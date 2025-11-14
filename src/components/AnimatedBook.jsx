@@ -26,38 +26,43 @@ const AnimatedBook = ({ type, position }) => {
   const bookTitle = type === 'romantic' ? 'Romantic Novels' : 'Crime-Thriller Novels';
   const coverGradient = 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%)';
 
-  // Automatic animation loop
+  // Automatic animation loop with proper timing
   useEffect(() => {
     const startAnimation = () => {
+      // Wait 4 seconds before opening
       setTimeout(() => {
         setAnimationPhase('opening');
         setIsOpen(true);
         
+        // Wait 2 seconds for opening animation to complete
         setTimeout(() => {
           setAnimationPhase('reading');
           
+          // Page turning every 3 seconds for better readability
           const pageInterval = setInterval(() => {
             setCurrentPage(prev => {
               if (prev < pages.length - 1) {
                 return prev + 1;
               } else {
                 clearInterval(pageInterval);
+                // Wait 3 seconds on last page before closing
                 setTimeout(() => {
                   setAnimationPhase('closing');
                   setIsOpen(false);
                   setCurrentPage(0);
                   
+                  // Wait 2.5 seconds for closing animation
                   setTimeout(() => {
                     setAnimationPhase('closed');
                     startAnimation();
-                  }, 2000);
-                }, 1500);
+                  }, 2500);
+                }, 3000);
                 return prev;
               }
             });
-          }, 2000);
-        }, 1000);
-      }, 3000);
+          }, 3000);
+        }, 2000);
+      }, 4000);
     };
 
     startAnimation();
@@ -80,10 +85,13 @@ const AnimatedBook = ({ type, position }) => {
       <AnimatePresence>
         {!isOpen ? (
           <motion.div
-            initial={{ rotateY: 0 }}
-            animate={{ rotateY: 0 }}
+            initial={{ rotateY: 0, scale: 1 }}
+            animate={{ 
+              rotateY: animationPhase === 'opening' ? -15 : 0,
+              scale: animationPhase === 'opening' ? 1.05 : 1
+            }}
             whileHover={{ scale: 1.02, rotateY: -2 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            transition={{ duration: 2, ease: "easeInOut" }}
             style={{
               width: '150px',
               height: '200px',
@@ -293,29 +301,55 @@ const AnimatedBook = ({ type, position }) => {
           </motion.div>
         ) : (
           <motion.div
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.9, opacity: 0 }}
-            transition={{ duration: 1.2, ease: "easeInOut" }}
+            initial={{ 
+              scale: 0.8, 
+              opacity: 0, 
+              rotateY: -90,
+              transformOrigin: "left center"
+            }}
+            animate={{ 
+              scale: 1, 
+              opacity: 1, 
+              rotateY: 0,
+              transformOrigin: "center center"
+            }}
+            exit={{ 
+              scale: 0.8, 
+              opacity: 0, 
+              rotateY: -90,
+              transformOrigin: "left center"
+            }}
+            transition={{ 
+              duration: animationPhase === 'closing' ? 2 : 2, 
+              ease: "easeInOut",
+              opacity: { duration: 0.8 }
+            }}
             style={{
               width: '240px',
               height: '160px',
               background: '#FFF',
               borderRadius: '8px',
-              boxShadow: '0 12px 30px rgba(0,0,0,0.4)',
+              boxShadow: '0 12px 30px rgba(0,0,0,0.4), 0 0 20px rgba(255,215,0,0.1)',
               display: 'flex',
               position: 'relative',
-              transformStyle: 'preserve-3d'
+              transformStyle: 'preserve-3d',
+              border: '2px solid #f0f0f0'
             }}
           >
-            <div style={{
-              width: '50%',
-              padding: '10px',
-              borderRight: '1px solid #ddd',
-              display: 'flex',
-              flexDirection: 'column',
-              overflow: 'hidden'
-            }}>
+            <motion.div 
+              key={`left-${currentPage}`}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+              style={{
+                width: '50%',
+                padding: '10px',
+                borderRight: '1px solid #ddd',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden'
+              }}
+            >
               <h4 style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>
                 {pages[currentPage]?.title}
               </h4>
@@ -325,15 +359,21 @@ const AnimatedBook = ({ type, position }) => {
               <div style={{ fontSize: '8px', color: '#999', textAlign: 'center' }}>
                 Page {currentPage + 1}
               </div>
-            </div>
+            </motion.div>
 
-            <div style={{
-              width: '50%',
-              padding: '10px',
-              display: 'flex',
-              flexDirection: 'column',
-              overflow: 'hidden'
-            }}>
+            <motion.div 
+              key={`right-${currentPage}`}
+              initial={{ opacity: 0, x: 20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
+              style={{
+                width: '50%',
+                padding: '10px',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden'
+              }}
+            >
               {currentPage < pages.length - 1 ? (
                 <>
                   <h4 style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>
@@ -347,11 +387,40 @@ const AnimatedBook = ({ type, position }) => {
                   </div>
                 </>
               ) : (
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#999' }}>
-                  <p style={{ fontSize: '10px' }}>The End</p>
-                </div>
+                <motion.div 
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 1, ease: "easeOut", delay: 0.5 }}
+                  style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#999' }}
+                >
+                  <p style={{ fontSize: '12px', fontWeight: 'bold' }}>The End</p>
+                </motion.div>
               )}
-            </div>
+            </motion.div>
+            
+            {/* Page flip indicator */}
+            {animationPhase === 'reading' && currentPage < pages.length - 1 && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: [0, 1, 0], scale: [0, 1, 0] }}
+                transition={{ 
+                  duration: 0.8, 
+                  ease: "easeInOut",
+                  repeat: Infinity,
+                  repeatDelay: 2.2
+                }}
+                style={{
+                  position: 'absolute',
+                  bottom: '8px',
+                  right: '8px',
+                  width: '12px',
+                  height: '12px',
+                  background: 'linear-gradient(45deg, #FFD700, #FFA500)',
+                  borderRadius: '50%',
+                  boxShadow: '0 0 8px rgba(255,215,0,0.6)'
+                }}
+              />
+            )}
           </motion.div>
         )}
       </AnimatePresence>
