@@ -77,18 +77,29 @@ const BackgroundVowels = () => {
         this.angle += 0.008;
         this.rotation += this.rotationSpeed;
 
-        // Reset when vowel goes off-screen
-        if (this.y < -100 || this.x < -100 || this.x > canvas.width + 100) {
+        // Keep within bounds and reset when off-screen
+        if (this.x < -50) this.x = canvas.width + 50;
+        if (this.x > canvas.width + 50) this.x = -50;
+        if (this.y < -50) {
           this.reset();
+          this.y = canvas.height + 50;
         }
       }
 
       draw() {
         ctx.save();
         ctx.globalAlpha = this.opacity;
-        ctx.font = `${this.size}px 'Segoe UI', sans-serif`;
-        ctx.fillStyle = '#DAA520';
-        ctx.shadowBlur = 8;
+        ctx.font = `bold ${this.size}px 'Segoe UI', sans-serif`;
+        
+        // Create shiny gold gradient
+        const gradient = ctx.createLinearGradient(0, -this.size/2, 0, this.size/2);
+        gradient.addColorStop(0, '#FFD700');
+        gradient.addColorStop(0.3, '#FFF8DC');
+        gradient.addColorStop(0.7, '#DAA520');
+        gradient.addColorStop(1, '#B8860B');
+        
+        ctx.fillStyle = gradient;
+        ctx.shadowBlur = 15;
         ctx.shadowColor = '#FFD700';
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
@@ -97,6 +108,12 @@ const BackgroundVowels = () => {
         ctx.translate(this.x, this.y);
         ctx.rotate(this.rotation);
         ctx.fillText(this.char, 0, 0);
+        
+        // Add shine effect
+        ctx.globalCompositeOperation = 'overlay';
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.fillText(this.char, -1, -1);
+        
         ctx.restore();
       }
     }

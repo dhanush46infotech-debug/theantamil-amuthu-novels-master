@@ -313,12 +313,13 @@ const AnimatedBook = ({ type, position }) => {
               padding: '10px',
               borderRight: '1px solid #ddd',
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              overflow: 'hidden'
             }}>
               <h4 style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>
                 {pages[currentPage]?.title}
               </h4>
-              <p style={{ fontSize: '9px', lineHeight: '1.4', color: '#555', flex: 1 }}>
+              <p style={{ fontSize: '9px', lineHeight: '1.4', color: '#555', flex: 1, overflow: 'hidden', wordWrap: 'break-word' }}>
                 {pages[currentPage]?.content}
               </p>
               <div style={{ fontSize: '8px', color: '#999', textAlign: 'center' }}>
@@ -330,15 +331,16 @@ const AnimatedBook = ({ type, position }) => {
               width: '50%',
               padding: '10px',
               display: 'flex',
-              flexDirection: 'column'
+              flexDirection: 'column',
+              overflow: 'hidden'
             }}>
               {currentPage < pages.length - 1 ? (
                 <>
                   <h4 style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>
                     {pages[currentPage + 1]?.title}
                   </h4>
-                  <p style={{ fontSize: '9px', lineHeight: '1.4', color: '#555', flex: 1 }}>
-                    {pages[currentPage + 1]?.content.substring(0, 150)}...
+                  <p style={{ fontSize: '9px', lineHeight: '1.4', color: '#555', flex: 1, overflow: 'hidden', wordWrap: 'break-word' }}>
+                    {pages[currentPage + 1]?.content.substring(0, 120)}...
                   </p>
                   <div style={{ fontSize: '8px', color: '#999', textAlign: 'center' }}>
                     Page {currentPage + 2}

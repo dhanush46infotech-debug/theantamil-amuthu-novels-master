@@ -11,8 +11,10 @@ function App() {
     <ThemeProvider>
       <LanguageProvider>
         <div className="app relative min-h-screen bg-dark-bg overflow-hidden">
-          <div className="fixed inset-0 z-0 pointer-events-none">
-            <BackgroundVowels />
+          <div className="absolute inset-0 overflow-hidden">
+            <div className="fixed inset-0 z-0 pointer-events-none">
+              <BackgroundVowels />
+            </div>
           </div>
           <div className="relative z-10">
             <Header />
