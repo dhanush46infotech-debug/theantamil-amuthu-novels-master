@@ -26,10 +26,6 @@
     "english": "English",
     "telugu": "తెలుగు"
   },
-  "categories": {
-    "romantic": "காதல்",
-    "crime": "குற்றம்"
-  },
   "aria": {
     "openMenu": "பட்டியை திற",
     "closeMenu": "பட்டியை மூடு",

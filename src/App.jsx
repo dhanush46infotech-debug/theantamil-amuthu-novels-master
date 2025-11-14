@@ -1,7 +1,6 @@
 import Header from './components/Header';
 import BackgroundVowels from './components/BackgroundVowels';
 import HeroBanner from './components/HeroBanner';
-import BookCategories from './components/BookCategories';
 import Footer from './components/Footer';
 import { LanguageProvider } from './context/LanguageContext';
 import { ThemeProvider } from './context/ThemeContext';
@@ -19,7 +18,8 @@ function App() {
             <Header />
             <main className="main-content" style={{ marginTop: '0', paddingTop: '0' }}>
               <HeroBanner />
-              <BookCategories />
+              {/* 20cm gap between banner and footer */}
+              <div style={{ height: '20cm', background: 'transparent' }}></div>
             </main>
             <Footer />
           </div>

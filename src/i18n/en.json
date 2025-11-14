@@ -26,10 +26,6 @@
     "english": "English",
     "telugu": "తెలుగు"
   },
-  "categories": {
-    "romantic": "ROMANTIC",
-    "crime": "CRIME"
-  },
   "aria": {
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
