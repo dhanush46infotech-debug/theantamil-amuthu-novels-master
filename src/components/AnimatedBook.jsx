@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const AnimatedBook = ({ type, position }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(0);
+  const [animationPhase, setAnimationPhase] = useState('closed');
 
   const romanticPages = [
     { title: "Love's First Whisper", content: "In the gentle breeze of spring, two hearts found their rhythm. Sarah walked through the garden, her heart beating faster as she saw him waiting by the old oak tree..." },
@@ -14,32 +15,53 @@ const AnimatedBook = ({ type, position }) => {
   ];
 
   const crimePages = [
-    { title: "கொலை மர்மம்", content: "இருண்ட இரவில் ஒரு கூக்குரல். துப்பறியும் ராஜ் அந்த வீட்டை நோக்கி ஓடினார். அங்கே கிடந்தது ஒரு உடல். யார் இந்த கொலையாளி?" },
-    { title: "அத்தியாயம் 1: சூத்திரம்", content: "குற்றம் நடந்த இடத்தில் கிடைத்த ஒரே சூத்திரம் - ஒரு சிவப்பு ரோஜா. ராஜ் யோசித்தார். இது எதைக் குறிக்கிறது? கொலையாளியின் அடையாளமா?" },
-    { title: "அத்தியாயம் 2: சந்தேகம்", content: "மூன்று சந்தேக நபர்கள். ஒவ்வொருவருக்கும் ஒரு காரணம். ஆனால் உண்மையான கொலையாளி யார்? ராஜ் ஆழமாக விசாரிக்க ஆரம்பித்தார்..." },
-    { title: "அத்தியாயம் 3: திருப்பம்", content: "திடீரென்று கிடைத்த புதிய தகவல். பாதிக்கப்பட்டவரின் இரகசிய வாழ்க்கை வெளிவந்தது. இந்த மர்மம் இன்னும் ஆழமானது..." },
-    { title: "அத்தியாயம் 4: உண்மை", content: "இறுதியாக உண்மை வெளிவந்தது. கொலையாளி யாரும் எதிர்பாராத நபர். ராஜ் அதிர்ச்சியில் நின்றார். இது எப்படி சாத்தியம்?" }
+    { title: "Murder Mystery", content: "A scream pierced the dark night. Detective Raj rushed towards the house. There lay a body. Who was this killer?" },
+    { title: "Chapter 1: The Clue", content: "The only clue at the crime scene - a red rose. Raj pondered. What does this signify? Is it the killer's signature?" },
+    { title: "Chapter 2: Suspicion", content: "Three suspects. Each with a motive. But who is the real killer? Raj began his deep investigation..." },
+    { title: "Chapter 3: The Twist", content: "Suddenly, new information emerged. The victim's secret life was revealed. This mystery runs even deeper..." },
+    { title: "Chapter 4: Truth", content: "Finally, the truth came out. The killer was someone no one expected. Raj stood in shock. How was this possible?" }
   ];
 
   const pages = type === 'romantic' ? romanticPages : crimePages;
-  const bookTitle = type === 'romantic' ? 'Romantic Hearts' : 'கொலை மர்மம்';
-  const coverColor = type === 'romantic' ? '#FF69B4' : '#CC0000';
-  const coverIcon = type === 'romantic' ? '🌹' : '🔪';
+  const bookTitle = type === 'romantic' ? 'Romantic Novels' : 'Crime-Thriller Novels';
+  const coverGradient = 'linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FFD700 100%)';
 
-  const nextPage = () => {
-    if (currentPage < pages.length - 1) {
-      setCurrentPage(currentPage + 1);
-    } else {
-      setIsOpen(false);
-      setCurrentPage(0);
-    }
-  };
+  // Automatic animation loop
+  useEffect(() => {
+    const startAnimation = () => {
+      setTimeout(() => {
+        setAnimationPhase('opening');
+        setIsOpen(true);
+        
+        setTimeout(() => {
+          setAnimationPhase('reading');
+          
+          const pageInterval = setInterval(() => {
+            setCurrentPage(prev => {
+              if (prev < pages.length - 1) {
+                return prev + 1;
+              } else {
+                clearInterval(pageInterval);
+                setTimeout(() => {
+                  setAnimationPhase('closing');
+                  setIsOpen(false);
+                  setCurrentPage(0);
+                  
+                  setTimeout(() => {
+                    setAnimationPhase('closed');
+                    startAnimation();
+                  }, 2000);
+                }, 1000);
+                return prev;
+              }
+            });
+          }, 2000);
+        }, 1000);
+      }, 2000);
+    };
 
-  const prevPage = () => {
-    if (currentPage > 0) {
-      setCurrentPage(currentPage - 1);
-    }
-  };
+    startAnimation();
+  }, [pages.length]);
 
   const bookStyle = {
     position: 'absolute',
@@ -54,74 +76,163 @@ const AnimatedBook = ({ type, position }) => {
     <div style={bookStyle}>
       <AnimatePresence>
         {!isOpen ? (
-          // Closed Book
           <motion.div
             initial={{ rotateY: 0 }}
             animate={{ rotateY: 0 }}
             whileHover={{ scale: 1.05, rotateY: -5 }}
-            onClick={() => setIsOpen(true)}
             style={{
-              width: '180px',
-              height: '240px',
-              background: type === 'romantic' 
-                ? `linear-gradient(135deg, ${coverColor} 0%, #FF1493 100%)`
-                : `linear-gradient(135deg, ${coverColor} 0%, #8B0000 100%)`,
-              borderRadius: '8px 12px 12px 8px',
-              boxShadow: '0 8px 20px rgba(0,0,0,0.3), inset 0 2px 0 rgba(255,255,255,0.2)',
+              width: '120px',
+              height: '160px',
+              background: 'linear-gradient(135deg, #8B4513 0%, #654321 50%, #8B4513 100%)',
+              borderRadius: '6px 8px 8px 6px',
+              boxShadow: '0 12px 30px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,215,0,0.3)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              color: 'white',
-              fontFamily: 'Georgia, serif',
+              color: '#FFD700',
+              fontFamily: 'serif',
               position: 'relative',
-              transformStyle: 'preserve-3d'
+              transformStyle: 'preserve-3d',
+              border: '3px solid #8B4513'
             }}
           >
             {/* Book Spine */}
             <div style={{
               position: 'absolute',
-              left: '-8px',
+              left: '-10px',
               top: '0',
-              width: '8px',
+              width: '10px',
               height: '100%',
-              background: `linear-gradient(180deg, ${coverColor} 0%, #B22222 100%)`,
-              borderRadius: '4px 0 0 4px'
+              background: 'linear-gradient(180deg, #654321 0%, #3E2723 100%)',
+              borderRadius: '4px 0 0 4px',
+              boxShadow: 'inset -2px 0 4px rgba(0,0,0,0.3)'
             }} />
             
-            {/* Cover Icon */}
-            <div style={{ fontSize: '48px', marginBottom: '20px' }}>{coverIcon}</div>
+            {/* Ornate Golden Border */}
+            <div style={{
+              position: 'absolute',
+              inset: '8px',
+              border: '1px solid #FFD700',
+              borderRadius: '3px',
+              pointerEvents: 'none',
+              boxShadow: 'inset 0 0 5px rgba(255,215,0,0.3)'
+            }} />
             
-            {/* Title */}
+            {/* Corner Decorations */}
+            <div style={{
+              position: 'absolute',
+              top: '12px',
+              left: '12px',
+              width: '8px',
+              height: '8px',
+              border: '1px solid #FFD700',
+              borderRight: 'none',
+              borderBottom: 'none',
+              borderRadius: '2px 0 0 0'
+            }} />
+            <div style={{
+              position: 'absolute',
+              top: '12px',
+              right: '12px',
+              width: '8px',
+              height: '8px',
+              border: '1px solid #FFD700',
+              borderLeft: 'none',
+              borderBottom: 'none',
+              borderRadius: '0 2px 0 0'
+            }} />
+            <div style={{
+              position: 'absolute',
+              bottom: '12px',
+              left: '12px',
+              width: '8px',
+              height: '8px',
+              border: '1px solid #FFD700',
+              borderRight: 'none',
+              borderTop: 'none',
+              borderRadius: '0 0 0 2px'
+            }} />
+            <div style={{
+              position: 'absolute',
+              bottom: '12px',
+              right: '12px',
+              width: '8px',
+              height: '8px',
+              border: '1px solid #FFD700',
+              borderLeft: 'none',
+              borderTop: 'none',
+              borderRadius: '0 0 2px 0'
+            }} />
+            
+            {/* Central Ornate Design */}
+            <div style={{
+              width: '30px',
+              height: '30px',
+              border: '1px solid #FFD700',
+              borderRadius: '50%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              marginBottom: '5px',
+              background: 'radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%)',
+              boxShadow: 'inset 0 0 5px rgba(255,215,0,0.3)'
+            }}>
+              <div style={{
+                width: '18px',
+                height: '18px',
+                border: '1px solid #FFD700',
+                borderRadius: '50%',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '10px',
+                textShadow: '0 0 4px #FFD700'
+              }}>
+                ✦
+              </div>
+            </div>
+            
+            {/* Book Title */}
             <h3 style={{
-              fontSize: '18px',
+              fontSize: '8px',
               fontWeight: 'bold',
               textAlign: 'center',
               margin: '0',
-              textShadow: '0 2px 4px rgba(0,0,0,0.5)',
-              padding: '0 20px'
+              textShadow: '0 0 3px #FFD700, 0 1px 1px rgba(0,0,0,0.8)',
+              padding: '0 5px',
+              letterSpacing: '0.3px',
+              lineHeight: '1.1'
             }}>
               {bookTitle}
             </h3>
             
-            {/* Decorative Border */}
+            {/* Decorative Lines */}
+            <div style={{
+              width: '50px',
+              height: '1px',
+              background: 'linear-gradient(90deg, transparent 0%, #FFD700 50%, transparent 100%)',
+              marginTop: '3px',
+              boxShadow: '0 0 2px #FFD700'
+            }} />
+            
+            {/* Vintage Texture Overlay */}
             <div style={{
               position: 'absolute',
-              inset: '10px',
-              border: '2px solid rgba(255,255,255,0.3)',
-              borderRadius: '4px',
+              inset: '0',
+              background: 'radial-gradient(circle at 30% 20%, rgba(255,215,0,0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)',
+              borderRadius: '6px 8px 8px 6px',
               pointerEvents: 'none'
             }} />
           </motion.div>
         ) : (
-          // Open Book
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             exit={{ scale: 0.8, opacity: 0 }}
             style={{
-              width: '400px',
-              height: '300px',
+              width: '240px',
+              height: '160px',
               background: '#FFF',
               borderRadius: '8px',
               boxShadow: '0 12px 30px rgba(0,0,0,0.4)',
@@ -130,114 +241,48 @@ const AnimatedBook = ({ type, position }) => {
               transformStyle: 'preserve-3d'
             }}
           >
-            {/* Left Page */}
             <div style={{
               width: '50%',
-              padding: '20px',
+              padding: '10px',
               borderRight: '1px solid #ddd',
               display: 'flex',
               flexDirection: 'column'
             }}>
-              <h4 style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '15px', color: '#333' }}>
+              <h4 style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>
                 {pages[currentPage]?.title}
               </h4>
-              <p style={{ fontSize: '12px', lineHeight: '1.6', color: '#555', flex: 1 }}>
+              <p style={{ fontSize: '9px', lineHeight: '1.4', color: '#555', flex: 1 }}>
                 {pages[currentPage]?.content}
               </p>
-              <div style={{ fontSize: '10px', color: '#999', textAlign: 'center' }}>
+              <div style={{ fontSize: '8px', color: '#999', textAlign: 'center' }}>
                 Page {currentPage + 1}
               </div>
             </div>
 
-            {/* Right Page */}
             <div style={{
               width: '50%',
-              padding: '20px',
+              padding: '10px',
               display: 'flex',
               flexDirection: 'column'
             }}>
               {currentPage < pages.length - 1 ? (
                 <>
-                  <h4 style={{ fontSize: '16px', fontWeight: 'bold', marginBottom: '15px', color: '#333' }}>
+                  <h4 style={{ fontSize: '12px', fontWeight: 'bold', marginBottom: '8px', color: '#333' }}>
                     {pages[currentPage + 1]?.title}
                   </h4>
-                  <p style={{ fontSize: '12px', lineHeight: '1.6', color: '#555', flex: 1 }}>
-                    {pages[currentPage + 1]?.content.substring(0, 200)}...
+                  <p style={{ fontSize: '9px', lineHeight: '1.4', color: '#555', flex: 1 }}>
+                    {pages[currentPage + 1]?.content.substring(0, 150)}...
                   </p>
-                  <div style={{ fontSize: '10px', color: '#999', textAlign: 'center' }}>
+                  <div style={{ fontSize: '8px', color: '#999', textAlign: 'center' }}>
                     Page {currentPage + 2}
                   </div>
                 </>
               ) : (
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%', color: '#999' }}>
-                  <p>The End</p>
+                  <p style={{ fontSize: '10px' }}>The End</p>
                 </div>
               )}
             </div>
-
-            {/* Navigation Buttons */}
-            <button
-              onClick={prevPage}
-              disabled={currentPage === 0}
-              style={{
-                position: 'absolute',
-                left: '10px',
-                bottom: '10px',
-                background: currentPage === 0 ? '#ccc' : '#007bff',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                padding: '5px 10px',
-                fontSize: '12px',
-                cursor: currentPage === 0 ? 'not-allowed' : 'pointer'
-              }}
-            >
-              ← Prev
-            </button>
-
-            <button
-              onClick={nextPage}
-              style={{
-                position: 'absolute',
-                right: '10px',
-                bottom: '10px',
-                background: '#28a745',
-                color: 'white',
-                border: 'none',
-                borderRadius: '4px',
-                padding: '5px 10px',
-                fontSize: '12px',
-                cursor: 'pointer'
-              }}
-            >
-              {currentPage >= pages.length - 2 ? 'Close' : 'Next →'}
-            </button>
-
-            {/* Close Button */}
-            <button
-              onClick={() => {
-                setIsOpen(false);
-                setCurrentPage(0);
-              }}
-              style={{
-                position: 'absolute',
-                top: '10px',
-                right: '10px',
-                background: '#dc3545',
-                color: 'white',
-                border: 'none',
-                borderRadius: '50%',
-                width: '24px',
-                height: '24px',
-                fontSize: '12px',
-                cursor: 'pointer',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center'
-              }}
-            >
-              ×
-            </button>
           </motion.div>
         )}
       </AnimatePresence>
