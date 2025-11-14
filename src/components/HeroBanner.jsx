@@ -96,14 +96,14 @@ const HeroBanner = () => {
         return (
           <div style={{ textAlign: 'center', color: 'white' }}>
             <h2 style={{ fontSize: 'clamp(24px, 4vw, 36px)', marginBottom: '30px', color: '#F4D233' }}>Follow us on Pratilipi for more stories!</h2>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '40px', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', justifyContent: 'center', gap: 'clamp(15px, 5vw, 40px)', flexWrap: 'wrap' }}>
               {authors.map((author, index) => (
                 <a key={index} href={author.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', transition: 'transform 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
-                    <div style={{ width: '120px', height: '120px', borderRadius: '50%', background: 'linear-gradient(135deg, #FF69B4, #FF1493)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '60px', boxShadow: '0 8px 20px rgba(255, 105, 180, 0.4)' }}>
+                    <div style={{ width: 'clamp(80px, 15vw, 120px)', height: 'clamp(80px, 15vw, 120px)', borderRadius: '50%', background: 'linear-gradient(135deg, #FF69B4, #FF1493)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'clamp(40px, 8vw, 60px)', boxShadow: '0 8px 20px rgba(255, 105, 180, 0.4)' }}>
                       {author.image}
                     </div>
-                    <h3 style={{ fontSize: '18px', fontWeight: '600', margin: 0 }}>{author.name}</h3>
+                    <h3 style={{ fontSize: 'clamp(14px, 3vw, 18px)', fontWeight: '600', margin: 0 }}>{author.name}</h3>
                   </div>
                 </a>
               ))}
@@ -115,11 +115,11 @@ const HeroBanner = () => {
           <div style={{ textAlign: 'center', color: 'white' }}>
             <h2 style={{ fontSize: 'clamp(24px, 4vw, 36px)', marginBottom: '10px', color: '#F4D233' }}>Let's build a world together!</h2>
             <p style={{ fontSize: 'clamp(18px, 3vw, 24px)', marginBottom: '30px', opacity: 0.9 }}>Join our community</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '20px', maxWidth: '800px', margin: '0 auto' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(clamp(150px, 40vw, 200px), 1fr))', gap: 'clamp(10px, 3vw, 20px)', maxWidth: '800px', margin: '0 auto' }}>
               {socialLinks.map((social, index) => (
-                <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'white', padding: '15px', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.2)', transition: 'all 0.3s ease', display: 'flex', alignItems: 'center', gap: '12px' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
-                  <span style={{ fontSize: '24px' }}>{social.icon}</span>
-                  <span style={{ fontSize: '16px', fontWeight: '500' }}>{social.name}</span>
+                <a key={index} href={social.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'white', padding: 'clamp(8px, 2vw, 15px)', background: 'rgba(255, 255, 255, 0.1)', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.2)', transition: 'all 0.3s ease', display: 'flex', alignItems: 'center', gap: 'clamp(6px, 2vw, 12px)' }} onMouseEnter={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.2)'; e.currentTarget.style.transform = 'translateY(-2px)'; }} onMouseLeave={(e) => { e.currentTarget.style.background = 'rgba(255, 255, 255, 0.1)'; e.currentTarget.style.transform = 'translateY(0)'; }}>
+                  <span style={{ fontSize: 'clamp(18px, 4vw, 24px)' }}>{social.icon}</span>
+                  <span style={{ fontSize: 'clamp(12px, 3vw, 16px)', fontWeight: '500' }}>{social.name}</span>
                 </a>
               ))}
             </div>
@@ -131,7 +131,7 @@ const HeroBanner = () => {
   };
 
   return (
-    <div style={{ minHeight: '60vh', width: '100vw', background: 'linear-gradient(135deg, #1a0033 0%, #000000 100%)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: '30px 20px' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+    <div style={{ minHeight: '60vh', width: '100vw', background: 'linear-gradient(135deg, #1a0033 0%, #000000 100%)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: 'clamp(15px, 4vw, 30px) clamp(10px, 3vw, 20px)' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <BackgroundVowels />
       
       {/* Animated Books - Only on first slide */}
@@ -146,9 +146,75 @@ const HeroBanner = () => {
         {renderSlide()}
       </div>
       
-      {/* Navigation Arrows - Further from corners */}
-      <button onClick={prevSlide} style={{ position: 'absolute', left: '60px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255, 255, 255, 0.2)', border: 'none', borderRadius: '50%', width: '50px', height: '50px', color: 'white', fontSize: '24px', cursor: 'pointer', zIndex: 20, transition: 'all 0.3s ease' }} onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'} onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}>‹</button>
-      <button onClick={nextSlide} style={{ position: 'absolute', right: '60px', top: '50%', transform: 'translateY(-50%)', background: 'rgba(255, 255, 255, 0.2)', border: 'none', borderRadius: '50%', width: '50px', height: '50px', color: 'white', fontSize: '24px', cursor: 'pointer', zIndex: 20, transition: 'all 0.3s ease' }} onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'} onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}>›</button>
+      {/* Navigation Arrows - Enhanced Touch Support */}
+      <button 
+        onClick={prevSlide}
+        onTouchStart={(e) => {
+          e.stopPropagation();
+          e.target.style.background = 'rgba(255, 255, 255, 0.4)';
+        }}
+        onTouchEnd={(e) => {
+          e.stopPropagation();
+          e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+        }}
+        style={{ 
+          position: 'absolute', 
+          left: 'clamp(10px, 5vw, 60px)', 
+          top: '50%', 
+          transform: 'translateY(-50%)', 
+          background: 'rgba(255, 255, 255, 0.2)', 
+          border: 'none', 
+          borderRadius: '50%', 
+          width: 'clamp(40px, 10vw, 60px)', 
+          height: 'clamp(40px, 10vw, 60px)', 
+          color: 'white', 
+          fontSize: 'clamp(20px, 5vw, 28px)', 
+          cursor: 'pointer', 
+          zIndex: 20, 
+          transition: 'all 0.3s ease',
+          touchAction: 'manipulation',
+          userSelect: 'none',
+          WebkitTapHighlightColor: 'transparent'
+        }} 
+        onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'} 
+        onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
+      >
+        ‹
+      </button>
+      <button 
+        onClick={nextSlide}
+        onTouchStart={(e) => {
+          e.stopPropagation();
+          e.target.style.background = 'rgba(255, 255, 255, 0.4)';
+        }}
+        onTouchEnd={(e) => {
+          e.stopPropagation();
+          e.target.style.background = 'rgba(255, 255, 255, 0.2)';
+        }}
+        style={{ 
+          position: 'absolute', 
+          right: 'clamp(10px, 5vw, 60px)', 
+          top: '50%', 
+          transform: 'translateY(-50%)', 
+          background: 'rgba(255, 255, 255, 0.2)', 
+          border: 'none', 
+          borderRadius: '50%', 
+          width: 'clamp(40px, 10vw, 60px)', 
+          height: 'clamp(40px, 10vw, 60px)', 
+          color: 'white', 
+          fontSize: 'clamp(20px, 5vw, 28px)', 
+          cursor: 'pointer', 
+          zIndex: 20, 
+          transition: 'all 0.3s ease',
+          touchAction: 'manipulation',
+          userSelect: 'none',
+          WebkitTapHighlightColor: 'transparent'
+        }} 
+        onMouseEnter={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.3)'} 
+        onMouseLeave={(e) => e.target.style.background = 'rgba(255, 255, 255, 0.2)'}
+      >
+        ›
+      </button>
       
       {/* Pagination Dots */}
       <div style={{ position: 'absolute', bottom: '30px', left: '50%', transform: 'translateX(-50%)', display: 'flex', gap: '12px', zIndex: 20 }}>

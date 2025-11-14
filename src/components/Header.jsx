@@ -36,7 +36,7 @@ const HamburgerMenu = ({ isOpen, onClick, ariaLabel }) => {
 const LanguageSwitcher = ({ currentLanguage, setCurrentLanguage }) => {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
-  const languages = ['TAMIL', 'ENGLISH'];
+  const languages = ['TAMIL', 'ENGLISH', 'TELUGU', 'HINDI'];
 
   const handleSelect = (lang) => {
     setCurrentLanguage(lang);
@@ -123,106 +123,35 @@ const Header = () => {
             onClick={() => setMenuOpen(!menuOpen)}
             ariaLabel={menuOpen ? t('aria.closeMenu') : t('aria.openMenu')}
           />
+          <img src={Logo} alt="TTM Novels Logo" className={styles.logo} />
         </div>
 
         <div className={styles.centerSection}>
-          <img src={Logo} alt="TTM Novels Logo" className={styles.logo} />
           <SearchBar onSearch={handleSearch} isMobile={isMobile} />
+          <HeaderSocialIcons />
+          <button
+            onClick={handleNotificationClick}
+            className={styles.iconButton}
+          >
+            🔔
+            <span className={styles.notificationBadge}>{notificationCount}</span>
+          </button>
+          <DarkModeToggle showText={false} />
         </div>
 
         <div className={styles.rightSection}>
-          <DarkModeToggle showText={false} />
-          <button
-            onClick={handleNotificationClick}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'scale(1.1) translateY(-3px)';
-              e.target.style.boxShadow = '0 8px 20px rgba(255, 215, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = 'none';
-            }}
-            style={{
-              background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2))',
-              border: '2px solid rgba(255, 215, 0, 0.6)',
-              borderRadius: '8px',
-              padding: '8px',
-              color: '#FFD700',
-              fontSize: '20px',
-              cursor: 'pointer',
-              position: 'relative',
-              minWidth: '40px',
-              minHeight: '40px',
-              transition: 'all 0.3s ease'
-            }}
-          >
-            🔔
-            <span style={{
-              position: 'absolute',
-              top: '4px',
-              right: '4px',
-              background: '#ff4444',
-              color: 'white',
-              borderRadius: '50%',
-              width: '16px',
-              height: '16px',
-              fontSize: '10px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>{notificationCount}</span>
-          </button>
           <button
             onClick={handleUserLoginClick}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'scale(1.1) translateY(-3px)';
-              e.target.style.boxShadow = '0 8px 20px rgba(255, 215, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = 'none';
-            }}
-            style={{
-              background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2))',
-              border: '2px solid rgba(255, 215, 0, 0.6)',
-              borderRadius: '8px',
-              padding: '8px',
-              color: '#FFD700',
-              fontSize: '20px',
-              cursor: 'pointer',
-              minWidth: '40px',
-              minHeight: '40px',
-              transition: 'all 0.3s ease'
-            }}
+            className={styles.iconButton}
           >
-            👨💼
+            👤
           </button>
           <button
             onClick={handleAdminLoginClick}
-            onMouseEnter={(e) => {
-              e.target.style.transform = 'scale(1.1) translateY(-3px)';
-              e.target.style.boxShadow = '0 8px 20px rgba(255, 215, 0, 0.4)';
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = 'scale(1)';
-              e.target.style.boxShadow = 'none';
-            }}
-            style={{
-              background: 'linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.2))',
-              border: '2px solid rgba(255, 215, 0, 0.6)',
-              borderRadius: '8px',
-              padding: '8px',
-              color: '#FFD700',
-              fontSize: '20px',
-              cursor: 'pointer',
-              minWidth: '40px',
-              minHeight: '40px',
-              transition: 'all 0.3s ease'
-            }}
+            className={styles.iconButton}
           >
             🔒
           </button>
-          <HeaderSocialIcons />
         </div>
       </header>
 

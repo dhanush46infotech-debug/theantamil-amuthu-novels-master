@@ -51,13 +51,13 @@ const AnimatedBook = ({ type, position }) => {
                     setAnimationPhase('closed');
                     startAnimation();
                   }, 2000);
-                }, 1000);
+                }, 1500);
                 return prev;
               }
             });
           }, 2000);
         }, 1000);
-      }, 2000);
+      }, 3000);
     };
 
     startAnimation();
@@ -65,11 +65,14 @@ const AnimatedBook = ({ type, position }) => {
 
   const bookStyle = {
     position: 'absolute',
-    [position]: '3cm',
+    [position]: 'clamp(10px, 8vw, 3cm)',
     top: '50%',
     transform: 'translateY(-50%)',
     zIndex: 15,
-    cursor: 'pointer'
+    cursor: 'pointer',
+    '@media (max-width: 768px)': {
+      display: 'none'
+    }
   };
 
   return (
@@ -79,22 +82,24 @@ const AnimatedBook = ({ type, position }) => {
           <motion.div
             initial={{ rotateY: 0 }}
             animate={{ rotateY: 0 }}
-            whileHover={{ scale: 1.05, rotateY: -5 }}
+            whileHover={{ scale: 1.02, rotateY: -2 }}
+            transition={{ duration: 0.8, ease: "easeInOut" }}
             style={{
-              width: '120px',
-              height: '160px',
-              background: 'linear-gradient(135deg, #8B4513 0%, #654321 50%, #8B4513 100%)',
+              width: '150px',
+              height: '200px',
+              background: 'linear-gradient(135deg, #DAA520 0%, #FFD700 20%, #B8860B 40%, #FFD700 60%, #DAA520 80%, #FFD700 100%)',
               borderRadius: '6px 8px 8px 6px',
-              boxShadow: '0 12px 30px rgba(0,0,0,0.4), inset 0 2px 0 rgba(255,215,0,0.3)',
+              boxShadow: '0 12px 30px rgba(0,0,0,0.5), inset 0 3px 0 rgba(255,255,255,0.6), inset 0 -2px 0 rgba(184,134,11,0.8), 0 0 25px rgba(218,165,32,0.8)',
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              color: '#FFD700',
+              color: '#FFFFFF',
               fontFamily: 'serif',
               position: 'relative',
               transformStyle: 'preserve-3d',
-              border: '3px solid #8B4513'
+              border: '3px solid #B8860B',
+              overflow: 'hidden'
             }}
           >
             {/* Book Spine */}
@@ -104,19 +109,19 @@ const AnimatedBook = ({ type, position }) => {
               top: '0',
               width: '10px',
               height: '100%',
-              background: 'linear-gradient(180deg, #654321 0%, #3E2723 100%)',
+              background: 'linear-gradient(180deg, #DAA520 0%, #B8860B 30%, #FFD700 50%, #B8860B 70%, #DAA520 100%)',
               borderRadius: '4px 0 0 4px',
-              boxShadow: 'inset -2px 0 4px rgba(0,0,0,0.3)'
+              boxShadow: 'inset -2px 0 4px rgba(0,0,0,0.3), 0 0 10px rgba(255,215,0,0.5)'
             }} />
             
             {/* Ornate Golden Border */}
             <div style={{
               position: 'absolute',
               inset: '8px',
-              border: '1px solid #FFD700',
+              border: '2px solid #DAA520',
               borderRadius: '3px',
               pointerEvents: 'none',
-              boxShadow: 'inset 0 0 5px rgba(255,215,0,0.3)'
+              boxShadow: 'inset 0 0 8px rgba(218,165,32,0.5), inset 0 2px 0 rgba(255,255,255,0.4)'
             }} />
             
             {/* Corner Decorations */}
@@ -167,8 +172,8 @@ const AnimatedBook = ({ type, position }) => {
             
             {/* Central Ornate Design */}
             <div style={{
-              width: '30px',
-              height: '30px',
+              width: '40px',
+              height: '40px',
               border: '1px solid #FFD700',
               borderRadius: '50%',
               display: 'flex',
@@ -179,27 +184,65 @@ const AnimatedBook = ({ type, position }) => {
               boxShadow: 'inset 0 0 5px rgba(255,215,0,0.3)'
             }}>
               <div style={{
-                width: '18px',
-                height: '18px',
-                border: '1px solid #FFD700',
+                width: '24px',
+                height: '24px',
+                border: '2px solid #FFFFFF',
                 borderRadius: '50%',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 fontSize: '10px',
-                textShadow: '0 0 4px #FFD700'
+                background: 'radial-gradient(circle, #FFFFFF 0%, rgba(255,255,255,0.8) 100%)',
+                boxShadow: 'inset 0 0 8px rgba(218,165,32,0.6)'
               }}>
-                ✦
+                <div style={{
+                  width: '16px',
+                  height: '16px',
+                  position: 'relative',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center'
+                }}>
+                  {/* Necklace Chain */}
+                  <div style={{
+                    position: 'absolute',
+                    width: '12px',
+                    height: '2px',
+                    background: '#DAA520',
+                    borderRadius: '1px',
+                    top: '2px'
+                  }} />
+                  {/* Pendant */}
+                  <div style={{
+                    width: '6px',
+                    height: '8px',
+                    background: 'linear-gradient(45deg, #FFD700, #DAA520)',
+                    borderRadius: '50% 50% 50% 50% / 60% 60% 40% 40%',
+                    border: '0.5px solid #B8860B',
+                    marginTop: '4px'
+                  }} />
+                  {/* Small gems */}
+                  <div style={{
+                    position: 'absolute',
+                    width: '2px',
+                    height: '2px',
+                    background: '#FFFFFF',
+                    borderRadius: '50%',
+                    top: '8px',
+                    left: '7px',
+                    boxShadow: '0 0 2px rgba(255,255,255,0.8)'
+                  }} />
+                </div>
               </div>
             </div>
             
             {/* Book Title */}
             <h3 style={{
-              fontSize: '8px',
+              fontSize: '12px',
               fontWeight: 'bold',
               textAlign: 'center',
               margin: '0',
-              textShadow: '0 0 3px #FFD700, 0 1px 1px rgba(0,0,0,0.8)',
+              textShadow: '2px 2px 4px rgba(0,0,0,0.9), 0 0 6px rgba(0,0,0,0.8), -1px -1px 2px rgba(0,0,0,0.7), 1px 1px 0 rgba(0,0,0,1)',
               padding: '0 5px',
               letterSpacing: '0.3px',
               lineHeight: '1.1'
@@ -216,20 +259,44 @@ const AnimatedBook = ({ type, position }) => {
               boxShadow: '0 0 2px #FFD700'
             }} />
             
-            {/* Vintage Texture Overlay */}
+            {/* Corner Shiny Effects */}
             <div style={{
               position: 'absolute',
-              inset: '0',
-              background: 'radial-gradient(circle at 30% 20%, rgba(255,215,0,0.1) 0%, transparent 50%), radial-gradient(circle at 70% 80%, rgba(0,0,0,0.1) 0%, transparent 50%)',
-              borderRadius: '6px 8px 8px 6px',
+              top: '5px',
+              left: '5px',
+              width: '30px',
+              height: '30px',
+              background: 'radial-gradient(circle, rgba(255,255,255,0.6) 0%, transparent 70%)',
+              borderRadius: '50%',
+              pointerEvents: 'none'
+            }} />
+            <div style={{
+              position: 'absolute',
+              top: '5px',
+              right: '5px',
+              width: '20px',
+              height: '20px',
+              background: 'radial-gradient(circle, rgba(255,255,255,0.4) 0%, transparent 70%)',
+              borderRadius: '50%',
+              pointerEvents: 'none'
+            }} />
+            <div style={{
+              position: 'absolute',
+              bottom: '5px',
+              right: '5px',
+              width: '25px',
+              height: '25px',
+              background: 'radial-gradient(circle, rgba(255,255,255,0.5) 0%, transparent 70%)',
+              borderRadius: '50%',
               pointerEvents: 'none'
             }} />
           </motion.div>
         ) : (
           <motion.div
-            initial={{ scale: 0.8, opacity: 0 }}
+            initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0.8, opacity: 0 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            transition={{ duration: 1.2, ease: "easeInOut" }}
             style={{
               width: '240px',
               height: '160px',

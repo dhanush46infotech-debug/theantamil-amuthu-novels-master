@@ -60,50 +60,33 @@ const HeaderSocialIcons = () => {
           href={social.url}
           target="_blank"
           rel="noopener noreferrer"
-          className="group relative w-9 h-9 flex items-center justify-center rounded-full transition-all duration-300 hover:scale-110 hover:rotate-6"
+          className="group relative flex items-center justify-center rounded-lg transition-all duration-300"
           style={{
-            background: isDark 
-              ? 'linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.15))'
-              : 'linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 215, 0, 0.3))',
-            border: isDark 
-              ? '2px solid rgba(255, 215, 0, 0.4)'
-              : '2px solid rgba(255, 215, 0, 0.6)',
-            boxShadow: isDark
-              ? '0 3px 8px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-              : '0 3px 8px rgba(255, 215, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)'
+            background: 'linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%)',
+            border: '2px solid #B8860B',
+            minWidth: '40px',
+            minHeight: '40px',
+            padding: '8px',
+            boxShadow: '0 4px 12px rgba(218, 165, 32, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
           }}
           role="listitem"
           aria-label={`Visit our ${social.name} page`}
           onMouseEnter={(e) => {
-            e.currentTarget.style.background = isDark
-              ? 'linear-gradient(135deg, rgba(255, 215, 0, 0.35), rgba(255, 215, 0, 0.25))'
-              : 'linear-gradient(135deg, rgba(255, 215, 0, 0.5), rgba(255, 215, 0, 0.4))';
-            e.currentTarget.style.borderColor = isDark
-              ? 'rgba(255, 215, 0, 0.6)'
-              : 'rgba(255, 215, 0, 0.8)';
-            e.currentTarget.style.boxShadow = isDark
-              ? '0 6px 15px rgba(255, 215, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.15)'
-              : '0 6px 15px rgba(255, 215, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25)';
+            e.currentTarget.style.transform = 'scale(1.1) translateY(-3px)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #FFD700 100%)';
+            e.currentTarget.style.boxShadow = '0 8px 20px rgba(218, 165, 32, 0.5), inset 0 3px 0 rgba(255, 255, 255, 0.4)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = isDark
-              ? 'linear-gradient(135deg, rgba(255, 215, 0, 0.25), rgba(255, 215, 0, 0.15))'
-              : 'linear-gradient(135deg, rgba(255, 215, 0, 0.4), rgba(255, 215, 0, 0.3))';
-            e.currentTarget.style.borderColor = isDark
-              ? 'rgba(255, 215, 0, 0.4)'
-              : 'rgba(255, 215, 0, 0.6)';
-            e.currentTarget.style.boxShadow = isDark
-              ? '0 3px 8px rgba(255, 215, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
-              : '0 3px 8px rgba(255, 215, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2)';
+            e.currentTarget.style.transform = 'scale(1)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%)';
+            e.currentTarget.style.boxShadow = '0 4px 12px rgba(218, 165, 32, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)';
           }}
         >
           <div
             className="w-5 h-5 transition-all duration-300"
             style={{
-              color: '#FFD700',
-              filter: isDark
-                ? 'drop-shadow(0 0 4px #FFD700) brightness(1.1)'
-                : 'drop-shadow(0 0 3px #B8860B) brightness(0.9)'
+              color: '#FFFFFF',
+              filter: 'drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.8))'
             }}
           >
             {social.icon}

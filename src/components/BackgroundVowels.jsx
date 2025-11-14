@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 /**
  * BackgroundVowels Component
@@ -8,6 +9,7 @@ const BackgroundVowels = () => {
   const canvasRef = useRef(null);
   const particlesRef = useRef([]);
   const animationIdRef = useRef(null);
+  const { currentLanguage } = useLanguage();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -23,10 +25,28 @@ const BackgroundVowels = () => {
     };
     setCanvasSize();
 
-    // All 30 Tamil letters (12 vowels + 18 consonants)
-    const vowels = ['அ', 'ஆ', 'இ', 'ஈ', 'உ', 'ஊ', 'எ', 'ஏ', 'ஐ', 'ஒ', 'ஓ', 'ஔ'];
-    const consonants = ['க', 'ங', 'ச', 'ஞ', 'ட', 'ண', 'த', 'ந', 'ப', 'ம', 'ய', 'ர', 'ல', 'வ', 'ழ', 'ள', 'ற', 'ன'];
-    const allChars = [...vowels, ...consonants];
+    // Language-based letters
+    const getLetters = () => {
+      switch(currentLanguage) {
+        case 'TAMIL':
+          const tamilVowels = ['அ', 'ஆ', 'இ', 'ஈ', 'உ', 'ஊ', 'எ', 'ஏ', 'ஐ', 'ஒ', 'ஓ', 'ஔ'];
+          const tamilConsonants = ['க', 'ங', 'ச', 'ஞ', 'ட', 'ண', 'த', 'ந', 'ப', 'ம', 'ய', 'ர', 'ல', 'வ', 'ழ', 'ள', 'ற', 'ன'];
+          return [...tamilVowels, ...tamilConsonants];
+        case 'ENGLISH':
+          return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+        case 'TELUGU':
+          const teluguVowels = ['అ', 'ఆ', 'ఇ', 'ఈ', 'ఉ', 'ఊ', 'ఋ', 'ౠ', 'ఌ', 'ౡ', 'ఎ', 'ఏ', 'ఐ', 'ఒ', 'ఓ', 'ఔ'];
+          const teluguConsonants = ['క', 'ఖ', 'గ', 'ఘ', 'ఙ', 'చ', 'ఛ', 'జ', 'ఝ', 'ఞ', 'ట', 'ఠ', 'డ', 'ఢ'];
+          return [...teluguVowels, ...teluguConsonants];
+        case 'HINDI':
+          const hindiVowels = ['अ', 'आ', 'इ', 'ई', 'उ', 'ऊ', 'ऋ', 'ए', 'ऐ', 'ओ', 'औ'];
+          const hindiConsonants = ['क', 'ख', 'ग', 'घ', 'ङ', 'च', 'छ', 'ज', 'झ', 'ञ', 'ट', 'ठ', 'ड', 'ढ', 'ण', 'त', 'थ', 'द', 'ध', 'न'];
+          return [...hindiVowels, ...hindiConsonants];
+        default:
+          return ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+      }
+    };
+    const allChars = getLetters();
 
     class FloatingVowel {
       constructor() {
@@ -67,9 +87,9 @@ const BackgroundVowels = () => {
         ctx.save();
         ctx.globalAlpha = this.opacity;
         ctx.font = `${this.size}px 'Segoe UI', sans-serif`;
-        ctx.fillStyle = '#00f0ff';
+        ctx.fillStyle = '#DAA520';
         ctx.shadowBlur = 8;
-        ctx.shadowColor = '#00f0ff';
+        ctx.shadowColor = '#FFD700';
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 0;
 
@@ -111,7 +131,7 @@ const BackgroundVowels = () => {
         cancelAnimationFrame(animationIdRef.current);
       }
     };
-  }, []);
+  }, [currentLanguage]);
 
   return (
     <canvas

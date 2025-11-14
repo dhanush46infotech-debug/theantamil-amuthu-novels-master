@@ -2,6 +2,7 @@ import React, { createContext, useState, useContext, useEffect } from 'react';
 import taTranslations from '../i18n/ta.json';
 import enTranslations from '../i18n/en.json';
 import teTranslations from '../i18n/te.json';
+import hiTranslations from '../i18n/hi.json';
 
 const LanguageContext = createContext();
 
@@ -9,6 +10,7 @@ const translations = {
   TAMIL: taTranslations,
   ENGLISH: enTranslations,
   TELUGU: teTranslations,
+  HINDI: hiTranslations,
 };
 
 export const useLanguage = () => {

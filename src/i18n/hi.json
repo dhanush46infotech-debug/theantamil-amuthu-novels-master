@@ -1,0 +1,24 @@
+{
+  "nav": {
+    "home": "होम",
+    "about": "हमारे बारे में",
+    "contact": "संपर्क",
+    "books": "किताबें",
+    "authors": "लेखक"
+  },
+  "hero": {
+    "welcome": "स्वागत है",
+    "subtitle": "हिंदी उपन्यासों की दुनिया में",
+    "description": "प्रेम, रहस्य और रोमांच से भरी कहानियों का आनंद लें"
+  },
+  "search": {
+    "placeholder": "खोजें...",
+    "button": "खोजें"
+  },
+  "aria": {
+    "openMenu": "मेनू खोलें",
+    "closeMenu": "मेनू बंद करें",
+    "selectLanguage": "भाषा चुनें",
+    "toggleTheme": "थीम बदलें"
+  }
+}
