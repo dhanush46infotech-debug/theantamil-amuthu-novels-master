@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import BackgroundVowels from './BackgroundVowels';
 import AnimatedBook from './AnimatedBook';
+import swethaAvatar from '../assets/swetha-avatar.png';
+import thenmozbiAvatar from '../assets/thenmozhi-avatar.png';
+import mohanaamozbiAvatar from '../assets/mohanaamozhi-avatar.png';
 
 const HeroBanner = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -10,17 +13,17 @@ const HeroBanner = () => {
   const authors = [
     {
       name: 'Swetha swe',
-      image: '🌸',
+      image: swethaAvatar,
       link: 'https://tamil.pratilipi.com/user/%F0%9F%92%99swetha%F0%9F%92%99-8cuvz20w13'
     },
     {
       name: 'Thenmozhi',
-      image: '📚',
+      image: thenmozbiAvatar,
       link: 'https://tamil.pratilipi.com/user/%E2%9C%8D%EF%B8%8F%E0%AE%A4%E0%AF%87%E0%AE%A9%E0%AF%8D%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF-%E2%9C%8D%EF%B8%8F-34-thenmozhi-34-u0958h9i3f?utm_campaign=authorprofile_share&utm_source=ios'
     },
     {
       name: 'Mohanaamozhi',
-      image: '✨',
+      image: mohanaamozbiAvatar,
       link: 'https://tamil.pratilipi.com/user/%E2%9C%8D%EF%B8%8F-%E0%AE%AE%E0%AF%8B%E0%AE%95%E0%AE%A9%E0%AE%BE-%E2%9C%8D%EF%B8%8F-697n99g2nt'
     }
   ];
@@ -100,8 +103,8 @@ const HeroBanner = () => {
               {authors.map((author, index) => (
                 <a key={index} href={author.link} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none', color: 'white', cursor: 'pointer' }}>
                   <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '15px', transition: 'transform 0.3s ease' }} onMouseEnter={(e) => e.currentTarget.style.transform = 'scale(1.1)'} onMouseLeave={(e) => e.currentTarget.style.transform = 'scale(1)'}>
-                    <div style={{ width: 'clamp(80px, 15vw, 120px)', height: 'clamp(80px, 15vw, 120px)', borderRadius: '50%', background: 'linear-gradient(135deg, #FF69B4, #FF1493)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 'clamp(40px, 8vw, 60px)', boxShadow: '0 8px 20px rgba(255, 105, 180, 0.4)' }}>
-                      {author.image}
+                    <div style={{ width: 'clamp(80px, 15vw, 120px)', height: 'clamp(80px, 15vw, 120px)', borderRadius: '50%', background: 'linear-gradient(135deg, #FF69B4, #FF1493)', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', boxShadow: '0 8px 20px rgba(255, 105, 180, 0.4)' }}>
+                      <img src={author.image} alt={author.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                     </div>
                     <h3 style={{ fontSize: 'clamp(14px, 3vw, 18px)', fontWeight: '600', margin: 0 }}>{author.name}</h3>
                   </div>
@@ -131,7 +134,7 @@ const HeroBanner = () => {
   };
 
   return (
-    <div style={{ minHeight: '60vh', width: '100vw', background: 'linear-gradient(135deg, #1a0033 0%, #000000 100%)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: 'clamp(15px, 4vw, 30px) clamp(10px, 3vw, 20px)' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
+    <div style={{ minHeight: '60vh', width: '100vw', background: 'linear-gradient(135deg, #1a0033 0%, #000000 100%)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: 'clamp(15px, 4vw, 30px) 0' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <BackgroundVowels />
       
       {/* Animated Books - Only on first slide */}
@@ -142,7 +145,7 @@ const HeroBanner = () => {
         </>
       )}
       
-      <div style={{ zIndex: 10, position: 'relative', width: '100%', maxWidth: '1200px' }}>
+      <div style={{ zIndex: 10, position: 'relative', width: '100%', maxWidth: '1200px', padding: '0 clamp(10px, 3vw, 20px)' }}>
         {renderSlide()}
       </div>
       
@@ -159,7 +162,7 @@ const HeroBanner = () => {
         }}
         style={{ 
           position: 'absolute', 
-          left: 'clamp(10px, 5vw, 60px)', 
+          left: '2cm', 
           top: '50%', 
           transform: 'translateY(-50%)', 
           background: 'rgba(255, 255, 255, 0.2)', 
@@ -193,7 +196,7 @@ const HeroBanner = () => {
         }}
         style={{ 
           position: 'absolute', 
-          right: 'clamp(10px, 5vw, 60px)', 
+          right: '2cm', 
           top: '50%', 
           transform: 'translateY(-50%)', 
           background: 'rgba(255, 255, 255, 0.2)', 

@@ -7,17 +7,9 @@ const SearchBar = ({ onSearch, isMobile = false }) => {
   const [query, setQuery] = useState('');
   const [isExpanded, setIsExpanded] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
-  const [langMenuOpen, setLangMenuOpen] = useState(false);
-  const { currentLanguage, setCurrentLanguage, t } = useLanguage();
+  const { t } = useLanguage();
   const inputRef = useRef(null);
   const containerRef = useRef(null);
-
-  // Available languages for search
-  const languages = [
-    { code: 'TAMIL', name: t('languages.tamil'), icon: '🇮🇳' },
-    { code: 'ENGLISH', name: t('languages.english'), icon: '🇬🇧' },
-    { code: 'TELUGU', name: t('languages.telugu'), icon: '🇮🇳' }
-  ];
 
   const translatedPlaceholder = t('search.placeholder');
 
@@ -133,49 +125,6 @@ const SearchBar = ({ onSearch, isMobile = false }) => {
           transition={{ type: 'spring', stiffness: 300, damping: 30 }}
           ref={containerRef}
         >
-          {/* Language Selector - Outside and Left of Search Bar */}
-          <div className={styles.languageSelectorExternal}>
-            <button
-              type="button"
-              className={styles.languageIconButton}
-              onClick={() => setLangMenuOpen(!langMenuOpen)}
-              aria-label={t('search.selectLanguage')}
-              aria-expanded={langMenuOpen}
-            >
-              🌐
-            </button>
-
-            {/* Language Dropdown Menu */}
-            <AnimatePresence>
-              {langMenuOpen && (
-                <motion.div
-                  className={styles.languageDropdown}
-                  initial={{ opacity: 0, y: -10, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: -10, scale: 0.95 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {languages.map((lang) => (
-                    <button
-                      key={lang.code}
-                      type="button"
-                      className={`${styles.languageOption} ${
-                        currentLanguage === lang.code ? styles.active : ''
-                      }`}
-                      onClick={() => {
-                        setCurrentLanguage(lang.code);
-                        setLangMenuOpen(false);
-                      }}
-                    >
-                      <span className={styles.langIcon}>{lang.icon}</span>
-                      <span className={styles.langName}>{lang.name}</span>
-                    </button>
-                  ))}
-                </motion.div>
-              )}
-            </AnimatePresence>
-          </div>
-
           {/* Search Form */}
           <form
             className={styles.searchForm}
@@ -222,49 +171,6 @@ const SearchBar = ({ onSearch, isMobile = false }) => {
   // Desktop view (always visible)
   return (
     <div className={styles.searchContainer} ref={containerRef}>
-      {/* Language Selector - Outside and Left of Search Bar */}
-      <div className={styles.languageSelectorExternal}>
-        <button
-          type="button"
-          className={styles.languageIconButton}
-          onClick={() => setLangMenuOpen(!langMenuOpen)}
-          aria-label="Select search language"
-          aria-expanded={langMenuOpen}
-        >
-          🌐
-        </button>
-
-        {/* Language Dropdown Menu */}
-        <AnimatePresence>
-          {langMenuOpen && (
-            <motion.div
-              className={styles.languageDropdown}
-              initial={{ opacity: 0, y: -10, scale: 0.95 }}
-              animate={{ opacity: 1, y: 0, scale: 1 }}
-              exit={{ opacity: 0, y: -10, scale: 0.95 }}
-              transition={{ duration: 0.2 }}
-            >
-              {languages.map((lang) => (
-                <button
-                  key={lang.code}
-                  type="button"
-                  className={`${styles.languageOption} ${
-                    currentLanguage === lang.code ? styles.active : ''
-                  }`}
-                  onClick={() => {
-                    setCurrentLanguage(lang.code);
-                    setLangMenuOpen(false);
-                  }}
-                >
-                  <span className={styles.langIcon}>{lang.icon}</span>
-                  <span className={styles.langName}>{lang.name}</span>
-                </button>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-      </div>
-
       {/* Search Bar */}
       <form
         className={styles.searchForm}

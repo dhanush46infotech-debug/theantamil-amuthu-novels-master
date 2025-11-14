@@ -18,6 +18,19 @@ const BackgroundVowels = () => {
     const ctx = canvas.getContext('2d', { alpha: true });
     if (!ctx) return;
 
+    // Performance optimization for low-end devices
+    const isLowEndDevice = () => {
+      const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+      const lowCores = navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 2;
+      const lowMemory = navigator.deviceMemory && navigator.deviceMemory <= 2;
+      return isMobile || lowCores || lowMemory;
+    };
+
+    const deviceOptimized = isLowEndDevice();
+    const particleCount = deviceOptimized ? 15 : 30;
+    const animationSpeed = deviceOptimized ? 1.2 : 2;
+    const targetFPS = deviceOptimized ? 30 : 60;
+
     // Set canvas size
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
@@ -63,9 +76,9 @@ const BackgroundVowels = () => {
         this.x = gridX * cellWidth + Math.random() * cellWidth * 0.8;
         this.y = gridY * cellHeight + Math.random() * cellHeight * 0.8;
         this.char = allChars[Math.floor(Math.random() * allChars.length)];
-        this.speed = 0.15 + Math.random() * 0.35;
+        this.speed = (0.15 + Math.random() * 0.35) * animationSpeed;
         this.size = 18 + Math.random() * 28;
-        this.opacity = 0.08 + Math.random() * 0.15;
+        this.opacity = deviceOptimized ? 0.05 + Math.random() * 0.1 : 0.08 + Math.random() * 0.15;
         this.angle = Math.random() * Math.PI * 2;
         this.rotationSpeed = (Math.random() - 0.5) * 0.02;
         this.rotation = 0;
@@ -118,18 +131,26 @@ const BackgroundVowels = () => {
       }
     }
 
-    // Create 30 particles for all Tamil letters
-    particlesRef.current = Array.from({ length: 30 }, () => new FloatingVowel());
+    // Create particles based on device capability
+    particlesRef.current = Array.from({ length: particleCount }, () => new FloatingVowel());
 
-    function animate() {
-      // Clear canvas completely - no smoke effect
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+    let lastTime = 0;
+    const frameInterval = 1000 / targetFPS;
 
-      // Update and draw particles
-      particlesRef.current.forEach(particle => {
-        particle.update();
-        particle.draw();
-      });
+    function animate(currentTime) {
+      // Throttle animation for low-end devices
+      if (currentTime - lastTime >= frameInterval) {
+        // Clear canvas completely - no smoke effect
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Update and draw particles
+        particlesRef.current.forEach(particle => {
+          particle.update();
+          particle.draw();
+        });
+
+        lastTime = currentTime;
+      }
 
       animationIdRef.current = requestAnimationFrame(animate);
     }

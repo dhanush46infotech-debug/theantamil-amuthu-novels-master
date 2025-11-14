@@ -20,9 +20,10 @@ const IconButton = ({
     >
       <motion.button
         type="button"
-        className={`${styles.iconButton} ${className}`}
+
         onClick={onClick}
         aria-label={ariaLabel || label}
+        className={`${styles.iconButton} ${className}`}
         style={{
           transform: isHovered ? 'scale(1.1) translateY(-3px)' : 'scale(1)',
           background: isHovered 

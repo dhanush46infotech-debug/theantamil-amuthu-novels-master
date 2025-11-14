@@ -4,6 +4,7 @@ import Menu from './Menu';
 import SearchBar from './SearchBar';
 import DarkModeToggle from './DarkModeToggle';
 import HeaderSocialIcons from './HeaderSocialIcons';
+import LoginModal from './LoginModal';
 
 import Logo from '../assets/TTM NOVRLS.png';
 import styles from '../styles/header.module.scss';
@@ -36,7 +37,12 @@ const HamburgerMenu = ({ isOpen, onClick, ariaLabel }) => {
 const LanguageSwitcher = ({ currentLanguage, setCurrentLanguage }) => {
   const [open, setOpen] = useState(false);
   const { t } = useLanguage();
-  const languages = ['TAMIL', 'ENGLISH', 'TELUGU', 'HINDI'];
+  const languages = [
+    { code: 'TAMIL', name: 'தமிழ்', flag: '🇮🇳' },
+    { code: 'ENGLISH', name: 'English', flag: '🇬🇧' },
+    { code: 'TELUGU', name: 'తెలుగు', flag: '🇮🇳' },
+    { code: 'HINDI', name: 'हिन्दी', flag: '🇮🇳' }
+  ];
 
   const handleSelect = (lang) => {
     setCurrentLanguage(lang);
@@ -65,14 +71,15 @@ const LanguageSwitcher = ({ currentLanguage, setCurrentLanguage }) => {
           >
             <ul className={styles.languageList}>
               {languages.map((lang) => (
-                <li key={lang}>
+                <li key={lang.code}>
                   <button
                     className={`${styles.languageItem} ${
-                      currentLanguage === lang ? styles.active : ''
+                      currentLanguage === lang.code ? styles.active : ''
                     }`}
-                    onClick={() => handleSelect(lang)}
+                    onClick={() => handleSelect(lang.code)}
                   >
-                    {lang}
+                    <span style={{ marginRight: '8px' }}>{lang.flag}</span>
+                    {lang.name}
                   </button>
                 </li>
               ))}
@@ -89,6 +96,8 @@ const Header = () => {
   const [notificationCount] = useState(3);
   const { currentLanguage, setCurrentLanguage, t } = useLanguage();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [loginModalOpen, setLoginModalOpen] = useState(false);
+  const [loginType, setLoginType] = useState('user');
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -107,11 +116,13 @@ const Header = () => {
   };
 
   const handleUserLoginClick = () => {
-    console.log('User login clicked');
+    setLoginType('user');
+    setLoginModalOpen(true);
   };
 
   const handleAdminLoginClick = () => {
-    console.log('Admin login clicked');
+    setLoginType('admin');
+    setLoginModalOpen(true);
   };
 
   return (
@@ -127,35 +138,50 @@ const Header = () => {
         </div>
 
         <div className={styles.centerSection}>
+          <LanguageSwitcher
+            currentLanguage={currentLanguage}
+            setCurrentLanguage={setCurrentLanguage}
+          />
           <SearchBar onSearch={handleSearch} isMobile={isMobile} />
-          <HeaderSocialIcons />
-          <button
-            onClick={handleNotificationClick}
-            className={styles.iconButton}
-          >
-            🔔
-            <span className={styles.notificationBadge}>{notificationCount}</span>
-          </button>
           <DarkModeToggle showText={false} />
+          <HeaderSocialIcons />
         </div>
 
         <div className={styles.rightSection}>
           <button
             onClick={handleUserLoginClick}
             className={styles.iconButton}
+            aria-label="User Login"
+            title="User login"
           >
             👤
           </button>
           <button
             onClick={handleAdminLoginClick}
             className={styles.iconButton}
+            aria-label="Admin Login"
+            title="Admin login"
           >
             🔒
+          </button>
+          <button
+            onClick={handleNotificationClick}
+            className={styles.iconButton}
+            aria-label="Notifications"
+            title="View notifications"
+          >
+            🔔
+            <span className={styles.notificationBadge}>{notificationCount}</span>
           </button>
         </div>
       </header>
 
       <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
+      <LoginModal
+        isOpen={loginModalOpen}
+        onClose={() => setLoginModalOpen(false)}
+        loginType={loginType}
+      />
     </>
   );
 };

@@ -223,6 +223,18 @@ $border-radius: 8px;
   gap: 6px;
   padding: var(--spacing-sm);
   z-index: var(--z-hamburger);
+  border-radius: 4px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: rgba(255, 215, 0, 0.1);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+    transition: all 0.1s ease;
+  }
 
   span {
     width: 28px;
@@ -231,6 +243,7 @@ $border-radius: 8px;
     border-radius: 2px;
     transition: all var(--transition-normal);
     display: block;
+    will-change: transform, background-color;
 
     @media (max-width: 480px) {
       width: 24px;
@@ -240,13 +253,25 @@ $border-radius: 8px;
 
   &:hover span {
     background-color: var(--color-accent-hover);
+    box-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   }
 
   @include focus-visible;
 
-  @include reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: none;
+    }
+    
     span {
       transition: none;
+      will-change: auto;
     }
   }
 }
@@ -272,11 +297,17 @@ $border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: transform, box-shadow, background;
 
   &:hover {
     transform: scale(1.1) translateY(-3px);
     box-shadow: 0 8px 20px rgba(218, 165, 32, 0.5), inset 0 3px 0 rgba(255, 255, 255, 0.4);
     background: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #FFD700 100%);
+  }
+
+  &:active {
+    transform: scale(1.05) translateY(-1px);
+    transition: all 0.1s ease;
   }
 
   @include focus-visible;
@@ -295,8 +326,17 @@ $border-radius: 8px;
     padding: 4px;
   }
 
-  @include reduced-motion {
+  @media (prefers-reduced-motion: reduce) {
     transition: none;
+    will-change: auto;
+    
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: none;
+    }
   }
 }
 
@@ -335,10 +375,14 @@ $border-radius: 8px;
   text-align: left;
   cursor: pointer;
   transition: all var(--transition-normal);
-  font-size: var(--font-size-sm);
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: none;
+  letter-spacing: 0.3px;
+  font-family: 'Noto Sans Devanagari', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  display: flex;
+  align-items: center;
 
   &:hover {
     background-color: rgba(255, 215, 0, 0.15);
@@ -350,6 +394,7 @@ $border-radius: 8px;
     color: var(--color-accent-primary);
     border-left: 3px solid var(--color-accent-primary);
     padding-left: calc(var(--spacing-lg) - 3px);
+    font-weight: 700;
   }
 
   @include focus-visible;
@@ -376,6 +421,7 @@ $border-radius: 8px;
   display: flex;
   align-items: center;
   justify-content: center;
+  will-change: transform, box-shadow, background;
 
   &:hover {
     transform: scale(1.1) translateY(-3px);
@@ -383,25 +429,43 @@ $border-radius: 8px;
     background: linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #FFD700 100%);
   }
 
+  &:active {
+    transform: scale(1.05) translateY(-1px);
+    transition: all 0.1s ease;
+  }
+
   @media (max-width: 768px) {
+    min-width: 36px;
+    min-height: 36px;
+    font-size: 16px;
+    padding: 6px;
+  }
+
+  @media (max-width: 480px) {
     min-width: 32px;
     min-height: 32px;
     font-size: 14px;
     padding: 4px;
   }
-
-  @media (max-width: 480px) {
+  
+  @media (max-width: 320px) {
     min-width: 28px;
     min-height: 28px;
     font-size: 12px;
     padding: 3px;
   }
-  
-  @media (max-width: 320px) {
-    min-width: 24px;
-    min-height: 24px;
-    font-size: 10px;
-    padding: 2px;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+    will-change: auto;
+    
+    &:hover {
+      transform: none;
+    }
+    
+    &:active {
+      transform: none;
+    }
   }
 }
 

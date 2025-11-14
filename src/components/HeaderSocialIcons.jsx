@@ -69,8 +69,6 @@ const HeaderSocialIcons = () => {
             padding: '8px',
             boxShadow: '0 4px 12px rgba(218, 165, 32, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)'
           }}
-          role="listitem"
-          aria-label={`Visit our ${social.name} page`}
           onMouseEnter={(e) => {
             e.currentTarget.style.transform = 'scale(1.1) translateY(-3px)';
             e.currentTarget.style.background = 'linear-gradient(135deg, #FFD700 0%, #DAA520 50%, #FFD700 100%)';
@@ -81,6 +79,9 @@ const HeaderSocialIcons = () => {
             e.currentTarget.style.background = 'linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%)';
             e.currentTarget.style.boxShadow = '0 4px 12px rgba(218, 165, 32, 0.3), inset 0 2px 0 rgba(255, 255, 255, 0.3)';
           }}
+          role="listitem"
+          aria-label={`Visit our ${social.name} page`}
+
         >
           <div
             className="w-5 h-5 transition-all duration-300"
