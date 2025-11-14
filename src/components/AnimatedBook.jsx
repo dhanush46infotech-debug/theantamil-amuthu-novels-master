@@ -71,7 +71,7 @@ const AnimatedBook = ({ type, position }) => {
   const bookStyle = {
     position: 'absolute',
     [position]: 'clamp(10px, 8vw, 3cm)',
-    top: '50%',
+    top: 'calc(50% + 80px)',
     transform: 'translateY(-50%)',
     zIndex: 15,
     cursor: 'pointer',
