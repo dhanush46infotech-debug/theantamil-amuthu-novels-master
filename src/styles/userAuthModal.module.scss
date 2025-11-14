@@ -29,17 +29,19 @@
     0 0 40px rgba(255, 215, 0, 0.2),
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   z-index: var(--z-modal, 9999);
   overflow: hidden;
   margin: auto;
+  max-height: 90vh;
+  overflow-y: auto;
 
   @media (max-width: 768px) {
-    max-width: 400px;
+    max-width: 450px;
   }
 
   @media (max-width: 480px) {
-    max-width: 350px;
+    max-width: 95%;
   }
 }
 
@@ -114,7 +116,7 @@
   }
 }
 
-.loginForm {
+.authForm {
   padding: var(--spacing-xl);
 
   @media (max-width: 480px) {
@@ -175,11 +177,15 @@
   color: #ff4444;
   font-size: 0.875rem;
   font-weight: 500;
-  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   display: flex;
   align-items: center;
   gap: var(--spacing-xs);
   text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: rgba(255, 68, 68, 0.1);
+  border-left: 3px solid #ff4444;
+  border-radius: var(--radius-sm);
 
   &::before {
     content: '⚠️';
@@ -264,7 +270,7 @@
   }
 }
 
-.helpText {
+.switchText {
   text-align: center;
   color: rgba(255, 255, 255, 0.7);
   font-size: 0.875rem;
@@ -276,112 +282,20 @@
   }
 }
 
-.adminSelection {
-  padding: var(--spacing-xl);
-
-  @media (max-width: 480px) {
-    padding: var(--spacing-lg);
-  }
-}
-
-.selectionTitle {
-  font-size: 1.3rem;
-  font-weight: 700;
+.switchButton {
+  background: none;
+  border: none;
   color: var(--color-accent-primary);
-  text-align: center;
-  margin-bottom: var(--spacing-xl);
-  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
-
-  @media (max-width: 480px) {
-    font-size: 1.1rem;
-    margin-bottom: var(--spacing-lg);
-  }
-}
-
-.adminGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-lg);
-
-  @media (max-width: 768px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-md);
-  }
-
-  @media (max-width: 480px) {
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-sm);
-  }
-}
-
-.adminCard {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 215, 0, 0.1) 0%,
-    rgba(218, 165, 32, 0.05) 100%
-  );
-  border: 2px solid rgba(255, 215, 0, 0.3);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl) var(--spacing-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--spacing-md);
+  font-weight: 700;
   cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: inherit;
   transition: all var(--transition-normal);
-  background-color: transparent;
-  color: var(--color-text-primary);
 
   &:hover {
-    background: linear-gradient(
-      135deg,
-      rgba(255, 215, 0, 0.2) 0%,
-      rgba(218, 165, 32, 0.1) 100%
-    );
-    border-color: var(--color-accent-primary);
-    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
-  }
-
-  &:active {
-    transform: scale(0.95);
-  }
-
-  @media (max-width: 768px) {
-    padding: var(--spacing-lg) var(--spacing-md);
-  }
-
-  @media (max-width: 480px) {
-    padding: var(--spacing-md) var(--spacing-sm);
-  }
-}
-
-.adminIcon {
-  font-size: 3rem;
-  filter: drop-shadow(0 2px 8px rgba(255, 215, 0, 0.4));
-
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 2rem;
-  }
-}
-
-.adminName {
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
-  color: var(--color-text-primary);
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
-  word-break: break-word;
-
-  @media (max-width: 768px) {
-    font-size: 0.9rem;
-  }
-
-  @media (max-width: 480px) {
-    font-size: 0.75rem;
+    color: var(--color-accent-hover);
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.5);
   }
 }
 
@@ -391,8 +305,7 @@
   .backdrop,
   .closeButton,
   .submitButton,
-  .error,
-  .adminCard {
+  .error {
     animation: none;
     transition: none;
   }
@@ -406,11 +319,6 @@
   }
 
   .submitButton:hover:not(:disabled) {
-    transform: none;
-  }
-
-  .adminCard:hover,
-  .adminCard:active {
     transform: none;
   }
 }

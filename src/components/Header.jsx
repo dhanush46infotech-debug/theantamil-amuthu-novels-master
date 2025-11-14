@@ -5,10 +5,12 @@ import SearchBar from './SearchBar';
 import DarkModeToggle from './DarkModeToggle';
 import HeaderSocialIcons from './HeaderSocialIcons';
 import LoginModal from './LoginModal';
+import UserAuthModal from './UserAuthModal';
 
 import Logo from '../assets/TTM NOVRLS.png';
 import styles from '../styles/header.module.scss';
 import { useLanguage } from '../context/LanguageContext';
+import { useAuth } from '../context/AuthContext';
 
 const HamburgerMenu = ({ isOpen, onClick, ariaLabel }) => {
   return (
@@ -95,9 +97,11 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [notificationCount] = useState(3);
   const { currentLanguage, setCurrentLanguage, t } = useLanguage();
+  const { user, isAuthenticated, logout } = useAuth();
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
-  const [loginModalOpen, setLoginModalOpen] = useState(false);
-  const [loginType, setLoginType] = useState('user');
+  const [adminModalOpen, setAdminModalOpen] = useState(false);
+  const [userModalOpen, setUserModalOpen] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
 
   React.useEffect(() => {
     const handleResize = () => {
@@ -116,13 +120,20 @@ const Header = () => {
   };
 
   const handleUserLoginClick = () => {
-    setLoginType('user');
-    setLoginModalOpen(true);
+    if (isAuthenticated && !user?.isAdmin) {
+      setShowUserMenu(!showUserMenu);
+    } else {
+      setUserModalOpen(true);
+    }
   };
 
   const handleAdminLoginClick = () => {
-    setLoginType('admin');
-    setLoginModalOpen(true);
+    setAdminModalOpen(true);
+  };
+
+  const handleLogout = () => {
+    logout();
+    setShowUserMenu(false);
   };
 
   return (
@@ -148,14 +159,40 @@ const Header = () => {
         </div>
 
         <div className={styles.rightSection}>
-          <button
-            onClick={handleUserLoginClick}
-            className={styles.iconButton}
-            aria-label="User Login"
-            title="User login"
-          >
-            👤
-          </button>
+          <div className={styles.userSection}>
+            <button
+              onClick={handleUserLoginClick}
+              className={styles.iconButton}
+              aria-label={isAuthenticated && !user?.isAdmin ? `Logged in as ${user.username}` : "User Login"}
+              title={isAuthenticated && !user?.isAdmin ? user.username : "User login"}
+            >
+              👤
+              {isAuthenticated && !user?.isAdmin && (
+                <span className={styles.loggedInDot}></span>
+              )}
+            </button>
+
+            {/* User Dropdown Menu */}
+            {isAuthenticated && !user?.isAdmin && showUserMenu && (
+              <motion.div
+                className={styles.userDropdown}
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+              >
+                <div className={styles.userInfo}>
+                  <p className={styles.userName}>👤 {user.username}</p>
+                  {user.emailOrPhone && (
+                    <p className={styles.userEmail}>{user.emailOrPhone}</p>
+                  )}
+                </div>
+                <button onClick={handleLogout} className={styles.logoutBtn}>
+                  🚪 Logout
+                </button>
+              </motion.div>
+            )}
+          </div>
+
           <button
             onClick={handleAdminLoginClick}
             className={styles.iconButton}
@@ -178,9 +215,13 @@ const Header = () => {
 
       <Menu isOpen={menuOpen} onClose={() => setMenuOpen(false)} />
       <LoginModal
-        isOpen={loginModalOpen}
-        onClose={() => setLoginModalOpen(false)}
-        loginType={loginType}
+        isOpen={adminModalOpen}
+        onClose={() => setAdminModalOpen(false)}
+        loginType="admin"
+      />
+      <UserAuthModal
+        isOpen={userModalOpen}
+        onClose={() => setUserModalOpen(false)}
       />
     </>
   );
