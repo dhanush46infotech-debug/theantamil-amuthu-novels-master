@@ -1,0 +1,203 @@
+@use './variables' as *;
+
+.continueReadingSection {
+  width: 100vw;
+  margin: 0;
+  padding: var(--spacing-xxl) 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 42, 67, 0.6) 0%,
+    rgba(15, 60, 87, 0.4) 100%
+  );
+  backdrop-filter: blur(10px);
+  border-top: 2px solid rgba(255, 215, 0, 0.2);
+  border-bottom: 2px solid rgba(255, 215, 0, 0.2);
+  clear: both;
+  display: block;
+  position: relative;
+
+  @media (max-width: 768px) {
+    padding: var(--spacing-xl) 0;
+  }
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+
+  @media (max-width: 768px) {
+    padding: 0 var(--spacing-lg);
+  }
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-accent-primary);
+  margin: 0 0 var(--spacing-xxl) 0;
+  text-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.5rem;
+  }
+}
+
+.novelsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-xl);
+
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+}
+
+.novelCard {
+  background: linear-gradient(
+    135deg,
+    rgba(10, 42, 67, 0.9) 0%,
+    rgba(15, 60, 87, 0.9) 100%
+  );
+  border: 2px solid rgba(255, 215, 0, 0.3);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  cursor: pointer;
+  transition: all var(--transition-normal);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  min-height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    border-color: var(--color-accent-primary);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+    transform: translateY(-5px);
+  }
+
+  @media (max-width: 768px) {
+    min-height: 180px;
+    padding: var(--spacing-lg);
+  }
+
+  @media (max-width: 480px) {
+    min-height: 150px;
+    padding: var(--spacing-md);
+  }
+}
+
+.novelContent {
+  text-align: center;
+  width: 100%;
+}
+
+.novelTitle {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.4;
+
+  @media (max-width: 768px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1rem;
+    margin-bottom: var(--spacing-sm);
+  }
+}
+
+.novelAuthor {
+  font-size: 1rem;
+  color: var(--color-accent-primary);
+  margin: 0;
+  font-weight: 600;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    font-size: 0.95rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.85rem;
+  }
+}
+
+.noNovels {
+  text-align: center;
+  padding: var(--spacing-xxl) var(--spacing-xl);
+  background: rgba(10, 42, 67, 0.5);
+  border: 2px dashed rgba(255, 215, 0, 0.3);
+  border-radius: var(--radius-lg);
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    min-height: 250px;
+    padding: var(--spacing-xl);
+  }
+
+  @media (max-width: 480px) {
+    min-height: 200px;
+    padding: var(--spacing-lg);
+  }
+}
+
+.noNovelsText {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 var(--spacing-md) 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    font-size: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 1.2rem;
+  }
+}
+
+.noNovelsSubtext {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+
+  @media (max-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 0.9rem;
+  }
+}
+
+// Reduced motion support
+@media (prefers-reduced-motion: reduce) {
+  .novelCard {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}

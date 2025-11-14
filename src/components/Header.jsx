@@ -116,7 +116,7 @@ const Header = () => {
   };
 
   const handleNotificationClick = () => {
-    console.log('Notifications clicked');
+    alert('Message will be received!');
   };
 
   const handleUserLoginClick = () => {

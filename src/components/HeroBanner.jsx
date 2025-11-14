@@ -136,7 +136,7 @@ const HeroBanner = () => {
   return (
     <div style={{ minHeight: '60vh', width: '100vw', background: 'linear-gradient(135deg, #1a0033 0%, #000000 100%)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: 'clamp(15px, 4vw, 30px) 0' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <BackgroundVowels />
-      
+
       {/* Animated Books - Only on first slide */}
       {currentSlide === 0 && (
         <>

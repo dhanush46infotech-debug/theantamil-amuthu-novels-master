@@ -1,6 +1,7 @@
 import Header from './components/Header';
 import BackgroundVowels from './components/BackgroundVowels';
 import HeroBanner from './components/HeroBanner';
+import ContinueReading from './components/ContinueReading';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
 import { LanguageProvider } from './context/LanguageContext';
@@ -26,7 +27,10 @@ function AppContent() {
         <Header />
         <main className="main-content" style={{ marginTop: '0', paddingTop: '0', width: '100%', margin: '0', padding: '0' }}>
           <HeroBanner />
-          {/* 20cm gap between banner and footer */}
+          {/* Add spacing between banner and continue reading */}
+          <div style={{ height: '5cm', background: 'transparent' }}></div>
+          <ContinueReading />
+          {/* 20cm gap between sections */}
           <div style={{ height: '20cm', background: 'transparent' }}></div>
         </main>
         <Footer />
