@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BackgroundVowels from './BackgroundVowels';
-import AnimatedBook from './AnimatedBook';
+import GenreBookShowcase from './GenreBookShowcase';
 import swethaAvatar from '../assets/swetha-avatar.png';
 import thenmozbiAvatar from '../assets/thenmozhi-avatar.png';
 import mohanaamozbiAvatar from '../assets/mohanaamozhi-avatar.png';
@@ -73,28 +73,7 @@ const HeroBanner = () => {
   const renderSlide = () => {
     switch (currentSlide) {
       case 0:
-        return (
-          <div style={{ textAlign: 'center', color: 'white' }}>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '30px', marginBottom: '30px' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span style={{ fontSize: '32px', filter: 'drop-shadow(0 0 8px #FF4D79)' }}>❤️</span>
-                <span style={{ fontSize: '32px', filter: 'drop-shadow(0 0 8px #FF4D79)' }}>❤️</span>
-                <span style={{ fontSize: '32px', filter: 'drop-shadow(0 0 8px #FF4D79)' }}>❤️</span>
-              </div>
-              <div style={{ textAlign: 'center' }}>
-                <h1 style={{ fontSize: 'clamp(24px, 4vw, 36px)', margin: 0, fontWeight: '600', color: '#FFFFFF', textShadow: '0 2px 4px rgba(0, 0, 0, 0.3)', lineHeight: '1.3' }}>தேன்தமிழமுது தேடிப்படி</h1>
-                <h2 style={{ fontSize: 'clamp(18px, 3vw, 26px)', margin: '6px 0', fontWeight: '400', color: '#E0E0E0', textShadow: '0 1px 2px rgba(0, 0, 0, 0.3)', lineHeight: '1.4' }}>அள்ளி அள்ளி பருக ஆசை பெருகுமே!</h2>
-              </div>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                <span style={{ fontSize: '32px', filter: 'drop-shadow(0 0 8px #FF4D79)' }}>❤️</span>
-                <span style={{ fontSize: '32px', filter: 'drop-shadow(0 0 8px #FF4D79)' }}>❤️</span>
-                <span style={{ fontSize: '32px', filter: 'drop-shadow(0 0 8px #FF4D79)' }}>❤️</span>
-              </div>
-            </div>
-            <h1 style={{ fontSize: 'clamp(36px, 8vw, 64px)', color: '#F4D233', fontWeight: '700', fontFamily: 'Georgia, serif', textShadow: '0 2px 8px rgba(244, 210, 51, 0.4)', margin: '20px 0', letterSpacing: '1px' }}>Welcome</h1>
-            <p style={{ fontSize: 'clamp(16px, 2vw, 20px)', fontStyle: 'italic', opacity: 0.9, color: '#FFFFFF', textShadow: '0 1px 3px rgba(0,0,0,0.3)', margin: '0', letterSpacing: '0.3px' }}>Countless words to find in endless worlds.</p>
-          </div>
-        );
+        return null; // GenreBookShowcase handles all content for slide 0
       case 1:
         return (
           <div style={{ textAlign: 'center', color: 'white' }}>
@@ -137,14 +116,9 @@ const HeroBanner = () => {
     <div style={{ minHeight: '60vh', width: '100vw', background: 'linear-gradient(135deg, #1a0033 0%, #000000 100%)', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden', padding: 'clamp(15px, 4vw, 30px) 0' }} onTouchStart={handleTouchStart} onTouchMove={handleTouchMove} onTouchEnd={handleTouchEnd}>
       <BackgroundVowels />
 
-      {/* Animated Books - Only on first slide */}
-      {currentSlide === 0 && (
-        <>
-          <AnimatedBook type="romantic" position="left" />
-          <AnimatedBook type="crime" position="right" />
-        </>
-      )}
-      
+      {/* Genre Book Showcase - Only on first slide */}
+      {currentSlide === 0 && <GenreBookShowcase />}
+
       <div style={{ zIndex: 10, position: 'relative', width: '100%', maxWidth: '1200px', padding: '0 clamp(10px, 3vw, 20px)' }}>
         {renderSlide()}
       </div>
