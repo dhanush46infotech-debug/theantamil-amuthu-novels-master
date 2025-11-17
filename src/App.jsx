@@ -2,8 +2,6 @@ import Header from './components/Header';
 import ContinueReading from './components/ContinueReading';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
-import { LanguageProvider } from './context/LanguageContext';
-import { ThemeProvider } from './context/ThemeContext';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import './styles/App.scss';
 
@@ -33,13 +31,9 @@ function AppContent() {
 
 function App() {
   return (
-    <ThemeProvider>
-      <LanguageProvider>
-        <AuthProvider>
-          <AppContent />
-        </AuthProvider>
-      </LanguageProvider>
-    </ThemeProvider>
+    <AuthProvider>
+      <AppContent />
+    </AuthProvider>
   );
 }
 
