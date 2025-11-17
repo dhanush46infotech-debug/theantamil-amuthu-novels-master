@@ -1,10 +1,11 @@
 import Footer from './components/Footer';
+import HeroSection from './components/HeroSection';
 import './styles/App.scss';
 import logo from './assets/TTM NOVRLS.png';
 
 function App() {
   return (
-    <div className="app relative min-h-screen bg-dark-bg overflow-hidden" style={{ margin: 0, padding: 0 }}>
+    <div className="app relative min-h-screen bg-dark-bg overflow-hidden" style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column' }}>
       {/* Logo in top-left corner */}
       <div style={{
         position: 'fixed',
@@ -25,8 +26,8 @@ function App() {
         />
       </div>
 
-      <div className="relative z-10" style={{ margin: 0, padding: 0 }}>
-        {/* Content will go here */}
+      <div className="relative z-10" style={{ margin: 0, padding: 0, flex: 1 }}>
+        <HeroSection />
       </div>
 
       <Footer />
