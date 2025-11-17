@@ -1,6 +1,4 @@
 import Header from './components/Header';
-import BackgroundVowels from './components/BackgroundVowels';
-import HeroBanner from './components/HeroBanner';
 import ContinueReading from './components/ContinueReading';
 import Footer from './components/Footer';
 import AdminDashboard from './pages/AdminDashboard';
@@ -18,16 +16,10 @@ function AppContent() {
 
   return (
     <div className="app relative min-h-screen bg-dark-bg overflow-hidden" style={{ margin: 0, padding: 0 }}>
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="fixed inset-0 z-0 pointer-events-none">
-          <BackgroundVowels />
-        </div>
-      </div>
       <div className="relative z-10">
         <Header />
         <main className="main-content" style={{ marginTop: '0', paddingTop: '0', width: '100%', margin: '0', padding: '0' }}>
-          <HeroBanner />
-          {/* Add spacing between banner and continue reading */}
+          {/* Add spacing at top */}
           <div style={{ height: '5cm', background: 'transparent' }}></div>
           <ContinueReading />
           {/* 20cm gap between sections */}
