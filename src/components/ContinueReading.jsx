@@ -1,13 +1,7 @@
 import React from 'react';
-import { useAuth } from '../context/AuthContext';
 import styles from '../styles/continueReading.module.scss';
 
 const ContinueReading = () => {
-  const { isAuthenticated } = useAuth();
-
-  // Only show if user is logged in
-  if (!isAuthenticated) return null;
-
   // Novel data
   const novels = [
     {
