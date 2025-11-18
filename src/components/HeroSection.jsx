@@ -94,7 +94,14 @@ const HeroSection = () => {
             textShadow: '3px 3px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7)',
             margin: 0,
             lineHeight: 1.4,
-            letterSpacing: '1px'
+            letterSpacing: '1px',
+            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%)',
+            backdropFilter: 'blur(10px)',
+            WebkitBackdropFilter: 'blur(10px)',
+            border: '1px solid rgba(255, 255, 255, 0.18)',
+            borderRadius: '20px',
+            padding: '30px 40px',
+            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 0 20px rgba(255, 255, 255, 0.1)'
           }}>
             தேன்தமிழமுது தேடிப்படி<br />
             அள்ளி அள்ளி பருக<br />
@@ -119,7 +126,7 @@ const HeroSection = () => {
               <span
                 key={index}
                 className={`${styles.drippingLetter} ${letterClasses[index]}`}
-                style={{ animationDelay: `${index * 0.15}s` }}
+                style={{ animationDelay: `${index * 0.5}s` }}
               >
                 {letter}
               </span>
