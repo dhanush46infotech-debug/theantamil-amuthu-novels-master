@@ -5,6 +5,7 @@ import gmailLogo from '../../../assets/images/social/gmail-logo.png';
 import facebookLogo from '../../../assets/images/social/facebook-logo.png';
 import instagramLogo from '../../../assets/images/social/instagram-logo.png';
 import youtubeLogo from '../../../assets/images/social/youtube-logo.png';
+import logo from '../../../assets/images/brand/TTM NOVRLS.png';
 import styles from './Footer.module.scss';
 
 const Footer = () => {
@@ -16,8 +17,13 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={{ background: '#0B1A2D', backgroundColor: '#0B1A2D' }}>
       <div className={styles.footerContent}>
+        {/* Logo on the left */}
+        <div className={styles.footerLeft}>
+          <img src={logo} alt="TTM Novels Logo" className={styles.footerLogo} />
+        </div>
+
         {/* Follow Us - Centered */}
         <div className={styles.followSection}>
           <h3 className={styles.followTitle}>Follow Us</h3>

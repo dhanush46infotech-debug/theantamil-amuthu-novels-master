@@ -1,0 +1,6 @@
+in the novel page i want 
+Create an header.tsx
+1) Place Hamberg Menu at Top left of the header.jsx
+2) Place the Logo next to the Hamberg Menu
+3) Place the language icon & search bar in the center of header
+in language icon .. Add Tamil(Default) & English (In dropdown)

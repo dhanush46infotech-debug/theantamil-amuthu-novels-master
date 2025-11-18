@@ -5,10 +5,12 @@ import Button from '../../components/common/Button/Button';
 import YouTubeModal from '../../components/common/Modal/YouTubeModal';
 import { ImageCarousel, WelcomeText, SocialIcons, StarsBackground } from './components';
 import styles from './HomePage.module.scss';
+import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
   const [mainSlide, setMainSlide] = useState(0);
   const [showYouTubeModal, setShowYouTubeModal] = useState(false);
+  const navigate = useNavigate();
 
   // Get carousel images
   const carouselImages = [1, 2, 3, 4, 5]; // Array length for hook
@@ -38,7 +40,11 @@ const HomePage = () => {
         </div>
 
         {/* 3D Read Now Button */}
-        <Button className={styles.heroButton}>READ NOW</Button>
+        <Button 
+        className={styles.heroButton}
+          onClick={() => navigate('/novels')}>
+            READ NOW
+        </Button>
 
         {/* WELCOME text with letter-by-letter dripping animation */}
         <WelcomeText />

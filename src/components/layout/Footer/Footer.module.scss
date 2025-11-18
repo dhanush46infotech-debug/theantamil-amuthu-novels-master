@@ -2,11 +2,13 @@
 @use '../../../styles/abstracts/variables' as *;
 
 .footer {
-  background: #0a1628;
-  border-top: 1px solid rgba(255, 215, 0, 0.2);
+  background: #0B1A2D !important;
+  background-color: #0B1A2D !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #FFFFFF;
   padding: 40px 40px 30px;
   margin-top: 0;
+  width: 100%;
 
   @media (max-width: 480px) {
     padding: 25px 20px 20px;
@@ -26,8 +28,9 @@
 }
 
 .footerContent {
-  max-width: 1200px;
+  max-width: 120px;
   margin: 0 auto;
+  position: relative;
 
   @media (min-width: 1440px) {
     max-width: 1400px;
@@ -35,6 +38,38 @@
 
   @media (min-width: 1920px) {
     max-width: 1600px;
+  }
+}
+
+.footerLeft {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    position: static;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+}
+
+.footerLogo {
+  height: 80px;
+  width: auto;
+  object-fit: contain;
+
+  @media (max-width: 480px) {
+    height: 60px;
+  }
+
+  @media (min-width: 1440px) {
+    height: 100px;
+  }
+
+  @media (min-width: 1920px) {
+    height: 120px;
   }
 }
 
