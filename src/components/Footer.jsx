@@ -105,7 +105,7 @@ const Footer = () => {
           fontSize: '14px',
           opacity: 0.8
         }}>
-          © 2025 தேன்தமிழமுது. All rights reserved.
+          © 2026 தேன்தமிழமுது. All rights reserved.
         </div>
       </div>
 
