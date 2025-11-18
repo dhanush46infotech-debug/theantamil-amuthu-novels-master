@@ -1,5 +1,5 @@
 // HeaderSocialIcons optimized styles
-@use './variables' as *;
+@use './abstracts/variables' as *;
 
 .headerSocialIcon {
   background: linear-gradient(135deg, #DAA520 0%, #FFD700 50%, #B8860B 100%);

@@ -1,0 +1,56 @@
+// YouTube Channels
+export const YOUTUBE_CHANNELS = [
+  {
+    name: 'YouTube(Thenmozhi)',
+    url: 'https://www.youtube.com/@thenthuzhinovels'
+  },
+  {
+    name: 'YouTube(MohanaMozhi)',
+    url: 'https://www.youtube.com/@mohanaamozhi_novels'
+  },
+  {
+    name: 'YouTube(Swetha swe)',
+    url: 'https://youtube.com/@swethaa_swe?si=GqKD38Gj9YAa6mhw'
+  }
+];
+
+// Genre Images
+export const GENRE_IMAGES = {
+  ROMANTIC: 'Romantic.jpg',
+  HEROIC: 'Heroic.jpg',
+  FANTASY: 'Fantasy.jpg',
+  CRIME: 'Crime.jpg',
+  HORROR: 'Horrorobj.jpg'
+};
+
+// Carousel Settings
+export const CAROUSEL_SETTINGS = {
+  AUTO_ROTATE_INTERVAL: 5000, // 5 seconds
+  TOTAL_STARS: 50
+};
+
+// Novel Data
+export const NOVELS = [
+  {
+    id: 1,
+    title: 'வந்தத்துணையே! என் வாழ்க்கைத்துணையே!',
+    author: 'Mohanaamozhi',
+  },
+  {
+    id: 2,
+    title: 'தாலாட்டும் தாழம்பூவே',
+    author: 'Swetha Swe',
+  },
+  {
+    id: 3,
+    title: 'ராட்சசனே எனை வதைப்பதேனடா!',
+    author: 'Thenmozhi',
+  },
+];
+
+// Social Media Links
+export const SOCIAL_LINKS = {
+  EMAIL: 'mailto:thentamizhamuzhunovels@gmail.com',
+  FACEBOOK: 'https://www.facebook.com/share/g/1FKze6xJV1/',
+  INSTAGRAM: 'https://www.instagram.com/thentamizhamuzhunovels?igsh=MTVmZ3p6dTlzZDEzeA'
+};

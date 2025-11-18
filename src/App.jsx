@@ -1,7 +1,7 @@
-import Footer from './components/Footer';
-import HeroSection from './components/HeroSection';
+import Footer from './components/layout/Footer/Footer';
+import Home from './pages/Home/Home';
 import './styles/App.scss';
-import logo from './assets/TTM NOVRLS.png';
+import logo from './assets/images/brand/TTM NOVRLS.png';
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
       </div>
 
       <div className="relative z-10" style={{ margin: 0, padding: 0, flex: 1 }}>
-        <HeroSection />
+        <Home />
       </div>
 
       <Footer />

@@ -1,0 +1,62 @@
+import { useState } from 'react';
+import { useImageCarousel } from '../../hooks/useImageCarousel';
+import { CAROUSEL_SETTINGS } from '../../utils/constants';
+import Button from '../../components/common/Button/Button';
+import YouTubeModal from '../../components/common/Modal/YouTubeModal';
+import ImageCarousel from './components/ImageCarousel';
+import WelcomeText from './components/WelcomeText';
+import SocialIcons from './components/SocialIcons';
+import StarsBackground from './components/StarsBackground';
+import styles from './Home.module.scss';
+
+const Home = () => {
+  const [mainSlide, setMainSlide] = useState(0);
+  const [showYouTubeModal, setShowYouTubeModal] = useState(false);
+
+  // Get carousel images
+  const carouselImages = [1, 2, 3, 4, 5]; // Array length for hook
+  const activeImageIndex = useImageCarousel(carouselImages, CAROUSEL_SETTINGS.AUTO_ROTATE_INTERVAL);
+
+  const handleYouTubeClick = (e) => {
+    e.preventDefault();
+    setShowYouTubeModal(true);
+  };
+
+  return (
+    <div className={styles.heroContainer}>
+      {/* SLIDE 1: Image Carousel with Ken Burns Effect */}
+      <div className={`${styles.mainSlide} ${mainSlide === 0 ? styles.active : ''}`}>
+        <ImageCarousel activeImageIndex={activeImageIndex} />
+
+        {/* Dark overlay */}
+        <div className={styles.overlay} />
+
+        {/* Center Quote */}
+        <div className={styles.quoteContainer}>
+          <h1 className={styles.quoteText}>
+            தேன்தமிழமுது தேடிப்படி<br />
+            அள்ளி அள்ளி பருக<br />
+            ஆசை பெருகுமே!!
+          </h1>
+        </div>
+
+        {/* 3D Read Now Button */}
+        <Button className={styles.heroButton}>READ NOW</Button>
+
+        {/* WELCOME text with letter-by-letter dripping animation */}
+        <WelcomeText />
+      </div>
+
+      {/* SLIDE 2: Stars Animation with Footer Content */}
+      <div className={`${styles.mainSlide} ${mainSlide === 1 ? styles.active : ''}`}>
+        <StarsBackground />
+        <SocialIcons onYouTubeClick={handleYouTubeClick} />
+      </div>
+
+      {/* YouTube Modal */}
+      <YouTubeModal isOpen={showYouTubeModal} onClose={() => setShowYouTubeModal(false)} />
+    </div>
+  );
+};
+
+export default Home;
