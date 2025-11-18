@@ -7,22 +7,10 @@ function App() {
   return (
     <div className="app relative min-h-screen bg-dark-bg overflow-hidden" style={{ margin: 0, padding: 0, display: 'flex', flexDirection: 'column' }}>
       {/* Logo in top-left corner */}
-      <div style={{
-        position: 'fixed',
-        top: '30px',
-        left: '30px',
-        zIndex: 9999,
-        width: '200px',
-        height: 'auto'
-      }}>
+      <div className="app-logo">
         <img
           src={logo}
           alt="TTM Novels Logo"
-          style={{
-            width: '100%',
-            height: 'auto',
-            filter: 'drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7))'
-          }}
         />
       </div>
 

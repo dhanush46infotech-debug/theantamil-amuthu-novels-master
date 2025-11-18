@@ -149,3 +149,68 @@ button:focus {
   outline: 2px solid #ffd700;
   outline-offset: 2px;
 }
+
+// Responsive App Logo
+.app-logo {
+  position: fixed;
+  z-index: 9999;
+
+  // Mobile (up to 480px)
+  top: 15px;
+  left: 15px;
+  width: 120px;
+
+  img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.7));
+    transition: filter 0.3s ease;
+  }
+
+  // Tablet (481px - 768px)
+  @media (min-width: 481px) and (max-width: 768px) {
+    top: 20px;
+    left: 20px;
+    width: 150px;
+  }
+
+  // Desktop (769px - 1439px)
+  @media (min-width: 769px) and (max-width: 1439px) {
+    top: 30px;
+    left: 30px;
+    width: 200px;
+  }
+
+  // Wide/TV screens (1440px - 1919px)
+  @media (min-width: 1440px) and (max-width: 1919px) {
+    top: 40px;
+    left: 40px;
+    width: 240px;
+
+    img {
+      filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.7));
+    }
+  }
+
+  // Ultra-wide/4K screens (1920px+)
+  @media (min-width: 1920px) {
+    top: 50px;
+    left: 50px;
+    width: 280px;
+
+    img {
+      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.8));
+    }
+  }
+
+  // Very small mobile devices (320px and below)
+  @media (max-width: 320px) {
+    top: 10px;
+    left: 10px;
+    width: 100px;
+
+    img {
+      filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.6));
+    }
+  }
+}

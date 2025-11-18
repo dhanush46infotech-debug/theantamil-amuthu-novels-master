@@ -29,6 +29,18 @@
   @media (max-width: 768px) {
     padding: 0 var(--spacing-lg);
   }
+
+  // Wide screens (1440px - 1919px)
+  @media (min-width: 1440px) {
+    max-width: 1600px;
+    padding: 0 40px;
+  }
+
+  // Ultra-wide/TV screens (1920px+)
+  @media (min-width: 1920px) {
+    max-width: 1800px;
+    padding: 0 60px;
+  }
 }
 
 .title {
@@ -47,6 +59,16 @@
   @media (max-width: 480px) {
     font-size: 1.5rem;
   }
+
+  // Wide screens (1440px - 1919px)
+  @media (min-width: 1440px) {
+    font-size: 3rem;
+  }
+
+  // Ultra-wide/TV screens (1920px+)
+  @media (min-width: 1920px) {
+    font-size: 3.5rem;
+  }
 }
 
 .novelsGrid {
@@ -61,6 +83,18 @@
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
+  }
+
+  // Wide screens (1440px - 1919px)
+  @media (min-width: 1440px) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+
+  // Ultra-wide/TV screens (1920px+)
+  @media (min-width: 1920px) {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
   }
 }
 

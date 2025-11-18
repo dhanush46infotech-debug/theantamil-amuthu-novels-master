@@ -19,10 +19,29 @@ const StarEffect = () => {
       initStars();
     };
 
-    // Create stars
+    // Create stars with responsive count based on screen size
     const initStars = () => {
       stars = [];
-      const numberOfStars = 150;
+      const screenWidth = window.innerWidth;
+
+      // Responsive star count:
+      // Mobile (<=480px): 50 stars
+      // Tablet (481-768px): 75 stars
+      // Desktop (769-1439px): 150 stars
+      // Wide/TV (1440-1919px): 200 stars
+      // Ultra-wide (1920+): 250 stars
+      let numberOfStars;
+      if (screenWidth <= 480) {
+        numberOfStars = 50; // Mobile - reduced for performance
+      } else if (screenWidth <= 768) {
+        numberOfStars = 75; // Tablet
+      } else if (screenWidth <= 1439) {
+        numberOfStars = 150; // Desktop
+      } else if (screenWidth <= 1919) {
+        numberOfStars = 200; // Wide/TV
+      } else {
+        numberOfStars = 250; // Ultra-wide/4K
+      }
 
       for (let i = 0; i < numberOfStars; i++) {
         stars.push({
