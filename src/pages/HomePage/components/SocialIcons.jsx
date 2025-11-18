@@ -3,7 +3,7 @@ import gmailLogo from '../../../assets/images/social/gmail-logo.png';
 import facebookLogo from '../../../assets/images/social/facebook-logo.png';
 import instagramLogo from '../../../assets/images/social/instagram-logo.png';
 import youtubeLogo from '../../../assets/images/social/youtube-logo.png';
-import styles from '../Home.module.scss';
+import styles from '../HomePage.module.scss';
 
 const SocialIcons = ({ onYouTubeClick }) => {
   return (

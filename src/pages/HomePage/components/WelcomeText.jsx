@@ -1,4 +1,4 @@
-import styles from '../Home.module.scss';
+import styles from '../HomePage.module.scss';
 
 const WelcomeText = () => {
   const letters = ['W', 'E', 'L', 'C', 'O', 'M', 'E'];

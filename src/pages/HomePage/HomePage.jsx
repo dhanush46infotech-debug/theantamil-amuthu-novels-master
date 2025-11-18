@@ -7,9 +7,9 @@ import ImageCarousel from './components/ImageCarousel';
 import WelcomeText from './components/WelcomeText';
 import SocialIcons from './components/SocialIcons';
 import StarsBackground from './components/StarsBackground';
-import styles from './Home.module.scss';
+import styles from './HomePage.module.scss';
 
-const Home = () => {
+const HomePage = () => {
   const [mainSlide, setMainSlide] = useState(0);
   const [showYouTubeModal, setShowYouTubeModal] = useState(false);
 
@@ -59,4 +59,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

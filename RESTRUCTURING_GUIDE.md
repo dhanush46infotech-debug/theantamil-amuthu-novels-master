@@ -28,14 +28,14 @@ src/
 │           └── Footer.module.scss
 │
 ├── pages/
-│   └── Home/               # Home page with all its components
+│   └── HomePage/           # HomePage with all its components
 │       ├── components/     # Page-specific components
 │       │   ├── ImageCarousel.jsx
 │       │   ├── SocialIcons.jsx
 │       │   ├── StarsBackground.jsx
 │       │   └── WelcomeText.jsx
-│       ├── Home.jsx
-│       └── Home.module.scss
+│       ├── HomePage.jsx
+│       └── HomePage.module.scss
 │
 ├── hooks/                  # Custom React hooks
 │   └── useImageCarousel.js
@@ -86,7 +86,7 @@ src/
 ## What Was Changed
 
 ### Components
-- ✅ `HeroSection.jsx` → Broken down into smaller components in `pages/Home/`
+- ✅ `HeroSection.jsx` → Broken down into smaller components in `pages/HomePage/`
 - ✅ `Footer.jsx` → Moved to `components/layout/Footer/`
 - ✅ Created reusable `Button` component
 - ✅ Created reusable `YouTubeModal` component
@@ -140,10 +140,12 @@ All import paths have been updated to reflect the new structure:
 ```javascript
 // Old
 import Footer from './components/Footer';
+import HeroSection from './components/HeroSection';
 import logo from './assets/TTM NOVRLS.png';
 
 // New
 import Footer from './components/layout/Footer/Footer';
+import HomePage from './pages/HomePage/HomePage';
 import logo from './assets/images/brand/TTM NOVRLS.png';
 ```
 

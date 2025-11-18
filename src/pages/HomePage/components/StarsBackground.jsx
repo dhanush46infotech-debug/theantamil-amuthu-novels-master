@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { generateStars } from '../../../utils/generateStars';
 import { CAROUSEL_SETTINGS } from '../../../utils/constants';
-import styles from '../Home.module.scss';
+import styles from '../HomePage.module.scss';
 
 const StarsBackground = () => {
   const [stars] = useState(() => generateStars(CAROUSEL_SETTINGS.TOTAL_STARS));

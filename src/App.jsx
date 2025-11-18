@@ -1,5 +1,5 @@
 import Footer from './components/layout/Footer/Footer';
-import Home from './pages/Home/Home';
+import HomePage from './pages/HomePage/HomePage';
 import './styles/App.scss';
 import logo from './assets/images/brand/TTM NOVRLS.png';
 
@@ -15,7 +15,7 @@ function App() {
       </div>
 
       <div className="relative z-10" style={{ margin: 0, padding: 0, flex: 1 }}>
-        <Home />
+        <HomePage />
       </div>
 
       <Footer />
