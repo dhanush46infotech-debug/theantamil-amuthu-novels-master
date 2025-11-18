@@ -46,7 +46,7 @@ const Footer = () => {
         }}>
           <h3 style={{ fontSize: '18px', marginBottom: '15px', color: '#FFD700' }}>Follow Us</h3>
           <div style={{ display: 'flex', gap: '1.5cm', alignItems: 'center' }}>
-            <a href="mailto:thentamizhamuzhunovels@gmail.com" style={{
+            <a href="mailto:thentamizhamuzhunovels@gmail.com" target="_blank" rel="noopener noreferrer" style={{
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',

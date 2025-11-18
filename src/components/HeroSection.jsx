@@ -116,8 +116,8 @@ const HeroSection = () => {
           className={buttonStyles.readNowButton}
           style={{
             position: 'absolute',
-            top: 'calc(50% + 1.5cm)',
-            left: 'calc(50% - 10.2cm)',
+            top: 'calc(50% + 2.5cm)',
+            left: 'calc(50% - 7.7cm)',
             transform: 'translate(-50%, -50%)',
             zIndex: 20
           }}
