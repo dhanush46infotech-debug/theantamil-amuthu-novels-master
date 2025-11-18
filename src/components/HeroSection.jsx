@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import styles from '../styles/HeroSection.module.scss';
+import buttonStyles from '../styles/ReadNowButton.module.scss';
 
 // Import genre images for Slide 1
 import RomanticImg from '../assets/Romantic.jpg';
@@ -108,6 +110,35 @@ const HeroSection = () => {
             ஆசை பெருகுமே!!
           </h1>
         </div>
+
+        {/* 3D Read Now Button */}
+        <motion.button
+          className={buttonStyles.readNowButton}
+          style={{
+            position: 'absolute',
+            top: 'calc(50% + 1.5cm)',
+            left: 'calc(50% - 10.2cm)',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 20
+          }}
+          whileHover={{
+            scale: 1.08,
+            rotateY: 8,
+            rotateX: -5,
+          }}
+          whileTap={{
+            scale: 0.98,
+            rotateY: 0,
+            rotateX: 0,
+          }}
+          transition={{
+            type: 'spring',
+            stiffness: 300,
+            damping: 20
+          }}
+        >
+          <span className={buttonStyles.buttonText}>READ NOW</span>
+        </motion.button>
 
         {/* WELCOME text with letter-by-letter dripping animation */}
         <div className={styles.welcomeText}>
