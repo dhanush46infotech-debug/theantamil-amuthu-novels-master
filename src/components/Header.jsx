@@ -12,7 +12,7 @@ const Header = () => {
       height: 'auto',
       minHeight: '60px'
     }}>
-      <img src={Logo} alt="TTM Novels Logo" className={styles.logo} style={{ height: '80px' }} />
+      <img src={Logo} alt="TTM Novels Logo" className={styles.logo} style={{ height: '120px' }} />
     </header>
   );
 };

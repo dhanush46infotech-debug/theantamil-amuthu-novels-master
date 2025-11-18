@@ -2,7 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(npm run build:*)",
-      "Bash(for f in \"src/assets/Crime.png\" \"src/assets/Fantasy.png\" \"src/assets/Horror.png\" \"src/assets/Romantic.png\" \"src/assets/TTM NOVRLS.png\" \"src/assets/swetha-avatar.png\" \"src/assets/thenmozhi-avatar.png\" \"src/assets/mohanaamozhi-avatar.png\" \"src/assets/react.svg\")",
+      "Bash(for f in \"src/assets/Crime.png\" \"src/assets/Fantasy.png\" \"src/assets/Horrorobj.jpg\" \"src/assets/Romantic.png\" \"src/assets/TTM NOVRLS.png\" \"src/assets/swetha-avatar.png\" \"src/assets/thenmozhi-avatar.png\" \"src/assets/mohanaamozhi-avatar.png\" \"src/assets/react.svg\")",
       "Bash(do if [ -f \"$f\" ])",
       "Bash(then echo \"OK: $f\")",
       "Bash(else echo \"MISSING: $f\")",
