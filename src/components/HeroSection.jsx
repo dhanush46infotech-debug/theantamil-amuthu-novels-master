@@ -112,7 +112,7 @@ const HeroSection = () => {
         </div>
 
         {/* 3D Read Now Button */}
-        <motion.button
+        <button
           className={buttonStyles.readNowButton}
           style={{
             position: 'absolute',
@@ -121,24 +121,9 @@ const HeroSection = () => {
             transform: 'translate(-50%, -50%)',
             zIndex: 20
           }}
-          whileHover={{
-            scale: 1.08,
-            rotateY: 8,
-            rotateX: -5,
-          }}
-          whileTap={{
-            scale: 0.98,
-            rotateY: 0,
-            rotateX: 0,
-          }}
-          transition={{
-            type: 'spring',
-            stiffness: 300,
-            damping: 20
-          }}
         >
           <span className={buttonStyles.buttonText}>READ NOW</span>
-        </motion.button>
+        </button>
 
         {/* WELCOME text with letter-by-letter dripping animation */}
         <div className={styles.welcomeText}>

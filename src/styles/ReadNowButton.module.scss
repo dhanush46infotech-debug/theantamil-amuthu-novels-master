@@ -3,12 +3,12 @@
 .readNowButton {
   position: relative;
   background: linear-gradient(135deg,
-    rgba(184, 134, 11, 0.4) 0%,    // Dark goldenrod
-    rgba(218, 165, 32, 0.3) 50%,   // Goldenrod
-    rgba(184, 134, 11, 0.4) 100%
+    rgba(184, 134, 11, 0.7) 0%,    // Dark goldenrod - increased opacity
+    rgba(218, 165, 32, 0.6) 50%,   // Goldenrod - increased opacity
+    rgba(184, 134, 11, 0.7) 100%
   );
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
 
   border: 2px solid rgba(255, 215, 0, 0.6);
   border-radius: 50px;
@@ -74,9 +74,8 @@
     z-index: 2;
   }
 
-  // Hover state
+  // Hover state - only visual effects, no movement
   &:hover {
-    transform: translateY(-5px) scale(1.05);
     box-shadow:
       0 12px 48px rgba(255, 215, 0, 0.7),
       0 6px 24px rgba(218, 165, 32, 0.6),
@@ -92,9 +91,8 @@
     }
   }
 
-  // Active/pressed state
+  // Active/pressed state - no movement
   &:active {
-    transform: translateY(-2px) scale(1.02);
     box-shadow:
       0 6px 24px rgba(255, 215, 0, 0.6),
       0 3px 12px rgba(218, 165, 32, 0.5),
