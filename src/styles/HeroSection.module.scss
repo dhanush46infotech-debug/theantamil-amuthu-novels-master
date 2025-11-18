@@ -3,8 +3,14 @@
   position: relative;
   width: 100%;
   height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   background: #000;
+
+  @media (max-width: 480px) {
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+  }
 }
 
 // Main Slide Container (for Slide 1 and Slide 2)
@@ -877,10 +883,11 @@
   padding: 20px;
 
   @media (max-width: 480px) {
-    left: calc(50% - 1.5cm);
-    transform: translate(-50%, -120%);
+    left: 50%;
+    top: 40%;
+    transform: translate(-50%, -50%);
     padding: 15px;
-    max-width: 95%;
+    max-width: 85%;
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
@@ -940,9 +947,9 @@
   z-index: 20;
 
   @media (max-width: 480px) {
-    top: calc(50% - 2cm + 2cm - 1cm);
-    left: calc(50% - 2cm);
-    transform: translate(-50%, 50%);
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   @media (min-width: 481px) and (max-width: 768px) {
