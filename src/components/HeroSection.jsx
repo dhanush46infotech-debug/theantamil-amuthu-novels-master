@@ -1,9 +1,8 @@
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import styles from '../styles/HeroSection.module.scss';
 import buttonStyles from '../styles/ReadNowButton.module.scss';
 
-// Import genre images for Slide 1
+// Import genre images
 import RomanticImg from '../assets/Romantic.jpg';
 import HeroicImg from '../assets/Heroic.jpg';
 import FantasyImg from '../assets/Fantasy.jpg';
@@ -11,10 +10,7 @@ import CrimeImg from '../assets/Crime.jpg';
 import HorrorImg from '../assets/Horrorobj.jpg';
 
 const HeroSection = () => {
-  // Main slide state (Slide 1: Image Carousel, Slide 2: Stars Animation)
-  const [mainSlide, setMainSlide] = useState(0);
-
-  // Image carousel state (for Slide 1)
+  // Image carousel state
   const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   const carouselImages = [
@@ -25,37 +21,14 @@ const HeroSection = () => {
     { id: 5, image: HorrorImg, alt: 'Horror' }
   ];
 
-  // Auto-rotate images in Slide 1 carousel
+  // Auto-rotate images
   useEffect(() => {
-    if (mainSlide === 0) {
-      const interval = setInterval(() => {
-        setActiveImageIndex((prev) => (prev + 1) % carouselImages.length);
-      }, 5000); // 5 seconds per image
+    const interval = setInterval(() => {
+      setActiveImageIndex((prev) => (prev + 1) % carouselImages.length);
+    }, 5000); // 5 seconds per image
 
-      return () => clearInterval(interval);
-    }
-  }, [mainSlide, carouselImages.length]);
-
-  // Generate random stars for Slide 2
-  const generateStars = (count) => {
-    return Array.from({ length: count }, (_, i) => ({
-      id: i,
-      top: Math.random() * 100,
-      left: Math.random() * 100,
-      size: Math.random() * 3 + 1,
-      duration: Math.random() * 3 + 2
-    }));
-  };
-
-  const stars = generateStars(100);
-
-  const goToNextMainSlide = () => {
-    setMainSlide(1);
-  };
-
-  const goToPrevMainSlide = () => {
-    setMainSlide(0);
-  };
+    return () => clearInterval(interval);
+  }, [carouselImages.length]);
 
   return (
     <div className={styles.heroContainer}>
@@ -96,14 +69,7 @@ const HeroSection = () => {
             textShadow: '3px 3px 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.7)',
             margin: 0,
             lineHeight: 1.4,
-            letterSpacing: '1px',
-            background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.05) 100%)',
-            backdropFilter: 'blur(10px)',
-            WebkitBackdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.18)',
-            borderRadius: '20px',
-            padding: '30px 40px',
-            boxShadow: '0 8px 32px 0 rgba(31, 38, 135, 0.37), inset 0 0 20px rgba(255, 255, 255, 0.1)'
+            letterSpacing: '1px'
           }}>
             தேன்தமிழமுது தேடிப்படி<br />
             அள்ளி அள்ளி பருக<br />
@@ -117,7 +83,7 @@ const HeroSection = () => {
           style={{
             position: 'absolute',
             top: 'calc(50% + 2.5cm)',
-            left: 'calc(50% - 7.7cm)',
+            left: 'calc(50% - 5.35cm)',
             transform: 'translate(-50%, -50%)',
             zIndex: 20
           }}

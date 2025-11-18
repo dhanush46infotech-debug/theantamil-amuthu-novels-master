@@ -49,6 +49,7 @@
   z-index: 1;
   transform-style: preserve-3d;
   padding: 0 var(--spacing-lg);
+  margin-left: 6cm;
 
   @include respond-to(tablet-and-below) {
     padding: 0 var(--spacing-md);
