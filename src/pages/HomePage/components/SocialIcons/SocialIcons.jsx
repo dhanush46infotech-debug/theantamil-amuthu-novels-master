@@ -1,9 +1,9 @@
-import { SOCIAL_LINKS } from '../../../utils/constants';
-import gmailLogo from '../../../assets/images/social/gmail-logo.png';
-import facebookLogo from '../../../assets/images/social/facebook-logo.png';
-import instagramLogo from '../../../assets/images/social/instagram-logo.png';
-import youtubeLogo from '../../../assets/images/social/youtube-logo.png';
-import styles from '../HomePage.module.scss';
+import { SOCIAL_LINKS } from '../../../../utils/constants';
+import gmailLogo from '../../../../assets/images/social/gmail-logo.png';
+import facebookLogo from '../../../../assets/images/social/facebook-logo.png';
+import instagramLogo from '../../../../assets/images/social/instagram-logo.png';
+import youtubeLogo from '../../../../assets/images/social/youtube-logo.png';
+import styles from './SocialIcons.module.scss';
 
 const SocialIcons = ({ onYouTubeClick }) => {
   return (

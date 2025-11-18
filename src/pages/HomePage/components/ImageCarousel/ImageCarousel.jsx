@@ -1,9 +1,9 @@
-import RomanticImg from '../../../assets/images/genres/Romantic.jpg';
-import HeroicImg from '../../../assets/images/genres/Heroic.jpg';
-import FantasyImg from '../../../assets/images/genres/Fantasy.jpg';
-import CrimeImg from '../../../assets/images/genres/Crime.jpg';
-import HorrorImg from '../../../assets/images/genres/Horrorobj.jpg';
-import styles from '../HomePage.module.scss';
+import RomanticImg from '../../../../assets/images/genres/Romantic.jpg';
+import HeroicImg from '../../../../assets/images/genres/Heroic.jpg';
+import FantasyImg from '../../../../assets/images/genres/Fantasy.jpg';
+import CrimeImg from '../../../../assets/images/genres/Crime.jpg';
+import HorrorImg from '../../../../assets/images/genres/Horrorobj.jpg';
+import styles from './ImageCarousel.module.scss';
 
 const ImageCarousel = ({ activeImageIndex }) => {
   const carouselImages = [

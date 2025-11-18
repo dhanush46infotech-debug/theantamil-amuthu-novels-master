@@ -3,10 +3,7 @@ import { useImageCarousel } from '../../hooks/useImageCarousel';
 import { CAROUSEL_SETTINGS } from '../../utils/constants';
 import Button from '../../components/common/Button/Button';
 import YouTubeModal from '../../components/common/Modal/YouTubeModal';
-import ImageCarousel from './components/ImageCarousel';
-import WelcomeText from './components/WelcomeText';
-import SocialIcons from './components/SocialIcons';
-import StarsBackground from './components/StarsBackground';
+import { ImageCarousel, WelcomeText, SocialIcons, StarsBackground } from './components';
 import styles from './HomePage.module.scss';
 
 const HomePage = () => {
