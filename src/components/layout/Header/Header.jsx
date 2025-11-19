@@ -3,7 +3,7 @@ import { useTheme } from '../../../context/ThemeContext';
 import logo from '../../../assets/images/brand/TTM NOVRLS.png';
 import styles from './Header.module.scss';
 
-const Header = () => {
+const Header = ({ onLoginClick }) => {
   const { theme, toggleTheme } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [language, setLanguage] = useState('Tamil');
@@ -199,6 +199,7 @@ const Header = () => {
           {/* User Login Icon */}
           <button
             className={styles.userLoginIcon}
+            onClick={onLoginClick}
             aria-label="User Login"
             title="User Login"
           >
