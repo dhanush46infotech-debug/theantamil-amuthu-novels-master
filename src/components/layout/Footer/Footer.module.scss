@@ -2,8 +2,7 @@
 @use '../../../styles/abstracts/variables' as *;
 
 .footer {
-  background: #0B1A2D !important;
-  background-color: #0B1A2D !important;
+  background: linear-gradient(180deg, #001f3f 0%, #000d1a 100%);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   color: #FFFFFF;
   padding: 40px 40px 30px;

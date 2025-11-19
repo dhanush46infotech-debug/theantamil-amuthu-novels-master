@@ -3,18 +3,18 @@
    ============================================ */
 
 /* 1. Tailwind CSS */
-@import './tailwind.scss';
+@use './tailwind.scss';
 
 /* 2. Base & Resets */
-@import './base/reset';
+@use './base/reset';
 
 /* 3. Abstracts (Variables, Mixins, Animations) */
-@import './abstracts/variables';
-@import './abstracts/animations';
+@use './abstracts/variables';
+@use './abstracts/animations';
 
 /* 4. Vendors (Third-party overrides) */
-@import './vendors/neon-utilities';
-@import './vendors/swiper-overrides';
+@use './vendors/neon-utilities';
+@use './vendors/swiper-overrides';
 
 /* 5. App-level styles */
-@import './App.scss';
+@use './App.scss';

@@ -17,7 +17,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className={styles.footer} style={{ background: '#0B1A2D', backgroundColor: '#0B1A2D' }}>
+    <footer className={styles.footer}>
       <div className={styles.footerContent}>
         {/* Logo on the left */}
         <div className={styles.footerLeft}>
