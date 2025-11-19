@@ -173,16 +173,104 @@ const Header = () => {
             )}
           </button>
         </div>
+
+        {/* Right Section: Notification & User Login Icons */}
+        <div className={styles.rightSection}>
+          {/* Notification Icon */}
+          <button
+            className={styles.notificationIcon}
+            aria-label="Notifications"
+            title="Notifications"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+              <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+            </svg>
+          </button>
+
+          {/* User Login Icon */}
+          <button
+            className={styles.userLoginIcon}
+            aria-label="User Login"
+            title="User Login"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
           <nav className={styles.nav}>
-            <a href="/" className={styles.navLink}>Home</a>
-            <a href="/novels" className={styles.navLink}>Novels</a>
-            <a href="/authors" className={styles.navLink}>Authors</a>
-            <a href="/about" className={styles.navLink}>About</a>
+            <a href="/" className={styles.navLink}>
+              <svg
+                className={styles.navIcon}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                <polyline points="9 22 9 12 15 12 15 22"></polyline>
+              </svg>
+              <span>Home</span>
+            </a>
+            <a href="/contact" className={styles.navLink}>
+              <svg
+                className={styles.navIcon}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <rect width="20" height="16" x="2" y="4" rx="2"></rect>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+              </svg>
+              <span>Contact</span>
+            </a>
+            <a href="/about" className={styles.navLink}>
+              <svg
+                className={styles.navIcon}
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <path d="M12 16v-4"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              <span>About Us</span>
+            </a>
           </nav>
         </div>
       )}
