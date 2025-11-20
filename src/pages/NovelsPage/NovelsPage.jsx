@@ -22,10 +22,7 @@ const NovelsPage = () => {
     <div className={styles.novelsContainer}>
       <Header onLoginClick={handleLoginClick} />
       <Carousel />
-      <ContinueReading
-        onLoginClick={handleLoginClick}
-        userName={user?.name}
-      />
+      <ContinueReading />
 
       {/* User Login Modal */}
       <UserLogin isOpen={isLoginModalOpen} onClose={handleCloseLogin} />
