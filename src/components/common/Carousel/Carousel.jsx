@@ -1,104 +1,64 @@
-import { useState } from 'react';
 import styles from './Carousel.module.scss';
 
+// Import images with correct relative path
+import swethaImg from '../../../assets/images/prathilipi/swetha swe.jpg';
+import mohanaImg from '../../../assets/images/prathilipi/mohanamozhi.jpg';
+import thenImg from '../../../assets/images/prathilipi/thenmozhi.jpg';
+
 const Carousel = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const totalSlides = 3;
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
-  };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  const authors = [
+    {
+      name: 'Swetha swe',
+      image: swethaImg,
+      link: 'https://tamil.pratilipi.com/user/%F0%9F%92%99swetha%F0%9F%92%99-8cuvz20w13'
+    },
+    {
+      name: 'Thenmozhi',
+      image: thenImg,
+      link: 'https://tamil.pratilipi.com/user/%E2%9C%8D%EF%B8%8F%E0%AE%A4%E0%AF%87%E0%AE%A9%E0%AF%8D%E0%AE%AE%E0%AF%8A%E0%AE%B4%E0%AE%BF-%E2%9C%8D%EF%B8%8F-34-thenmozhi-34-u0958h9i3f?utm_campaign=authorprofile_share&utm_source=ios'
+    },
+    {
+      name: 'Mohanaamozhi',
+      image: mohanaImg,
+      link: 'https://tamil.pratilipi.com/user/%E2%9C%8D%EF%B8%8F-%E0%AE%AE%E0%AF%8B%E0%AE%95%E0%AE%A9%E0%AE%BE-%E2%9C%8D%EF%B8%8F-697n99g2nt'
+    }
+  ];
 
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.carouselWrapper}>
-        {/* Slides */}
-        <div
-          className={styles.carouselTrack}
-          style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-        >
-          {/* Slide 1 */}
+        <div className={styles.carouselTrack}>
           <div className={styles.carouselSlide}>
-            <div className={styles.slideContent}>
-              <h2 className={styles.slideTitle}>Slide 1</h2>
-              <p className={styles.slideDescription}>Content for slide 1</p>
-            </div>
-          </div>
+            <div className={styles.slideContentWrapper}>
+              {/* Title */}
+              <h2 className={styles.carouselTitle}>
+                Follow us on Pratilipi for more stories!
+              </h2>
 
-          {/* Slide 2 */}
-          <div className={styles.carouselSlide}>
-            <div className={styles.slideContent}>
-              <h2 className={styles.slideTitle}>Slide 2</h2>
-              <p className={styles.slideDescription}>Content for slide 2</p>
-            </div>
-          </div>
-
-          {/* Slide 3 */}
-          <div className={styles.carouselSlide}>
-            <div className={styles.slideContent}>
-              <h2 className={styles.slideTitle}>Slide 3</h2>
-              <p className={styles.slideDescription}>Content for slide 3</p>
+              {/* Authors Grid */}
+              <div className={styles.authorsGrid}>
+                {authors.map((author, index) => (
+                  <a
+                    key={index}
+                    href={author.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.authorCard}
+                  >
+                    <div className={styles.authorImageWrapper}>
+                      <img
+                        src={author.image}
+                        alt={author.name}
+                        className={styles.authorImage}
+                      />
+                    </div>
+                    <h3 className={styles.authorName}>{author.name}</h3>
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         </div>
-
-        {/* Previous Button */}
-        <button
-          className={`${styles.carouselButton} ${styles.prevButton}`}
-          onClick={prevSlide}
-          aria-label="Previous slide"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-
-        {/* Next Button */}
-        <button
-          className={`${styles.carouselButton} ${styles.nextButton}`}
-          onClick={nextSlide}
-          aria-label="Next slide"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
-      </div>
-
-      {/* Navigation Dots */}
-      <div className={styles.carouselDots}>
-        {[...Array(totalSlides)].map((_, index) => (
-          <button
-            key={index}
-            className={`${styles.dot} ${currentSlide === index ? styles.activeDot : ''}`}
-            onClick={() => goToSlide(index)}
-            aria-label={`Go to slide ${index + 1}`}
-          />
-        ))}
       </div>
     </div>
   );
