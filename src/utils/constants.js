@@ -33,18 +33,21 @@ export const CAROUSEL_SETTINGS = {
 export const NOVELS = [
   {
     id: 1,
-    title: 'வந்தத்துணையே! என் வாழ்க்கைத்துணையே!',
-    author: 'Mohanaamozhi',
+    title: 'ராட்சசனே எனை வதைப்பதேனடா!',
+    author: 'Thenmozhi',
+    image: 'Novel Card/Thenmozhi Card.jpg'
   },
   {
     id: 2,
     title: 'தாலாட்டும் தாழம்பூவே',
     author: 'Swetha Swe',
+    image: 'Novel Card/swetha swe card.jpg'
   },
   {
     id: 3,
-    title: 'ராட்சசனே எனை வதைப்பதேனடா!',
-    author: 'Thenmozhi',
+    title: 'வந்தத்துணையே!\nஎன்\nவாழ்க்கைத்\nதுணையே!',
+    author: 'Mohanaamozhi',
+    image: 'Novel Card/Mohanamozhi Card.jpg'
   },
 ];
 

@@ -23,3 +23,10 @@ dist-ssr
 *.sln
 *.sw?
 .history
+
+# Windows
+nul
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+$RECYCLE.BIN/
