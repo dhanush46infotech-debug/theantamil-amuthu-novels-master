@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import Header from '../../components/layout/Header/Header';
 import Carousel from '../../components/common/Carousel/Carousel';
@@ -20,6 +21,7 @@ const imageMap = {
 
 const NovelsPage = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
   const handleLoginClick = () => {
@@ -28,6 +30,10 @@ const NovelsPage = () => {
 
   const handleCloseLogin = () => {
     setIsLoginModalOpen(false);
+  };
+
+  const handleNovelClick = (novelId) => {
+    navigate(`/novel/${novelId}`);
   };
 
   return (
@@ -44,7 +50,7 @@ const NovelsPage = () => {
       <div className={styles.content}>
         <div className={styles.grid}>
           {NOVELS.map(novel => (
-            <div className={styles.novelCard} key={novel.id}>
+            <div className={styles.novelCard} key={novel.id} onClick={() => handleNovelClick(novel.id)}>
               <div className={styles.cardImage}>
                 {novel.image && imageMap[novel.image] ? (
                   <img
@@ -58,7 +64,7 @@ const NovelsPage = () => {
               </div>
               <h3 className={styles.novelTitle}>{novel.title}</h3>
               <p className={styles.novelAuthor}>by {novel.author}</p>
-              <button className={styles.readNowButton}>READ NOW</button>
+              <button className={styles.readNowButton} onClick={(e) => { e.stopPropagation(); handleNovelClick(novel.id); }}>READ NOW</button>
             </div>
           ))}
         </div>
