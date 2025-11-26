@@ -298,51 +298,202 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.3cm;
+    gap: 1rem;
+  }
+
+  .content {
+    padding: 0 1.5rem 2rem;
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
   }
 
   .cardImage {
     height: 220px;
   }
+
+  .novelTitle {
+    font-size: 1.2rem;
+    min-height: 50px;
+  }
+
+  .novelAuthor {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 768px) {
+  .continueReadingSection {
+    padding: 0 1rem;
+    margin-top: 0.5cm;
+  }
+
+  .content {
+    padding: 0 1rem 2rem;
+    margin-top: 0.5cm;
+  }
+
   .grid {
     grid-template-columns: 1fr;
-    gap: 0.3cm;
+    gap: 1rem;
     padding: 0.5rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .sectionHeader {
+    font-size: 2.5rem;
   }
 
   .cardImage {
     height: 200px;
   }
 
-  .sectionHeader {
-    font-size: 2rem;
+  .novelCard {
+    padding: 1rem;
+  }
+
+  .novelTitle {
+    font-size: 1.15rem;
+  }
+
+  .novelAuthor {
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+  }
+
+  .readNowButton {
+    padding: 0.7rem 1.25rem;
+    font-size: 0.95rem;
   }
 }
 
 @media (max-width: 480px) {
+  .novelsContainer {
+    padding-bottom: 1rem;
+  }
+
+  .continueReadingSection {
+    padding: 0 0.75rem;
+    margin-top: 0.3cm;
+  }
+
+  .content {
+    padding: 0 0.75rem 1rem;
+    margin-top: 0.3cm;
+  }
+
   .grid {
     grid-template-columns: 1fr;
-    gap: 0.3cm;
+    gap: 0.75rem;
     padding: 0.5rem;
+    border-radius: 15px;
+  }
+
+  .title {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .description {
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+  }
+
+  .sectionHeader {
+    font-size: 2rem;
+    padding: 0.25rem 0;
   }
 
   .cardImage {
     height: 180px;
+    border-radius: 6px;
   }
 
   .novelCard {
     min-height: auto;
     padding: 0.75rem;
+    border-radius: 10px;
   }
 
-  .sectionHeader {
+  .novelTitle {
+    font-size: 1.1rem;
+    min-height: 45px;
+    margin-bottom: 0.4rem;
+  }
+
+  .novelAuthor {
+    font-size: 0.85rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .readNowButton {
+    padding: 0.65rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 10px;
+  }
+}
+
+// Extra small devices
+@media (max-width: 360px) {
+  .continueReadingSection {
+    padding: 0 0.5rem;
+  }
+
+  .content {
+    padding: 0 0.5rem 1rem;
+  }
+
+  .grid {
+    gap: 0.5rem;
+    padding: 0.4rem;
+  }
+
+  .title {
     font-size: 1.5rem;
   }
 
-  .continueReadingSection {
-    padding: 0 1rem;
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .sectionHeader {
+    font-size: 1.75rem;
+  }
+
+  .cardImage {
+    height: 160px;
+  }
+
+  .novelCard {
+    padding: 0.65rem;
+  }
+
+  .novelTitle {
+    font-size: 1rem;
+    min-height: 40px;
+  }
+
+  .novelAuthor {
+    font-size: 0.8rem;
+  }
+
+  .readNowButton {
+    padding: 0.6rem 0.9rem;
+    font-size: 0.85rem;
   }
 }
