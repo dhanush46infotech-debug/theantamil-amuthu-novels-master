@@ -41,13 +41,13 @@ export const NOVELS = [
     id: 2,
     title: 'தாலாட்டும் தாழம்பூவே',
     author: 'Swetha Swe',
-    image: 'Novel Card/swetha swe card.jpg'
+    image: 'Novel Card/swetha card.jpg'
   },
   {
     id: 3,
-    title: 'வந்தத்துணையே!\nஎன்\nவாழ்க்கைத்\nதுணையே!',
+    title: 'வந்தத்துணையே! என் வாழ்க்கைத் துணையே!',
     author: 'Mohanaamozhi',
-    image: 'Novel Card/Mohanamozhi Card.jpg'
+    image: 'Novel Card/Mohana card.jpg'
   },
 ];
 
