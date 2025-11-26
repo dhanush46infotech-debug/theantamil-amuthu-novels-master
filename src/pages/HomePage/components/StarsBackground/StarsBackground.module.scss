@@ -31,3 +31,17 @@
     transform: scale(1.2);
   }
 }
+
+// Responsive Design
+@media (max-width: 768px) {
+  .star {
+    // Reduce star count visually on smaller screens by making them slightly smaller
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.7);
+  }
+}
+
+@media (max-width: 480px) {
+  .star {
+    box-shadow: 0 0 2px rgba(255, 255, 255, 0.6);
+  }
+}

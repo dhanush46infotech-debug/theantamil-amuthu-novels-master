@@ -11,12 +11,14 @@ const ProtectedRoute = ({ children, redirectTo = '/novels' }) => {
         justifyContent: 'center',
         alignItems: 'center',
         minHeight: '100vh',
-        background: '#0B1A2D'
+        background: '#0B1A2D',
+        padding: '20px'
       }}>
         <div style={{
           color: '#ffd700',
-          fontSize: '1.5rem',
-          fontWeight: 'bold'
+          fontSize: 'clamp(1rem, 3vw, 1.5rem)',
+          fontWeight: 'bold',
+          textAlign: 'center'
         }}>
           Loading...
         </div>

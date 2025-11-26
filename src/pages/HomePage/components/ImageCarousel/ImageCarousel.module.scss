@@ -35,3 +35,38 @@
     transform: scale(1);
   }
 }
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .carouselImage {
+    background-size: cover;
+    background-position: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselImage {
+    &.activeImage {
+      animation: kenBurnsEffectMobile 5s ease-in-out infinite !important;
+    }
+  }
+
+  @keyframes kenBurnsEffectMobile {
+    0% {
+      transform: scale(1.1);
+    }
+    50% {
+      transform: scale(1.25);
+    }
+    100% {
+      transform: scale(1.1);
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselImage {
+    background-size: cover;
+    background-position: center center;
+  }
+}
