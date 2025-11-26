@@ -47,7 +47,7 @@ export const authService = {
     try {
       await apiClient.post(API_ENDPOINTS.LOGOUT);
     } catch (error) {
-      console.error('Logout error:', error);
+      // Silently handle logout errors
     } finally {
       // Clear local storage
       localStorage.removeItem('authToken');

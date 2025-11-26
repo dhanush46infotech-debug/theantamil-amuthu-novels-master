@@ -25,7 +25,6 @@ const Header = ({ onLoginClick }) => {
 
   const handleSearch = (e) => {
     e.preventDefault();
-    console.log('Searching for:', searchQuery);
     // Add search functionality here
   };
 

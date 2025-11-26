@@ -298,7 +298,7 @@
 @media (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    gap: 0.5cm;
   }
 
   .content {
@@ -311,189 +311,192 @@
 
   .description {
     font-size: 1.1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 2.5rem;
   }
 
   .cardImage {
-    height: 220px;
+    height: 240px;
   }
 
   .novelTitle {
-    font-size: 1.2rem;
-    min-height: 50px;
+    font-size: 1.25rem;
+    min-height: 55px;
   }
 
   .novelAuthor {
     font-size: 0.95rem;
+  }
+
+  .novelCard {
+    min-height: 360px;
   }
 }
 
 @media (max-width: 768px) {
   .continueReadingSection {
-    padding: 0 1rem;
-    margin-top: 0.5cm;
+    padding: 0 2rem;
+    margin-top: 1cm;
   }
 
   .content {
-    padding: 0 1rem 2rem;
-    margin-top: 0.5cm;
+    padding: 0 2rem 2rem;
+    margin-top: 1cm;
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 1rem;
+    gap: 0.3cm;
     padding: 0.5rem;
   }
 
   .title {
-    font-size: 2rem;
-    margin-bottom: 0.75rem;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
   }
 
   .description {
-    font-size: 1rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    margin-bottom: 2.5rem;
   }
 
   .sectionHeader {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .cardImage {
-    height: 200px;
+    height: 240px;
   }
 
   .novelCard {
     padding: 1rem;
+    min-height: 380px;
   }
 
   .novelTitle {
-    font-size: 1.15rem;
+    font-size: 1.3rem;
+    min-height: 60px;
   }
 
   .novelAuthor {
-    font-size: 0.9rem;
-    padding-bottom: 1rem;
+    font-size: 1rem;
+    padding-bottom: 1.5rem;
   }
 
   .readNowButton {
-    padding: 0.7rem 1.25rem;
-    font-size: 0.95rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
 @media (max-width: 480px) {
   .novelsContainer {
-    padding-bottom: 1rem;
+    padding-bottom: 2rem;
   }
 
   .continueReadingSection {
-    padding: 0 0.75rem;
-    margin-top: 0.3cm;
+    padding: 0 1.5rem;
+    margin-top: 0.8cm;
   }
 
   .content {
-    padding: 0 0.75rem 1rem;
-    margin-top: 0.3cm;
+    padding: 0 1.5rem 2rem;
+    margin-top: 0.8cm;
   }
 
   .grid {
     grid-template-columns: 1fr;
-    gap: 0.75rem;
+    gap: 0.3cm;
     padding: 0.5rem;
-    border-radius: 15px;
   }
 
   .title {
-    font-size: 1.75rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 0.8rem;
   }
 
   .description {
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
+    font-size: 1.05rem;
+    margin-bottom: 2rem;
   }
 
   .sectionHeader {
-    font-size: 2rem;
-    padding: 0.25rem 0;
+    font-size: 2.6rem;
+    padding: 0.5rem 0;
   }
 
   .cardImage {
-    height: 180px;
-    border-radius: 6px;
+    height: 240px;
   }
 
   .novelCard {
-    min-height: auto;
-    padding: 0.75rem;
-    border-radius: 10px;
+    min-height: 370px;
+    padding: 1rem;
   }
 
   .novelTitle {
-    font-size: 1.1rem;
-    min-height: 45px;
-    margin-bottom: 0.4rem;
+    font-size: 1.25rem;
+    min-height: 58px;
+    margin-bottom: 0.5rem;
   }
 
   .novelAuthor {
-    font-size: 0.85rem;
-    padding-bottom: 0.75rem;
+    font-size: 0.95rem;
+    padding-bottom: 1.3rem;
   }
 
   .readNowButton {
-    padding: 0.65rem 1rem;
-    font-size: 0.9rem;
-    border-radius: 10px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
 // Extra small devices
 @media (max-width: 360px) {
   .continueReadingSection {
-    padding: 0 0.5rem;
+    padding: 0 1rem;
   }
 
   .content {
-    padding: 0 0.5rem 1rem;
+    padding: 0 1rem 1.5rem;
   }
 
   .grid {
-    gap: 0.5rem;
-    padding: 0.4rem;
+    gap: 0.28cm;
+    padding: 0.5rem;
   }
 
   .title {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .description {
-    font-size: 0.9rem;
+    font-size: 1rem;
   }
 
   .sectionHeader {
-    font-size: 1.75rem;
+    font-size: 2.3rem;
   }
 
   .cardImage {
-    height: 160px;
+    height: 220px;
   }
 
   .novelCard {
-    padding: 0.65rem;
+    padding: 0.9rem;
+    min-height: 350px;
   }
 
   .novelTitle {
-    font-size: 1rem;
-    min-height: 40px;
+    font-size: 1.15rem;
+    min-height: 52px;
   }
 
   .novelAuthor {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 
   .readNowButton {
-    padding: 0.6rem 0.9rem;
-    font-size: 0.85rem;
+    padding: 0.7rem 1.3rem;
+    font-size: 0.95rem;
   }
 }

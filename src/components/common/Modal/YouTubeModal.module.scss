@@ -94,3 +94,112 @@
   font-size: 16px;
   font-weight: 500;
 }
+
+// Responsive Design
+@media (max-width: 1024px) {
+  .modalContent {
+    padding: 25px;
+    max-width: 450px;
+  }
+
+  .modalTitle {
+    font-size: 22px;
+  }
+
+  .channelIcon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .channelName {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .modalContent {
+    padding: 20px;
+    max-width: 400px;
+    width: 92%;
+  }
+
+  .modalTitle {
+    font-size: 20px;
+  }
+
+  .modalClose {
+    font-size: 32px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .channelLink {
+    padding: 12px 16px;
+    gap: 12px;
+  }
+
+  .channelIcon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .channelName {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .modalContent {
+    padding: 16px;
+    width: 95%;
+    border-radius: 16px;
+  }
+
+  .modalTitle {
+    font-size: 18px;
+  }
+
+  .modalHeader {
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+  }
+
+  .modalClose {
+    font-size: 28px;
+    width: 32px;
+    height: 32px;
+  }
+
+  .modalBody {
+    gap: 12px;
+  }
+
+  .channelLink {
+    padding: 10px 14px;
+    gap: 10px;
+  }
+
+  .channelIcon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .channelName {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 360px) {
+  .modalContent {
+    padding: 14px;
+    width: 96%;
+  }
+
+  .modalTitle {
+    font-size: 16px;
+  }
+
+  .channelName {
+    font-size: 12px;
+  }
+}

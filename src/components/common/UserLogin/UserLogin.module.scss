@@ -13,6 +13,13 @@
   justify-content: center;
   z-index: 2000;
   animation: fadeIn 0.3s ease;
+  padding: 1rem;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+
+  @media (max-width: 480px) {
+    padding: 0.5rem;
+  }
 }
 
 @keyframes fadeIn {
@@ -39,9 +46,21 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.1);
   animation: slideUp 0.3s ease;
 
+  @media (max-width: 768px) {
+    padding: 2.25rem 1.75rem;
+    max-width: 92%;
+    border-radius: 18px;
+  }
+
   @media (max-width: 480px) {
     padding: 2rem 1.5rem;
     max-width: 95%;
+    border-radius: 16px;
+  }
+
+  @media (max-width: 360px) {
+    padding: 1.75rem 1.25rem;
+    max-width: 96%;
   }
 }
 
@@ -116,6 +135,11 @@
   gap: 1rem;
   margin-bottom: 2rem;
   border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+
+  @media (max-width: 480px) {
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 .tab {
@@ -144,6 +168,20 @@
 
   &:hover {
     color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.875rem;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.75rem 0.5rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    font-size: 0.95rem;
   }
 }
 
@@ -232,6 +270,21 @@
     box-shadow:
       0 2px 8px rgba(255, 215, 0, 0.3),
       inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    padding: 0.95rem;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 480px) {
+    padding: 0.875rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 360px) {
+    padding: 0.8rem;
+    font-size: 0.95rem;
   }
 }
 

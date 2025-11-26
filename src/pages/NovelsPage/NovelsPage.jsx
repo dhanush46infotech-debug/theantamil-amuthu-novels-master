@@ -6,6 +6,18 @@ import UserLogin from '../../components/common/UserLogin/UserLogin';
 import { NOVELS } from '../../utils/constants';
 import styles from './NovelsPage.module.scss';
 
+// Import novel card images
+import thenmozhiCard from '../../assets/images/Novel Card/Thenmozhi Card.jpg';
+import swethaCard from '../../assets/images/Novel Card/swetha card.jpg';
+import mohanaCard from '../../assets/images/Novel Card/Mohana card.jpg';
+
+// Image mapping
+const imageMap = {
+  'Novel Card/Thenmozhi Card.jpg': thenmozhiCard,
+  'Novel Card/swetha card.jpg': swethaCard,
+  'Novel Card/Mohana card.jpg': mohanaCard
+};
+
 const NovelsPage = () => {
   const { user } = useAuth();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -34,9 +46,9 @@ const NovelsPage = () => {
           {NOVELS.map(novel => (
             <div className={styles.novelCard} key={novel.id}>
               <div className={styles.cardImage}>
-                {novel.image ? (
+                {novel.image && imageMap[novel.image] ? (
                   <img
-                    src={`/src/assets/images/${novel.image}`}
+                    src={imageMap[novel.image]}
                     alt={novel.title}
                     className={styles.novelImage}
                   />
