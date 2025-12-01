@@ -62,6 +62,7 @@
   font-weight: 700;
   margin-bottom: 2rem;
   color: #fff;
+  font-family: 'Noto Sans Tamil', sans-serif;
 
   [data-theme="light"] & {
     color: #0a2a43;
@@ -79,6 +80,31 @@
   }
 }
 
+.storyContent {
+  font-size: 1.125rem;
+  line-height: 2;
+  color: #e5e7eb;
+  text-align: justify;
+  font-family: 'Noto Sans Tamil', 'Lato', sans-serif;
+
+  [data-theme="light"] & {
+    color: #1f2937;
+  }
+}
+
+.paragraph {
+  margin-bottom: 1.75rem;
+  text-indent: 2rem;
+
+  &:first-child {
+    text-indent: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
 @media (max-width: 768px) {
   .content {
     padding: 1.5rem;
@@ -91,6 +117,16 @@
 
   .chapterTitle {
     font-size: 2rem;
+  }
+
+  .storyContent {
+    font-size: 1.05rem;
+    line-height: 1.9;
+  }
+
+  .paragraph {
+    margin-bottom: 1.5rem;
+    text-indent: 1.5rem;
   }
 }
 
@@ -111,5 +147,16 @@
   .placeholder {
     font-size: 1rem;
     padding: 3rem 0;
+  }
+
+  .storyContent {
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: left;
+  }
+
+  .paragraph {
+    margin-bottom: 1.25rem;
+    text-indent: 1rem;
   }
 }
