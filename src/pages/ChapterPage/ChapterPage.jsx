@@ -1,13 +1,16 @@
 import { useParams, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 import Header from '../../components/layout/Header/Header';
 import { useAuth } from '../../context/AuthContext';
-import { getChapterContent } from '../../utils/chapterContent';
+import { getChapterContent } from '../../utils/chapterContentLoader';
 import styles from './ChapterPage.module.scss';
 
 const ChapterPage = () => {
   const { novelId, chapterId } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
+  const [chapterData, setChapterData] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   const handleLoginClick = () => {
     // Handle login if needed
@@ -17,10 +20,32 @@ const ChapterPage = () => {
     navigate(`/novel/${novelId}`);
   };
 
-  // Get the chapter content
-  const chapterData = getChapterContent(Number(novelId), Number(chapterId));
+  // Load chapter content dynamically
+  useEffect(() => {
+    const loadChapter = async () => {
+      setLoading(true);
+      const data = await getChapterContent(Number(novelId), Number(chapterId));
+      setChapterData(data);
+      setLoading(false);
+    };
 
-  // Handle case when chapter is not found
+    loadChapter();
+  }, [novelId, chapterId]);
+
+  // Handle loading and not found states
+  if (loading) {
+    return (
+      <div className={styles.chapterContainer}>
+        <Header onLoginClick={handleLoginClick} />
+        <div className={styles.content}>
+          <div className={styles.chapterContent}>
+            <h1 className={styles.chapterTitle}>ஏற்றுகிறது...</h1>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   if (!chapterData) {
     return (
       <div className={styles.chapterContainer}>
