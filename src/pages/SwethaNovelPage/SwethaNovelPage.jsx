@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useLanguage } from '../../context/LanguageContext';
 import Header from '../../components/layout/Header/Header';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
 import styles from './SwethaNovelPage.module.scss';
@@ -11,6 +12,7 @@ import swethaChapterImage from '../../assets/images/episodes_card/swetha swe epi
 
 const SwethaNovelPage = () => {
   const { user } = useAuth();
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
@@ -22,8 +24,19 @@ const SwethaNovelPage = () => {
     setIsLoginModalOpen(false);
   };
 
-  // Chapters for Swetha novel
-  const chapters = [
+  // Chapters for Swetha novel - dynamically generated based on language
+  const chapters = Array.from({ length: 27 }, (_, i) => {
+    const chapterId = i + 1;
+    return {
+      id: chapterId,
+      title: language === 'tamil' ? `அத்தியாயம் ${chapterId}` : `Chapter ${chapterId}`,
+      date: new Date(2025, 0, 5 + i).toLocaleDateString('en-GB'),
+      words: 1500
+    };
+  });
+
+  // Old hardcoded chapters for reference (can be removed)
+  /* const chapters = [
     { id: 1, title: 'அத்தியாயம் 1', date: '05/01/2025', words: 1500 },
     { id: 2, title: 'அத்தியாயம் 2', date: '06/01/2025', words: 1500 },
     { id: 3, title: 'அத்தியாயம் 3', date: '07/01/2025', words: 1500 },
@@ -51,11 +64,13 @@ const SwethaNovelPage = () => {
     { id: 25, title: 'அத்தியாயம் 25', date: '29/01/2025', words: 1500 },
     { id: 26, title: 'அத்தியாயம் 26', date: '30/01/2025', words: 1500 },
     { id: 27, title: 'அத்தியாயம் 27', date: '31/01/2025', words: 1500 }
-  ];
+  ]; */
 
   const novel = {
     id: 2,
-    title: 'தாலாட்டும் தாழம்பூவே',
+    title: language === 'tamil'
+      ? 'தாலாட்டும் தாழம்பூவே'
+      : 'The Lullaby of the Temple Flower',
     author: 'Swetha Swe',
     genres: ['Love', 'Romantic'],
     image: swethaCard,
@@ -66,7 +81,7 @@ const SwethaNovelPage = () => {
     },
     description: {
       tamil: 'சிறுவயதில் வீட்டை விட்டு வெளியேறிய நாயகன், எட்டு வருடங்கள் கடந்து யாரும் எதிர்பார்க்காத வகையில், கையில் குழந்தையுடன் வீட்டிற்கு வருகிறான். சிறுவயது முதல் தாய், தந்தை, தங்கை, தம்பி என்று அவர்களையே தன் உலகம் என்று வாழ்ந்த நாயகிக்குத் துரோகம் இழைத்தது மட்டுமில்லாமல், அவளை "அவர்கள் வீட்டுப் பெண்ணே இல்லை" என்று கூறியதால், வீட்டை விட்டு வெளியேறி, யாரும் இல்லாமல் நிர்கதியாக நிற்கிறாள் நாயகி. இவர்கள் இருவரும் திருமண பந்தத்தில் ஒன்று சேர்ந்தால், அவர்களின் வாழ்க்கை எவ்வாறு இருக்கும்? தெரிந்துகொள்ளக் காத்திருங்கள்... "தாலாட்டும் தாழம்பூவே!"',
-      english: ''
+      english: 'The hero, who left home in childhood, returns unexpectedly after eight years with a child in hand. The heroine, who lived considering her mother, father, sister, and brother as her whole world since childhood, is not only betrayed but is told she is "not a girl of their house," forcing her to leave home and stand destitute without anyone. When these two come together in matrimony, what will their life be like? Stay tuned to find out... "The Lullaby of the Temple Flower!"'
     },
     chapters: chapters
   };
@@ -109,7 +124,7 @@ const SwethaNovelPage = () => {
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                படிக்க ஆரம்பிக்கவும்
+                {language === 'tamil' ? 'படிக்க ஆரம்பிக்கவும்' : 'Start Reading'}
               </button>
             </div>
           </div>
@@ -117,16 +132,21 @@ const SwethaNovelPage = () => {
 
         {/* Story Summary Section */}
         <div className={styles.storySection}>
-          <h2 className={styles.sectionTitle}>கதை சுருக்கம்</h2>
+          <h2 className={styles.sectionTitle}>
+            {language === 'tamil' ? 'கதை சுருக்கம்' : 'Story Summary'}
+          </h2>
           <div className={styles.storyContent}>
-            <p className={styles.tamilDescription}>{novel.description.tamil}</p>
-            <p className={styles.englishDescription}>{novel.description.english}</p>
+            <p className={language === 'tamil' ? styles.tamilDescription : styles.englishDescription}>
+              {language === 'tamil' ? novel.description.tamil : novel.description.english}
+            </p>
           </div>
         </div>
 
         {/* Chapters Section */}
         <div className={styles.chaptersSection}>
-          <h2 className={styles.sectionTitle}>அத்தியாயங்கள் [{novel.chapters.length}]</h2>
+          <h2 className={styles.sectionTitle}>
+            {language === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'} [{novel.chapters.length}]
+          </h2>
           <div className={styles.chaptersList}>
             {novel.chapters.map((chapter) => (
               <div

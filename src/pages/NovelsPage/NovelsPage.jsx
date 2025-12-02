@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useLanguage } from '../../context/LanguageContext';
 import Header from '../../components/layout/Header/Header';
 import Carousel from '../../components/common/Carousel/Carousel';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
@@ -21,6 +22,7 @@ const imageMap = {
 
 const NovelsPage = () => {
   const { user } = useAuth();
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
@@ -62,7 +64,11 @@ const NovelsPage = () => {
                   <span className={styles.placeholder}>Novel Cover</span>
                 )}
               </div>
-              <h3 className={styles.novelTitle}>{novel.title}</h3>
+              <h3 className={styles.novelTitle}>
+                {typeof novel.title === 'object'
+                  ? novel.title[language]
+                  : novel.title}
+              </h3>
               <p className={styles.novelAuthor}>by {novel.author}</p>
               <button className={styles.readNowButton} onClick={(e) => { e.stopPropagation(); handleNovelClick(novel.id); }}>READ NOW</button>
             </div>
