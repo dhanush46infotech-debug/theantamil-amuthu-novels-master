@@ -197,7 +197,6 @@
   .chapterContent {
     padding: 1.5rem 1rem;
   }
-
   .chapterTitle {
     font-size: 1.7rem;
   }
@@ -227,5 +226,132 @@
   .navButton {
     padding: 0.65rem 1.25rem;
     font-size: 0.95rem;
+  }
+}
+
+// Tablet devices optimization (768px - 1024px)
+@media (min-width: 768px) and (max-width: 1024px) {
+  .chapterContainer {
+    padding-top: 0;
+  }
+
+  .content {
+    max-width: 900px;
+    padding: clamp(1.5rem, 3vw, 2rem);
+    padding-top: clamp(5rem, 8vw, 7rem);
+  }
+
+  .backButton {
+    padding: clamp(0.6rem, 1.5vw, 0.8rem) clamp(1rem, 2vw, 1.5rem);
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
+  }
+
+  .chapterContent {
+    padding: clamp(2rem, 4vw, 3rem);
+    border-radius: 12px;
+  }
+
+  .chapterTitle {
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+  }
+
+  .storyContent {
+    font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+    line-height: 1.9;
+  }
+
+  .paragraph {
+    margin-bottom: clamp(1rem, 2vw, 1.5rem);
+    text-indent: clamp(1.25rem, 2.5vw, 2rem);
+  }
+}
+
+// Extra small devices (360px and below)
+@media (max-width: 360px) {
+  .chapterContainer {
+    padding-top: 0;
+  }
+
+  .content {
+    max-width: 100%;
+    padding: 1rem;
+    padding-top: clamp(4.5rem, 10vw, 5.5rem);
+    margin: 0;
+  }
+
+  .backButton {
+    background: rgba(255, 255, 255, 0.08);
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    margin-bottom: 1.5rem;
+
+    &:hover {
+      background: rgba(255, 255, 255, 0.12);
+      transform: translateX(-2px);
+    }
+
+    [data-theme="light"] & {
+      background: rgba(0, 0, 0, 0.04);
+      color: #0a2a43;
+      border-color: rgba(0, 0, 0, 0.08);
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.08);
+      }
+    }
+  }
+
+  .chapterContent {
+    padding: 1.2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .chapterTitle {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    line-height: 1.3;
+    word-wrap: break-word;
+  }
+
+  .placeholder {
+    font-size: 0.95rem;
+    padding: 2rem 0;
+  }
+
+  .storyContent {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    text-align: justify;
+  }
+
+  .paragraph {
+    margin-bottom: 1rem;
+    text-indent: 0.8rem;
+
+    &:first-child {
+      text-indent: 0;
+    }
+  }
+
+  .chapterNavigation {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    gap: 0.4rem;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .navButton {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+    flex: 1;
+    min-width: 120px;
+    border-radius: 6px;
   }
 }

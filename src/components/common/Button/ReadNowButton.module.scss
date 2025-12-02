@@ -1,4 +1,5 @@
 // 3D Read Now Button with Dark Golden Glassmorphism and Shining Gold Effect
+// Fully responsive across all device sizes
 
 .readNowButton {
   position: relative;
@@ -7,17 +8,17 @@
     rgba(218, 165, 32, 0.6) 50%,   // Goldenrod - increased opacity
     rgba(184, 134, 11, 0.7) 100%
   );
-  backdrop-filter: blur(30px);
   -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
 
   border: 2px solid rgba(255, 215, 0, 0.6);
   border-radius: 50px;
-  padding: 20px 60px;
+  padding: clamp(12px, 2.5vw, 20px) clamp(30px, 5vw, 60px);
 
   font-family: 'Times New Roman', Times, serif;
-  font-size: clamp(18px, 3vw, 28px);
+  font-size: clamp(14px, 2.5vw, 28px);
   font-weight: bold;
-  letter-spacing: 3px;
+  letter-spacing: clamp(1px, 0.2vw, 3px);
 
   color: #000000; // Black text
   text-shadow:
@@ -36,11 +37,12 @@
 
   overflow: hidden;
   transition: all 0.3s ease;
+  white-space: nowrap;
   
   // GPU acceleration for smooth animations on low-end devices
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  will-change: box-shadow;
+  will-change: box-shadow, transform;
   transform: translateZ(0);
 
   // 3D depth effect
@@ -304,6 +306,128 @@
         0 8px 32px rgba(255, 215, 0, 0.6),
         0 4px 16px rgba(218, 165, 32, 0.5),
         inset 0 0 25px rgba(255, 215, 0, 0.25);
+    }
+  }
+}
+
+// Tablet devices (1024px and below)
+@media (max-width: 1024px) {
+  .readNowButton {
+    padding: clamp(12px, 2.2vw, 18px) clamp(28px, 4.5vw, 50px);
+    font-size: clamp(14px, 2.2vw, 22px);
+    letter-spacing: clamp(0.5px, 0.15vw, 2.5px);
+    border: 1.5px solid rgba(255, 215, 0, 0.6);
+    
+    box-shadow:
+      0 6px 24px rgba(255, 215, 0, 0.4),
+      0 3px 12px rgba(218, 165, 32, 0.3),
+      inset 0 0 15px rgba(255, 215, 0, 0.15),
+      inset 0 -4px 8px rgba(184, 134, 11, 0.25);
+
+    &:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow:
+        0 10px 32px rgba(255, 215, 0, 0.5),
+        0 5px 16px rgba(218, 165, 32, 0.4),
+        inset 0 0 20px rgba(255, 215, 0, 0.2),
+        inset 0 -4px 10px rgba(184, 134, 11, 0.3);
+    }
+  }
+}
+
+// Mobile devices (768px and below)
+@media (max-width: 768px) {
+  .readNowButton {
+    padding: clamp(10px, 2vw, 16px) clamp(24px, 4vw, 40px);
+    font-size: clamp(13px, 2vw, 18px);
+    letter-spacing: clamp(0.3px, 0.1vw, 1.5px);
+    border: 1.5px solid rgba(255, 215, 0, 0.55);
+    border-radius: 40px;
+
+    box-shadow:
+      0 5px 20px rgba(255, 215, 0, 0.35),
+      0 2px 8px rgba(218, 165, 32, 0.25),
+      inset 0 0 12px rgba(255, 215, 0, 0.12),
+      inset 0 -3px 6px rgba(184, 134, 11, 0.2);
+
+    &:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow:
+        0 7px 24px rgba(255, 215, 0, 0.45),
+        0 3px 12px rgba(218, 165, 32, 0.35),
+        inset 0 0 16px rgba(255, 215, 0, 0.15),
+        inset 0 -3px 8px rgba(184, 134, 11, 0.25);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.98);
+      box-shadow:
+        0 3px 12px rgba(255, 215, 0, 0.3),
+        0 2px 6px rgba(218, 165, 32, 0.2),
+        inset 0 0 10px rgba(255, 215, 0, 0.1),
+        inset 0 -2px 4px rgba(184, 134, 11, 0.15);
+    }
+  }
+}
+
+// Small mobile (480px and below)
+@media (max-width: 480px) {
+  .readNowButton {
+    padding: clamp(8px, 1.8vw, 14px) clamp(20px, 3.5vw, 32px);
+    font-size: clamp(12px, 1.8vw, 15px);
+    letter-spacing: clamp(0px, 0.05vw, 1px);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    border-radius: 35px;
+
+    box-shadow:
+      0 4px 16px rgba(255, 215, 0, 0.3),
+      0 2px 6px rgba(218, 165, 32, 0.2),
+      inset 0 0 10px rgba(255, 215, 0, 0.1),
+      inset 0 -2px 4px rgba(184, 134, 11, 0.15);
+
+    &::after {
+      width: 0;
+    }
+
+    &:hover {
+      transform: translateY(-1px) scale(1.02);
+      box-shadow:
+        0 5px 18px rgba(255, 215, 0, 0.4),
+        0 2px 8px rgba(218, 165, 32, 0.3),
+        inset 0 0 12px rgba(255, 215, 0, 0.12),
+        inset 0 -2px 5px rgba(184, 134, 11, 0.2);
+    }
+
+    &:active {
+      transform: translateY(0) scale(0.97);
+    }
+  }
+}
+
+// Ultra small devices (360px and below)
+@media (max-width: 360px) {
+  .readNowButton {
+    padding: clamp(6px, 1.5vw, 10px) clamp(16px, 3vw, 24px);
+    font-size: clamp(11px, 1.5vw, 13px);
+    letter-spacing: 0px;
+    border: 1px solid rgba(255, 215, 0, 0.45);
+    border-radius: 30px;
+
+    box-shadow:
+      0 3px 12px rgba(255, 215, 0, 0.25),
+      0 1px 4px rgba(218, 165, 32, 0.15),
+      inset 0 0 8px rgba(255, 215, 0, 0.08),
+      inset 0 -1px 3px rgba(184, 134, 11, 0.12);
+
+    text-shadow: 0 0 3px rgba(255, 215, 0, 0.2);
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow:
+        0 4px 14px rgba(255, 215, 0, 0.35),
+        0 2px 6px rgba(218, 165, 32, 0.25),
+        inset 0 0 10px rgba(255, 215, 0, 0.1),
+        inset 0 -1px 4px rgba(184, 134, 11, 0.15);
     }
   }
 }
