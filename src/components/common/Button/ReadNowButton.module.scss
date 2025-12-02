@@ -36,6 +36,12 @@
 
   overflow: hidden;
   transition: all 0.3s ease;
+  
+  // GPU acceleration for smooth animations on low-end devices
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  will-change: box-shadow;
+  transform: translateZ(0);
 
   // 3D depth effect
   &::before {
@@ -127,30 +133,142 @@
 }
 
 // Responsive adjustments
-@media (max-width: 768px) {
+
+// Ultra-low-end devices (320px - 360px)
+@media (max-width: 360px) {
   .readNowButton {
-    padding: 15px 40px;
-    letter-spacing: 2px;
+    padding: 10px 20px;
+    font-size: clamp(14px, 3.5vw, 18px);
+    letter-spacing: 0.5px;
+    border-width: 1px;
+    border-radius: 30px;
+
+    box-shadow:
+      0 4px 16px rgba(255, 215, 0, 0.4),
+      0 2px 8px rgba(218, 165, 32, 0.3),
+      inset 0 0 12px rgba(255, 215, 0, 0.15),
+      inset 0 -3px 6px rgba(184, 134, 11, 0.2);
+
+    &::after {
+      width: 40%;
+      animation: shineEffect 4s ease-in-out infinite;
+    }
+
+    &:hover {
+      box-shadow:
+        0 6px 20px rgba(255, 215, 0, 0.5),
+        0 3px 10px rgba(218, 165, 32, 0.4),
+        inset 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+  }
+
+  .buttonText {
+    font-size: 0.95em;
   }
 }
 
-@media (max-width: 480px) {
+// Low-end mobile devices (361px - 480px)
+@media (max-width: 480px) and (min-width: 361px) {
   .readNowButton {
-    padding: 12px 30px;
+    padding: 12px 28px;
+    font-size: clamp(16px, 3vw, 20px);
     letter-spacing: 1px;
+    border-width: 1.5px;
+    border-radius: 35px;
+
+    box-shadow:
+      0 6px 24px rgba(255, 215, 0, 0.45),
+      0 3px 12px rgba(218, 165, 32, 0.35),
+      inset 0 0 15px rgba(255, 215, 0, 0.18),
+      inset 0 -4px 8px rgba(184, 134, 11, 0.25);
+
+    &::after {
+      width: 45%;
+      animation: shineEffect 3.5s ease-in-out infinite;
+    }
+
+    &:hover {
+      box-shadow:
+        0 8px 32px rgba(255, 215, 0, 0.55),
+        0 4px 16px rgba(218, 165, 32, 0.45),
+        inset 0 0 20px rgba(255, 215, 0, 0.25);
+    }
+
+    &:active {
+      box-shadow:
+        0 4px 16px rgba(255, 215, 0, 0.4),
+        0 2px 8px rgba(218, 165, 32, 0.3),
+        inset 0 0 12px rgba(255, 215, 0, 0.2);
+    }
+  }
+}
+
+// Tablet devices (481px - 768px)
+@media (max-width: 768px) and (min-width: 481px) {
+  .readNowButton {
+    padding: 15px 42px;
+    font-size: clamp(18px, 2.8vw, 24px);
+    letter-spacing: 1.5px;
+    border-width: 2px;
+
+    box-shadow:
+      0 8px 32px rgba(255, 215, 0, 0.5),
+      0 4px 16px rgba(218, 165, 32, 0.4),
+      inset 0 0 18px rgba(255, 215, 0, 0.2),
+      inset 0 -5px 10px rgba(184, 134, 11, 0.3);
+
+    &::after {
+      width: 50%;
+      animation: shineEffect 3.5s ease-in-out infinite;
+    }
+
+    &:hover {
+      box-shadow:
+        0 10px 40px rgba(255, 215, 0, 0.6),
+        0 5px 20px rgba(218, 165, 32, 0.5),
+        inset 0 0 25px rgba(255, 215, 0, 0.25);
+    }
+  }
+}
+
+// Large tablets (769px - 1023px)
+@media (min-width: 769px) and (max-width: 1023px) {
+  .readNowButton {
+    padding: 18px 55px;
+    font-size: clamp(20px, 2.5vw, 26px);
+    letter-spacing: 2.5px;
+    border-width: 2px;
+
+    &::after {
+      width: 55%;
+    }
   }
 }
 
 // Wide screens (1440px - 1919px)
-@media (min-width: 1440px) {
+@media (min-width: 1440px) and (max-width: 1919px) {
   .readNowButton {
     padding: 24px 70px;
     font-size: clamp(22px, 3vw, 32px);
     letter-spacing: 4px;
     border-width: 3px;
 
+    box-shadow:
+      0 10px 40px rgba(255, 215, 0, 0.6),
+      0 5px 20px rgba(218, 165, 32, 0.5),
+      inset 0 0 25px rgba(255, 215, 0, 0.25),
+      inset 0 -6px 12px rgba(184, 134, 11, 0.35);
+
     &::after {
       width: 60%;
+    }
+
+    &:hover {
+      box-shadow:
+        0 12px 48px rgba(255, 215, 0, 0.7),
+        0 6px 24px rgba(218, 165, 32, 0.6),
+        inset 0 0 30px rgba(255, 215, 0, 0.3),
+        inset 0 -6px 18px rgba(184, 134, 11, 0.4);
     }
   }
 }
@@ -164,10 +282,10 @@
     border-width: 4px;
 
     box-shadow:
-      0 10px 40px rgba(255, 215, 0, 0.6),
-      0 5px 20px rgba(218, 165, 32, 0.5),
-      inset 0 0 25px rgba(255, 215, 0, 0.25),
-      inset 0 -6px 12px rgba(184, 134, 11, 0.35);
+      0 12px 48px rgba(255, 215, 0, 0.7),
+      0 6px 24px rgba(218, 165, 32, 0.6),
+      inset 0 0 35px rgba(255, 215, 0, 0.3),
+      inset 0 -8px 16px rgba(184, 134, 11, 0.4);
 
     &::after {
       width: 70%;
@@ -175,10 +293,17 @@
 
     &:hover {
       box-shadow:
-        0 14px 56px rgba(255, 215, 0, 0.8),
-        0 7px 28px rgba(218, 165, 32, 0.7),
-        inset 0 0 35px rgba(255, 215, 0, 0.35),
-        inset 0 -6px 18px rgba(184, 134, 11, 0.45);
+        0 16px 60px rgba(255, 215, 0, 0.85),
+        0 8px 30px rgba(218, 165, 32, 0.7),
+        inset 0 0 40px rgba(255, 215, 0, 0.35),
+        inset 0 -8px 20px rgba(184, 134, 11, 0.5);
+    }
+
+    &:active {
+      box-shadow:
+        0 8px 32px rgba(255, 215, 0, 0.6),
+        0 4px 16px rgba(218, 165, 32, 0.5),
+        inset 0 0 25px rgba(255, 215, 0, 0.25);
     }
   }
 }

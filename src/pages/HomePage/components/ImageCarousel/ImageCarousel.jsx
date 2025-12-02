@@ -23,8 +23,13 @@ const ImageCarousel = ({ activeImageIndex }) => {
             index === activeImageIndex ? styles.activeImage : ''
           }`}
           style={{
-            backgroundImage: `url(${item.image})`
+            backgroundImage: `url(${item.image})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundRepeat: 'no-repeat'
           }}
+          role="img"
+          aria-label={item.alt}
         />
       ))}
     </>
