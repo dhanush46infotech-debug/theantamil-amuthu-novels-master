@@ -1,26 +1,59 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useTheme } from '../../../context/ThemeContext';
+import { useLanguage } from '../../../context/LanguageContext';
+import { translations } from '../../../translations';
 import logo from '../../../assets/images/brand/TTM NOVRLS.png';
 import styles from './Header.module.scss';
 
 const Header = ({ onLoginClick }) => {
   const { theme, toggleTheme } = useTheme();
+  const { language, changeLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [language, setLanguage] = useState('Tamil');
   const [isLanguageDropdownOpen, setIsLanguageDropdownOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const languageDropdownRef = useRef(null);
+
+  const t = translations[language];
+
+  // Close dropdown when clicking outside or pressing ESC
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (languageDropdownRef.current && !languageDropdownRef.current.contains(event.target)) {
+        setIsLanguageDropdownOpen(false);
+      }
+    };
+
+    const handleEscKey = (event) => {
+      if (event.key === 'Escape') {
+        setIsLanguageDropdownOpen(false);
+      }
+    };
+
+    if (isLanguageDropdownOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+      document.addEventListener('keydown', handleEscKey);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener('keydown', handleEscKey);
+    };
+  }, [isLanguageDropdownOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const toggleLanguageDropdown = () => {
+  const toggleLanguageDropdown = (e) => {
+    e.stopPropagation();
     setIsLanguageDropdownOpen(!isLanguageDropdownOpen);
   };
 
   const handleLanguageChange = (lang) => {
-    setLanguage(lang);
+    changeLanguage(lang);
     setIsLanguageDropdownOpen(false);
+    // Force re-render by scrolling to top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleSearch = (e) => {
@@ -53,11 +86,13 @@ const Header = ({ onLoginClick }) => {
         {/* Center Section: Language Selector & Search Bar */}
         <div className={styles.centerSection}>
           {/* Language Selector */}
-          <div className={styles.languageSelector}>
+          <div className={styles.languageSelector} ref={languageDropdownRef}>
             <button
+              type="button"
               className={styles.languageButton}
               onClick={toggleLanguageDropdown}
               aria-label="Select language"
+              aria-expanded={isLanguageDropdownOpen}
             >
               <svg
                 className={styles.languageIcon}
@@ -71,7 +106,7 @@ const Header = ({ onLoginClick }) => {
                 <line x1="2" y1="12" x2="22" y2="12"></line>
                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
               </svg>
-              <span className={styles.languageText}>{language}</span>
+              <span className={styles.languageText}>{language === 'tamil' ? 'தமிழ்' : 'English'}</span>
               <svg
                 className={`${styles.dropdownArrow} ${isLanguageDropdownOpen ? styles.open : ''}`}
                 xmlns="http://www.w3.org/2000/svg"
@@ -86,17 +121,21 @@ const Header = ({ onLoginClick }) => {
 
             {/* Language Dropdown */}
             {isLanguageDropdownOpen && (
-              <div className={styles.languageDropdown}>
+              <div className={styles.languageDropdown} role="menu">
                 <button
-                  className={`${styles.languageOption} ${language === 'Tamil' ? styles.active : ''}`}
-                  onClick={() => handleLanguageChange('Tamil')}
+                  type="button"
+                  className={`${styles.languageOption} ${language === 'tamil' ? styles.active : ''}`}
+                  onClick={() => handleLanguageChange('tamil')}
+                  role="menuitem"
                 >
                   <span>தமிழ்</span>
                   <span className={styles.languageLabel}>Tamil</span>
                 </button>
                 <button
-                  className={`${styles.languageOption} ${language === 'English' ? styles.active : ''}`}
-                  onClick={() => handleLanguageChange('English')}
+                  type="button"
+                  className={`${styles.languageOption} ${language === 'english' ? styles.active : ''}`}
+                  onClick={() => handleLanguageChange('english')}
+                  role="menuitem"
                 >
                   <span>English</span>
                 </button>
@@ -120,7 +159,7 @@ const Header = ({ onLoginClick }) => {
               </svg>
               <input
                 type="text"
-                placeholder="Search novels..."
+                placeholder={t.header.search}
                 className={styles.searchInput}
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -236,7 +275,7 @@ const Header = ({ onLoginClick }) => {
                 <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
-              <span>Home</span>
+              <span>{t.header.home}</span>
             </a>
             <a href="/contact" className={styles.navLink}>
               <svg
@@ -252,7 +291,7 @@ const Header = ({ onLoginClick }) => {
                 <rect width="20" height="16" x="2" y="4" rx="2"></rect>
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </svg>
-              <span>Contact</span>
+              <span>{t.header.contact}</span>
             </a>
             <a href="/about" className={styles.navLink}>
               <svg
@@ -269,7 +308,7 @@ const Header = ({ onLoginClick }) => {
                 <path d="M12 16v-4"></path>
                 <path d="M12 8h.01"></path>
               </svg>
-              <span>About Us</span>
+              <span>{t.header.about}</span>
             </a>
           </nav>
         </div>

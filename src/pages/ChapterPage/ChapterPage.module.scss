@@ -105,6 +105,53 @@
   }
 }
 
+.chapterNavigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  gap: 1rem;
+
+  [data-theme="light"] & {
+    border-top-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.navButton {
+  background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+  color: #fff;
+  border: none;
+  padding: 0.875rem 1.75rem;
+  border-radius: 10px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+  font-family: 'Noto Sans Tamil', sans-serif;
+
+  &:hover {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  [data-theme="light"] & {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
+
+    &:hover {
+      box-shadow: 0 6px 16px rgba(59, 130, 246, 0.3);
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .content {
     padding: 1.5rem;
@@ -127,6 +174,17 @@
   .paragraph {
     margin-bottom: 1.5rem;
     text-indent: 1.5rem;
+  }
+
+  .chapterNavigation {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    flex-wrap: wrap;
+  }
+
+  .navButton {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
   }
 }
 
@@ -158,5 +216,16 @@
   .paragraph {
     margin-bottom: 1.25rem;
     text-indent: 1rem;
+  }
+
+  .chapterNavigation {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    gap: 0.5rem;
+  }
+
+  .navButton {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
   }
 }
