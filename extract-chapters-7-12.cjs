@@ -1,4 +1,4 @@
-const fs = require('fs');
+const fs = require('fs'); 
 const chapters = require('./src/utils/chapters/novel-2.js');
 
 for (let i = 7; i <= 12; i++) {

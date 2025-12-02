@@ -1,6 +1,6 @@
 // English Chapter content for Novel 2 - The Lullaby of the Temple Flower
-// Chapters 1-12 have been translated from Tamil (AI-translated)
-// Chapters 13-27 will fallback to Tamil when language is set to English
+// Chapters 1-20 have been translated from Tamil (AI-translated)
+// Chapters 21-27 will fallback to Tamil when language is set to English
 
 export const CHAPTERS = {
   "1": {
@@ -1307,6 +1307,923 @@ Thinking about that, his eyes unknowingly welled up slightly thinking of someone
 At that time, when Sarathi's phone rang and he answered, seeing the panic on his face, Varman asked, "What?"
 
 With that same panicked face, "He escaped. He's gone to the palace," said Sarathi.
+
+To be continued...`
+  },
+  "13": {
+    title: "Chapter 13",
+    subtitle: "Sudden Revelation",
+    content: `Sarathi looked at the woman who suddenly separated his younger sister from him in confusion, and within that confusion, Durga started shouting angrily at them. On top of that, addressing both of them with 'Da' (an informal way of addressing), anger arose in our Sarathi boy.
+
+"Hey! Who are you talking to like that? If you continue, I'll talk to you the same way. Are you a girl? Why are you shouting like a street vendor!" When he shouted back at her in anger, Mitra stood caught between these two, just blinking.
+
+She didn't find Sarathi's embrace wrong. It felt like the affection of a brother embracing his sister. So she didn't take that matter seriously. However, while she struggled to understand her own heart—wondering why she felt not even the slightest anger toward the man who had tied a thali around her neck without saying a single word to her, and instead felt a desire to remain in his embrace—she stood blinking at these two fighting between them, when Sarathi's phone rang to save her from them.
+
+Sarathi too, without even looking at who was calling at this time, took the phone and put it to his ear. Upon hearing what was said from the other side, Sarathi was shocked.
+
+Seeing Sarathi's face change after the phone call, Varman asked, "What?"
+
+"He escaped from the place where we had locked him up," Sarathi said hesitantly and softly so only he could hear.
+
+That was also heard by Valavan, who was nearby. Looking at them both suspiciously, when Varman noticed him, "Business matter," Varman brushed it off, and Valavan, who smiled slightly at that, said, "I know not only the truth about Mitra, but everything about you both," emphasizing the word "everything" slightly. At that, Sarathi looked at him shocked, while Varman looked at him without any expression.
+
+"You must have been hiding your identity from everyone and living all these years because you have some problem. But now I'm sending Mitra with you trusting you. Nothing should happen to her," he said to both of them.
+
+Going near Mitra, he gently stroked her head and said, "I thought I knew where to place you, but you've joined the hands you were meant to be with."
+
+Without understanding what he said, both women looked at Valavan with confusion.
+
+Noticing that, Valavan took Mitra's hand and placed it in Varman's hand, joining the locket in both their hands, and said, "This is your life hereafter, and also your true kinship. I came out of jail only to hand you over to this true relationship. I never thought it would happen automatically."
+
+Only then did what he meant to say become clear to Mitra, and she looked at her husband shocked, while he looked at her and winked his eyes beautifully and smiled.
+
+With everything that happened today being shocking events, Mitra stood silently not knowing what to say.
+
+Looking at them both with satisfaction, Valavan brought the shocked Durga, who had been standing there, to his memory and explained the truth to her, telling her that she must stay with them from now on. With tears in her eyes, she embraced her friend, and Valavan and Durga left from there. Before leaving, he took their number saying he could be called for help at any time and gave his phone number before leaving.
+
+After they both left that place, "Look here, Bappu, you may not understand what he said. But don't confuse your mind thinking about it. No matter what happens, you must have complete trust in me," Varman said with authority.
+
+Her innate nature is to think about everything and make decisive decisions. The only decision she made without thinking was agreeing to marry the groom her father showed her. Otherwise, Mitra is someone who thinks patiently about everything and makes decisive decisions. From the moment he tied the thali around her neck, she had already decided that her life was with him. Now, after Valavan said what he did, she was firmly determined that her life was with him from now on.
+
+"No matter what happens, the trust I have placed in you will never change," she said with determination, and seeing that, his heart struggled with an indescribable feeling.
+
+Then Sarathi said, "Bappu, I'm your brother," and laughed, and she laughed too. But that laughter was only on her lips and not in her eyes.
+
+No matter what, when told that those she had considered her family for all these years were not, she couldn't bear it at all.
+
+After a while of their conversation, telling Sarathi, "Finish all the work here and come to town in two days," Varman left, taking Mitra with him.
+
+In exactly two hours, they arrived in front of the Venthanar Palace where they had come from.
+
+Without even noticing that the car had stopped, Mitra sat there as if in a trance.
+
+"Mitra!" When Varman called, she turned toward him at his voice and looked at him as if asking "What?"
+
+"Until I tell you the truth about who you are, no one here should know. You are the girl who belongs to this house. I will tell you when the time comes, okay?" he said.
+
+With her trust in him, she nodded her head as if saying "okay" and got down from the car.
+
+Without even noticing that there was a palace-like house in front of her, with what happened at the hall repeatedly coming to her memory and disturbing her heart, in that memory, not even noticing Varman holding her hand and taking her along, she went with him without feeling.
+
+Since Varman had informed Venthanar beforehand that he was coming, Venthanar was sitting in a chair in front of the house with his wife, waiting for Varman's arrival.
+
+Just then, Varman came and stood before them with his wife.
+
+The first to see him was his grandmother Mangalammal. Shocked at seeing her grandson standing there, she called her daughters-in-law and sons. When everyone in the house came out wondering what was happening, they were shocked to see the heir of their house standing there.
+
+The first to recover from that was his mother Mangai. "What is this, Varma? Who is this girl? Why did you bring her here?" Mangai asked her son, looking at the girl standing next to him with an emotionless face and a thali around her neck.
+
+Unable to look at anyone's face and answer, for the first time in his life, he bowed his head and said to everyone in general, "She is my wife," in his authoritative voice.
+
+Those in his house who were shocked to see him standing with his head bowed, reached the height of shock at the word "wife" he said next.
+
+"Varma, do you know what you've done in the problem the house is facing now?" his father asked.
+
+"I know, Dad! But I haven't done anything wrong. You trust me, don't you?" Varman said looking directly at his father.
+
+"It's because I trust you that I haven't said a word to you even though so many problems have occurred in the house. But what you've done and come with now is not a simple matter. Do you know where this will lead you?" his father asked angrily.
+
+"Whatever problem comes, I can face it, Dad," he said firmly.
+
+With the unshakeable trust in his son, without saying anything else, "Mangai, bring the daughter-in-law inside," he ordered his wife, and taking everyone in his family with him, he went inside the house.
+
+Mangai too performed the aarthi for her son and daughter-in-law with a reluctant smile. When asked to enter with their right foot first, Varman, holding his wife's hand tightly, took the right foot together and entered. The next moment, with a shout of "Daddy!" a tiny tot grabbed Varman's leg and stood there.
+
+Even that she didn't feel, and Varman's wife stood next to him with that same emotionless face. Nothing happening here registered in her brain. It must be said that her thoughts were spinning around what happened at the hall to that extent.
+
+But seeing that child holding Varman's leg, fear was on everyone's faces in Varman's family about "what will happen after this?"
+
+"Yathra! Dad just came into the house, why are you already bothering him?" said Yathra's mother Samshika, coming dressed in clothes completely unsuitable for that house.
+
+Looking at her, everyone's faces showed such revulsion. Yet, unable to show anything outside, they stood suppressing their anger.
+
+"Daddy! Who is she? Why did she come to our house?" Yathra asked looking at the woman next to Varman.
+
+The moment the child asked that, without any hesitation, embracing his wife with one hand and lifting Yathra with the other, "She is my wife. Your mother," said Varman.
+
+Hearing what Varman said, Yathra, who screamed "No!", got down from Varman's hand, stood next to Samshika, and said, "She is my mother! She is not my mother!" angrily, that tiny tot.
+
+Seeing Yathra speak, Shailu looked at Varman with contempt and thought to herself, "No matter how hard you try, you can't defeat me, Varma. Your daughter is going to help me complete what I came to do," and smiled cruelly.
+
+Hearing what Yathra said, Varman glared at Samshika and said angrily, "Yathra! She is not your mother. She is your mother. From now on, you must call only her mother."
+
+But, "I'm not someone who fears your anger," as if saying that, looking directly at her father, "I don't like her. I won't call her mother. I don't like her, and she shouldn't stay in this house either. Send her out of this house immediately!" she said angrily.
+
+Varman looked at his daughter with shock, opposing him like this. Varman understood that in the days he wasn't here, Samshika had planted her purpose in his daughter's mind. Now Varman said patiently, "Look here, Yathra, Dad is telling you, from now on she is your mother."
+
+At that moment, "Why should my daughter call strangers mother?" a man's voice angrily echoed at the doorway of the house. At that voice, everyone turned toward the doorway. Seeing the person standing there, everyone in the house froze, and Varman's mother fainted in shock and fell down.
+
+To be continued...`
+  },
+  "14": {
+    title: "Chapter 14",
+    subtitle: "Twin Brothers Revealed",
+    content: `Varman looked at his daughter with shock as she opposed him like this.
+
+Understanding that in the days he wasn't here, Samshika had shown her work, Varman said gently, "Look here, Yathra, Dad is telling you, from now on she is your mother."
+
+At that moment, "Why should my daughter call strangers mother?" a man's voice angrily echoed at the doorway of the house. A smile that no one knew about came on Varman's face.
+
+With that same smile, he turned toward the doorway, and the people in the house also turned toward the doorway at that voice.
+
+Standing there with a face looking exactly like Varman, his face full of anger, everyone in the house froze seeing him, and Varman's mother fainted in shock and fell down.
+
+With both having the same facial expression, Yathra didn't know which was her "Daddy." Even for a minute, even Samshika couldn't identify her husband with whom she lived, to that extent the facial similarity between the two was the same.
+
+Those who were greatly shocked in this were Venthanar, his sons, and his grandson Varman—only these four. They weren't shocked looking at the person standing at the doorway.
+
+The one who entered angrily inside, seeing Yathra standing there, left all his anger and hurried and embraced the child.
+
+When suddenly embraced, the child looked at her mother a bit frightened. She was looking at the new person with shock.
+
+Seeing the child look at her, frightened, looking at Varman who was mocking him from there, burning him with his eyes, he picked up Yathra in his hand and asked, "Pink Princess! Don't you recognize Daddy?"
+
+Yathra, who had been frightened all this time in his father's appearance, at his call of "Pink Princess," hugged him saying "Daddy!"
+
+She too didn't like that for a month her father wasn't calling her as usual but was calling her differently, though what does a 5-year-old child know?
+
+At the same time, laying the fainted Mangai on the sofa there, sprinkling water, they brought her to consciousness. In a short while, she too opened her eyes and looked. When Chandra Venthan's wife Vasanthi, who was near her, seated her properly.
+
+When fully recovered from fainting, Mangai looked at the doorway to see if what she saw was real. No one was there, so she wondered if what she saw was a dream. "Vasanthi!" When she turned calling her, Varman was standing in front of her, and opposite him, someone with his appearance was standing with the child in hand.
+
+As soon as she saw him, with tears in her eyes, "Maran!" When Mangai called and approached the new person, as soon as he heard that name, his entire body burned with anger.
+
+With that same anger, "I'm not Maran, I'm Nandhan!" he shouted.
+
+At that, everyone looked at Varman shocked, while he just stood coolly. But his wife came to her senses at the new person's shout and immediately identified that the person standing in a coat suit with her husband's appearance in anger was not her husband, with slight shock looking at the new person and others alternately. Then she looked pitifully at her husband who was embracing her, like a small child stuck in an unknown place.
+
+Seeing that, Varman felt like laughing, but considering the place, he stood quietly.
+
+But Venthanar's wife standing there asked shocked, "What's happening here? Are you Nandhan? Then you're Maran?"
+
+No one understood one thing: why would he come here lying by saying Nandhan when he was Maran, who hadn't come to this town for all these years and was thought to be not even alive? But one thing everyone knew well was that he was Maravarman.
+
+Without answering what his grandmother asked, looking at the person standing in front of him glaring, Varman (Maravarman) asked somewhat mockingly, "You look very thin. Didn't anyone feed you properly?"
+
+Handing Yathra who was in his hand to Pavithra, he asked them to go to the room.
+
+She too looked at her two brothers with wonder and took the child and went inside, and Kavya also left.
+
+When they entered the room, "Grandpa, who is he? You said he was dead. You even said I killed him and sent me out of this town. Now how did he come alive?" Nandha Varman asked angrily.
+
+"How will they know if you ask them, brother?" asked Mara Varman, who had been acting as Nandha Varman all these days.
+
+"Who's whose brother, you rascal? All these days, after kidnapping me and locking me up, you came here in my name? Don't you have shame?" Nandhan asked angrily.
+
+Hearing what he said, the people in the house looked at both shocked.
+
+"Don't be angry, Dad. Let's ask brother what happened," Mangai said, holding his hand, and he pushed her hand away and stood aside.
+
+"I didn't come here to have a relationship with any of you. I came here only to take my daughter from here," said Nandhan.
+
+"What, Raja? As soon as you came, you're saying you're leaving from here?" his grandmother said holding Nandhan's hand, and going near Maran, holding his hand, "Look here, grandchildren, I don't know what happened between you before. But from now on, for Grandfather's sake, you both must live in harmony. When you fell from the mountain as a child and we thought Maran died, we've been thinking all these years. Now he's standing alive before our eyes. Now it feels like our family is complete. Now you're saying you're leaving the house, Raja?"
+
+When Mangalammal said with her eyes welling up, both her grandsons embraced her.
+
+"Okay, Grandma, for your sake I agree to stay here. But one thing: he shouldn't stay in this house. If he stays here, I won't stay in this house," said Nandhan.
+
+Everyone stood looking at each other's faces, not knowing what answer to give.
+
+"What are you looking at? Knowing that your precious boy, after coming from abroad, kidnapped me and even acted as father with my daughter for all these days in this house. Should I stay with him?!" he said with disgust.
+
+"What's happening here?" Sathya Venthan shouted in anger at how they were behaving.
+
+When he shouted, for a moment Mitra was frightened and held Maran's hand tightly and looked at him with fear.
+
+"Dad, why are you shouting now? You want to know what happened, right? I'll tell you myself," said Maran. "A month ago, he came here from abroad. When I found out he came here, I kidnapped him and locked him in a house and came to this town with Yathra. Enough?"
+
+At that, angry Nandhan unexpectedly kicked the person standing in front of him with his leg.
+
+In that, Maran stumbled slightly and fell down, and Mitra, who was holding his hand, also fell down when he was kicked. But when falling, she fell on the teapoy beside and got slightly injured on her forehead and blood oozed from Mitra.
+
+Seeing Mitra who fell down, Maran panicked and held Mitra's hand and made her sit on the sofa there. Only then did he see the injury on her forehead with blood oozing.
+
+Maran, who had been playful and patient all this time, seeing the blood on his wife's forehead, from where so much anger came no one knows, he started beating without seeing anything in anger. All this happened within the blink of an eye.
+
+"Mara! What are you doing? Leave Nandhan!" his father and uncle tried to stop him. But they couldn't stop him even slightly, to that extent was his speed. Maran's beating left Nandhan's face full of injuries.
+
+"Mara! What are you doing? Leave him!" Only after Venthanar said that did he leave Nandhan.
+
+"Sathya, take Nandhan to his room," Venthanar said and sent them away, then turned toward Maran and asked with slight emphasis, "Do you know what you've done?"
+
+"I know very well what I'm doing," Maran said angrily, and taking Mitra, who was standing there not understanding anything that was happening, frightened looking at Maran, he took her hand and left angrily from there.
+
+With Varman suddenly getting married and coming, before that ended, Nandhan came, Maran was here all these days as Nandhan, then the fight between them—everyone had gone crazy seeing all this.
+
+But without participating in any of this, only Samshika stood quietly. Though Maran being alive was slightly shocking to her, seeing the brothers fighting each other made her happy. Immediately thinking she should tell her father what happened here, without anyone knowing, she entered her room and called her father.
+
+In a short while, the phone was answered from that side. "Dad, do you know what's happening here? You said 20 years ago that Mara Varman died, but that Mara Varman is standing alive here," she said. Hearing that, the person on that side was shocked for a moment.
+
+"What are you saying? Is he alive? That's impossible. I pushed him from the mountain myself and made everyone believe all these years that his brother pushed him. Then how can he come alive? Did you check properly?"
+
+"Dad, just now I came seeing it with my own eyes," she said with slight emphasis.
+
+"What should I do now?" her father asked.
+
+"Dad, whether he's alive or not, it doesn't matter to us. Because the Suriyan matcham belongs to Nandhavarman. So if we need to get what we want, we need Nandhavarman. Not Maravarman," said Samshika.
+
+"What you're saying is right. All these years we've been waiting, and in another two months, the fruit is going to come to our hands. Until then, you watch your daughter and your husband carefully. I've been telling you again and again, don't show your character to Nandhavarman. Adjust a bit until our work is done. But you hastily showed your true character to him, and not only did he chase you out of the house, but he also divorced you," her father said angrily.
+
+"Dad, there's no use talking about what's finished. No matter how much that Nandhan let go of my hand, Yathra is still in my hands. So it's easy to finish our work with her," said Samshika.
+
+"Then one more important thing, Dad. That Maran has been living in this house under the name 'Nandhan' all these days. Even I couldn't identify that. Four days ago, he left saying important work, and this morning he comes and stands with a girl. Also claiming her as his wife. Until then even I couldn't truly identify that he was Maran. Only after that did my ex-husband Nandhan come into the house. Even for a moment I was shocked. 'Who is this new guy?' Then I found out he's my husband, and Maran has been living in this house saying his name all these days. Something seems wrong to me. The one who hasn't come to this town all these years and was thought to be not even alive has suddenly come, and two months before Maha Shivaratri he's come here—something seems wrong to me, Dad," she said.
+
+"Nothing like what you're thinking will be there. Without thinking about anything, just do the work I told you correctly. I'll take care of the rest," her father said and hung up the phone.
+
+But in Samshika's mind, Maran's sudden coming was slightly irritating. Still, after her father said that, without thinking about it, she started planning how to make Nandhan fall into her trap.
+
+At the same time, Varman, who angrily pulled Mitra's hand and came to his room, was still walking here and there in the room with his anger not subsiding, while she stood aside looking at him with fear.
+
+Pavithra came and stood in front of him walking here and there. "Brother, Mother is calling you and sister-in-law downstairs," she said.
+
+"For what?" he looked at his sister not understanding.
+
+"It's something about performing a ritual. Mother is asking you to come," said Pavithra.
+
+"Okay," said Varman and took Mitra and came down again. There, only the women of the house were present.
+
+"Mangai, look, grandson and granddaughter-in-law have come. Take them to the pooja room," said Mangalammal.
+
+The people who had spoken well to him when he was Nandhan, once they knew he was Maran, no one came forward to speak to him. He too didn't take it seriously.
+
+As his mother-in-law said, taking them both to the pooja room, Mangai made Mitra light the lamp through her.
+
+In a short while, all the rituals were completed, and everyone was sitting in the hall, when Maran's phone rang. Taking it to see who it was, his grandfather had called.
+
+Taking the phone and standing at a distance, he answered, and he asked him to come up to Nandhan's room.
+
+He too said "okay" to him, and without saying anything to his mother, telling Mitra "I'll talk to Grandfather and come," he left from there.
+
+Sathya Venthan, who took Nandhan to his room, left to see other work due to the problem that occurred at home, and his younger brother Chandra Venthan also left to see their daily work. In a short while, Venthanar came to that room, and behind him, Maran also came.
+
+Seeing Maran, Nandhan started shouting.
+
+"Hey! Why are you shouting unnecessarily now? Didn't I tell you not to come here now? Who asked you to come here?" Maran looked angrily at his brother.
+
+"Why should I listen to what you say?" Nandhan flared up.
+
+"What? Wasn't the beating you got downstairs enough?" he said, cracking his knuckles and approaching him.
+
+"Hey! Will you both stop fighting first! How big a problem am I talking about, and you both are fighting like small children," Venthanar scolded them both, and they stood glaring at each other silently.
+
+"Grandpa, you called me on the phone and asked me to come to India. Then why did he kidnap me? Not only did he kidnap me, but he also tied me to a madwoman there," said Nandhan.
+
+"Hey! How dare you suddenly call that girl mad? Don't you know who she is? Even knowing, how dare you call her mad?" Maran asked angrily.
+
+"Will you both shut your mouths now or not? If the sound you're making is heard outside, all the trouble we've taken all these days will go to waste. So will you both be quiet for a while until I speak?" said Venthanar.
+
+"Grandfather, why are you shouting unnecessarily now? You know what? Do you know about the drama that happened downstairs? One woman would have called her father after seeing it. Do you know how you caught that Samshika mookee for your grandson?" said Maran.
+
+"Hey! For a moment, let me speak! Don't torture me," he said unable to bear their torture.
+
+"Okay, tell us, Grandpa. What should you say now?" said Maran.
+
+"Look here, Nandha, everything that happened downstairs was correct. But why did you kick Maran?" he asked.
+
+"I kicked him as punishment for what he locked me up and tortured me there. But when I thought he would fall down and break his skull, his wife standing next to him fell down and is standing with her skull broken," said Nandhan.
+
+"Hey! Speak respectfully! She's your sister-in-law! If you speak of her as 'her' or 'that' one more time, the beating you got downstairs was less, watch out!" said Maran.
+
+"Mara, you too be a bit patient. He kicked you innocently as a joke. That's why why did you beat him until his face swelled?" Venthanar asked.
+
+"Look here, Grandpa, I'll do everything you say, I'll listen patiently. But if anything happens to my Bappu, I won't spare anyone, even if it's you!" he said with slight emphasis.
+
+"Yeah, great Bappu. As if you've been cooing over her since birth. You're talking as if you saw her only four hours ago. Already you have so much affection for her?" Nandhan asked mockingly. (As if he's forgotten the beating he got from him, he's speaking like this again to get another beating.)
+
+"I may not have seen her for all these years. But when she first came to this world, it was by my hands that I received her. For all these years without seeing her, I've kept her alive in my chest," said Maran.
+
+After hearing what he said, Nandhan didn't say anything else. He too knew his brother was crazy about his Bappu, yet he spoke to him a bit jokingly.
+
+"Look here, Nandha, I'm telling you again, even if you interfere in any of my matters, I won't mind, but if you do anything in my Bappu's matter, I won't see you as a brother, I'll bury you alive!" he said angrily.
+
+"Okay, leave it, Mara. The main reason I called you both to talk is about finding your younger uncle. Your elder uncle is coming tomorrow to leave his daughter here. He just called me and asked me to keep his daughter here for a few days. I also said okay. Maran, you also watch him well. I have doubts about him too. We found out that this girl and her father are the reason for all the problems. But we don't know who her father is. We need to find him soon," said Venthanar.
+
+"You poor things! Are you all gang thieves? I thought what happened downstairs was real seeing the fight."
+
+To be continued...`
+  },
+  "15": {
+    title: "Chapter 15",
+    subtitle: "The Hidden Conspiracy",
+    content: `Samshika, who thought she should tell her father what happened here, entered her room without anyone knowing and called her father.
+
+In a short while, the phone was answered from that side. "Dad, you know what's happening here? The Mara Varman you said died 20 years ago is standing alive here," she said.
+
+The person on that side was shocked for a moment upon hearing that. "What are you saying? Is he alive? That's impossible. I myself pushed him from the mountain and made everyone believe all these years that his brother pushed him. Then how can he come alive?"
+
+"Dad, it's because I just came seeing it with my own eyes that I'm saying it. Didn't I check properly?" Samshika said with slight emphasis.
+
+"What should I do now?" her father asked.
+
+"Dad, whether he's alive or not, it doesn't matter to us. Because the Suriyan mark belongs to Nandhavarman. So if we need to get what we want, we need Nandhavarman. Not Maravarman," said Samshika.
+
+"What you're saying is right. All these years we've been waiting, and the reward is going to come to our hands in another two months. Until then, you watch your daughter and your husband carefully. I told you again and again, don't show your character to Nandhavarman. Adjust a bit until our work is done. But you hastily showed your true character to him, and not only did he chase you from the house, but he also divorced you," her father said angrily.
+
+"Dad, there's no use talking about what's finished. No matter how much that Nandhan let go of my hand, Yathra is still in my hands. So it's easy to finish our work with her," said Samshika.
+
+"Then one more important thing, Dad. That Maran has been living in this house under the name 'Nandhan' all these days. Even I couldn't identify that. Four days ago, saying important work, the one who went, today morning comes and stands with a girl. Also claiming her as his wife. Until then even I couldn't truly identify that he was Maran. Only after that did my ex-husband Nandhan come into the house. Even for a moment I was shocked. 'Who is this new person?' Then I found out he's my husband, and all these days Maran has been living in this house saying his name. Something seems wrong to me. The one who hasn't come to this town all these years and was thought to be not even alive has suddenly come, and he's come here when there are two months until Maha Shivaratri—something seems wrong to me, Dad," she said.
+
+"Nothing like what you're thinking will be there. Without thinking about anything, just do the work I told you correctly. I'll take care of the rest," her father said and hung up the phone.
+
+But in Samshika's mind, Maran's sudden coming was slightly irritating. Still, after her father said that, without thinking about it, she started planning how to make Nandhan fall into her trap.
+
+At the same time, Varman, who angrily pulled Mitra's hand and came to his room, was still walking here and there in the room with his anger not subsiding, while she stood aside looking at him with fearful eyes.
+
+Pavithra came and stood in front of him walking here and there. "Brother, Mother is calling you and sister-in-law downstairs," she said.
+
+"For what?" he looked at his sister not understanding.
+
+"It's something about performing a ritual. Mother is asking you to come," said Pavithra.
+
+"Okay," said Varman and took Mitra and came down again. There, only the women of the house were present.
+
+"Mangai, look, grandson and granddaughter-in-law have come. Take them to the pooja room," said Mangalammal.
+
+The people who had spoken well to him when he was Nandhan, once they knew he was Maran, no one came forward to speak to him. He too didn't take it seriously.
+
+As his mother-in-law said, taking them both to the pooja room, Mangai made Mitra light the lamp.
+
+In a short while, all the rituals were completed, and everyone was sitting in the hall, when Maran's phone rang. Taking it to see who it was, his grandfather had called.
+
+Taking the phone and standing at a distance, he answered, and he asked him to come up to Nandhan's room.
+
+He too said "okay" to him, and without saying anything to his mother, telling Mitra "I'll talk to Grandfather and come," he left from there.
+
+Sathya Venthan, who took Nandhan to his room, left his younger brother Chandra Venthan and left to see their daily work due to the problem that occurred at home. In a short while, Venthanar came to that room, and behind him, Maran also came.
+
+Seeing Maran, Nandhan started shouting.
+
+"Hey! Why are you shouting unnecessarily now? Didn't I tell you not to come here now? Who asked you to come here?" Maran looked angrily at his brother.
+
+"Why should I listen to what you say?" Nandhan flared up.
+
+"What? Wasn't the beating you got downstairs enough?" he said, cracking his knuckles and approaching him.
+
+"Hey! Will you both stop fighting first! How big a problem am I talking about, and you both are fighting like small children," Venthanar scolded them both, and they stood glaring at each other silently.
+
+"Grandpa, you called me on the phone and asked me to come to India. Then why did he kidnap me? Not only did he kidnap me, but he also tied me to a madwoman there," said Nandhan.
+
+"Hey! How dare you suddenly call that girl mad? Don't you know who she is? Even knowing, how dare you call her mad?" Maran asked angrily.
+
+"Will you both shut your mouths now or not? If the sound you're making is heard outside, all the trouble we've taken all these days will go to waste. So will you both be quiet for a while until I speak?" said Venthanar.
+
+"Okay, leave it. The main reason I called you both to talk is about finding your younger uncle. Your elder uncle is coming tomorrow to leave his daughter here. He just called me and asked me to keep his daughter here for a few days. I also said okay. Maran, you also watch him well. I have doubts about him too. We found out that this girl and her father are the reason for all the problems. But we don't know who her father is. We need to find him soon," said Venthanar.
+
+"You poor things! Are you all gang thieves? I thought what happened downstairs was real seeing the fight."
+
+"Grandpa, why are you shouting unnecessarily now? You know what happened downstairs? Seeing the drama that happened downstairs, one woman would have called her father. Everyone is united in gang thievery. How did you catch that Samshika mookee for your grandson?" said Maran.
+
+"Hey! For a moment, let me speak without you torturing me!" he said unable to bear what they were doing.
+
+"Okay, tell us, Grandpa. What should you say now?" said Maran.
+
+"Look here, Nandha, everything that happened downstairs was correct. But why did you kick Maran?" he asked.
+
+"I kicked him innocently as a joke. But when I thought he would fall down, his wife standing next to him fell down and broke her head," said Nandhan.
+
+"Hey! Speak respectfully! She's your sister-in-law! If you speak of her as 'her' or 'that' one more time, watch out!" said Maran.
+
+"Mara, you too be a bit patient. He kicked you innocently as a joke. That's why why did you beat him until his face swelled?" Venthanar asked.
+
+"Look here, Grandpa, I'll do everything you say, I'll listen patiently. But if anything happens to my Bappu, I won't spare anyone, even if it's you!" he said with slight emphasis.
+
+"Yeah, great Bappu. As if you've been cooing over her since birth. You're talking as if you saw her only four hours ago. Already you have so much affection?" Nandhan asked mockingly.
+
+"I may not have seen her for all these years. But when she first came to this world, it was by my hands that I received her. For all these years without seeing her, I've kept her alive in my chest," said Maran.
+
+After hearing what he said, Nandhan didn't say anything else. He too knew his brother was crazy about his Bappu, yet he spoke to him a bit jokingly.
+
+"Look here, I'm telling you again. I won't mind even if you interfere in any of my matters, but if you do anything in my Bappu's matter, I won't see you as a brother, I'll bury you alive!" he said angrily.
+
+"Okay, leave it, Maran. The main reason I called you both to talk is about finding your younger uncle. Your elder uncle is coming tomorrow to leave his daughter here. He just called me and asked me to keep his daughter here for a few days. I also said okay. Maran, you also watch him well. I have doubts about him too. We found out that this girl and her father are the reason for all the problems. But we don't know who her father is. We need to find him soon," said Venthanar.
+
+"You poor things! Are you all gang thieves? I thought what happened downstairs was real seeing the fight," thought someone watching all this.
+
+"Grandpa, why are you shouting unnecessarily now? You know what? Do you know about the drama that happened downstairs? Seeing it, one woman would have called her father. Are you all united in gang thievery?" said Maran.
+
+"Hey! Why suddenly call that girl mad? Don't you know who she is? Even knowing, how dare you call her mad?" said Maran angrily.
+
+"Now will you both shut your mouths or not? If the sound you're making is heard outside, all the trouble we've taken will go to waste. So until I speak, will you both be quiet?" Venthanar asked.
+
+"Okay, Grandpa. Whatever you tell us, we'll do," both said.
+
+"Look, Nandha, now I'm asking you again. Why did you kick your brother like that?"
+
+"He innocently kicked as a joke, Grandpa. It's my fault that I beat him," said Maran.
+
+"Look here, I'm telling you both about an important matter now. Your younger uncle's daughter is coming here tomorrow. Watch her too. There's something wrong with that family. Also, find out soon who this Samshika's father is. Until we find out, both of you should act like you're fighting," said Venthanar.
+
+"Okay, Grandpa," both said together.
+
+To be continued...`
+  },
+  "16": {
+    title: "Chapter 16",
+    subtitle: "Nandhan's Past Unveiled",
+    content: `For a long time, the three of them talked, and realizing time had passed, Maran and his grandfather left Nandhan's room.
+
+After they both left, Nandhan recalled his past life.
+
+Nandhan had gone abroad from Poonsolai village to pursue his higher studies, and his life had gone normally for two years, calling home occasionally.
+
+When Samshika entered his life, that's when his habits began to change. As the first sign of this, he stopped calling home. Even when they called, he wouldn't speak properly and would hang up immediately.
+
+As days passed, Samshika gradually introduced him to habits like pubs and alcohol, which became his daily routine.
+
+One day, intoxicated with alcohol and with the poison called Samshika who was with him, he lost his life, and that day, Saturday caught him.
+
+At first, nodding to everything she said as his girlfriend, without knowing her true nature, he started a business in her name. In the midst of this, when Samshika became pregnant, he had to marry her.
+
+Everything was going well, and after Yathra was born, when she was four years old, her true nature came to light.
+
+She who was always secretly talking to her father, that day Nandhan had said he would return only in the evening for a business meeting, so she called her father and was discussing their next plan—that through Nandhan and Yathra, they should control the Agni Suli pooja of Shiva, which would be performed by the heir with the Surya mark of the Venthanar family. When Nandhan came back to get the file he had forgotten for the meeting, he heard everything.
+
+Immediately, he moved from that place without leaving any trace, and hearing what she said, he went to the pub in anger and started drinking. What she said wasn't complete, so he didn't understand it. But he clearly understood that she had been pretending to be good with him only to take something from their family.
+
+That whole night he stayed at the pub, and only the next morning did he come home.
+
+Samshika talked to him as if she knew nothing. But Nandhan ignored her and called Yathra.
+
+Yathra ran and hugged him.
+
+He looked at Yathra's face. A child's face without deceit. Realizing that Samshika's thoughts weren't in her, he felt relieved.
+
+But he didn't have the courage to confront Samshika. He didn't want to reveal the truth to her. So he isolated himself.
+
+Whenever Samshika tried to get close to him, he moved away. After knowing her true nature, living with her disgusted him.
+
+As days passed like this, he also reduced going home. He didn't know then who the heir with the Surya mark of the Venthanar family was. He thought he himself was that heir. But Samshika's plan threw him into great confusion.
+
+This situation continued for four months, and his condition worsened from drinking. That's when he got a call from his mother. With some guilt, unable to talk much, he inquired about her well-being and hung up. In his mind, thinking, "I've made my family suffer all these days, I shouldn't stay here anymore."
+
+Thinking that, he went home, and on the way home, he saw his love-wife going into a hotel intimately with another man.
+
+Following them without their knowledge to see who she had come here with, he faced another humiliation—both of them went into a room and locked the door. Hearing from a nearby employee that both of them come here often, with disgust, he went straight to work on canceling their marriage.
+
+After finishing all the work, Nandhan went home in the evening. There, his darling daughter at the beginning of five years, with an innocent face, was playing with the maid.
+
+The one who thought all these days that she needed something from their family, that's why she lied and got close to him, and otherwise was truly married to him—today, after seeing the scenes before his eyes, was shattered.
+
+He too is a man, isn't he? How long can he endure? Today itself, deciding to end everything and go to India immediately, Nandhan made his decision.
+
+That night, he was waiting in the hall for her arrival.
+
+Samshika entered the house. The moment she entered, seeing Nandhan there, she was about to go inside ignoring him when he stopped her saying "Stop!"
+
+Looking at him as if asking "What?"
+
+"Where have you been?" he asked calmly.
+
+"I went out shopping with my friends," she said casually, and he gave her a slap in which his five fingers were imprinted on her cheek.
+
+"Where you were, with whom, in which hotel, how long you were... I know everything!" he said with disgust.
+
+Angry at that, Samshika, who had been acting all these days, when she realized everything about her was known to him, her true nature emerged and she started screaming.
+
+At that sound, the child who was playing in the room came out and saw her parents fighting.
+
+Their fight escalated and Nandhan hit her again, and Samshika angrily was leaving the house when it happened again.
+
+Seeing her mother leaving the house, Yathra, crying "Mommy, where are you going? Don't leave me!" ran after her. He stopped and carried her.
+
+"Princess, from now on Mommy won't come here. We're going to town," he said and took her to the room.
+
+This was imprinted in the child's mind: "Because her father hit her, that's why her mother left her."
+
+Two days passed, and Samshika talked to the child and plotted to enter the house. Meeting her at school and acting as if crying, the child also believed her.
+
+So that evening, when Yathra cried and made a scene wanting her mommy, Nandhan also called Samshika and asked her to come home.
+
+Samshika, elated that her plan had succeeded, entered the house looking at her husband contemptuously. But there, he was ready with big papers in hand, sitting with his leg crossed, looking at her with the same elation.
+
+Seeing the change in his face, Samshika looked at him thoughtfully. He threw the paper in his hand at her face and said, "From now on, there's no relationship between you and me. You shouldn't set foot in this house anymore," and turned to go to his room carrying his daughter.
+
+But Samshika snapped her fingers and called him, and he stood there without turning toward her.
+
+Opening and looking at that paper, Samshika learned that he had used money to eliminate the husband-wife relationship between them in just two days.
+
+Now money plays everywhere, with that same money, Nandhan had obtained the divorce. Seeing that, Samshika wasn't shocked, she took it casually.
+
+"Where are you going? This house is in my name. You're in my house and telling me to leave? First, you get out of my house!" said Samshika.
+
+He regretted his own foolishness of buying everything in her name in his love infatuation.
+
+Then, going to his room, taking only what was necessary for him and Yathra, not even wanting to look at her face, with his crying daughter, he left that house.
+
+Nandhan, who left the house, made all arrangements to go to India that very day and came to India.
+
+But when he got off here, Sarathi was waiting for him as a taxi driver.
+
+Soon after both of them got into Sarathi's car and sat down, they lost consciousness. Taking the unconscious people, Sarathi had taken them to a small village in Madurai.
+
+After two hours, when Nandhan opened his eyes, sitting in a majestic pose in veshti and shirt directly opposite him was Maravarman.
+
+Seeing him, Nandhan was shocked. "Who is he? Someone who looks exactly like him," wondering, Maravarman answered without being asked.
+
+"What, brother, is it shocking? Don't be too shocked. I'm your brother. The same brother who they said died as a child—I'm Maravarman," he said with a smile, and Nandhan was shocked.
+
+"You're alive? Then why did you make everyone believe all these years that you died?" Nandhan asked Maran with confusion.
+
+"That... it's some hereditary secret. Grandfather and our younger uncle said that no one should know that I'm alive. That's why I've been hiding all these years. Even though I was hiding, I was monitoring you. But what I didn't expect was you getting married," he said, slightly curling his lips.
+
+"When a girl suddenly comes and talks to you, won't you think about whether she's good or not? You nicely got caught in the trap she spread," Varman asked irritably.
+
+What Maran said was humiliating to Nandhan. But what he says is true, isn't it! When Samshika first talked to him, he was captivated by her beauty. Not only her beauty, but knowing she was from Tamil Nadu pleased him very much. That's why he fell in love with her, married her, and had been living with a daughter for these five years. All of that was washed away like water in this one week.
+
+"Okay, why talk about old stories? I need you to do something for me. That's why I brought you here," said Maran.
+
+"What help do you need from me?" asked Nandhan.
+
+"Until I tell you, you shouldn't leave this place and go anywhere. You should stay here in my place. I'm going to our palace in your place with our daughter Yathra," said Varman.
+
+"Why do we need to do this? Can't we both just go to our house together? Why the impersonation?" asked Nandhan.
+
+"Look here, there are many things you don't know. The moment you go there, your wife is going to come here. You definitely can't handle her.
+
+The wife you've seen for these five years is different. After this, only her true nature will be revealed. You definitely can't handle it, so I have to go there in your place. Until then, you have to stay here," he said, leaving Sarathi and a woman named Seetha with him for help and security. Taking Yathra, who was still in deep unconsciousness, he went to his other house. Staying there with Yathra for a month and bonding well with her, only after that did Varman go to the Venthanar palace in Nandhan's name.
+
+Thinking about everything that happened, Nandhan thought about Samshika, who had entered his house in the name of his child's "mother." He got angry. Yet, unable to show it outside, he stayed calm for the one reason Varman had said.
+
+For some reason, Grandfather and Varman have been silent for all these years. He stayed calm for the sole reason that it shouldn't be ruined because of him.
+
+To be continued...`
+  },
+  "17": {
+    title: "Chapter 17",
+    subtitle: "Moonlit Intimacy",
+    content: `Night time, Varman's room was glowing in the soft light of electric lamps. Through the windows, the silver rays of the full moon filled the room. Mitrayazhini stood on the room's balcony, pondering over every incident that had happened since this morning.
+
+This morning, she was ready to accept the groom her parents had chosen and receive the wedding necklace. When she learned it wasn't happening, her mind immediately accepted it normally. However, thinking about how not only did she marry him at first sight, but her heart also accepted him as her husband—she kept confusing her mind thinking about this.
+
+One thing she didn't think about was Valavan's words: "I've united you with the one meant for you." If only she had thought about those words, she would have known right then that he was born for her.
+
+As she was thinking about everything, Varman, eager to see his wife, opened the door and entered. First, he locked the door and scanned the room with his eyes, but saw only an empty room.
+
+"Maybe she hasn't come from Pavithra's room yet," he thought and turned to leave the room again, when he spotted her on the balcony.
+
+The white light of the full moon, the gentle pleasant breeze from the garden area caressing her hair—she stood there taking in all the beauty of the moon on her face. The rays of the full moon fell on her face, creating a divine glow. With long hair waving in the wind, with eyes reflecting the star clusters, Mitrayazhini stood motionless like a statue. In the stillness of the night, in the enchanting moonlight, she appeared like a painting to his eyes.
+
+Mesmerized by her beauty for a moment, he then brought himself back to awareness and moved toward her, placing each step softly.
+
+Lost in her thoughts, Mitra didn't even notice her husband standing behind her. Varman stood slowly behind her, and as her dark hair swayed in the wind and touched his face, its fragrance touched his very soul. That natural jasmine flower fragrance, her proximity, made his mind shiver. He had never felt such a fragrant sensation in his life. Forgetting himself in that fragrance, he wished that moment would stand still forever.
+
+She had been standing lost in some thought for so long, and when she suddenly felt someone very close to her, she turned sharply. Seeing Varman standing very close behind her, she was startled for a moment and leaned back. He had bent and embraced her waist.
+
+When he held her waist, the breeze had moved her saree aside, allowing his hand to touch her bare waist. When the warmth of his fingers touched her delicate skin, a kind of shiver spread throughout her body. Her mind, which had been confused until then, became emotional at that touch. Her soft waist fit completely within his grasp. The touch of his fingers created a new feeling within her. A thousand colors spread like a rainbow inside her. His gaze filled with love increased her shyness even more.
+
+In that sudden touch, Mitrayazhini stood shivering as if electrified. There was a kind of tremor throughout her body. Her eyes, caught in the grip of his hands, looked at him. For a moment, both stood speechless, looking at each other. The longing in his eyes was too much for her to bear, so she closed her eyes tightly.
+
+That silence spoke more emotions than words. Her act of closing her eyes seemed to accept his closeness. In the yearning of his many years of love, without knowing himself, Varman approached to kiss her. His eyes fixed on her lips, her lips and his lips came close to unite. The longing of many years, the yearning of many years, had been waiting for that one moment.
+
+Their heartbeats sounded in unison. Both wished that moment would freeze forever. But to ruin that sweet moment, the door of the room where they were was knocked very forcefully.
+
+In the closeness of love, he who had forgotten himself didn't hear the knocking on the room's door. But with the natural feeling inherent to femininity, Mitra realized herself and slowly opened her eyes, trying to gently move away from him. This action of hers brought Varman out of his trance.
+
+Realizing his emotional action without having told her anything about himself yet, he immediately released her.
+
+Slightly hesitant to look at her face, he attempted to say something to her. Before that, she said with some fear, "Some...one... is knock...ing... the door..." stammering, which he didn't quite understand.
+
+While Varman was thinking that she was scared because he had approached her without her permission, the door of the room was knocked again, and only then did he understand that she was scared seeing the door being knocked. Thinking he could talk to her later, he turned and opened the door to see who it was. Pavithra was standing there anxiously.
+
+Her anxiety itself indicated some problem, Varman understood and asked, "What happened?"
+
+The anxiety on Pavithra's face also made Mitra, who was behind him, feel that it was some problem again.
+
+"Brother, downstairs Yathra suddenly started acting strangely. No one can manage her. She won't even let Nandhan brother come near her. We're scared, please come down, brother," Pavithra said anxiously.
+
+As soon as she said that, he quickly went downstairs. He knew very well whose work this was. So he quickly went down and went to Pavithra's room.
+
+When he arrived there, everyone in the house was standing anxiously, while Sarvesh and Nandhan were holding Yathra, she was struggling in their hands. Everyone stood in fear wondering if a small child could be this violent. Pushing everyone aside, Varman approached Yathra.
+
+Looking at Varman, Yathra kept saying, "I want my mommy... I want mommy."
+
+"Let her go, both of you," Varman said firmly.
+
+"Are you crazy? Right now she's not herself. Something has happened to my daughter, I'm scared," Nandhan panicked.
+
+"I'm the one telling you to let the baby go! Let her go!" This time his voice sounded angry, and both immediately released Yathra.
+
+As soon as they let go, the next moment she got down from the bed, pushed everyone aside, and ran out of the room quickly. Mitra came and stood in front of her.
+
+As soon as she saw Mitra, her eyes waved, and Varman signaled Mitra with his eyes from behind Yathra to take her to the prayer room.
+
+Understanding the message conveyed by his eyes, Mitra, unknowingly, gripped the child's hand tightly and dragged her to the prayer room.
+
+Varman's mother and grandmother, seeing her do this, thought Mitra might do something to the child. Mangai and Mangalammaal panicked and went to stop Mitra.
+
+"Stop right here! No one should move even one step from here. Until I come back," Varman stopped them and called Pragadeesh. "Go upstairs and lock Samshika's room so the sound doesn't reach," he said and walked in the direction Mitra had gone.
+
+No one in the house understood how he was behaving, but they obeyed his words and stood quietly in the same place.
+
+For Nandhan and his grandfather, one thing became very clear from Varman's actions: Samshika was the reason for Yathra's condition. Nandhan, seething with anger, struggled to control it. Noticing him, Venthanar gripped his hand tightly without anyone knowing and told him to remain calm.
+
+"I'm scared! Please go and check. Both of them came to the hall, but we can't see them," Mangai complained to her husband.
+
+Then Pragadeesh arrived and said, "Uncle, when I was locking their room, not only were they in the room, but someone else was also there. I couldn't understand what they were saying. But I heard them both talking."
+
+"What are you blabbering? We were all in the hall, weren't we? How could someone else go into that room past us? Without observing anything properly, you come here and blabber! Everyone here is already scared about what's happening to the baby. With what you're saying, they'll be even more scared. Shut your mouth and stand quietly," said Sathiyan.
+
+Then, from the direction of the prayer room, the child's screaming was heard loudly.
+
+Everyone was shocked hearing the child's scream. Nandhan, hearing his child's cries, became distressed.
+
+To be continued...`
+  },
+  "18": {
+    title: "Chapter 18",
+    subtitle: "The Truth Exposed",
+    content: `"Everyone here is already scared about what's happening to the baby. With what you're saying, they'll be even more scared. Keep your mouth shut and stand quietly," Sathiyan said angrily.
+
+Then, from the direction of the prayer room, the child's screaming was heard loudly, and everyone rushed toward the prayer room in shock.
+
+Only Nandhan, hearing his child's cries, stood frozen in the same spot. Noticing him, Sarvesh, knowing his brother's state of mind, took him along to the prayer room.
+
+As everyone approached the prayer room, Varman was coming out of the prayer room carrying Yathra, and behind him, with a slightly frightened face and trembling hands, Mitra stood holding Varman's shirt.
+
+"Varma, what happened to the baby?" Sathiyan panicked and went near him.
+
+"Everyone wait in the hall for a minute. I'll put Yathra in Pavithra's room and come back," he said, carrying the child, and took two steps. Then Nandhan stood in front of him with pain in his eyes and outstretched hands.
+
+Seeing something in his face, he immediately gave Yathra into his hands, and without anyone knowing, he pressed his hand and comforted him.
+
+Nandhan took Yathra and instead of going to the room, he laid her on the sofa in the hall and looked at Varman. That look seemed to say, "I need to know what happened to my daughter."
+
+Understanding that, Varman asked, "Pavithra, what suddenly happened? Why was Yathra behaving like that?"
+
+"Brother, when we went to the room, she was fine at first. After some time, she said 'I want to go to mommy, take me along.' I said 'Mommy will come soon, until then let's play,' and Kavya and I distracted her and showed her games for a while."
+
+"Then Pragadeesh uncle gave me sister-in-law Mitra's bag from your car, saying there was some sound coming from it, and asked me to check. When I opened the bag to see what sound it was, it was something like a watch. That's where the sound was coming from. Kavya took it from me and was trying to stop the sound. Then Yathra took something from sister-in-law's bag, threw it away, and started screaming. We tried to calm her down. But as if she was scared of seeing something, she kept screaming 'I want to go to mommy, let me go,' and hearing her voice, everyone came. When Nandhan brother and Sarvesh brother tried to hold Yathra, she was just screaming to get out of the room," Pavithra told everything.
+
+"I knew from the beginning that she didn't seem like a good person looking at her. We let her into the house just because Varma tied the wedding necklace and brought her. But letting her into the house was a mistake. She must have tried to do something to my grandchild," Mangai said angrily.
+
+Everyone was shocked to see that the person who had joyfully performed aarti and welcomed her inside when her son said this was his wife just a while ago, was now talking as if letting her into the house was a mistake. Varman looked at his mother's face without any emotion.
+
+"Mangai, do you know what you're saying?" Sathiyan looked at his wife angrily.
+
+"I'm saying everything knowingly! She must have tried to do something to my grandchild. That's what Pavithra said, 'The baby was scared after taking something from her bag.' Shouldn't that be obvious?" Mangai looked at Mitra with irritation.
+
+"Daughter-in-law, what happened to you? Do you know what you're saying? You who have never spoken harshly, are now talking like this?" Mangalammaal asked.
+
+"Everyone, will you be quiet for a moment?" Varman's voice sounded firmly in that hall, and everyone now looked at Varman.
+
+"What are you using to say that my wife did something to your grandchild?" Varman asked his mother with a glare.
+
+Mangai remained silent without answering Varman. "I'm asking you, answer me. If you don't like my wife, say it directly to her face. Don't try to drive her out of the house by unnecessarily blaming her. Now what did your daughter say? That Yathra was scared after seeing something from Mitra's bag, right? Pavithra, Yathra was scared after seeing something, you said, right? That object must be in your room, go get it," he told his sister, and Pavithra also immediately rushed to her room.
+
+Mitra was watching everything that was happening there without any emotion. Her heart felt disgusted. She had already come here with a broken heart, thinking that everyone here would be comforting to her. It seemed to her that these people were much worse than them.
+
+Nandhan clearly understood that his mother was unnecessarily creating a problem. But he also looked at his mother suspiciously, wondering why she was saying this.
+
+Varman's mother looked at Mitra with disgust. Not wanting to stand there anymore, she thought of going to the room she was in a while ago. Because she couldn't leave the house, not just this town.
+
+While coming in the car, Varman had told her a few things and made her swear that she should not leave the house under any circumstances. Not only that, he had said, "The lives of those in their house are in your hands." After saying that, how could she leave? So, as she turned to go to the room, understanding her intention, he tightly held her hand to prevent her from moving anywhere.
+
+With tearful eyes, she looked up at her husband. "It's nothing, I'm here," he comforted her, and without anyone knowing, he told his grandfather to find the other person in Samshika's room.
+
+Venthanar had been thinking about just that, standing quietly all this time. Now that his grandson also said so, he left from that place without anyone knowing, went to his room, called Kuberan on the phone, told him everything, and said, "Quickly find out who is in that room," and came back and stood with the others.
+
+"What, Mangai, your speech is all coming out differently. Do you remember that I'm the eldest in this house?" he asked in a majestic voice. Until then, he had been quiet.
+
+Everyone looked at him a bit differently because he had been quiet all these days and suddenly Mangai's voice was sounding different from usual.
+
+Then Pavithra came from her room and gave the envelope she had brought to her brother Varman, and he opened it to see what it was.
+
+Inside were temple kumkum and Shiva's rudraksha beads. Seeing it, Varman showed it to his mother with a smile, and not only she but everyone there looked to see what it was, and seeing the kumkum and rudraksha in it, everyone looked at Mangai's face.
+
+But Varman, at the sound that came to his phone, took it out and looked at it—his face had such radiance. The happiness of finding a treasure he had been searching for many days. He immediately called Pragadeesh softly and told him to take all the young ones and immediately go to the Shiva temple.
+
+"Why?" Pragadeesh looked as if asking.
+
+"Do as I say," he said, and also told him to take Nandhan and Yathra along with them.
+
+"Grandfather, let the young ones go outside for a bit. Until then, let's talk privately," Varman said.
+
+Understanding his intention, he nodded with a smile, and the next moment, all the young heirs of the house left the palace and went to the Shiva temple. As Pragadeesh was leaving, he told him, "Don't leave the temple under any circumstances, especially Yathra shouldn't come out," and sent them off.
+
+Mangai, though suspicious about suddenly sending all the young ones to the temple, thought "They shouldn't know about me," and tried to approach Mitra to apologize to her. Then her eldest son came and stood in front of her, blocking her.
+
+"The habit of blaming others hasn't left you yet, it seems," he said looking at Mangai. She was shocked hearing it.
+
+"Varma, what are you saying?" asked Chandra Venthan, who had been standing quietly all this time.
+
+He too didn't like some qualities of his sister-in-law. He had told his wife about it too. But now hearing what Varman said, he thought Varman definitely knows something about his sister-in-law. That's why he's asking like this.
+
+But Mangai's husband, who should have been shocked and panicked, stood calmly without any emotion.
+
+Mitra, Vasanthi, Prabavathi, Mangalammaal were standing there watching, not understanding anything that was happening.
+
+"Hey, what uncle, why are you in such a hurry? It seems you also know about them," Varman looked at him sharply. He didn't give any answer. In that itself, Varman understood.
+
+"You don't know about me fully. If they speak a little calmly and affectionately, you might believe them. But I will never believe you," he looked at his mother with disgust.
+
+At the same time, Kuberan, who had gone to the room next to where Samshika was staying, went through the balcony and through the window of the room where Samshika was, recorded a video of those inside using a selfie stick, and sent it to Varman's phone.
+
+To be continued...`
+  },
+  "19": {
+    title: "Chapter 19",
+    subtitle: "The Murder Revealed",
+    content: `"The habit of blaming others hasn't left you yet, has it, mother?" he said, emphasizing 'mother' slightly, which shocked Mangai.
+
+With the same shock, Mangai looked at her son, and her son was also looking at her. "You don't know about me fully. I will never trust people who are very affectionate toward me. If they speak a little calmly and affectionately, you might believe them. But I will never believe you," he looked at his mother with disgust.
+
+"Varma, now is not the time to talk about that. We should go to the temple immediately," said Varman's grandfather, Venthanar.
+
+"No, grandfather, we have to talk now. Because only if those in the house know about them, they will stay away from them," Varman told his grandfather and looked at his father.
+
+"What, Mr. Sathyaventhan? Will you tell about your wife yourself? Or should I tell?" he asked, and Sathyaventhan looked at his son with pain in his eyes.
+
+"Looking like this, what can I do? You have to tell," he said and sat on the sofa there with his wife. Everyone looked at Sathyaventhan with confusion, "What?"
+
+He too took a big breath and said, "Twenty years ago, it was Mangai who murdered Valli and the child in her womb," and everyone there was shocked. That matter was already known to Venthanar and Varman, so they didn't show shock hearing it.
+
+Mitra screamed in shock, "What... murder?"
+No one even noticed her screaming in shock. Everyone was frozen in shock to that extent.
+
+"I learned this truth only a few years ago," he said, and Mangai glared at her husband angrily.
+
+"So is it really true that Valli is not alive?" Vasanthi asked in shock.
+
+Sathyaventhan nodded as if to say "No."
+
+Valli was Mangai's own elder brother Athikesavan's wife.
+
+A few years ago,
+
+Mangai's father Janarthanan, mother Vadivukarasi. In Melaiyur village, their family, like Venthanar's family, was a traditional family.
+
+This couple had two sons and one daughter.
+
+First son Perumal, his wife Rama. Four years after marriage, they still don't have children.
+
+Second son Athikesavan was studying in another town and working there. Today they have asked him to come to the village to see a girl for him.
+
+Third daughter Mangai. Being the only female heir in that house, Janarthanan had blind love for her. If his daughter wished for anything, he would never refuse. That's how, when she saw the rich, educated Sathyaventhan from the neighboring village, Mangai liked him very much. Since they were already relatives, he got Mangai married to Sathyaventhan.
+
+Nine years had passed since Mangai's marriage. She had twin sons, Maravarman and Nandhavarman. Both were turning eight.
+
+Today, since they were going to see a girl for Janarthanan's second son Athikesavan, everyone at the Melaiyur palace was getting ready excitedly. Then a car came and stopped at the palace entrance, and from it, Mangai, her father-in-law, mother-in-law, husband, and their sons all got out.
+
+"Father, has brother come?" Mangai entered the house with the question.
+
+"Not yet, dear," her father told his daughter, and with a smile, invited his son-in-law and his parents inside Janarthanan.
+
+After a brief pleasantry exchange inside, Sathyaventhan asked, "What uncle, we still haven't seen brother-in-law?"
+
+"That's the thing, we don't know, son-in-law. There's still one hour of good time left. We still haven't seen Kesavan," he said and called his son again. When the phone didn't go through this time too, he got a bit anxious and told his elder son to go check.
+
+He too called his younger brother's friend and inquired. They said Athikesavan had already left for the village, and he told this to his father.
+
+Only after hearing that did Janarthanan feel a bit relieved. Then they heard the car sound outside. Just from the car sound, they knew who had come, and went outside with faces blooming after six months.
+
+The joy of that couple eagerly awaiting their son was wiped away in an instant.
+
+Because Athikesavan didn't come alone. Standing with him was his eight-month pregnant wife Valli.
+
+"Father, forgive me. I got married without your knowledge due to circumstances," Athikesavan said, and Janarthanan silently entered the house without saying anything.
+
+Perumal was the one who shouted about family honor and respect, and Sathyaventhan pacified him and took him inside.
+
+As everyone went inside without inviting them into the house in anger, Varman was the one who invited his uncle and his wife inside.
+
+When those who entered inside, no one said anything to them. Not wanting his father to be humiliated, Perumal called the girl's house, told them everything, and apologized.
+
+Venthanar said, "The boy got married as he wished, accept them, Sambandhi."
+
+"No, Sambandhi. If he had told this matter earlier, I wouldn't have looked for a girl for him. Now look, because of what he did, I have to bow my head in front of them," Janarthanan said with pain.
+
+Then Perumal arrived and said, "Father, don't think about anything and worry. I spoke to them," and then said, "I have some work, I'll go out and come back," and glared at his brother and left from there.
+
+Everyone was normal, only Mangai kept looking at Valli thoughtfully.
+
+After a while, the Venthanar family talked and went to their house, and Athikesavan took his wife to his room.
+
+Vadivukarasi, noticing that Perumal who went out hadn't returned even after night fell, told her husband and worried. Without giving any answer, Janarthanan lay down quietly.
+
+Perumal, who came home at 11 pm at night, without anyone knowing, placed the object in his hand in the store room there and went to his room.
+
+Two weeks passed quietly. As Valli's eight months were completed and the ninth month started, Vadivukarasi told her husband that they should perform the valakappu ceremony in the ninth month and introduce the younger daughter-in-law to the village.
+
+What his wife said also seemed right, so he also agreed to perform the valakappu.
+
+Since Valli had no family, Sathyaventhan said he would act as Valli's brother and do everything, and Athikesavan and Valli were overjoyed.
+
+During that intervening period, Varman got very attached to Valli. He touched and touched the child in her womb and was delighted.
+
+Nandhan didn't associate much with Athi, so he wouldn't come to their house. But Varman liked his uncle Athi more than his elder uncle, so he had great love for his wife and the child growing in her womb, staying in their house with them.
+
+There were two more days for the valakappu. Everyone was sleeping that day, when Varman suddenly woke up.
+
+Everywhere was dark. Looking at his uncle and aunt sleeping beside him, he got up silently, feeling a bit hungry. Remembering the ice cream he had bought in the evening, eager to eat it, he came out of the room.
+
+Then he saw his elder uncle entering the house with wet clothes and going into the store room. Wanting to call "Uncle," he wanted to frighten and play with his uncle, so he went to the room he had gone to without making a sound, slowly opened the door, and shouted "Uncle." Seeing the event that happened there, he screamed in fear and fainted on the spot.
+
+Athikesavan, who was sleeping well, woke up hearing Varman's sound. "What... it sounded like Varman screamed? He was sleeping right here, wasn't he?" he wondered and came out of the room without disturbing his wife. There, directly opposite, he saw his brother carrying Varman and going outside.
+
+"Brother, what happened to Varman?" he went quickly to him, and he, not expecting him there at that time, was shocked.
+
+Everything was just a few moments. Immediately not showing his shock, he said, "I went to Madurai town and just came back, Kesava. It rained on the way. So I got a bit wet. The light wasn't on, so when he saw me, he got scared and fainted. So I picked him up to take him to the hospital."
+
+Athikesavan also believed what he said. "Okay, leave it, brother. He must have fainted in fear. Otherwise, there's nothing. Give him to me," he said and took Varman in his hands. Going up the stairs to his room carrying him, he suddenly turned and looked at his brother. He left from there without saying anything.
+
+Perumal, watching both of them leave, with some anxiety on his face, went to his room. "What next? Varman saw him, didn't he?" he panicked and decided on a course of action, and slept that night having made a decision.
+
+The next day, according to Perumal's plan, Varman fell from the mountain and died. But that blame fell on Nandhan.
+
+To be continued...`
+  },
+  "20": {
+    title: "Chapter 20",
+    subtitle: "The Night of Truth",
+    content: `"What to do now? Varman even saw me, didn't he?" Perumal panicked a bit, deciding that if he remained alive, nothing they thought would happen. Having made that decision, he slept that night.
+
+Accordingly, the next morning, everyone at Janarthanan's house were seated at the dining table.
+
+Just then, Varman woke up from sleep and came out of the room, went straight to his uncle Athikesavan. "Uncle, I want to go home, please take me there and drop me," he said, looking at his elder uncle with fear. Both his uncles who were watching him noticed this.
+
+"Why is he afraid looking at brother? Brother's behavior last night wasn't right either. I thought I'd talk to Varman today, but he's asking to be dropped home," he thought. "Okay, I can talk to him in the car on the way," he thought and nodded yes to what Varman said.
+
+"Kesava, I also have some work to talk to Mangai about. I'll come with you," Perumal said, looking at Varman.
+
+Hearing what Perumal said, Athikesavan knew very well that something was not right with his brother. Yet, because he let it pass casually saying "Let's see," it would later become a very big problem—he himself couldn't have imagined.
+
+No matter how much Valli and Vadivukarasi said, Varman, not wanting to stay there, insisted on going to his house immediately. Without even letting Athikesavan eat properly, he took him along.
+
+Perumal also went behind them.
+
+Even at eight years old, Varman, having shrewd intelligence like a cheetah, knowing why his uncle was following them, didn't sit near him in the car but sat beside his uncle Athikesavan.
+
+In a short while, all three reached the Venthanar palace. At that morning time, everyone was sitting at the dining table eating. Mangai was the first to see them.
+
+"Brother, come brother. Why did you suddenly come without saying or calling?" Mangai approached both her brothers with a smile. Their beloved son, without looking at anyone, ran quickly to his room.
+
+Venthanar looked at Varman's action without understanding.
+
+"What brother, the one who refused to come even when I called yesterday, has gotten up and come this morning," Mangai said laughing.
+
+"Don't know, dear. As soon as he woke up from sleep, he insisted on going home, only one insistence. He didn't even let me eat breakfast," Athikesavan said.
+
+"Okay, come inside both brothers. Let's eat," Mangai invited, and they too sat down to eat.
+
+Everyone was eating normally, but Perumal alone kept looking at the upstairs.
+
+Athikesavan was just observing each of his brother's actions.
+
+To divert Athikesavan's attention, Mangai was the one who spoke. "Aunt, uncle, I told you yesterday, right? Today I said I was going to Kunrakudi Murugan temple. Vasanthi and I will go and come back."
+
+"Okay, dear, go and come. You shouldn't go alone. Sathyan, Chandra, you too take the children and go together as a family," said Venthanar.
+
+They too said okay and prepared to go to the temple.
+
+Kesavan and Perumal, who had been talking for a while, said Kesavan should leave as it was getting time. Perumal, who had been expecting Varman to come down, when he didn't seem to be coming down, thought, "They're all going to the temple. I can deal with him there," and left with his brother.
+
+At 10 o'clock, everyone except Bapaa and Paati left for the temple.
+
+Here, Kesavan was driving the car thoughtfully. "Kesava, stop the car for a bit. I have some work at our farm," said Perumal.
+
+As Kesavan was also in some thought, he stopped the car. Perumal got down from it and said he would come home himself in the afternoon, and left from there.
+
+Kesavan too said okay and left with the car. Perumal, who stood looking at the farm until the car left, as soon as the car disappeared, took out his phone, told another car to come, and in the next two minutes, left for Kunrakudi.
+
+Here, Varman's family all reached Kunrakudi Murugan temple in one hour. Perumal had come before them and was waiting in a secluded spot.
+
+Those who went inside the temple finished all their prayers in a short time and were sitting in the temple sanctum talking, the elders. All the children were playing a little away from them. Only Varman was sitting very quietly near the elders, watching the children play.
+
+"Hey Varma, why are you so quiet since coming from uncle's house? Did they scold you? Did you come back because of me?" his father asked, but he remained quiet without giving any answer.
+
+Looking at his face, his father Sathyaventhan thought, "Someone at that house must have scolded him, so he came back angry," and said, "Look here, Varma, you shouldn't take everything the elders say the wrong way. Go, go and play with them."
+
+He too said okay and went to play with the children.
+
+In a short while, forgetting everything else, he was playing busily with the children when he saw his uncle Perumal looking at him. Shocked at seeing him, everything that happened last night came to his mind. Slightly scared, he suddenly ran toward where he had seen him. Nandhan also ran behind him.
+
+Seeing both children suddenly running, Mangai too went near them saying "Something's wrong."
+
+By then, everything was over.
+
+Perumal, seeing Varman running, hid himself in a way that the boy couldn't see him from the side. When Varman came near him, without noticing Nandhan and his mother coming behind him, he pushed Varman down from the mountain and tried to move from there. Then a voice from behind him, "Brother!" made him turn back in shock. There, Nandhan was running fast looking at Varman. Not noticing the stone below, he stumbled and fell down. His head was hit hard, and he fainted falling down, both from the heavy bleeding and the fear of seeing Varman fall from the mountain.
+
+The person who came first slapped his brother. "You sinner! You unjustly killed my son!" he kept asking while beating him repeatedly. By then everyone had come there hearing the sound.
+
+Those who came there were shocked to see Nandhan lying in a pool of blood. The next moment, they took him and admitted him to the nearby hospital. Meanwhile, no one even checked if Varman was with them or not.
+
+While Nandhan was being treated inside, everyone else was standing in front of that room saying, "What happened to Nandhan?"
+
+Then Perumal, who was sitting alone and crying, took his sister away and said, "Mangai, forgive me. I had no other way than this. Varman knew all our secrets. Even though he's a small boy, you know about his horoscope, right? He has great intelligence. So, if he tells everything to those in the house, we'll get caught with the family. That's why I pushed him down from the mountain," he said, and Mangai was shocked.
+
+"What... what are you saying?"
+
+"Yes, dear. Last night I was performing puja and Varman saw it. He even saw me directly offering the sacrifice. Seeing that, he fainted right there. But when he woke up in the morning, he acted normally as if nothing happened. That's what scared me a bit. I knew then. With his intelligence, he must have stayed quiet thinking to somehow expose our secret. Also, he tried to tell Kesavan right away. I was there, so he couldn't tell. Even after this, if we leave him, definitely the hardship our family has suffered all these years will all go to waste. You leave this problem as it is, I'll take care of it," he said.
+
+"But brother, he's my born son. How can I forget what happened in front of my eyes?" she cried. He consoled her saying this and that and brought her to where everyone was.
+
+Just then, Vasanthi asked, "Varman is nowhere to be seen?" and everyone became anxious again. Then Mangai looked at her brother, and he said with his eyes, "I'll take care of it," and turned to everyone and said, "When Varman and Nandhan were fighting in play and when Nandhan pushed Varman, Varman lost his footing and fell down the mountain. I've told our people to search fully," he said without any hesitation. Everyone who heard what he said stood shocked.
+
+Mangai, though saying her brother did this heinous act to save their secret, was crying in pain knowing who killed her born son but not being able to tell. Everyone there thought she was crying thinking about Varman. But only Mangai knows why she is crying. She's crying thinking of sacrificing her own son to save her birth home's secret. Such a mother.
+
+Hearing what Perumal said, all the men immediately left from there and searched for five hours around the place where Varman was said to have fallen. But they couldn't find Varman anywhere. Finally, only Varman's torn shirt came into their hands.
+
+At the same time, in the forest area of Poonsolai village, in the Shiva temple that only the Venthanar lineage has been worshipping for many years, Athikesavan, Valli, and Varman were standing in fear, while in front of them, a man-sized black king cobra stood with its hood raised.
 
 To be continued...`
   }
