@@ -101,7 +101,6 @@ const ChapterPage = () => {
         </button>
 
         <div className={styles.chapterContent}>
-          <h1 className={styles.chapterTitle}>{chapterData.subtitle || chapterData.title}</h1>
           <div className={styles.storyContent}>
             {formatContent(chapterData.content)}
           </div>

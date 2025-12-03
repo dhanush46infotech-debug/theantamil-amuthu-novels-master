@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Configuration
-const CHAPTERS_TO_TRANSLATE = [10, 11, 12];
+const CHAPTERS_TO_TRANSLATE = [21, 22, 23, 24, 25, 26, 27];
 const SOURCE_LANG = 'ta'; // Tamil
 const TARGET_LANG = 'en'; // English
 const OUTPUT_DIR = './translations';

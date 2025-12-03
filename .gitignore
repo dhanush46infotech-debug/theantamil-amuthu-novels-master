@@ -24,6 +24,15 @@ dist-ssr
 *.sw?
 .history
 
+# Claude AI artifacts
+.claude
+.claude-dev-helper
+
+# Translation outputs (generated files)
+translations/
+chapter-*-tamil.json
+chapter-*-english.json
+
 # Windows
 nul
 Thumbs.db

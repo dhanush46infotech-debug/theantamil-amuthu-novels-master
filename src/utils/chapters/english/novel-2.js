@@ -1,6 +1,6 @@
 // English Chapter content for Novel 2 - The Lullaby of the Temple Flower
-// Chapters 1-20 have been translated from Tamil (AI-translated)
-// Chapters 21-27 will fallback to Tamil when language is set to English
+// All chapters (1-27) have been translated from Tamil (AI-translated)
+// Translation completed on December 3, 2025
 
 export const CHAPTERS = {
   "1": {
@@ -2226,5 +2226,707 @@ Hearing what Perumal said, all the men immediately left from there and searched 
 At the same time, in the forest area of Poonsolai village, in the Shiva temple that only the Venthanar lineage has been worshipping for many years, Athikesavan, Valli, and Varman were standing in fear, while in front of them, a man-sized black king cobra stood with its hood raised.
 
 To be continued...`
+  }
+,
+  "21": {
+    title: "Chapter 21",
+    subtitle: "Continuity",
+    content: `Hearing what Perumal said, Satyavendan and Chandravendan asked their son Perumal to take care of everything at the hospital and left the hospital where Nandan had been admitted. 
+
+The police were informed and picked up and searched for five hours around the spot where Varman was said to have fallen. No matter how hard they searched, they could not find Varman anywhere. In the end, all they got was Varman's torn shirt. 
+
+The police also announced, "After falling down such a big hill, the child will not be alive. Your child is dead," and left. Neither of the men expected this event at all. 
+Those who were worried seeing Nandan in that state, could not even imagine that Varman was not alive now. 
+
+They could not bear the fact that the eldest heir of their house, "This is the one born to protect your dynasty", who had amazed the household, was no longer alive. 
+
+Here in the hospital Perumal was sitting a little nervous. "Where will those who have gone find and save Varman?" He was afraid. He was thinking, "If only he comes alive, everything that has been suffered for so many years will be in vain." 
+
+At that time, Satyavendan and Chandravendan stood in front of Perumal with tired faces. Seeing both of them, everyone got up and eagerly looked at them, seeing the confusion in their eyes and the torn clothes of Varman in their hands, everyone understood the matter. The women screamed without looking at the hospital. Even children say, “What?” Without knowing that, they cried seeing their mother crying. Deivaprakash made them all quiet by showing them children. 
+
+At the same time, seeing that Nandan had not closed his eyes for so long, he said to the others, "Where will this man leave them?" As he was sitting holding his life in his hand, Vendanar and his wife came there after getting the information. As time passed, Nandan did not wake up. 
+
+“If everyone is here, who will do what Varman has to do?” Deivaprakash told Mangai to stay near Nandan and took everyone home. 
+
+Even before they reached home, the village had already assembled at Vendanar Palace. Varman was dead and everyone was doing things for him. But Varman was sitting alive next to his maternal uncle and his wife in the oldest Shiva temple in the town. 
+
+A while back, "When Perumal got out of the car, Adikesavan took the car and had not gone a short distance. By then, he was looking thoughtfully at the phone call from his wife and was confused by what Valli said on that side. 
+
+"What do you mean? Tell me patiently without crying. What would I think if he suddenly called me and told me to save Varuman?” he asked. 
+
+"What, don't ask me anything now. I am now in the Shiva temple in the forest of your village. You immediately go to Kunrakkudi Murugan Temple. Varmanoda's life is in danger. Moreover, no one should ever know that he is still alive.” 
+
+“Somehow you save Varman and bring him to my place. We will leave this town immediately. Every minute that we are in this town, our child's life and Varman's life are in danger," before she could say it fully, the phone was disconnected. 
+However, Adikesavan, who did not ignore his wife's insistence, immediately took the car and left for Kunrakkudi. Adi Kesavan saw his brother on the way. 
+
+"What is he doing here? He got out of the car saying that he had work in the garden. Where are you going in another car now?” Thinking that, he felt connected to something that his brother's actions were different from yesterday and that now his wife was saying “Varman's life is in danger”. Immediately, he secretly followed his brother. 
+
+In pursuit of his brother, Adikesava learned what he was about to do and saved Varman just in time.
+
+When Perumal pushed Varman down, he didn't even look to see if he fell or not. Varman's good timing was hanging in the gap, only to catch his leg on a tree branch as he fell. God had thought that his life should not end so quickly, and in those ten minutes when he was throbbing in pain, Adikesavan came there to save him. 
+
+Immediately, he saved Varman who was hanging from the tree and the next minute left from Kunrakkudi to his wife's place. Valli stood there for a long time with his full stomach panting for them. It was only after seeing Varman come with her husband that he could breathe well. 
+
+Adikesavan quickly approached his wife, "Valli, what is the matter? How did you know that Varman's life was in danger? What are you doing here?" He asked nervously. 
+
+"What, I want to talk to you about something important," Valli started, then a black dragon with a man at the gate of the temple stood in front of the three of them, and the three of them started fighting. 
+
+They say, "Snake means the army trembles." But who would not be afraid of a snake standing here as tall as a man? Even Adikesavan, not knowing what to do for a moment, stood hugging his wife and son-in-law. 
+
+Suddenly an old man appeared from the darkness of the Shiva temple. His eyes flashed with wisdom and he smiled at the dragon. 
+
+"Fear not! This dragon has not come to kill you. Rather, Lord Shiva has sent you to protect you and your heirs." 
+
+“He was blessed by Lord Shiva at birth. His future is as lofty as that of Islam. He is chosen by Shiva. He has many enemies. But there is no destruction forever,” he said and smiled. 
+
+“This dragon has come here to protect you,” he said, and the dragon disappeared. 
+
+After thinking about something for a while, Adikesavan ordered his wife and son-in-law, "Not to go anywhere outside the temple until I come here," and left the temple. 
+
+Even then, "What, I want to talk to you about something important. Just listen to me for a minute,” Valli said and hurried out of the temple, bypassing Siddhar who was going ahead of him. 
+
+Someone who had already thought that Kesavan would come to see him, smiled softly at him and said, “I know why you have come to me. I will tell you only one thing. The eldest female heir of your family will come through you. If your son-in-law is an aspect of Shiva, your daughter is an aspect of Parvati. Even if their circumstances change and take them to different sides, life will bring them together. Then you will meet your daughter again. Until then your daughter cannot be seen in your eyes. Go to your birthplace now. Your father's life is swinging,” a few more things that he had not even thought of and went away with so many mysteries. 
+
+Adikesavan was shocked when he heard what Siddhar said. His statement that the child inside his wife and his son-in-law were all aspects of Shiva made Adikesavan think. But at that time, the only thought in his mind was to protect his father. So he left that place. Little did he know that that day would be the last time he would see his wife, unborn child and son-in-law. 
+
+At the same time, Satyavendan was performing all the rituals as a father, saying that Varman had died. It was then that he noticed that Kesavan and his father Janardhan were not there, asked his brother where they were and asked Perumal saying that he did not know either, he said “I will take care” and moved a bit to call his brother, saying that it was also switched off. 
+
+Whoever had called him left his wife and son-in-law alone and came home to see what had happened to his father. At that time, some raiders entered the temple to find the whereabouts of Valli and kill him, when a dragon stood in front of them as their bulwark.
+
+At the sight of the Aluyar Naga, the raiders ran away, and Valli suddenly went into labor. Valli doesn't know what to do when he, who is now in his ninth month, suddenly starts having pain. Seeing his aunt writhing in pain, little Varman doesn't know what to do. 
+
+Varman also placed his hand on his aunt's stomach and cried, "Father, aunty, don't make them cry." 
+
+Isn't Varman a small child, so he doesn't know what to do when he sees his aunt crying. The only thing he knows at his age is that his papa is in his aunt's womb. That was all he knew. 
+
+Although the pain stopped for a while, the pain started again. At that time, some women from the neighboring village who had come to collect firewood in that forest heard the noise and came to see. When they arrived there, the dragon they were guarding had disappeared from the place. So when the women came to that place, they saw a little boy and a woman with a full belly. As soon as they saw it, they understood that it was labor pains and immediately thought that it would not be right to be there. They took Valli by the hand at the crossroad they had come to and when they were trying to cross the border of the town, Valli, whatever he thought in his mind, immediately took the shirt of a woman's child who was there in pain and put the shirt that Varman was wearing on the child. 
+
+Then, he removed the heirloom of their house from his neck and placed it in his hand. All the women present noticed Valli's behavior and understood the danger for both of them. So they immediately left the place without delay and brought him to a small hospital in that town. 
+
+In Valli's mind, there was only the thought of "somehow to save her child." 
+
+Because only he knows who this child is important to. For that sole reason, she decided not to have her child in this town and tried to tell her husband. But Adikesavan, who did not see it at all, said that he was coming after talking to Siddha. He did not even come back to see them and forgot about the rest when he heard that his father's life was in danger. 
+
+To be continued…`
+  },
+  "22": {
+    title: "Chapter 22",
+    subtitle: "Continuity",
+    content: `Valli's only thought was to "save her child somehow." 
+Adikesavan and Valli's penitent daughter was born amidst many struggles, leaving Valli in the delivery ward while everyone waited outside. 
+
+After the birth of the child, Valli went into unconsciousness and the new born child was first given to Varman as per Valli's wish. An eight-year-old boy doesn't even know how to hold a baby. Varman carried his baby in his arms for the first time as the two women by his side told him how to hold the baby. 
+
+He had such an ecstasy at that young age. All the way Valli was brought to the hospital, Valli told him only one thing, that he would have to take care of the baby girl who was going to be born in his womb for the rest of his life. Apart from that, she also took an oath from him that no one should know that she and the unborn child were alive. He already knew that he was going to die...though he didn't want to put up with his pain and tell the boy everything, but he matured him by telling him everything, thinking that someone with more intelligence would understand. 
+
+The boy who had gone to the brink of death understood everything. "Even if he goes home alive, his uncle will plan to kill him again," he understood even at that young age. 
+
+So, keeping his aunt's words in mind, he decided at that early age, "These are the only people in his life." 
+
+But what if he made up his mind? There is a rule, isn't there? It is waiting to tear their family apart. 
+
+The first play of fate was that Varman died while he was still alive and all the rituals were performed by his father's hands. Here is his destiny waiting to hold the next event. 
+
+Valli woke up half an hour after the baby was born. Beside him, his son-in-law Varman was sitting on one side and his beloved daughter was fast asleep on the other side. As he thought, a female heir was born to them. He had already predicted it. However, just as he was thinking about how to save his child after this, he heard someone shouting outside. At that sound he knew who had come. 
+
+In the same hospital Lakshmi was admitted for delivery in the bed next to Valli (Mitra's foster mother). 
+
+When there was no one at home, the pain came and he could not stand above one level and fainted and fell down. When she fell down, Lakshmi hit her stomach and started bleeding there. The family took him to the hospital after a quarter of an hour after he fell down. The baby was stillborn after being hit in the stomach when it fell down. While Lakshmi was unconscious, her husband Annadurai, Lakshmi's mother Sundari and her son were watching to see when she would wake up. 
+
+At that time, one of the women of the village who came in from another side of the general maternity ward, said, "Inda girl, someone has come looking for you. You can tell by looking at them, they are some kind of rowdy. I doubt it because of what you have done in the forest. Now they are making trouble by saying that they have come looking for a girl. I suspect that you are the one they are looking for." It was understood that Valli called the nurse who was examining Sundari in the bed next to him and pleaded with tears, "Please save my baby somehow ma'am." 
+
+"What are you talking about? If you told us to save the child without saying anything, what would we think? We know very well that something is going on outside. But what can we do without knowing what the problem is?" 
+
+Annadurai, who came near them, said, "I heard what that girl was saying. I think that they are trying to get this girl and that child to do something."
+
+Despite all the trouble, Varman was holding the child's hand and looking at her face. He was looking at the child's face without taking his eyes off the face of the child as he knew beforehand that "If you leave her now, you will never see her again." 
+
+Then Valavan came near him and gently touched the child's cheek to make him look like a doll. 
+
+"Hey, that's my sin. Untouchable," said Varman, patting Valavan's hand. 
+
+Just by his voice, I remembered that Varman was now by his side. Not knowing what to do with it, Valli said with tears in her eyes, "Varma, run away from this place as soon as possible. Don't you run away from them." 
+
+“Aunty, I will never leave you and papa.” said stubbornly, 
+
+"Sonna don't understand. They don't know that you are alive. You are not a little boy. You will be nine years old. Do you understand what I am saying? Please come and join you with your father. Now escape from this place," he called the woman who was there and said, "Send this one away from here without them knowing," and sent Varman with them. 
+
+As Varman also left the place, he turned back and looked at the child's face. 
+
+"These are the only people in his life," he thought, and in a few seconds, everything flew away from his life. 
+
+At that time, Lakshmi, who was in the bed next to her, woke up and asked her mother, "Where is my child?" He was shouting. Hearing that, Valli immediately called Annadurai, who was there, took her child in her arms, kissed the child's face with tears and felt the pain of dying inside. We will not come and celebrate the girl as our own. From now on, she is only your daughter," said Valli, handing over her daughter. She couldn't help but think how many dreams she and her husband had for their unborn child, all shattered by that one person. 
+
+Annadurai also asked, "What happened now?" He was startled for a minute. 
+
+He thought, "There is some danger for them. So he will tell them to save them." But Annadurai never imagined that he would give the child in his hand and say, "This is your daughter." 
+
+As far as that memory was concerned, it was Lakshmi's cry that brought it back. Annadurai, who looked at Valli with troubled eyes, looked at him with a feeling of gratitude, turned and approached his weeping wife, gave the child in his arms to her, and said, "Our child," said Manamarak. When he said, he thought, "Now this is his daughter". But he failed to think if his wife would think of him as a daughter after knowing all the truth. 
+
+Whoever is not happy there, Valavan is very happy. As soon as he saw the child, who was the embodiment of beauty like the crescent moon, Valavan fell in love with him. Its tiny arms and legs and soft fluffy cheeks did something to him. Varman was upset because he had scolded him for touching the child some time ago. But "No one can say anything about her from now on. From now on she will stay in our house," Valavan was looking at the child with a full face of joy. 
+
+Lakshmi's face was so happy after buying the baby. "Where did something happen when he fell down and something happened to his child?" The person who had been protesting for so long was so happy when he found out that nothing happened to his child and that she was fine. 
+
+"After all, isn't it the first child? Everyone will treasure it?"
+
+Lakshmi's mother Sundari also knew that “the child is dead”. Suddenly he saw with shock that his son-in-law had come with a child in his arms. When he came to ask something, Annadurai said to his mother-in-law with his eyes, "I will tell you later", he saw Valli, who was sitting next to his wife and caressing the baby, looking at them on the bed next to him. In his hand was Lakshmi's baby which the nurse had given him. 
+
+He had tears in his eyes but a smile on his face. "Even if she is no more, her child will not be an orphan," the mother felt relieved. He remembered what had happened in the house since morning, and he knew from the voice that said, "It is impossible to meet her husband anymore." That is why he has shown that he decided everything immediately and implemented it. 
+
+At that time, the person responsible for Valli's condition entered the room where Valli was. If you think it's great to have arrived, it's not. The one who has come is more dangerous than Perumal. After seeing the truth about him with her own eyes, Valli decided that it was definitely not possible for her to be alive anymore. Valli had already predicted that he would know everything about himself in an instant. But Valli didn't expect him to approach her so soon. 
+
+Just as Valli thought, the man who had heard about Valli's labor pains and was admitted to the hospital and planned to kill Valli to take away the child who was going to be born the next moment, had changed his appearance and came there with two robbers. 
+
+The person who came in first went near the child. "When will he come?" Valli, who had expected that, was looking at the person who had come with such murderous passion. 
+
+"What do you want? You won't be waiting for me here?" He laughed. 
+
+"I expected it. But what, I didn't expect you so soon," he said with a smile. 
+
+"No need to cut words. You know why I have come here," said the person who approached Valli, went near the child and lifted the child. As soon as it was picked up, it became clear that it was not a girl, but a boy. 
+
+
+"How did this happen? It's impossible!" He asked in shock. 
+
+He smiled slightly at him, and the face of the person who saw that smile was so cruel. Annadurai could clearly see the cruelty on his face. 
+
+He walked around for a while, thinking something, "Tell me the truth, you gave birth to a girl? Are you trying to deceive me?" He said murderously. 
+
+Although he was a little startled by what he heard, he immediately braced himself up and said, "Don't talk unnecessarily. I am in agony because my child has died. Don't increase my suffering by talking like this," he said with a real pain on his face to part with his daughter. 
+
+"How long have you been left alive for the sake of this child that will come through you. But how could my prediction be wrong? You should have given birth to a girl child? How come a boy child was born? That too, the child was not alive and was stillborn! How is this possible?" He mumbled something, and when no one noticed, he put the poison needle in his hand into his glucose bottle. 
+
+The person who stayed in the room for a while said, "If he is still here after this, he will be suspected that he is not there," and immediately left the place. 
+
+With the thought "Valli will not be alive anymore". 
+
+Similarly, in the next five minutes after he left the room, the doctors could not save Valli even though they struggled to breathe a little bit. Even at the moment of his death, Valli died looking at his daughter and the chain of inheritance that was the memory of his son-in-law in his hand. 
+
+At the same time, Adikesavan came to the town in search of his father, and everyone who saw him in the town came to console him saying "Varman is dead". 
+
+He hurried to his house without noticing any of them. No matter how fast he went, there was no one in such a big house and Janardhanan was lying dead in the hall. 
+
+
+To be continued…`
+  },
+  "23": {
+    title: "Chapter 23",
+    subtitle: "Continuity",
+    content: `Leaving his wife and son-in-law alone, Adikesavan rushes into the house to save his father's life, when he sees his father lying lifeless and stops at the same spot. 
+
+For a minute he didn't know what to do. Seeing his father's condition, even his eyes were disturbed. He turned his eyes on all four sides, but not a single person was visible to his eyes. Guilty that he could not save his father despite coming so quickly, he sat down in front of his father's dead body and stared at his face. He didn't even know how long he had been sitting. As everyone in the house heard of Varman's death and was in the Vendanar palace, Janardhana's condition was still unknown to anyone there. 
+
+Then his cell phone showed its presence to distract him from his memory. Being in the forest for so long, his cell phone did not have a tower. 
+He came out of his memory at the sound of the phone ringing and it was Vendar who had called him to pick up the phone. Just then, the man who hit himself on the head 'for not telling others this news' accepted the invitation. 
+
+"What are you asking, where are you? How many times have you tried to call your phone since morning? Your phone won't go away. Where have you been?" 
+
+"Uncle, listen carefully to what I am saying. This is very important." 
+
+When Kesavan said that, Vendana frowned slightly and looked around. He said. 
+
+"Uncle, Varman is not dead as you think. He is alive. But, no one should know that he is alive. A lot of things are happening here without our knowledge. I can't tell you anything completely now," said Kesavan while he was talking, "Kesava!" A voice was heard from the door of the house. 
+Shaken by it, he dropped the cell phone in his hand and it shattered. 
+
+Perumal also did not listen to everything Adikesavan said. He heard only one last word spoken. So Perumal did not know that Varman was alive. 
+
+Adikesavan was shocked to see Perumal standing there saying "Brother". 
+
+He knew very well, "He who saw Varman killed must have killed his father," he came out of shock, immediately went to his brother and grabbed his shirt, "Are you a human being? Not only did you see Varman killed, but also killed my father?" He asked angrily. 
+
+When Kesavan heard what he said, 'How did he know the truth? Even without that, he will say that I have killed my father,' said the shocked one, as if he did not know anything, "Kesava, what are you talking about? I think you are talking about something wrong," Perumal came close to him to see what had happened to his father. 
+
+"He won't go near me. Is my father such a murderous boy? I can't even imagine. How much affection did he have for you? How could you have the heart to kill him?" 
+
+"Kesava, don't talk like a madman. How can I try to kill our father?" 
+
+"Don't act too much. I know all the truth. You have not been acting well since Neth. I was also watching you. I thought there was some problem. But I never thought you would go to the extent of killing Varman," while he was talking, someone hit Adikesavan from behind with an iron rod, and the next second he went unconscious. He fainted before he saw who hit him. 
+
+When he saw his brother passed out, he was shocked and asked, "Who hit him?" When he saw the person standing there, he was even more shocked. 
+
+"Don't do anything right?" He looked at Perumal angrily, 
+
+"I don't know how he knew all the truth. You hit him when I was in shock after hearing everything he said. I'm sorry, I never expected this to happen."
+
+"We have to wait. Because, that's what we are doing. When we do something, we have to do it by looking at who is by our side. Otherwise, something like this will happen and put us in front of us," he said. If you see that there is no one, I will go there immediately. 
+
+As he moved from the spot, Vendanar's car was just right for entering the house. 
+
+While they were talking a while back, Vendanar immediately left the place so that Kesavan's voice could not be heard from that side. 
+
+Perumal had started his performance as soon as he saw Vendanar's car. "Daddy wake up. What's wrong with you?" He shouted and cried. 
+
+Perumal heard the sound of crying and wanted to enter the house and was shocked to see Janardhanan lying there speechless. 
+"Perumal, what's wrong?" Come near him asking, 
+
+"Uncle, father has left us all," cried Perumal, hugging him. 
+
+Hearing Perumal's words, he did not know what to do. Walking one by one since morning, he couldn't even think straight. Keshavan had called him some time ago and said, "Something is happening in their house without anyone's knowledge." The phone hung up before he could finish. Kesavan's phone did not pick up when he called back. That is why he left there immediately. If you come here and see, they say that Janardhana is not alive. He didn't understand what was happening. 
+
+But one thing was clear, "Something is happening that we don't know about." Until he knew what it was, as Kesavan had said, he thought he didn't want anyone to know that Varman was alive. 
+
+Later, Janardhanan's death was made known to everyone. In the next few hours, all the relatives arrived and the rituals began to take place one by one. 
+
+Some people who came to the dead house said, "Kesavan and his wife are missing. I think they must have done something to him. Otherwise, how did a good man die?" They said. 
+
+Another said, "The horoscope of the second son-in-law of his family is not good. Otherwise, would two people have died in succession in a family that was otherwise good?" Everyone said what came to their mind and said that it was true. Everything fell on Vendar's ears. However, he could not accept their offer kindly. He knew the character of both Kesavan and Valli very well. He firmly believed that they would not have done as they say. 
+
+Mangai did not understand anything. Already, for their selfishness, they had taken the life of one of their sons and lost their father before the ordeal was over. 
+
+All rituals completed. A week has passed since the death of Varman and Janardhanan. Still no one knows the whereabouts of Keshavan and Valli. To inquire about them, Perumal, his mother and his wife were all in the Vendanar palace. At that moment, a guard came to Vendanar's palace and told him that the police had entered the palace, and he also sent them inside with an idea. 
+
+"The police have come," said the general to everyone, he called his sons and Perumal alone and asked, "Did you file a police complaint?" he asked. 
+
+"No, we will not give anything," said Satyavendan and Chandravendan, who went to see Perumal. 
+
+"I don't have any complaints either, uncle," he said. 
+
+"No one filed a police complaint in both our houses, why have the police come here now?" He asked the three thoughtfully. 
+
+Perumal's face turned white with fear. "Where did Keshavan tell the police about Varman?" Thinking that, the whole face started to turn in fear. 
+
+"What, do you want to say something to the police? Have you found Kesavan and Valli?" Mangalammal asked her husband, then the police entered the house.
+
+When they saw the police, the women stood to one side. "Sir, I am Dhenkarai Station Inspector Muthukumar." 
+
+"Tell me brother, what are you here for?" 
+
+"Sir, a week ago a pregnant girl died at the Dhenkarai Government Hospital. It was while we were looking for them that we heard that your relative Janardana's son Adikesavan and his wife had gone missing. We went to his house to inquire about it. They told us they were here. That's why we came here." 
+
+"What do you mean? What happened to my daughter-in-law?" Vatukarasi came to them panicking. 
+
+"Your daughter-in-law and the child in her womb died a week ago. Since no one there knows who they are when they die, let the people in the hospital perform all the rituals for them," he said. 
+
+It took many days for those present to recover from the series of tragedies. In the meantime, Vendana continued his search for Varman without raising suspicion. 
+
+At the same time, Valli and the baby in her womb died the next day when Varman, who was in the neighboring village, came to know that his "Papa" was not alive and became very quiet. As a month passed, Vendanar found Varman and came to his place, but at first refused to see him. Then he asked to say, "I have come here because of his uncle Adikesavan's wish" and after that he agreed to meet him. 
+
+When she saw the eldest heir of their house alive again, her face was so ecstatic, "Varma, are you okay?" to ask, 
+
+Atty did not answer him with his mouth, but only said that his head was fine. 
+
+Even though his calmness was new, he guessed right away that “something is up”. He who thought not to hear it now, remembered what Adikesavan had said and immediately made all arrangements for his departure from here. 
+
+"Grandfather, I will not leave here alone. All these people are going to come with me. You have to take care of everything." 
+
+"Okay, let them come with you to help you. I will prepare everything for them to stay there," he said, and sent Varman and his family, who had been looking after him for so many days, to a village in Madurai. 
+
+The family accompanying Varman - Mani, his wife Shanti, their children Sarathi and Sita. 
+
+He did not say 'who tried to kill him' and 'even his mother knew it'. Yes, Varman also saw his mother see Perumal pushing him off the mountain. Somehow, he didn't feel like telling his grandfather. So he buried everything within himself. 
+
+In the intervening days, Perumal had told Mangai everything about their father's death and Valli's death. 
+
+A few years later, while talking to Vendanar on the phone, Vendanar said that when Valli died normally and that her child was a boy, it was not her "daddy" who died that day. When he came to know that his aunt had done something to prevent anyone from knowing that she was alive, he immediately told his grandfather about it. 
+
+Because from what his aunt had said, her life and hers were very important to those who wanted to kill them. So they searched from then till now, hoping that if they told this to her grandfather, they would find her. As a result of their quest, Mitra also joined Varman's hand. 
+
+Sathyavendan came to know about Mangai's truth two years ago, when he overheard Mangai talking to someone on the phone, Sathyavendan came to know that Valli was murdered and his wife had a role in it. Till today he did not know that it was Perumal who was talking on that side. From that day he could not get along with his wife. He was a little aloof from him. However, he did not tell the true face of his wife to anyone present.
+
+That's all the flashback. No one knows all the facts. The only person who knows is Valli. Now he is also not alive. Grandfather did not know what Varman knew. What the grandfather knew was that Varman and Adikesavan's daughter's life was also in danger. This is because of the Shiva temple where only their family heirs worship, a 
+Janardhanan, Vallai's death and Adikesavan's disappearance are all due to that temple. But he doesn't know who is behind it. 
+
+
+To be continued…`
+  },
+  "24": {
+    title: "Chapter 24",
+    subtitle: "Continuity",
+    content: `At the same time, Annadurai was shocked to hear the news of Valli's death in the hospital. What would they do without shaking if they heard the news that the person who had been talking to them so well for so long had died in the next ten minutes? Similarly, Annadurai was shocked to hear the news of Valli's death. 
+
+Only now did he understand why Valli had changed the child. He knew very well that the person who had come to see him must have done something to the girl. Because of that, even after hearing the news of Valli's death, Annadurai did not even come close to him. He stayed away from him because he was afraid that if he came close they would find out about the child. 
+
+A week after the birth of the child, the person who brought them home to their hometown, Dhenkar, thought, 'It is not good for them to stay in this town after this.' Since then he has done all the work to get out of here. Similarly, they arranged to sell all their properties, within three months they sold all the land, took the money and went to Madurai. 
+
+Everything went well. Lakshmi also gave birth to a girl as her first child as she wished, so she named her Mithrayajini. After Tanuja and Roshan were born, Annadurai invested all the money he had and started a departmental store. When he started, he started small. After that, growing more and more and keeping the department store big and doing well, Mitra's character did not change at all when Mitra's mother, Sundari, at the age of 15, told Mitra things on her deathbed. But, a few qualities have changed. One of them, from that time till now, she had thought in her mind that the two children she had borne should go to Mitra, and she instilled it in her husband's mind. 
+
+From then on, though he did not show much affection for Mitra, he spoke without hesitation and did not completely withdraw. After all, the first-born girl had an overwhelming love for her, didn't she? That's why he couldn't get rid of her altogether. 
+
+Even when Mitra was of marriageable age, she was the first to be married. But Tanuja, who is infatuated with being a “foreign bridegroom” enters and plays a few games. 
+In it, he unilaterally leans towards Lakshmi as his adopted daughter. 
+
+Lo and behold, as a result of this, his beloved daughter Tanuja was scolding him and Lakshmi was not knowing how to pacify her. 
+
+Tanuja shouted angrily, "Why did you remind her right after coming home? It's because of you that my husband can't even talk to me." 
+
+Tanuja was screaming, "No, Tanuma, I have lost my mouth. Do I want to make you angry or make the groom sad?" 
+
+Some time ago, after the wedding, Madesh's mother Chintamani, knowing that the bride and groom had come home, remained in her room to bring both the bride and groom home. 
+
+He never came unless the time had passed for everyone to stand at the door waiting for him to come from home. So Lakshmi herself went inside and took the arati and wrapped the arati around both of them and said, “Mitramma, take your right foot and enter,” and uttered Mitra's name. That's it. The smiles that were on the faces of both the bride and groom all this time disappeared in the next second. Mathesh, who was the first to enter, looked around for his mother, but he could not find the person he was looking for. When he knew that "his mother must be in his room", Mathesh immediately took off the garland from his neck and put it on the sofa and went to his mother's room. 
+
+Here she grabbed her mother's hand with so much anger on her face and dragged her into a room downstairs, screaming at her mother. 
+
+Then Roshan entered the room and said, "Why are you scolding your mother unnecessarily? Do you get angry because of the dirty work you do?” Roshan asked tongue-in-cheek. 
+
+“Dude, speak respectfully. Did I do a bad job? I got hold of him and asked him to marry me. Father and mother agreed. What's wrong with this?"
+
+"What's so bad? Aren't you proud to say that you liked the groom that your sister saw? Despite this bad thing, good things have happened to my sister. Fortunately, my sister will not marry that man. He who marries such a beauty is not suitable for my sister," said Roshan and left the room. 
+
+"He has a very long mouth. Let it be, or else I will kill him,” she muttered, staring at her mother and leaving the room. 
+
+Here, Mathesh went to his mother's room and asked, “Mom... Emma is behaving like this? Do you like everything I like? I like Tanuja. I married her. Why do all this?" 
+
+“Look here Mahesh, if you like Tanuja, you should have said it earlier. You should not have humiliated a girl to such an extent that you came to the wedding hall like this. Honestly, I didn't expect this from you. Please don't talk to me. I don't even want to look at your face. All the questions asked by Durga in the hall are true. Calling gold tin, put it away, let tin be gold now with you. You will understand it soon. Now go out of my room," Chintamani said and sat back. 
+
+Not wanting to torment his mother by staying there again after his mother said so, Mathesh left the room and went to his room without seeing anyone there. 
+
+Tanuja was annoyed to see Madesh going. "Even after marrying the one you love, you cannot be completely happy. She is the cause of everything. Let her come before me, then there is. Anyway, stay at home. It is far from home," she said, growing anger in her heart, and looked at her father-in-law. 
+
+He also saw his daughter-in-law and said, "He is a little upset because his mother is talking to him? So he is a little disturbed. According to religion, there will be nothing. Go and rest for a while, Boma,” he sent her away. 
+
+Both Annadurai and Lakshmi said, “We are also leaving, Samanthi. "Let's call the bridegroom to the other house after a good time," they said, leaving from there. 
+
+Those who set out from there came straight to their homes, where they found the house just as they had left it the night before. The door was not even opened. Only then did Lakshmi realize that she had the house key. "I have the key, where is Mitra?" Thinking that, he opened the house with the key in his hand and went inside, Roshan asked his father the question that was in his mind. 
+
+"The house is locked. So Durga must have gone home. Annadurai sent him away and fetch his sister, Roshan. Roshan was eager to see his sister right away and went to Durga's house immediately. Durga was sitting outside the house as if she was waiting for him. 
+
+As Durga was sitting as if she didn't see Roshan coming, Roshan approached her directly, "Durga sister... where is sister?" He asked. 
+
+That's all, Durga was furious. "Why, have you come to see if she is still alive?" 
+
+"Why are you talking like this? What shall I do for all that they have done?” He asked with slightly confused eyes. 
+
+"You don't have to do anything. But, just seeing you makes me happy. How did you all think to leave her in that situation? Do you think that no matter what you do, you remain silent, no matter what you do?" She asked angrily. 
+
+“Durga, what will he do if you scold him for what he did? Like you, he came very happy to hear about his sister's wedding. Let go, whatever happened happened. Valavan came there saying that nothing is going to happen by talking about it. 
+
+“Uncle, tell me. where is sister I want to see my sister," Roshan cried now.
+
+Valawan remained silent as he did not know what to answer, Durga said, "You will not be able to see her anymore. She has gone where she is supposed to go. She will not come to that house again. You are the one who sent her away by calling her an 'orphan', right? You do not need her after this. You have gone where she wants to go. Don't look for her anymore." 
+
+"Sister, I am scared to hear everything you are saying. Where is my sister? I want to see my sister right now. You are going to scare me by saying something. Stay, I will go immediately and fetch my father," Roshan cried and went to his house. 
+
+Annadurai, who was sitting in the hall, eager to see his daughter, got up and looked at the gate, only his son was there. As his beloved daughter was nowhere to be found, he looked at Roshan and said, "Father, sister has gone somewhere? Sister Durga says that she will not come here anymore. You should come and ask me. I am afraid. Sister is not at home," he cried. 
+
+At what he said, Annadurai stood like a statue, hearing what Roshan said from the kitchen, Lakshmi's vessel fell down in shock and made a noise. 
+
+At the same time, here in Pooncholai village, Varman again throws a bomb to everyone's shock when they hear Satyavendan Valli's death attributed to Mangai. 
+
+"This is shocking. It was not Nandan who pushed me off the mountain. It was someone else. My mother and I know who it is. Even if they know, they will not tell anyone who it is," Varman said while looking at his mother's face. 
+
+Watching everything that was going on there, Mitra thought, "We've got caught up in some murderous crowd." 
+
+To be continued…`
+  },
+  "25": {
+    title: "Chapter 25",
+    subtitle: "Continuity",
+    content: `"Why are you all shocked by this? It was not Nandan who pushed me off the mountain, but someone else. My petha and my mother also know who it is. Even if they know who it is, they won't tell any of you." So what does that mean? 
+Varman said, looking at his mother's face, "She was so fond of him that she did not even tell the man who killed her son when she was ten months pregnant." 
+
+Mangai was struggling to find out all the truths about her one by one, not knowing what to do. 
+
+Vendan noticed it and said, "What Varma said is true. You know that no one has pushed Varma from the mountain. Is it so that you did not tell me about it for so long?" He asked a little angrily. 
+
+"How can she tell me? How could she deceive us all by pretending for so many years! Two years ago, I was so shocked to see her true face. She pretended to know nothing and deceived us all. I was dying to see her. The reason why I was patient for so long was, 'You should not speak without knowing the truth.' That's right. When she knows the person who killed my boy, she shouldn't be in this house for a minute. She should be in this house or I should be in this house," shouted Satyavendan angrily. 
+
+"Shakti, be patient. Varman didn't even tell me this for so long. Does that mean there is more to come? So, be patient. Let everything come out," he said looking at Varman. 
+
+"Grandfather, I don't know many things either. But I think aunty wants to know everything. That's why they all killed aunty," he said, looking at his mother with disgust. 
+"Everybody buy a little bit of me. I will show you directly who is the main point of all this," he said and took everyone and went straight to the room where Samshika was. 
+
+Just then, Nandan, leaving the child in the temple, told Pavitra to see that the Yatra does not go anywhere, and hurried home from there. Just as he was coming he noticed that Varman was taking everyone to the room where Samshika was, and he followed them. 
+
+Standing directly in front of the room where Samshika was, he told the people there to be quiet and slowly opened the door that was placed outside, he who already had the key to the room, opened it slowly and asked everyone to look inside. 
+
+Shamshika and her father Perumal were talking earnestly there, when they heard the sound of the door being opened and got up startled. The family in front of them all stood shocked. 
+
+Like them, everyone in the house was shocked to see Perumal there. Even Vendar did not expect this at all. 'Is he the cause of everything?' Couldn't help but shudder. 
+
+"Machan, what are you doing here? Isn't that the room with this girl?" Chandravendan asked, "There is nothing wrong with him being in his girl's room, Sithappa," Varman said with a smile. 
+
+"What, girl?" Mangai did not expect this. Mangai was so angry with her brother when she thought that the person who had told her everything for so many years, not only hid the existence of such a girl, but also ruined her son's life with that girl. 
+
+"Innocent! Is this your girl? Is it unfair that you ruined my life with my boy?" Mangai slapped her brother without looking. 
+
+"Mangai, what to do? I am your brother." 
+
+"It was my brother, who said no? Did I listen to you all these years! But what else is hidden that I don't know? Just because I made a post and said 'okay, okay' to everything you said, my life will be ruined after all these years," cried Mangai. 
+
+"Besides, what's the use of crying? Everything you do is a girl's thing?" Mangaiyammal scolded her daughter-in-law, "Varma, don't drag him out first. We have to know whether everything is true or not. What kind of work have you done with this family?" Mangaiyammal took everyone and came back to the hall.
+
+After a while everyone stood in the hall and Varman started the speech. "Do you remember one day when I snuck up on you and told you to stay with your aunt?" He asked everyone in his house. 
+
+"Yes. The person who said that he would not come the day before, came home the next morning, I remember that well," he wanted to say. 
+
+"It's because I stayed at that house that night with my mother, look, I know the true face of this man. Because I was a little boy, I couldn't tell you about it at that time. When I was about to tell you, this man pushed me away from the mountain," he said, and began to tell what happened that night. 
+
+"Mother suddenly became hungry at night and I was sleepless. When I got up and went out, this man came in from outside and instead of going to the room, he went straight to the store room. I also went to the same store room where he did not make a noise saying, 'Uncle is going to do some work and may show fear at night.' He was not the only one. I don't know if they passed out. I was scared and fell down. I don't know what happened there. 
+
+Apart from that, I can't stay in that house. That's why I immediately called my uncle and came home. Even when I came home, I could not tell anyone because I was afraid of what had happened there. It was only after going to the temple that I felt the need to tell this matter that Adi uncle told me. 'Well, let's go home and tell,' I thought, and there I saw him again. When we went immediately he was not there. While I was thinking, he pushed me down from behind. But when I fell down, I saw the three madams behind me and fell down. 
+
+That God decided that I should not die. Somehow I survived through Adi Mama. Apart from that, uncle went on a wild ride without anyone knowing. Aunty was also there. I knew as soon as I saw them that the aunt was in some fear. But, in the situation at that time, uncle did not investigate anything properly. If we had asked the aunt then, we would have known the whole truth then. But, at that time a Siddhar came there and said something and made Mama go away from there. I still don't know why my uncle left there. But, before uncle left there, suddenly some people came with knives to kill aunty. Then a dragon in that Shiva temple saved us from them. As soon as the raid went away, the aunt felt a sudden pain. Then, it was the neighboring villagers who came there to collect firewood and brought her to the hospital. 
+
+Soon after being brought to the hospital, the aunt gave birth to a baby. I bought it in my hand. As you think, no child will die without an aunt. It's alive," . 
+
+"Then suddenly someone came to the room where my aunt was admitted. My aunt heard her voice and sent me away from there. I don't know what happened there. The next day I got the news that my aunt and the child died. After a few days, my grandfather found me and sent me from that town to Madurai. The only thing that my aunt told me was that it was because of that Shiva temple. I also knew something about it. It has been a long time since the Agni Puja that happens to Shiva once in 50 years has to be done by our dynasty. 
+
+What's amazing about that pooja is that only those with a good heart can perform this pooja. Even if someone wants to get the power of that pooja in a wrong way, the next moment the Shiva Naga protecting that pooja will kill them.
+
+It is the eldest successor of this generation who has to do that puja after the grandfather. You can do that pooja. The problem here is that Nandan and I, who were twins born in the same birth, were born in the same mole. First of all, I was wondering if the puja is happening and they have planned it. But when I think about what to do because I know the truth about them, if I am not alive at that place for them, they may have performed that puja through the heir to be born to Nandan, and they may have attained all its powers. That's why they tried to kill me because they knew the truth so that I should not be alive. But what they didn't expect was that I was still alive before I died." 
+
+
+To be continued…`
+  },
+  "26": {
+    title: "Chapter 26",
+    subtitle: "Continuity",
+    content: `After saying everything he looked at his wife without looking at anyone. She was also looking at him with confused eyes. From what he said, it was clear that what he said as 'aunt' was the mother who gave birth to him. Immediately she wiped her eye without anyone knowing and stood quietly. Varman was watching everything. He remained calm thinking that 'even now if he gets closer, the truth of who she is will be known to the people here.' 
+
+Then, "You idiot! Have you lied to me for so many years?" The one who asked her brother and went to her husband said, "Why, I don't know anything about what Varman is saying. I didn't do anything wrong. The only mistake I made was that he was trying to interfere with me for so long. That's all. According to religion, I didn't do anything wrong," cried Mangai. 
+
+"So what did you do wrong?" Varman looked sharply at his mother. 
+
+Mangai was embarrassed to say that mistake in front of her sons. However, the person who thought that it would not be good not to tell the truth after this, thought, 'It doesn't matter if they think she is ugly, she can tell all the truth about herself,' Mangai thought that she fell in love with the boy who studied with her when she was a child and thought of getting married, only then did she know that he was poor and said, "I don't like him." After that, Mangaiyammal also told her brother to force him to marry her by showing her photographs of the boy. 
+No matter how much Perumal talked to the boy about his affection for his younger sister, Perumal killed him at one point so that he would not lose his temper. At first Mangai was scared when she told her sister, then she thought, 'His trouble will be no more' and then crawled away happily, only then did Satyavendan catch her eye. 
+
+Immediately after seeing him, he got hold of him, told his father about it and married him. 
+
+Because of this, Perumal kept him in his favor for so many years. 
+The one who spoke all the truth stood without looking up at anyone's face, but Satyavendan, who was close to him, let out a slap. To the point of tearing the ear. A man who had not reached out for a single day in all these years of marriage, for the first time everyone in the house had slapped him with anger towards his wife. 
+
+"Hey big guy! Is this a new habit? The habit of hitting the boy with his hand?" Mangaiyammal scolded her son. 
+
+"Then what? If she had told me before the wedding without concealing her wrongdoing, would I have had so much trouble? By now she is dead with two other people. My son has passed away. It has been so many years. Who is all this? She was the only one who told him about her, and her brother too. "I don't know if Kesavan Machan is alive all these years," said Satyavendan, who shouted angrily at his wife and went straight to Perumal, who was 'elder in age' and 'wife's brother'. 
+
+"Are you a human being? Are you so mad that you would kill your father, your half-brother, your brother's wife, all of them?" Satyavendan, who shouted angrily, looked at his son Varman and said, "Whatever you want to do from now on, I will not stop you from doing anything. I will also tell you about your mother. From now on, everyone in this house should listen to what you say," and angrily went near him. 
+
+All the girls took one look at Mangai and went to their rooms, only the men were there. 
+
+"Varma, have you decided what to do? Looking at all the work they have done, the matter seems a little serious. It is not right for me to leave it like this," Deivaprakash said. 
+
+"You are right, uncle. I have a doubt that they have done all this. I feel that there is someone behind them. It is dangerous for us to let them out until we know that," said Varman, looking at Nandan and telling him some things, he told him to do it immediately.
+
+As Varman said, Nandan got down to the job immediately. "I will not go with him," said Nandan, who was dragged away by four servants. He also now somewhat understood why his wife had stayed with him for so many years. 
+
+When Nandan left there, he said, "Grandpa, a special pooja is being organized in our village temple tomorrow. Tell everyone to be ready for it. We have a little surprise for everyone after going to our temple," and Varman left. 
+
+"Still a surprise?" Deiva Prakash thought, "Machan, every day there are shocks in this house. What shock is your brother waiting to give tomorrow?" He looked at Chandravendan and left. 
+Chandravendan took one look at his father and left for the field. Only Vendanar was sitting on the sofa there thinking about something. 
+
+He knew better. From what his father told him, he can get the power to destroy many evil spirits through that pooja. The same power cannot defeat the evil ones if they attain them. His father had heard that at the end of the pooja, a powerful fire called Agni Chuji would be lit. It is well understood that they have worked so hard to achieve that. 
+
+There were still 21 days left for Maha Shivratri, and he was a little afraid of how many more problems would come. 
+
+Here Mitra was crying in Varman's room and Varman was comforting her. 
+
+"Don't look here, you must never cry again. When you were born, I bought you with this hand. When I bought you, I thought, 'I will always hold you in this hand.'" I'm sorry," said Varman, smiling and hugging her. 
+
+"They are the ones who told everyone that I am dead. Then how do you know that I am still alive?" she asked wiping her eyes. 
+
+"I also thought you were dead then. It was only ten years ago that we knew you were alive. 
+I came to know one day when my grandfather told me that my aunt had a boy and 'died at birth'. Aunty has lied something to protect you. We have been looking for you from mother without anyone knowing." 
+
+"In all these years, I have not talked to anyone much. I will not talk to anyone except Durga, Valavan Mama and these people. I agreed to marry Madesh not because I like him. I agreed to the marriage only because my father told me. Not right. I had a feeling then, but I didn't even think that my father would cheat on me. Whatever it is, it's a girl, Mitra looked at her husband in confusion. 
+
+He also felt sad for her. "Don't stay here, papu, you shouldn't be upset about anything. It's like we both don't have enough money to grow up even as children. Even for you, both 'father and mother' have been with you for so long. But I know the pain of seeing them standing there, unable to go to them," he said casually with pain in his eyes. 
+
+'For all these years we were happy with them, thinking that they were her father and mother. But, this man...' she felt sad. Mitra seemed to think that God would not give anyone a life without flaws. Not liking the sad look on his face, to call him "Mama," he must say he was stunned with happiness for a second. 
+
+"What? What did you call?" Turning to look at Mitra, Mitra nodded and said, "I called you uncle. Why, don't you like it when I call you uncle?" rolling her eggy eyes and saying,
+
+Varman thought that he would get lost in those eyes. "Do you know how many years I have been waiting for this word 'Mama'?" He smiled beautifully. 
+
+"Honey, uncle, I want to ask you something, will you give it to me?" Mitra asked in eager tongues, not even knowing what he was asking and she shook her head as if to 'give'. 
+
+When Mitra said 'I'll give', he immediately stood up and spoke the language of love with his wife's eyes, "Will you give me just one kiss for this uncle?" He asked. 
+
+Mitra, who thought he was going to ask for something else, who suddenly didn't expect him to ask for a kiss, his cheeks turned red and her face began to sweat. 
+
+"What's wrong honey, uncle said 'I'll give you right away' when he asked? Are you thinking so much now? Maybe you don't like me?" Mitra asked sadly, unable to bear his grief, she gave him a kiss on the cheek before he took off and entered the bathroom from there. 
+
+Varman asked 'What?' He gave her a kiss and ran away before he could even think about it, he was first stunned by her kiss, then he shook his head to hide his pride as he looked at the bathroom she joined. In the same happiness, he called Prakadish and asked him to bring everyone home. 
+
+The next morning dawned beautifully. Everyone in the house got ready to go to the temple, but only Mangai stayed in her room. No one spoke a word to Mangai even when Vendanar told them about everyone going to the temple last night. Even Satyavendan did not like to go to the room where the monk was, but stayed in another room there and used to get ready from there in the morning. 
+
+Even though he did not come, no one forced him to come. "What's up Varma, everyone has come, only you and Bondati will see each other. How long will you be ready?" asked his aunt, 
+
+"I don't know, aunty. I left on time to go to the temple and come home to collect you, but I haven't come home yet. Wait, I'll go and see what's going on," he said and went upstairs to fetch his wife. Just then, his wife Mithrayashini came down from her room. 
+
+Mitra came down the steps like an angel in a golden and silver embroidered silk sari, wearing the yellow rope she had worn on her wedding day and a small aura around her neck, with a bun on her forehead, a few gray hairs in a single braid, and fragrant jasmine in it, and without any make-up. 
+
+Varman froze when he saw his wife walking like an angel. Not only him, but also the people below. Even yesterday she was wearing a disheveled sari and her head was disheveled, so they didn't know her true beauty, but now they were surprised to see that she had taken a normal bath and was wearing a new sari. 
+
+Mitra was coming down and was looking at her husband without blinking. Varman came to his senses as she came down, gazing at the handsome beauty of her husband, who was majestic in his silk shirt, and stood close to him. 
+
+"Brother, that's enough. It's time. Go to the temple and kiss your sister on the side. Let's go to the temple now," said Sarvesh, and the laughter reached Mangai's room. Varman was beautifully embarrassed by their laughter. 
+
+"Okay, it's time. Everyone can go," called Vendanar, "wait a minute, grandpa. More important people have to come," Nandan said while looking at Nandan. 
+
+"Varma, that's why you said she was coming. Why do you think she's coming? She's not that important," Satyavendan said angrily. 
+
+"Father, I will not tell them anything. They are very important. You are going to have a second daughter-in-law," said Varman, "Machan!" A quill's voice was heard at the door. 
+
+As Nandan stood with his back turned, the woman called "Machan" ran to hug Nandan, and everyone in the house was shocked. 
+
+To be continued…`
+  },
+  "27": {
+    title: "Chapter 27",
+    subtitle: "Continuity",
+    content: `"Hey, who is this girl?" asked Deiva Prakash. 
+
+“Nandanoda Pontati Sita,” said Varman, drawing out every word as he looked at Nandan. 
+
+"What, son? Hey, didn't you just tell us about the first marriage, but at least tell us about the second marriage?" Everyone in the house looked at Nandan with open mouth. 
+
+Seeing everyone's gaze, Nandan said to Sita, who was hugging him, "What are you doing?" 
+
+But, she said, "Machan, why did you run away from there without telling me. If you had said a word to me, I would have come with you, wouldn't I?" cry that 
+
+"Devil, let go first!" He pushed her away from him and looked at his daughter's face. She was looking at both of them casually. Varman told her to understand everything last night. 
+
+"Hey Nanda, what is all this?" Satyavendan asked, "Don't ask me anything. Ask your son who is going with you. He is the one who tied this thing on my head," said Nandan. 
+
+"Dude, one more time, I will tell my father to beat you like a mother who called my mother 'Imsa'. Remember that!" The driver came there as he said. 
+
+He smiled and said to the two who came in, "Father, this driver is my friend. I have been in his house for so many years. This is his younger sister Sita, now your second daughter-in-law." 
+
+"Let's buy it now, it's time," he said, putting his hand on his wife's shoulder and walking forward, everyone followed him with laughter. 
+
+Finally, Nandan went with a glimpse of Sita's happiness as Sita went happily holding her husband's hand. 
+
+While abducting Nandan, Varman threatened him and ended his marriage with Sita. Nandan has been falling in love with her since the day of her marriage. 
+
+After going to the temple and everyone finished the puja and came out happily, a foreign expensive car stopped in front of them. As soon as Varman and the driver saw the car, before they could find out who was inside, a bullet fired from inside the car went towards Varman. In seconds, his wife Mitra took the bullet in her stomach. 
+
+It was all over before they could think about it. At that moment her world stopped spinning as the event unfolded before Varman's eyes, and Mitra fell unconscious on his chest as she gazed at her husband standing in shock. 
+
+When Mitra fainted, he said, "Bapu!" He shouted in a life-melting voice that shook the place. 
+
+Then Shamshika's boyfriend David got out of the car first. Shamshika came down behind him holding his hand. 
+
+Everyone trembled at her and Shamshika approached them smiling at them all. 
+
+"What? If you take me away and seal it up, can't I escape?" She smiled mockingly at Varman, then angrily said, "Well cry, I am happy to see you cry. You are the one who ruined all our plans? I will not leave you alone after this," she pointed the gun in her hand towards him again. 
+
+To show the eye to his grandfather, he took everyone and re-entered the temple and locked the door. 
+
+The man, who lifted his unconscious wife on his lap, looked at the driver and said, "Not a single one should be usurped from here," looking at them and approaching them, while Shamshika and Davids were surrounded by the police. 
+
+"What do you want? It's our plan that makes you come here. You've come and trapped yourself," said Varman, smiling at them, "drag them away," telling the driver to catch Perumal and another person with him, carrying Mitra and going to the hospital. 
+
+Here Nandan came to help the driver, who refused and told him to take everyone in the house safely, called the police and rushed to the place told by their men. 
+
+When they reached there, Varman and Nandan never expected Perumala and another person who had been their strong side for so many days.
+
+Because there, beside Perumal, with a grotesque face staring at himself with a frenzy, was Vatuukkarasi. 
+
+It was Vadiukkarasi who helped Perumal all these days. Due to the absence of a mother and father since childhood, he treated his younger brother like his own child and brought him up with lots of pampering. 
+
+When Janardhanan wanted to marry Vaduukkarasi, he said, "I will marry him only if his younger brother comes with him." Janardhanan fell in love with Vaduukkarasi as soon as he saw him, so he promised to keep Dharma with them and took them to the palace. 
+All was well in the new marriage. After a few months, Vadikukarasi let it be that Dharman's attitude was different and asked his tamayan what it was, and that it would not be a big problem as he did not say anything. 
+
+Just then, as was their custom in Vendanar's dynasty, their eldest heir Vendanar and his wife went to perform puja in the Shiva temple, and Dharma followed behind them without their knowledge. 
+
+In the town, all these people told Dharma, "If one attains that power, there is no one in this world who can defeat him," saying that this was it, to stimulate his desire, and with the aim of attaining it, he joined with some miscreants and entered the temple to attain that power. All that said left it unsaid, "If you enter that temple with evil intentions, it is difficult to come out alive." 
+
+So the one who went in, not only saw both of them doing the pooja, but at the end of the pooja, when he came close to the glowing Agni Sathi, the guarding dragon touched him, and the next moment his whole body was poisoned and his body turned blue. 
+
+The two who had come to perform the puja after hearing about the snake that was already here came in with fear. So their eyes were closed so they didn't see anything that happened there. Dharmana opened her eyes only to scream at the snakebite, where the huge snake spewed its venom on Dharmana and re-entered the womb. 
+
+That day 'Dharman's death' was the headline in the whole town. Vaduukkarasi, who kept his brother's life alive, said, "The power that took the life of his brother, he should rule that power." 
+
+Valli was the first to know the truth about him. When Varman came to know about their affair, Valli was caught by Vaduukkarasi before he could escape after hearing what Varman was saying over the phone asking him to kill him. 
+
+"Nobody should be alive if I don't know anything about me," he told Adikesavan to save Varman before approaching Valli, holding Vatudiukkarasi and throwing him down. 
+
+No matter how much Valli tried to tell this to Vendanar, he was unable to tell it till the end. 
+Then, Janardhanan came to stop the person who wanted to go quickly, asking that Valli had labor pains and was admitted to the hospital. 
+
+"Queen, what have you done? Do you know? Everything you have done is a sin. Please leave our daughter-in-law. Don't do anything to her," she begged, and without the least bit of mercy, she had injected her husband with the poison that was to be given to Valli. 
+
+He went to the hospital after taking another poison injection. In order to prevent the deceased from having a daughter as the eldest heir of their house, he killed Valli in a fit of rage and attended Varman's funeral 'as if he knew nothing'. As he was showing his normal face everywhere, no one suspected him. Why, even Mangai doesn't know that her mother did it all. 
+
+Varman and Nandan followed Perumal and Vadikukarasi to take them away. After going to the police station, when Varman heard him say everything he had done, he did not know what to think. 
+
+A few hours later, after a long time in the hospital, Mitra woke up with her entire family standing in front of her. But, not seeing her husband alone, Varman entered, looking round and round.
+
+When he entered and saw his wife awake, he rushed without noticing anyone there and hugged his wife with tears in his eyes. 
+
+"Well, I've got nothing," he said, laughing, "do you know that for a minute my life is gone?" He said in a hoarse voice. 
+
+"Where did your life go, uncle?" Sita asked the ignorant child, at which everyone laughed. 
+
+"Ask your husband. He'll tell you where he is," he said, turning her to him, "Why, drag me away?" Nandan looked at him like that. 
+
+"Machan, what is Uncle Verma saying? Where did he die?" asked in a whispering voice, and there was a pattern of it in her whispering voice. "I see, this is a hospital, right? I don't know what I'm going to do with you," said Varman, pulling her out, followed by the others, and stopped them all. 
+
+"A surprise for all of you. I told you, didn't I? That surprise," said an old man, showing the gate and standing there, skin and bones. No one recognized him there. Such was his appearance. 
+
+"Verma, who is this?" Vendar asked first. When Varman got up from his wife, he went near him and took him by the hand and said, "This is my first uncle to everyone. Mitra's true father," and everyone's face was so happy. 
+
+Why, not even Mitra expected this. 
+"Varma, my daughter," asked Kesavan, and Varman took him to Mitra's compartment. 
+
+Adikesavan hugged his daughter and called Mitra, "Father," with wide eyes. 
+
+Kesavan was happy to be alive, and everyone was doubly happy when Mitra found out that Kesavan was a girl. 
+
+It has been 20 days since Mitra was brought home from the hospital. Today is the Maha Shivratri said by Vendar. Varman and his wife would finish the night puja and come home only in the morning. All preparations were going on for that. 
+
+No one talks to Mangai. He also started living accepting it saying, 'This is his punishment.' 
+
+At the same time, here in Madurai, "Why did we come home?" Tanuja gives me the idea every day. What his mother said that day was true. Mathesh found out within a week of his marriage that he had rejected gold as tin and made tin his wife. 
+
+However, 'this is his life', he accepts it and lives with pride. It is the same today. In the morning, when she asked her to cook because her mother was not feeling well, she said, "She can't cook everything. If you want, I will order from the hotel." 
+
+Chintamani looked at her son and said, "You need this," and went to his room. 
+
+"Forgive me, Mathesh. I thought it was family honor and I married this girl to you by marrying you and ruining your life," said his father. 
+
+"Excuse me, all this is written in my head. What can I do?" After saying that, Mathesh went to his office. 
+
+At the same time, Annadurai Lakshmi also broke down hearing that Roshan said that his sister had gone somewhere. Even though he betrayed Mitra with affection for his own daughter, he had more affection for her as 'the first child'. 
+
+But when Tanuja threatened to stay, that's why both of them agreed to the marriage. But now when Mithrayazini said that she will not come here anymore, both of them broke down. 
+
+After going straight to Durga and getting Mitra's address, the three of them came towards Pooncholai village in a week. Unexpectedly, the car they came in met with an accident and Annadurai and Lakshmi died on the spot. 
+
+Roshan, who was hit only on the head, was taken to the hospital and Roshan called Mitra from the phone, which was picked up by Varman. Those who told all that had happened, Varman told the people in his house not to tell Mitra about this now, "to buy Padi," and he himself came to Madurai and performed all the rituals for Annadurai and Lakshmi.
+
+Valavan asks about Mitra's arrival and tells her what happened and says she still doesn't know. After asking Roshan to take care of Valavan, he came to Pooncholai. 
+
+Later, only after Mitra recovered well, she was told about the death of both Annadurai and Lakshmi. 
+
+Mitra was saddened that she could not even go to the funeral of those who raised her as 'mother and father' for so many years. Amidst this, Valavan and Durga come and see Mitra after Roshan recovers and takes him along. 
+
+Behold, both the husband and wife have left for the Shiva temple. Both husband and wife entered the dilapidated Shiva temple alone in the dark forest, holding hands, where snakes were everywhere. Lo and behold, with all the holy conch, holy water, and the holy flower suitable for Shiva, they performed the puja from the house to Shiva's lingam. 
+
+Puja was performed throughout the night and as a result, Agni Chuli appeared on the lingam and blessed both the husband and wife. After all the pooja was completed, both the husband and wife journeyed home with contentment. 
+
+Sita was standing at the door of the house with aarti for them. 
+
+"Andi, the aarti is taken away only after they come. Why are you standing on the door step with the aarti in your hand since morning?" Nandan who came near her asked, 
+
+"Oh machan, you don't know anything. If you take aarti, put a lot of money. No matter where in our town, wherever aarti is performed, I will stand in the front. Only now, if I didn't come in front, what will I do if someone else takes aarti and buys money?" Nandan looked at her and patted her on the head, saying with the village's pride. 
+
+While he was lamenting that "Vechu has put this madness on my head and wasted my life," his beloved daughter Yatra came there with aarti in her hand, calling him "Daddy". 
+
+Nandan thought, "Lord! My daughter has become like her now that she has come together." 
+
+"Pilgrim boy, what gold is this?" 
+
+"Father, only Seethamma and Varma are taking aarti for father. Shouldn't I take it? I will also take it for my father," he said looking at Sita's face and saying, 
+
+"Hey, here is Barudi Silvandu! I will perform aarti for my uncle and sister first. If you want it, you can go and get it. Have you come..." to smile. 
+
+Seeing both of them, everyone in the house hit their heads. 
+
+Without keeping them waiting for a long time, both the husband and wife got out of the car with so much happiness on their faces, "Sir.., uncle and sister are here!" Sita screamed, 
+
+In which all came to the gate. 
+"Uncle, I will perform aarti for you first. Then you have to pay me a lot of money, okay?" Saying that, Aarti went around and stood before Varman with outstretched hand, 
+
+"Dad, you don't have to give them first, I want to give it to you," Pushing Sita away, she wrapped her pinched hands around her 'Varma Dad', 'Mitra Amma', took the plate from her hand and handed it to her younger sister Pavitra, who carried her in his arms, Varman kissed her on the cheek, and to see his friend Sarathi, ten 500 rupee notes each. Varman divided it equally and gave it to both. Carrying the Yatra, he entered the house. 
+
+"Owner of such a great empire, can you go and fight for money like this?" To tease both the drivers, 
+
+"Boda dubku!" That Yatra would knock him down on one side and his younger sister Sita on the other side, and the place was lively. 
+
+I wish them all the same happiness and farewell, thank you and hello🙏🙏🙏. 
+
+Conclusion….`
   }
 };
