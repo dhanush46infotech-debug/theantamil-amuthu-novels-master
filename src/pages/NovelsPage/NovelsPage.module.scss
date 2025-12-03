@@ -24,17 +24,95 @@
 .sectionHeader {
   font-family: 'Brush Script MT', 'Lucida Handwriting', 'Segoe Script', cursive;
   font-style: italic;
-  font-size: 3.5rem;
+  font-size: 1.75rem;
   font-weight: 400;
   color: #ffffff;
   margin: 0;
-  padding: 0.5rem 0;
+  padding: 0.75rem 1.5rem;
   letter-spacing: 0.02em;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+
+  // Golden Jewel Background
+  background: linear-gradient(135deg,
+    #FFD700 0%,
+    #FFA500 25%,
+    #FF8C00 50%,
+    #FFA500 75%,
+    #FFD700 100%
+  );
+
+  // Premium Golden Border
+  border: 2px solid #FFD700;
+  border-radius: 10px;
+
+  // Luxurious Shadow & Glow Effects
+  box-shadow:
+    0 10px 40px rgba(255, 215, 0, 0.5),
+    inset 0 2px 10px rgba(255, 255, 255, 0.4),
+    inset 0 -2px 10px rgba(0, 0, 0, 0.3),
+    0 0 30px rgba(255, 215, 0, 0.4),
+    0 5px 15px rgba(255, 140, 0, 0.3);
+
+  text-shadow:
+    2px 2px 4px rgba(0, 0, 0, 0.5),
+    0 0 10px rgba(255, 215, 0, 0.3);
+
+  // Shimmering Effect
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      45deg,
+      transparent 30%,
+      rgba(255, 255, 255, 0.3) 50%,
+      transparent 70%
+    );
+    animation: shimmer 3s infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 15px;
+    padding: 3px;
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FFD700);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.6;
+  }
 
   [data-theme="light"] & {
-    color: #000000;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg,
+      #FFD700 0%,
+      #FFA500 25%,
+      #FF8C00 50%,
+      #FFA500 75%,
+      #FFD700 100%
+    );
+    border-color: #FF8C00;
+    box-shadow:
+      0 10px 40px rgba(255, 140, 0, 0.6),
+      inset 0 2px 10px rgba(255, 255, 255, 0.5),
+      inset 0 -2px 10px rgba(0, 0, 0, 0.2),
+      0 0 30px rgba(255, 215, 0, 0.5);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
   }
 }
 
@@ -360,7 +438,7 @@
   }
 
   .sectionHeader {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .cardImage {
@@ -420,8 +498,8 @@
   }
 
   .sectionHeader {
-    font-size: 2.6rem;
-    padding: 0.5rem 0;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
   }
 
   .cardImage {
@@ -474,7 +552,7 @@
   }
 
   .sectionHeader {
-    font-size: 2.3rem;
+    font-size: 1.15rem;
   }
 
   .cardImage {
