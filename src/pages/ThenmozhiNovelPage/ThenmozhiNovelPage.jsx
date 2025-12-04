@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useLanguage } from '../../context/LanguageContext';
 import Header from '../../components/layout/Header/Header';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
 import styles from './ThenmozhiNovelPage.module.scss';
@@ -11,6 +12,7 @@ import thenmozhiChapterImage from '../../assets/images/episodes_card/Thenmozhi_e
 
 const ThenmozhiNovelPage = () => {
   const { user } = useAuth();
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
@@ -109,7 +111,7 @@ const ThenmozhiNovelPage = () => {
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                படிக்க ஆரம்பிக்கவும்
+                {language === 'tamil' ? 'படிக்க ஆரம்பிக்கவும்' : 'Start Reading'}
               </button>
             </div>
           </div>
@@ -117,7 +119,7 @@ const ThenmozhiNovelPage = () => {
 
         {/* Story Summary Section */}
         <div className={styles.storySection}>
-          <h2 className={styles.sectionTitle}>கதை சுருக்கம்</h2>
+          <h2 className={styles.sectionTitle}>{language === 'tamil' ? 'கதை சுருக்கம்' : 'Story Summary'}</h2>
           <div className={styles.storyContent}>
             <p className={styles.tamilDescription}>{novel.description.tamil}</p>
             <p className={styles.englishDescription}>{novel.description.english}</p>
@@ -126,7 +128,7 @@ const ThenmozhiNovelPage = () => {
 
         {/* Chapters Section */}
         <div className={styles.chaptersSection}>
-          <h2 className={styles.sectionTitle}>அத்தியாயங்கள் [{novel.chapters.length}]</h2>
+          <h2 className={styles.sectionTitle}>{language === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'} [{novel.chapters.length}]</h2>
           <div className={styles.chaptersList}>
             {novel.chapters.map((chapter) => (
               <div

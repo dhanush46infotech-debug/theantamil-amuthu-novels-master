@@ -33,19 +33,28 @@ export const CAROUSEL_SETTINGS = {
 export const NOVELS = [
   {
     id: 1,
-    title: 'ராட்சசனே எனை வதைப்பதேனடா!',
+    title: {
+      tamil: 'ராட்சசனே எனை வதைப்பதேனடா!',
+      english: 'Oh Demon! Why Do You Torment Me!'
+    },
     author: 'Thenmozhi',
     image: 'Novel Card/Thenmozhi Card.jpg'
   },
   {
     id: 2,
-    title: 'தாலாட்டும் தாழம்பூவே',
+    title: {
+      tamil: 'தாலாட்டும் தாழம்பூவே',
+      english: 'The Lullaby of the Temple Flower'
+    },
     author: 'Swetha Swe',
     image: 'Novel Card/swetha card.jpg'
   },
   {
     id: 3,
-    title: 'வந்தத்துணையே! என் வாழ்க்கைத் துணையே!',
+    title: {
+      tamil: 'வந்தத்துணையே! என் வாழ்க்கைத் துணையே!',
+      english: 'Welcome! My Life Partner!'
+    },
     author: 'Mohanaamozhi',
     image: 'Novel Card/Mohana card.jpg'
   },

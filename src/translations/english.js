@@ -64,7 +64,10 @@ const englishTranslations = {
     welcome: 'Welcome!',
     featuredNovels: 'Featured Novels',
     allNovels: 'All Novels',
-    readMore: 'Read More'
+    readMore: 'Read More',
+    quote: 'Seek the honey of Tamil\nGather and drink\nDesire will multiply!!',
+    readNow: 'READ NOW',
+    continueReading: 'Continue Reading'
   },
 
   // Footer

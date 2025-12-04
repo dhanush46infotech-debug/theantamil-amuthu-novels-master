@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
+import { translations } from '../../translations';
 import Header from '../../components/layout/Header/Header';
 import Carousel from '../../components/common/Carousel/Carousel';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
@@ -25,6 +26,7 @@ const NovelsPage = () => {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const t = translations[language];
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -45,7 +47,7 @@ const NovelsPage = () => {
 
       {/* Continue Reading Section */}
       <div className={styles.continueReadingSection}>
-        <h2 className={styles.sectionHeader}>Continue Reading</h2>
+        <h2 className={styles.sectionHeader}>{language === 'tamil' ? 'தொடர்ந்து படிக்க' : 'Continue Reading'}</h2>
       </div>
 
       {/* Novels Grid Section */}
@@ -70,7 +72,7 @@ const NovelsPage = () => {
                   : novel.title}
               </h3>
               <p className={styles.novelAuthor}>by {novel.author}</p>
-              <button className={styles.readNowButton} onClick={(e) => { e.stopPropagation(); handleNovelClick(novel.id); }}>READ NOW</button>
+              <button className={styles.readNowButton} onClick={(e) => { e.stopPropagation(); handleNovelClick(novel.id); }}>{language === 'tamil' ? 'இப்போது படிக்க' : 'READ NOW'}</button>
             </div>
           ))}
         </div>

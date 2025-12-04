@@ -64,7 +64,10 @@ const tamilTranslations = {
     welcome: 'வணக்கம்!',
     featuredNovels: 'சிறப்பு நாவல்கள்',
     allNovels: 'அனைத்து நாவல்கள்',
-    readMore: 'மேலும் படிக்க'
+    readMore: 'மேலும் படிக்க',
+    quote: 'தேன்தமிழமுது தேடிப்படி\nஅள்ளி அள்ளி பருக\nஆசை பெருகுமே!!',
+    readNow: 'இப்போது படிக்க',
+    continueReading: 'தொடர்ந்து படிக்க'
   },
 
   // Footer
