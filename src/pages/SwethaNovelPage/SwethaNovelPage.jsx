@@ -124,7 +124,7 @@ const SwethaNovelPage = () => {
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                {language === 'tamil' ? 'படிக்க ஆரம்பிக்கவும்' : 'Start Reading'}
+                Start Reading
               </button>
             </div>
           </div>

@@ -240,7 +240,7 @@ const NovelDetailPage = () => {
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                படிக்க ஆரம்பிக்கவும்
+                Start Reading
               </button>
             </div>
           </div>
