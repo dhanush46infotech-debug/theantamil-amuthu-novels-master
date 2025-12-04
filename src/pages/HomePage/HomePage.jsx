@@ -37,18 +37,19 @@ const HomePage = () => {
         {/* Center Quote */}
         <div className={styles.quoteContainer}>
           <h1 className={styles.quoteText}>
-            {language === 'tamil' 
-              ? 'தேன்தமிழமுது தேடிப்படி\nஅள்ளி அள்ளி பருக\nஆசை பெருகுமே!!'
-              : 'Seek the honey of Tamil\nGather and drink\nDesire will multiply!!'
-            }
+            தேன்தமிழமுது தேடிப்படி
+            <br />
+            அள்ளி அள்ளி பருக
+            <br />
+            ஆசை பெருகுமே!!
           </h1>
         </div>
 
         {/* 3D Read Now Button */}
-        <Button 
+        <Button
         className={styles.heroButton}
           onClick={() => navigate('/novels')}>
-            {language === 'tamil' ? 'இப்போது படிக்க' : 'READ NOW'}
+            READ NOW
         </Button>
 
         {/* WELCOME text with letter-by-letter dripping animation */}
