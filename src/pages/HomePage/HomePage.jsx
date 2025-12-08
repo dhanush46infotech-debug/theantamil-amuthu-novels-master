@@ -12,7 +12,7 @@ import { translations } from '../../translations';
 const HomePage = () => {
   const [mainSlide, setMainSlide] = useState(0);
   const [showYouTubeModal, setShowYouTubeModal] = useState(false);
-  const navigate = useNavigate();
+  const navigate = useNavigate(); 
   const { language } = useLanguage();
   const t = translations[language];
 
