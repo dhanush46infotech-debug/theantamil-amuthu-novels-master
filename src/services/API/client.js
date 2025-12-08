@@ -1,6 +1,8 @@
 import axios from 'axios';
 import API_BASE_URL from './config';
 
+console.log('API Base URL configured:', API_BASE_URL);
+
 // Create axios instance
 const apiClient = axios.create({
   baseURL: API_BASE_URL,
@@ -13,6 +15,7 @@ const apiClient = axios.create({
 // Request interceptor - Add auth token to requests
 apiClient.interceptors.request.use(
   (config) => {
+    console.log(`[API Request] ${config.method?.toUpperCase()} ${config.url}`);
     const token = localStorage.getItem('authToken');
     if (token) {
       config.headers.Authorization = `Bearer ${token}`;
@@ -20,6 +23,7 @@ apiClient.interceptors.request.use(
     return config;
   },
   (error) => {
+    console.error('[API Request Error]', error);
     return Promise.reject(error);
   }
 );
@@ -27,10 +31,18 @@ apiClient.interceptors.request.use(
 // Response interceptor - Handle errors globally
 apiClient.interceptors.response.use(
   (response) => {
+    console.log(`[API Response] ${response.status} ${response.statusText}`);
     return response;
   },
   async (error) => {
     const originalRequest = error.config;
+    
+    console.error('[API Response Error]', {
+      status: error.response?.status,
+      statusText: error.response?.statusText,
+      message: error.message,
+      url: originalRequest?.url
+    });
 
     // Handle 401 Unauthorized - Token expired
     if (error.response?.status === 401 && !originalRequest._retry) {
