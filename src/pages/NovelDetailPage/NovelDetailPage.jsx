@@ -50,14 +50,25 @@ const NovelDetailPage = () => {
     const fetchNovelData = async () => {
       try {
         setLoading(true);
+        console.log('Fetching novel details for ID:', id);
 
         // Fetch novel details
         const novelResponse = await novelService.getNovelById(id);
-        setNovel(novelResponse.novel);
+        console.log('Novel response:', novelResponse);
+        
+        // Support both { novel: {...} } and direct novel object
+        const novelData = novelResponse.novel || novelResponse;
+        setNovel(novelData);
 
         // Fetch chapters
         const chaptersResponse = await novelService.getNovelChapters(id);
-        setChapters(chaptersResponse.chapters || []);
+        console.log('Chapters response:', chaptersResponse);
+        
+        // Support both { chapters: [...] } and direct chapters array
+        const chaptersData = Array.isArray(chaptersResponse) 
+          ? chaptersResponse 
+          : (chaptersResponse.chapters || []);
+        setChapters(chaptersData);
 
         setError(null);
       } catch (err) {

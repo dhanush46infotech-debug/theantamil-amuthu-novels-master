@@ -30,9 +30,11 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/novels" element={<NovelsPage />} />
+        {/* Specific routes first (for hardcoded novel pages) */}
         <Route path="/novel/1" element={<ThenmozhiNovelPage />} />
         <Route path="/novel/2" element={<SwethaNovelPage />} />
         <Route path="/novel/3" element={<MohanaNovelPage />} />
+        {/* Generic routes after specific ones */}
         <Route path="/novel/:id" element={<NovelDetailPage />} />
         <Route path="/novel/:novelId/chapter/:chapterId" element={<ChapterPage />} />
       </Routes>

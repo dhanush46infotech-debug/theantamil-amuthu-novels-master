@@ -104,8 +104,10 @@ const NovelsPage = () => {
           </div>
         ) : (
           <div className={styles.grid}>
-            {novels.map(novel => (
-              <div className={styles.novelCard} key={novel._id} onClick={() => handleNovelClick(novel._id)}>
+            {novels.map(novel => {
+              const novelId = novel._id || novel.id; // Support both _id and id
+              return (
+              <div className={styles.novelCard} key={novelId} onClick={() => handleNovelClick(novelId)}>
                 <div className={styles.cardImage}>
                   {novel.coverImage && imageMap[novel.coverImage] ? (
                     <img
@@ -123,19 +125,20 @@ const NovelsPage = () => {
                 <p className={styles.novelAuthor}>by {novel.author}</p>
                 <div className={styles.novelStats}>
                   <span>📖 {novel.totalChapters} {language === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'}</span>
-                  <span>👁️ {novel.stats?.views || 0}</span>
+                  <span>👁️ {novel.stats?.views || novel.views || 0}</span>
                 </div>
                 <button
                   className={styles.readNowButton}
                   onClick={(e) => {
                     e.stopPropagation();
-                    handleNovelClick(novel._id);
+                    handleNovelClick(novelId);
                   }}
                 >
                   {language === 'tamil' ? 'இப்போது படியுங்கள்' : 'READ NOW'}
                 </button>
               </div>
-            ))}
+            );
+            })}
           </div>
         )}
       </div>
