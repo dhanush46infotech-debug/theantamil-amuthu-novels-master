@@ -21,7 +21,10 @@ const imageMap = {
   'Novel Card/Mohana card.jpg': mohanaCard,
   '/assets/images/Novel Card/Thenmozhi Card.jpg': thenmozhiCard,
   '/assets/images/Novel Card/swetha card.jpg': swethaCard,
-  '/assets/images/Novel Card/Mohana card.jpg': mohanaCard
+  '/assets/images/Novel Card/Mohana card.jpg': mohanaCard,
+  '/assets/images/novel-cards/Thenmozhi Card.jpg': thenmozhiCard,
+  '/assets/images/novel-cards/swetha card.jpg': swethaCard,
+  '/assets/images/novel-cards/Mohana card.jpg': mohanaCard
 };
 
 const NovelsPage = () => {
