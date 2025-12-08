@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { useLanguage } from '../../context/LanguageContext';
 import Header from '../../components/layout/Header/Header';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
-import { NOVELS } from '../../utils/constants';
+import novelService from '../../services/API/novelService';
 import styles from './NovelDetailPage.module.scss';
 
 // Import the card images
@@ -16,40 +17,61 @@ import thenmozhiChapterImage from '../../assets/images/episodes_card/Thenmozhi_e
 import swethaChapterImage from '../../assets/images/episodes_card/swetha swe episodes.jpg';
 import mohanaChapterImage from '../../assets/images/episodes_card/Mohanamozhi episodes.jpg';
 
-// Image mapping for novel cards
+// Image mapping - supports both old and new paths
 const imageMap = {
   'Novel Card/Thenmozhi Card.jpg': thenmozhiCard,
   'Novel Card/swetha card.jpg': swethaCard,
-  'Novel Card/Mohana card.jpg': mohanaCard
+  'Novel Card/Mohana card.jpg': mohanaCard,
+  '/assets/images/Novel Card/Thenmozhi Card.jpg': thenmozhiCard,
+  '/assets/images/Novel Card/swetha card.jpg': swethaCard,
+  '/assets/images/Novel Card/Mohana card.jpg': mohanaCard
 };
 
-// Chapter/Episode image mapping
-const chapterImageMap = {
-  1: thenmozhiChapterImage,
-  2: swethaChapterImage,
-  3: mohanaChapterImage
+// Chapter/Episode image mapping by author
+const chapterImageMapByAuthor = {
+  'Thenmozhi': thenmozhiChapterImage,
+  'Swetha Swe': swethaChapterImage,
+  'Mohanaamozhi': mohanaChapterImage
 };
 
 const NovelDetailPage = () => {
   const { user } = useAuth();
+  const { language } = useLanguage();
   const navigate = useNavigate();
   const { id } = useParams();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+  const [novel, setNovel] = useState(null);
+  const [chapters, setChapters] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  // Get the novel data based on the ID from URL
-  const novelData = NOVELS.find(n => n.id === parseInt(id));
+  // Fetch novel and chapters from API
+  useEffect(() => {
+    const fetchNovelData = async () => {
+      try {
+        setLoading(true);
 
-  // If novel not found, show error or redirect
-  if (!novelData) {
-    return (
-      <div className={styles.novelDetailContainer}>
-        <Header onLoginClick={() => setIsLoginModalOpen(true)} />
-        <div className={styles.content}>
-          <h2>Novel not found</h2>
-        </div>
-      </div>
-    );
-  }
+        // Fetch novel details
+        const novelResponse = await novelService.getNovelById(id);
+        setNovel(novelResponse.novel);
+
+        // Fetch chapters
+        const chaptersResponse = await novelService.getNovelChapters(id);
+        setChapters(chaptersResponse.chapters || []);
+
+        setError(null);
+      } catch (err) {
+        console.error('Error fetching novel data:', err);
+        setError('Failed to load novel details. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    if (id) {
+      fetchNovelData();
+    }
+  }, [id]);
 
   const handleLoginClick = () => {
     setIsLoginModalOpen(true);
@@ -59,8 +81,98 @@ const NovelDetailPage = () => {
     setIsLoginModalOpen(false);
   };
 
-  // Define chapters for each novel
-  const novelChapters = {
+  const handleChapterClick = (chapterId) => {
+    navigate(`/novel/${id}/chapter/${chapterId}`);
+  };
+
+  const handleContinueReading = () => {
+    if (chapters.length > 0) {
+      navigate(`/novel/${id}/chapter/${chapters[0]._id}`);
+    }
+  };
+
+  const handleBookmark = async () => {
+    if (!user) {
+      setIsLoginModalOpen(true);
+      return;
+    }
+
+    try {
+      await novelService.bookmarkNovel(id);
+      alert(language === 'tamil' ? 'புக்மார்க் சேர்க்கப்பட்டது' : 'Bookmarked successfully');
+    } catch (err) {
+      console.error('Error bookmarking novel:', err);
+      alert(language === 'tamil' ? 'பிழை ஏற்பட்டது' : 'Error occurred');
+    }
+  };
+
+  const handleLike = async () => {
+    if (!user) {
+      setIsLoginModalOpen(true);
+      return;
+    }
+
+    try {
+      await novelService.likeNovel(id);
+      // Update novel stats locally
+      if (novel) {
+        setNovel(prev => ({
+          ...prev,
+          stats: {
+            ...prev.stats,
+            likes: (prev.stats?.likes || 0) + 1
+          }
+        }));
+      }
+    } catch (err) {
+      console.error('Error liking novel:', err);
+    }
+  };
+
+  const handleDownloadPDF = () => {
+    if (!user) {
+      setIsLoginModalOpen(true);
+      return;
+    }
+    console.log('Download PDF functionality coming soon');
+  };
+
+  const handleShare = () => {
+    console.log('Share functionality coming soon');
+  };
+
+  // Loading state
+  if (loading) {
+    return (
+      <div className={styles.novelDetailContainer}>
+        <Header onLoginClick={handleLoginClick} />
+        <div className={styles.loading}>
+          <p>{language === 'tamil' ? 'ஏற்றுகிறது...' : 'Loading...'}</p>
+        </div>
+      </div>
+    );
+  }
+
+  // Error state
+  if (error || !novel) {
+    return (
+      <div className={styles.novelDetailContainer}>
+        <Header onLoginClick={handleLoginClick} />
+        <div className={styles.error}>
+          <p>{error || 'Novel not found'}</p>
+          <button onClick={() => navigate('/novels')}>
+            {language === 'tamil' ? 'நாவல்களுக்குத் திரும்பு' : 'Back to Novels'}
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  const coverImage = imageMap[novel.coverImage] || thenmozhiCard;
+  const chapterImage = chapterImageMapByAuthor[novel.author] || thenmozhiChapterImage;
+
+  // Remove all hardcoded chapter data below this comment
+  /* const novelChapters = {
     1: [ // ராட்சசனே எனை வதைப்பதேனடா! - Thenmozhi
       { id: 1, title: 'தேன் 1', date: '05/01/2025', words: 1500 },
       { id: 2, title: 'தேன் 2', date: '06/01/2025', words: 1500 },
@@ -148,67 +260,7 @@ const NovelDetailPage = () => {
       { id: 26, title: 'பாகம் 26', date: '30/01/2025', words: 1500 },
       { id: 27, title: 'பாகம் 27', date: '31/01/2025', words: 1500 }
     ]
-  };
-
-  // Create novel object with dynamic data
-  const novel = {
-    id: novelData.id,
-    title: novelData.title,
-    englishTitle: 'Shadow of Night',
-    author: novelData.author,
-    rating: 4.8,
-    reviewCount: 567,
-    genres: ['Love', 'Romantic'],
-    image: imageMap[novelData.image] || thenmozhiCard,
-    stats: {
-      views: '25.6K',
-      bookmarks: '1.9K',
-      chapters: novelChapters[novelData.id]?.length || 12
-    },
-    description: {
-      tamil: 'சிறுவயதில் வீட்டை விட்டு வெளியேறிய நாயகன், எட்டு வருடங்கள் கடந்து யாரும் எதிர்பார்க்காத வகையில், கையில் குழந்தையுடன் வீட்டிற்கு வருகிறான். சிறுவயது முதல் தாய், தந்தை, தங்கை, தம்பி என்று அவர்களையே தன் உலகம் என்று வாழ்ந்த நாயகிக்குத் துரோகம் இழைத்தது மட்டுமில்லாமல், அவளை "அவர்கள் வீட்டுப் பெண்ணே இல்லை" என்று கூறியதால், வீட்டை விட்டு வெளியேறி, யாரும் இல்லாமல் நிர்கதியாக நிற்கிறாள் நாயகி. இவர்கள் இருவரும் திருமண பந்தத்தில் ஒன்று சேர்ந்தால், அவர்களின் வாழ்க்கை எவ்வாறு இருக்கும்? தெரிந்துகொள்ளக் காத்திருங்கள்... "தாலாட்டும் தாழம்பூவே!"',
-      english: ''
-    },
-    chapters: novelChapters[novelData.id] || []
-  };
-
-  const handleChapterClick = (chapterId) => {
-    // Navigate directly to chapter page without login check
-    navigate(`/novel/${novel.id}/chapter/${chapterId}`);
-  };
-
-  const handleContinueReading = () => {
-    // Navigate directly to first chapter
-    navigate(`/novel/${novel.id}/chapter/1`);
-  };
-
-  const handleDownloadPDF = () => {
-    if (!user) {
-      setIsLoginModalOpen(true);
-      return;
-    }
-    console.log('Download PDF');
-  };
-
-  const handleBookmark = () => {
-    if (!user) {
-      setIsLoginModalOpen(true);
-      return;
-    }
-    console.log('Bookmark novel');
-  };
-
-  const handleLike = () => {
-    if (!user) {
-      setIsLoginModalOpen(true);
-      return;
-    }
-    console.log('Like novel');
-  };
-
-  const handleShare = () => {
-    console.log('Share novel');
-  };
+  }; */
 
   return (
     <div className={styles.novelDetailContainer}>
@@ -218,7 +270,7 @@ const NovelDetailPage = () => {
         {/* Novel Header Section */}
         <div className={styles.novelHeader}>
           <div className={styles.imageSection}>
-            <img src={novel.image} alt={novel.title} className={styles.novelImage} />
+            <img src={coverImage} alt={novel.title} className={styles.novelImage} />
           </div>
 
           <div className={styles.infoSection}>
@@ -230,17 +282,32 @@ const NovelDetailPage = () => {
               <span className={styles.author}>{novel.author}</span>
             </div>
 
-            {/* Genres */}
+            {/* Genres/Tags */}
             <div className={styles.genres}>
-              {novel.genres.map((genre, index) => (
-                <span key={index} className={styles.genreTag}>{genre}</span>
+              <span className={styles.genreTag}>{novel.genre}</span>
+              {novel.tags?.slice(0, 3).map((tag, index) => (
+                <span key={index} className={styles.genreTag}>{tag}</span>
               ))}
+            </div>
+
+            {/* Stats */}
+            <div className={styles.novelStats}>
+              <span>👁️ {novel.stats?.views || 0}</span>
+              <span>❤️ {novel.stats?.likes || 0}</span>
+              <span>🔖 {novel.stats?.bookmarks || 0}</span>
+              <span>📖 {novel.totalChapters} {language === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'}</span>
             </div>
 
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                Start Reading
+                {language === 'tamil' ? 'படிக்கத் தொடங்கு' : 'Start Reading'}
+              </button>
+              <button className={styles.bookmarkButton} onClick={handleBookmark}>
+                🔖 {language === 'tamil' ? 'புக்மார்க்' : 'Bookmark'}
+              </button>
+              <button className={styles.likeButton} onClick={handleLike}>
+                ❤️ {language === 'tamil' ? 'விரும்பு' : 'Like'}
               </button>
             </div>
           </div>
@@ -248,31 +315,38 @@ const NovelDetailPage = () => {
 
         {/* Story Summary Section */}
         <div className={styles.storySection}>
-          <h2 className={styles.sectionTitle}>கதை சுருக்கம்</h2>
+          <h2 className={styles.sectionTitle}>
+            {language === 'tamil' ? 'கதை சுருக்கம்' : 'Story Summary'}
+          </h2>
           <div className={styles.storyContent}>
-            <p className={styles.tamilDescription}>{novel.description.tamil}</p>
-            <p className={styles.englishDescription}>{novel.description.english}</p>
+            <p className={styles.description}>
+              {novel.description?.[language] || novel.description?.tamil || ''}
+            </p>
           </div>
         </div>
 
         {/* Chapters Section */}
         <div className={styles.chaptersSection}>
-          <h2 className={styles.sectionTitle}>அத்தியாயங்கள் [{novel.chapters.length}]</h2>
+          <h2 className={styles.sectionTitle}>
+            {language === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'} [{chapters.length}]
+          </h2>
           <div className={styles.chaptersList}>
-            {novel.chapters.map((chapter) => (
+            {chapters.map((chapter) => (
               <div
-                key={chapter.id}
+                key={chapter._id}
                 className={styles.chapterCard}
-                onClick={() => handleChapterClick(chapter.id)}
+                onClick={() => handleChapterClick(chapter._id)}
               >
                 <div className={styles.chapterImageWrapper}>
                   <img
-                    src={chapterImageMap[novel.id]}
-                    alt={chapter.title}
+                    src={chapterImage}
+                    alt={chapter.title?.[language] || chapter.title?.tamil}
                     className={styles.chapterImage}
                   />
                 </div>
-                <h3 className={styles.chapterTitle}>{chapter.title}</h3>
+                <h3 className={styles.chapterTitle}>
+                  {chapter.title?.[language] || chapter.title?.tamil}
+                </h3>
               </div>
             ))}
           </div>

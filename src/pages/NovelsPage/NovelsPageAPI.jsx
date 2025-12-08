@@ -14,17 +14,14 @@ import thenmozhiCard from '../../assets/images/Novel Card/Thenmozhi Card.jpg';
 import swethaCard from '../../assets/images/Novel Card/swetha card.jpg';
 import mohanaCard from '../../assets/images/Novel Card/Mohana card.jpg';
 
-// Image mapping - supports both old and new image paths
+// Image mapping
 const imageMap = {
-  'Novel Card/Thenmozhi Card.jpg': thenmozhiCard,
-  'Novel Card/swetha card.jpg': swethaCard,
-  'Novel Card/Mohana card.jpg': mohanaCard,
   '/assets/images/Novel Card/Thenmozhi Card.jpg': thenmozhiCard,
   '/assets/images/Novel Card/swetha card.jpg': swethaCard,
   '/assets/images/Novel Card/Mohana card.jpg': mohanaCard
 };
 
-const NovelsPage = () => {
+const NovelsPageAPI = () => {
   const { user } = useAuth();
   const { language } = useLanguage();
   const navigate = useNavigate();
@@ -134,4 +131,4 @@ const NovelsPage = () => {
   );
 };
 
-export default NovelsPage;
+export default NovelsPageAPI;
