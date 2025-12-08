@@ -134,6 +134,7 @@ $black: #000000;
 // Breakpoints
 $breakpoint-mobile: 480px;
 $breakpoint-tablet: 768px;
+$breakpoint-tablet-lg: 850px;  // 850x815 tablet size
 $breakpoint-desktop: 1024px;
 $breakpoint-wide: 1440px;
 $breakpoint-ultra-wide: 1920px;
@@ -151,6 +152,10 @@ $breakpoint-4k: 2560px;
     }
   } @else if $breakpoint == tablet {
     @media (min-width: #{$breakpoint-mobile + 1}) and (max-width: #{$breakpoint-tablet}) {
+      @content;
+    }
+  } @else if $breakpoint == tablet-lg {
+    @media (min-width: #{$breakpoint-tablet + 1}) and (max-width: #{$breakpoint-tablet-lg}) {
       @content;
     }
   } @else if $breakpoint == desktop {

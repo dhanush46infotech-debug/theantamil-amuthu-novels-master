@@ -94,6 +94,10 @@
     color: #0a2a43;
   }
 
+  @media (min-width: 769px) and (max-width: 850px) {
+    font-size: 2.5rem;
+  }
+
   @media (max-width: 768px) {
     font-size: 2rem;
   }
