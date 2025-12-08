@@ -36,7 +36,7 @@ const chapterImageMapByAuthor = {
 
 const NovelDetailPage = () => {
   const { user } = useAuth();
-  const { language } = useLanguage();
+  const { language: globalLanguage } = useLanguage();
   const navigate = useNavigate();
   const { id } = useParams();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
@@ -44,6 +44,7 @@ const NovelDetailPage = () => {
   const [chapters, setChapters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [displayLanguage, setDisplayLanguage] = useState('tamil'); // Local language state
 
   // Fetch novel and chapters from API
   useEffect(() => {
@@ -59,6 +60,14 @@ const NovelDetailPage = () => {
         // Support both { novel: {...} } and direct novel object
         const novelData = novelResponse.novel || novelResponse;
         setNovel(novelData);
+        
+        // Set display language based on novel's language
+        if (novelData && novelData.language) {
+          console.log('Novel language:', novelData.language);
+          setDisplayLanguage(novelData.language); // Use novel's language
+        } else {
+          setDisplayLanguage('tamil'); // Default to Tamil
+        }
 
         // Fetch chapters
         const chaptersResponse = await novelService.getNovelChapters(id);
@@ -110,10 +119,10 @@ const NovelDetailPage = () => {
 
     try {
       await novelService.bookmarkNovel(id);
-      alert(language === 'tamil' ? 'புக்மார்க் சேர்க்கப்பட்டது' : 'Bookmarked successfully');
+      alert(displayLanguage === 'tamil' ? 'புக்மார்க் சேர்க்கப்பட்டது' : 'Bookmarked successfully');
     } catch (err) {
       console.error('Error bookmarking novel:', err);
-      alert(language === 'tamil' ? 'பிழை ஏற்பட்டது' : 'Error occurred');
+      alert(displayLanguage === 'tamil' ? 'பிழை ஏற்பட்டது' : 'Error occurred');
     }
   };
 
@@ -158,7 +167,7 @@ const NovelDetailPage = () => {
       <div className={styles.novelDetailContainer}>
         <Header onLoginClick={handleLoginClick} />
         <div className={styles.loading}>
-          <p>{language === 'tamil' ? 'ஏற்றுகிறது...' : 'Loading...'}</p>
+          <p>{displayLanguage === 'tamil' ? 'ஏற்றுகிறது...' : 'Loading...'}</p>
         </div>
       </div>
     );
@@ -172,7 +181,7 @@ const NovelDetailPage = () => {
         <div className={styles.error}>
           <p>{error || 'Novel not found'}</p>
           <button onClick={() => navigate('/novels')}>
-            {language === 'tamil' ? 'நாவல்களுக்குத் திரும்பு' : 'Back to Novels'}
+            {displayLanguage === 'tamil' ? 'நாவல்களுக்குத் திரும்பு' : 'Back to Novels'}
           </button>
         </div>
       </div>
@@ -306,19 +315,19 @@ const NovelDetailPage = () => {
               <span>👁️ {novel.stats?.views || 0}</span>
               <span>❤️ {novel.stats?.likes || 0}</span>
               <span>🔖 {novel.stats?.bookmarks || 0}</span>
-              <span>📖 {novel.totalChapters} {language === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'}</span>
+              <span>📖 {novel.totalChapters} {displayLanguage === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'}</span>
             </div>
 
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                {language === 'tamil' ? 'படிக்கத் தொடங்கு' : 'Start Reading'}
+                {displayLanguage === 'tamil' ? 'படிக்கத் தொடங்கு' : 'Start Reading'}
               </button>
               <button className={styles.bookmarkButton} onClick={handleBookmark}>
-                🔖 {language === 'tamil' ? 'புக்மார்க்' : 'Bookmark'}
+                🔖 {displayLanguage === 'tamil' ? 'புக்மார்க்' : 'Bookmark'}
               </button>
               <button className={styles.likeButton} onClick={handleLike}>
-                ❤️ {language === 'tamil' ? 'விரும்பு' : 'Like'}
+                ❤️ {displayLanguage === 'tamil' ? 'விரும்பு' : 'Like'}
               </button>
             </div>
           </div>
@@ -327,7 +336,7 @@ const NovelDetailPage = () => {
         {/* Story Summary Section */}
         <div className={styles.storySection}>
           <h2 className={styles.sectionTitle}>
-            {language === 'tamil' ? 'கதை சுருக்கம்' : 'Story Summary'}
+            {displayLanguage === 'tamil' ? 'கதை சுருக்கம்' : 'Story Summary'}
           </h2>
           <div className={styles.storyContent}>
             <p className={styles.description}>
@@ -339,7 +348,7 @@ const NovelDetailPage = () => {
         {/* Chapters Section */}
         <div className={styles.chaptersSection}>
           <h2 className={styles.sectionTitle}>
-            {language === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'} [{chapters.length}]
+            {displayLanguage === 'tamil' ? 'அத்தியாயங்கள்' : 'Chapters'} [{chapters.length}]
           </h2>
           <div className={styles.chaptersList}>
             {chapters.map((chapter) => (
@@ -356,7 +365,7 @@ const NovelDetailPage = () => {
                   />
                 </div>
                 <h3 className={styles.chapterTitle}>
-                  {chapter.title?.[language] || chapter.title?.tamil}
+                  {chapter.title?.[displayLanguage] || chapter.title?.tamil}
                 </h3>
               </div>
             ))}
