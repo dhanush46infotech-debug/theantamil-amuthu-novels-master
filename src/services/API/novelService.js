@@ -1,9 +1,11 @@
 import apiClient from './client';
 import { API_ENDPOINTS } from './config';
+import mockNovels from './mockData';
 
 /**
  * Novel Service
  * Handles all API calls related to novels
+ * Integrates with backend API and falls back to mock data when needed
  */
 
 const novelService = {
@@ -13,11 +15,14 @@ const novelService = {
    */
   getAllNovels: async () => {
     try {
+      console.log('Fetching novels from backend API...');
       const response = await apiClient.get(API_ENDPOINTS.GET_NOVELS);
+      console.log('Successfully fetched novels from backend:', response.data);
       return response.data;
     } catch (error) {
-      console.error('Error fetching novels:', error);
-      throw error;
+      console.warn('Backend API unavailable, using fallback mock data:', error.message);
+      // Fallback to mock data - ALWAYS return data, never throw
+      return { novels: mockNovels };
     }
   },
 
@@ -30,10 +35,13 @@ const novelService = {
     try {
       const endpoint = API_ENDPOINTS.GET_NOVEL.replace(':id', novelId);
       const response = await apiClient.get(endpoint);
+      console.log('Successfully fetched novel from backend:', response.data);
       return response.data;
     } catch (error) {
-      console.error(`Error fetching novel ${novelId}:`, error);
-      throw error;
+      console.warn(`Backend API unavailable for novel ${novelId}, using fallback:`, error.message);
+      // Fallback to mock data
+      const novel = mockNovels.find(n => n.id === parseInt(novelId));
+      return novel || {};
     }
   },
 

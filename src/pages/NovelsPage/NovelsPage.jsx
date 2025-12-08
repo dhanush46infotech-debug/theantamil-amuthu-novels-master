@@ -39,12 +39,24 @@ const NovelsPage = () => {
     const fetchNovels = async () => {
       try {
         setLoading(true);
-        const response = await novelService.getAllNovels();
-        setNovels(response.novels || []);
         setError(null);
+        console.log('Fetching novels from service...');
+        
+        const response = await novelService.getAllNovels();
+        console.log('Service response:', response);
+        
+        const novelsList = response.novels || response || [];
+        
+        if (Array.isArray(novelsList) && novelsList.length > 0) {
+          setNovels(novelsList);
+          console.log('Loaded', novelsList.length, 'novels');
+        } else {
+          console.warn('No novels in response');
+          setNovels([]);
+        }
       } catch (err) {
         console.error('Error fetching novels:', err);
-        setError('Failed to load novels. Please try again later.');
+        setError('Unable to load novels. Please try again later.');
       } finally {
         setLoading(false);
       }
