@@ -7,15 +7,33 @@ import { translations } from '../../translations';
 import { getChapterContent } from '../../utils/chapterContentLoader';
 import styles from './ChapterPage.module.scss';
 
+// Novel metadata - contains title and default language
+const NOVEL_METADATA = {
+  1: {
+    title: 'ராட்சசனே எனை வதைப்பதேனடா!',
+    defaultLanguage: 'tamil'
+  },
+  2: {
+    title: 'தாலாட்டும் தாழம்பூவே!',
+    defaultLanguage: 'tamil'
+  },
+  3: {
+    title: 'மோகனா',
+    defaultLanguage: 'tamil'
+  }
+};
+
 const ChapterPage = () => {
   const { novelId, chapterId } = useParams();
   const navigate = useNavigate();
   const { user } = useAuth();
-  const { language } = useLanguage();
+  const { language: userLanguage } = useLanguage();
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [displayLanguage, setDisplayLanguage] = useState(userLanguage);
 
-  const t = translations[language];
+  const t = translations[displayLanguage];
+  const novelMeta = NOVEL_METADATA[novelId];
 
   const handleLoginClick = () => {
     // Handle login if needed
@@ -39,17 +57,28 @@ const ChapterPage = () => {
     }
   };
 
-  // Load chapter content dynamically
+  // Load chapter content dynamically with proper language fallback
   useEffect(() => {
     const loadChapter = async () => {
       setLoading(true);
-      const data = await getChapterContent(Number(novelId), Number(chapterId), language);
+      
+      // Use default language for the novel if user language is not available
+      const languageToUse = displayLanguage;
+      
+      const data = await getChapterContent(Number(novelId), Number(chapterId), languageToUse);
       setChapterData(data);
       setLoading(false);
     };
 
     loadChapter();
-  }, [novelId, chapterId, language]);
+  }, [novelId, chapterId, displayLanguage]);
+
+  // Set default language based on novel when component mounts
+  useEffect(() => {
+    if (novelMeta) {
+      setDisplayLanguage(novelMeta.defaultLanguage);
+    }
+  }, [novelId, novelMeta]);
 
   // Handle loading and not found states
   if (loading) {
@@ -101,6 +130,16 @@ const ChapterPage = () => {
         </button>
 
         <div className={styles.chapterContent}>
+          {/* Novel Title Heading */}
+          {novelMeta && (
+            <h1 className={styles.novelTitle}>{novelMeta.title}</h1>
+          )}
+          
+          {/* Chapter Header */}
+          {chapterData.title && (
+            <h2 className={styles.chapterHeading}>{chapterData.title}</h2>
+          )}
+
           <div className={styles.storyContent}>
             {formatContent(chapterData.content)}
           </div>
