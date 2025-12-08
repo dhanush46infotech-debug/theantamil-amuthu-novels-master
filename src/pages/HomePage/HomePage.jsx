@@ -29,20 +29,23 @@ const HomePage = () => {
     <div className={styles.heroContainer}>
       {/* SLIDE 1: Image Carousel with Ken Burns Effect */}
       <div className={`${styles.mainSlide} ${mainSlide === 0 ? styles.active : ''}`}>
-        <ImageCarousel activeImageIndex={activeImageIndex} />
+        {/* Carousel Hero Section */}
+        <div className={styles.carouselSection}>
+          <ImageCarousel activeImageIndex={activeImageIndex} />
 
-        {/* Dark overlay */}
-        <div className={styles.overlay} />
+          {/* Dark overlay */}
+          <div className={styles.overlay} />
 
-        {/* Center Quote */}
-        <div className={styles.quoteContainer}>
-          <h1 className={styles.quoteText}>
-            தேன்தமிழமுது தேடிப்படி
-            <br />
-            அள்ளி அள்ளி பருக
-            <br />
-            ஆசை பெருகுமே!!
-          </h1>
+          {/* Center Quote */}
+          <div className={styles.quoteContainer}>
+            <h1 className={styles.quoteText}>
+              தேன்தமிழமுது தேடிப்படி
+              <br />
+              அள்ளி அள்ளி பருக
+              <br />
+              ஆசை பெருகுமே!!
+            </h1>
+          </div>
         </div>
 
         {/* 3D Read Now Button */}
