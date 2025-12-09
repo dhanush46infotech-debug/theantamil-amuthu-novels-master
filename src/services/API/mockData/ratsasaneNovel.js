@@ -34,7 +34,7 @@ export const ratsasaneNovelData = {
         bookmarksFormatted: '1.9K',
         likes: 3400,
         likesFormatted: '3.4K',
-        chapters: 12,
+        chapters: 14,
         totalWords: 18000,
         averageReadTime: '2 hours'
       },
@@ -54,12 +54,15 @@ export const ratsasaneNovelData = {
 
       // Genres/Categories
       genres: [
-        { id: 'thriller', name: 'Thriller', nameEnglish: 'Thriller' },
-        { id: 'mystery', name: 'Mystery', nameEnglish: 'Mystery' }
+        { id: 'thriller', name: 'த்ரில்லர்', nameEnglish: 'Thriller' },
+        { id: 'mystery', name: 'மர்மம்', nameEnglish: 'Mystery' }
       ],
 
       // Tags
-      tags: ['Crime', 'Detective', 'Suspense', 'Murder Mystery', 'Madurai', 'Inspector Ravi'],
+      tags: {
+        tamil: ['குற்றம்', 'துப்பறிதல்', 'சஸ்பென்ஸ்', 'கொலை மர்மம்', 'மதுரை', 'இன்ஸ்பெக்டர் ரவி'],
+        english: ['Crime', 'Detective', 'Suspense', 'Murder Mystery', 'Madurai', 'Inspector Ravi']
+      },
 
       // Status
       status: 'completed', // completed, ongoing, hiatus
@@ -73,19 +76,18 @@ export const ratsasaneNovelData = {
 
       // Description
       description: {
-        tamil: 'மதுரை தெருக்களில் நடக்கும் மர்ம கொலைகளை விசாரிக்கும் துப்பறியும் அதிகாரி ரவியின் பரபரப்பான பயணம்.',
-        english: 'A gripping thriller about a detective solving mysterious murders in the streets of Madurai. Dark secrets unfold as Inspector Ravi delves deeper into a conspiracy that threatens the entire city.',
-        full: {
-          tamil: 'மதுரை நகரத்தின் இருண்ட தெருக்களில் தொடர்ச்சியாக நடக்கும் மர்ம கொலைகள். ஒவ்வொரு கொலையும் ஒரு பயங்கரமான செய்தியை விட்டுச் செல்கிறது. இந்த வழக்கை விசாரிக்க வரும் துப்பறியும் அதிகாரி ரவி, ஒவ்வொரு தடயத்தையும் பின்தொடர்ந்து செல்லும் போது, நகரத்தையே அச்சுறுத்தும் ஒரு பெரிய சதியின் மையத்திற்கு வந்து சேர்கிறார். கொலைகளுக்கு பின்னால் இருக்கும் உண்மை என்ன? ரவியால் இந்த சதியை தடுக்க முடியுமா? இந்த பதட்டமான பயணத்தில் உங்களை அழைத்துச் செல்லும் ஒரு அபாரமான த்ரில்லர்.',
-          english: 'Mysterious murders occur continuously in the dark streets of Madurai city. Each murder leaves a terrifying message. Inspector Ravi, who comes to investigate this case, following every clue, arrives at the center of a major conspiracy that threatens the entire city. What is the truth behind the murders? Can Ravi stop this conspiracy? An amazing thriller that takes you on this tense journey.'
-        }
+        tamil: `மதுரை நகரத்தின் இருண்ட தெருக்களில் தொடர்ச்சியாக நடக்கும் மர்ம கொலைகள். ஒவ்வொரு கொலையும் ஒரு பயங்கரமான செய்தியை விட்டுச் செல்கிறது. இந்த வழக்கை விசாரிக்க வரும் துப்பறியும் அதிகாரி ரவி, ஒவ்வொரு தடயத்தையும் பின்தொடர்ந்து செல்லும் போது, நகரத்தையே அச்சுறுத்தும் ஒரு பெரிய சதியின் மையத்திற்கு வந்து சேர்கிறார். கொலைகளுக்கு பின்னால் இருக்கும் உண்மை என்ன? ரவியால் இந்த சதியை தடுக்க முடியுமா? இந்த பதட்டமான பயணத்தில் உங்களை அழைத்துச் செல்லும் ஒரு அபாரமான த்ரில்லர்.`,
+        english: `Mysterious murders occur continuously in the dark streets of Madurai city. Each murder leaves a terrifying message. Inspector Ravi, who comes to investigate this case, following every clue, arrives at the center of a major conspiracy that threatens the entire city. What is the truth behind the murders? Can Ravi stop this conspiracy? An amazing thriller that takes you on this tense journey.`
       },
 
       // Content Warnings
-      contentWarnings: ['Violence', 'Crime Scenes', 'Mature Themes'],
+      contentWarnings: {
+        tamil: ['வன்முறை', 'குற்ற காட்சிகள்', 'முதிர்ந்த கருப்பொருள்கள்'],
+        english: ['Violence', 'Crime Scenes', 'Mature Themes']
+      },
 
       // Chapters List
-      chaptersCount: 12,
+      chaptersCount: 14,
       chapters: [
         {
           id: 1,
@@ -276,6 +278,38 @@ export const ratsasaneNovelData = {
           words: 1500,
           readTime: '10 mins',
           views: 15000,
+          isLocked: false,
+          isPremium: false
+        },
+        {
+          id: 13,
+          chapterId: 'chapter-13',
+          number: 13,
+          title: 'அத்தியாயம் 13',
+          titleEnglish: 'Chapter 13',
+          subtitle: 'புதிய வாழ்க்கை',
+          subtitleEnglish: 'New Life',
+          publishedDate: '2025-01-17T00:00:00Z',
+          publishedDateFormatted: '17/01/2025',
+          words: 1500,
+          readTime: '10 mins',
+          views: 14500,
+          isLocked: false,
+          isPremium: false
+        },
+        {
+          id: 14,
+          chapterId: 'chapter-14',
+          number: 14,
+          title: 'அத்தியாயம் 14',
+          titleEnglish: 'Chapter 14',
+          subtitle: 'நம்பிக்கையின் விதை',
+          subtitleEnglish: 'Seed of Hope',
+          publishedDate: '2025-01-18T00:00:00Z',
+          publishedDateFormatted: '18/01/2025',
+          words: 1500,
+          readTime: '10 mins',
+          views: 14000,
           isLocked: false,
           isPremium: false
         }

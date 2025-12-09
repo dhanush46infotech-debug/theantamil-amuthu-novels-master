@@ -20,7 +20,7 @@ const novelsData = [
     genre: 'Romance',
     coverImage: '/assets/images/Novel Card/Thenmozhi Card.jpg',
     authorAvatar: '/assets/thenmozhi-avatar.png',
-    totalChapters: 27,
+    totalChapters: 14,
     isCompleted: false,
     tags: ['Tamil', 'Romance', 'Drama', 'Love'],
     languages: ['tamil', 'english']

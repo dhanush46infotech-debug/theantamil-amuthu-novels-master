@@ -8,7 +8,7 @@ const NOVEL_CONFIG = {
   1: {
     name: 'raatchasane-novel',
     languages: ['tamil'],
-    totalChapters: 27
+    totalChapters: 14
   },
   2: {
     name: 'thaalaattum-novel',

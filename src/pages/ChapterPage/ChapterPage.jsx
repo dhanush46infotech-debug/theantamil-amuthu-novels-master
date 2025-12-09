@@ -80,6 +80,11 @@ const ChapterPage = () => {
     }
   }, [novelId, novelMeta]);
 
+  // Scroll to top when chapter changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [chapterId]);
+
   // Handle loading and not found states
   if (loading) {
     return (

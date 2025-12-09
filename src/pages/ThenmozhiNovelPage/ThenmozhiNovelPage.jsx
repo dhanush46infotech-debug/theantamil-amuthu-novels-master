@@ -26,49 +26,47 @@ const ThenmozhiNovelPage = () => {
 
   // Chapters for Thenmozhi novel
   const chapters = [
-    { id: 1, title: 'தேன் 1', date: '05/01/2025', words: 1500 },
-    { id: 2, title: 'தேன் 2', date: '06/01/2025', words: 1500 },
-    { id: 3, title: 'தேன் 3', date: '07/01/2025', words: 1500 },
-    { id: 4, title: 'தேன் 4', date: '08/01/2025', words: 1500 },
-    { id: 5, title: 'தேன் 5', date: '09/01/2025', words: 1500 },
-    { id: 6, title: 'தேன் 6', date: '10/01/2025', words: 1500 },
-    { id: 7, title: 'தேன் 7', date: '11/01/2025', words: 1500 },
-    { id: 8, title: 'தேன் 8', date: '12/01/2025', words: 1500 },
-    { id: 9, title: 'தேன் 9', date: '13/01/2025', words: 1500 },
-    { id: 10, title: 'தேன் 10', date: '14/01/2025', words: 1500 },
-    { id: 11, title: 'தேன் 11', date: '15/01/2025', words: 1500 },
-    { id: 12, title: 'தேன் 12', date: '16/01/2025', words: 1500 },
-    { id: 13, title: 'தேன் 13', date: '17/01/2025', words: 1500 },
-    { id: 14, title: 'தேன் 14', date: '18/01/2025', words: 1500 },
-    { id: 15, title: 'தேன் 15', date: '19/01/2025', words: 1500 },
-    { id: 16, title: 'தேன் 16', date: '20/01/2025', words: 1500 },
-    { id: 17, title: 'தேன் 17', date: '21/01/2025', words: 1500 },
-    { id: 18, title: 'தேன் 18', date: '22/01/2025', words: 1500 },
-    { id: 19, title: 'தேன் 19', date: '23/01/2025', words: 1500 },
-    { id: 20, title: 'தேன் 20', date: '24/01/2025', words: 1500 },
-    { id: 21, title: 'தேன் 21', date: '25/01/2025', words: 1500 },
-    { id: 22, title: 'தேன் 22', date: '26/01/2025', words: 1500 },
-    { id: 23, title: 'தேன் 23', date: '27/01/2025', words: 1500 },
-    { id: 24, title: 'தேன் 24', date: '28/01/2025', words: 1500 },
-    { id: 25, title: 'தேன் 25', date: '29/01/2025', words: 1500 },
-    { id: 26, title: 'தேன் 26', date: '30/01/2025', words: 1500 },
-    { id: 27, title: 'தேன் 27', date: '31/01/2025', words: 1500 }
+    { id: 1, title: 'வதைப்பதேன்-1', titleEnglish: 'Chapter 1', date: '05/01/2025', words: 1500 },
+    { id: 2, title: 'வதைப்பதேன்-2', titleEnglish: 'Chapter 2', date: '06/01/2025', words: 1500 },
+    { id: 3, title: 'வதைப்பதேன்-3', titleEnglish: 'Chapter 3', date: '07/01/2025', words: 1500 },
+    { id: 4, title: 'வதைப்பதேன்-4', titleEnglish: 'Chapter 4', date: '08/01/2025', words: 1500 },
+    { id: 5, title: 'வதைப்பதேன்-5', titleEnglish: 'Chapter 5', date: '09/01/2025', words: 1500 },
+    { id: 6, title: 'வதைப்பதேன்-6', titleEnglish: 'Chapter 6', date: '10/01/2025', words: 1500 },
+    { id: 7, title: 'வதைப்பதேன்-7', titleEnglish: 'Chapter 7', date: '11/01/2025', words: 1500 },
+    { id: 8, title: 'வதைப்பதேன்-8', titleEnglish: 'Chapter 8', date: '12/01/2025', words: 1500 },
+    { id: 9, title: 'வதைப்பதேன்-9', titleEnglish: 'Chapter 9', date: '13/01/2025', words: 1500 },
+    { id: 10, title: 'வதைப்பதேன்-10', titleEnglish: 'Chapter 10', date: '14/01/2025', words: 1500 },
+    { id: 11, title: 'வதைப்பதேன்-11', titleEnglish: 'Chapter 11', date: '15/01/2025', words: 1500 },
+    { id: 12, title: 'வதைப்பதேன்-12', titleEnglish: 'Chapter 12', date: '16/01/2025', words: 1500 },
+    { id: 13, title: 'வதைப்பதேன்-13', titleEnglish: 'Chapter 13', date: '17/01/2025', words: 1500 },
+    { id: 14, title: 'வதைப்பதேன்-14', titleEnglish: 'Chapter 14', date: '18/01/2025', words: 1500 }
   ];
 
   const novel = {
     id: 1,
     title: 'ராட்சசனே எனை வதைப்பதேனடா!',
-    author: 'Thenmozhi',
-    genres: ['Love', 'Romantic'],
+    titleEnglish: 'Why Do You Torment Me, Demon!',
+    author: 'தென்மொழி',
+    authorEnglish: 'Thenmozhi',
+    genres: [
+      { tamil: 'காதல்', english: 'Love' },
+      { tamil: 'ரொமாண்டிக்', english: 'Romantic' }
+    ],
     image: thenmozhiCard,
     stats: {
-      views: '25.6K',
-      bookmarks: '1.9K',
+      views: '0',
+      bookmarks: '0',
       chapters: chapters.length
     },
     description: {
-      tamil: 'சிறுவயதில் வீட்டை விட்டு வெளியேறிய நாயகன், எட்டு வருடங்கள் கடந்து யாரும் எதிர்பார்க்காத வகையில், கையில் குழந்தையுடன் வீட்டிற்கு வருகிறான். சிறுவயது முதல் தாய், தந்தை, தங்கை, தம்பி என்று அவர்களையே தன் உலகம் என்று வாழ்ந்த நாயகிக்குத் துரோகம் இழைத்தது மட்டுமில்லாமல், அவளை "அவர்கள் வீட்டுப் பெண்ணே இல்லை" என்று கூறியதால், வீட்டை விட்டு வெளியேறி, யாரும் இல்லாமல் நிர்கதியாக நிற்கிறாள் நாயகி. இவர்கள் இருவரும் திருமண பந்தத்தில் ஒன்று சேர்ந்தால், அவர்களின் வாழ்க்கை எவ்வாறு இருக்கும்? தெரிந்துகொள்ளக் காத்திருங்கள்... "தாலாட்டும் தாழம்பூவே!"',
-      english: ''
+      tamil: `காதலனால் ஏமாற்றபடும் நாயகி, தம்பியின் மரணத்திற்கு நாயகியே காரணம் என்று அவளை பழிவாங்க துடிக்கும் நாயகன்.
+
+பழிவாங்கும்படலம் ஒரு கட்டத்தில் காதலாய் மலர்கிறது. நாயகி மீது தவறில்லை என்ற உண்மை அறியும் போது நாயகன் நிலை என்னவோ? வெறுப்பு மட்டுமே உமிழ்ந்த நாயகனை காதலுடன் ஏற்பாளா நாயகி?.
+மரணத்துக்கு முன் நாயகன் கூறிய ஒரு வார்த்தை நாயகியின் வாழ்க்கையை மாற்றி வைக்குமா? காதல், வெறுப்பு, பழிவாங்கல் என மாறி மாறி வரும் உணர்வுகளால் நாயகியின் மனம் குழப்பமடையும் கதை இது`,
+      english: `A heroine betrayed by her lover, and a hero seeking revenge, believing she is responsible for his brother's death.
+
+The revenge saga blossoms into love at one point. What will be the hero's state when he learns the truth that the heroine is not at fault? Will the heroine accept the hero who only spewed hatred, with love?
+Will a word spoken by the hero before death change the heroine's life? This is a story where the heroine's mind is confused by the ever-changing emotions of love, hatred, and revenge.`
     },
     chapters: chapters
   };
@@ -94,24 +92,30 @@ const ThenmozhiNovelPage = () => {
 
           <div className={styles.infoSection}>
             {/* Title */}
-            <h1 className={styles.novelTitle}>{novel.title}</h1>
+            <h1 className={styles.novelTitle}>
+              {language === 'tamil' ? novel.title : novel.titleEnglish}
+            </h1>
 
             {/* Author */}
             <div className={styles.authorSection}>
-              <span className={styles.author}>{novel.author}</span>
+              <span className={styles.author}>
+                {language === 'tamil' ? novel.author : novel.authorEnglish}
+              </span>
             </div>
 
             {/* Genres */}
             <div className={styles.genres}>
               {novel.genres.map((genre, index) => (
-                <span key={index} className={styles.genreTag}>{genre}</span>
+                <span key={index} className={styles.genreTag}>
+                  {language === 'tamil' ? genre.tamil : genre.english}
+                </span>
               ))}
             </div>
 
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                Start Reading
+                {language === 'tamil' ? 'வாசிக்க தொடங்கு' : 'Start Reading'}
               </button>
             </div>
           </div>
@@ -121,8 +125,9 @@ const ThenmozhiNovelPage = () => {
         <div className={styles.storySection}>
           <h2 className={styles.sectionTitle}>{language === 'tamil' ? 'கதை சுருக்கம்' : 'Story Summary'}</h2>
           <div className={styles.storyContent}>
-            <p className={styles.tamilDescription}>{novel.description.tamil}</p>
-            <p className={styles.englishDescription}>{novel.description.english}</p>
+            <p className={language === 'tamil' ? styles.tamilDescription : styles.englishDescription}>
+              {language === 'tamil' ? novel.description.tamil : novel.description.english}
+            </p>
           </div>
         </div>
 
@@ -139,11 +144,13 @@ const ThenmozhiNovelPage = () => {
                 <div className={styles.chapterImageWrapper}>
                   <img
                     src={thenmozhiChapterImage}
-                    alt={chapter.title}
+                    alt={language === 'tamil' ? chapter.title : chapter.titleEnglish}
                     className={styles.chapterImage}
                   />
                 </div>
-                <h3 className={styles.chapterTitle}>{chapter.title}</h3>
+                <h3 className={styles.chapterTitle}>
+                  {language === 'tamil' ? chapter.title : chapter.titleEnglish}
+                </h3>
               </div>
             ))}
           </div>
