@@ -74,13 +74,23 @@ Will a word spoken by the hero before death change the heroine's life? This is a
   };
 
   const handleChapterClick = (chapterId) => {
+    console.log('[THENMOZHI_PAGE] Chapter clicked:', chapterId);
     startReading(1, novel.title, 'Novel Card/Thenmozhi Card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
-    navigate(`/novel/1/chapter/${chapterId}`);
+    const newUrl = `/novel/1/chapter/${chapterId}`;
+    console.log('[THENMOZHI_PAGE] Navigating to:', newUrl);
+    setTimeout(() => {
+      navigate(newUrl);
+    }, 100);
   };
 
   const handleContinueReading = () => {
+    console.log('[THENMOZHI_PAGE] Continue reading clicked');
     startReading(1, novel.title, 'Novel Card/Thenmozhi Card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
-    navigate(`/novel/1/chapter/1`);
+    const newUrl = `/novel/1/chapter/1`;
+    console.log('[THENMOZHI_PAGE] Navigating to:', newUrl);
+    setTimeout(() => {
+      navigate(newUrl);
+    }, 100);
   };
 
   return (

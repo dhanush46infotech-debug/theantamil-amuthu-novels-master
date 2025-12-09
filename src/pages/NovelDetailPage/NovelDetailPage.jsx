@@ -47,13 +47,7 @@ const NovelDetailPage = () => {
   const [chapters, setChapters] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [displayLanguage, setDisplayLanguage] = useState(globalLanguage); // Use global language preference
-
-  // Update display language when global language changes
-  useEffect(() => {
-    setDisplayLanguage(globalLanguage);
-    console.log('[NOVEL_DETAIL] Language updated to:', globalLanguage);
-  }, [globalLanguage]);
+  const [displayLanguage, setDisplayLanguage] = useState('tamil'); // Local language state
 
   // Fetch novel and chapters from API
   useEffect(() => {
@@ -69,6 +63,14 @@ const NovelDetailPage = () => {
         // Support both { novel: {...} } and direct novel object
         const novelData = novelResponse.novel || novelResponse;
         setNovel(novelData);
+        
+        // Set display language based on novel's language
+        if (novelData && novelData.language) {
+          console.log('Novel language:', novelData.language);
+          setDisplayLanguage(novelData.language); // Use novel's language
+        } else {
+          setDisplayLanguage('tamil'); // Default to Tamil
+        }
 
         // Fetch chapters
         const chaptersResponse = await novelService.getNovelChapters(id);
@@ -103,12 +105,21 @@ const NovelDetailPage = () => {
   };
 
   const handleChapterClick = (chapterId) => {
-    navigate(`/novel/${id}/chapter/${chapterId}`);
+    const newUrl = `/novel/${id}/chapter/${chapterId}`;
+    console.log('[NOVEL_DETAIL] Chapter clicked - navigating to:', newUrl);
+    setTimeout(() => {
+      navigate(newUrl);
+    }, 100);
   };
 
   const handleContinueReading = () => {
     if (chapters.length > 0) {
-      navigate(`/novel/${id}/chapter/${chapters[0]._id}`);
+      const firstChapterId = chapters[0]._id || chapters[0].id || 1;
+      const newUrl = `/novel/${id}/chapter/${firstChapterId}`;
+      console.log('[NOVEL_DETAIL] Continue reading clicked - navigating to:', newUrl);
+      setTimeout(() => {
+        navigate(newUrl);
+      }, 100);
     }
   };
 
