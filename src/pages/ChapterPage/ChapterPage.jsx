@@ -104,20 +104,30 @@ const ChapterPage = () => {
 
   // Load chapter content dynamically with proper language fallback
   useEffect(() => {
-    console.log('[CHAPTER_PAGE] useEffect - loading chapter:', chapterId, 'from route params');
+    const currentNovelId = Number(novelId);
+    const currentChapterId = Number(chapterId);
+    
+    console.log('[CHAPTER_LOAD] useEffect triggered - novel:', currentNovelId, 'chapter:', currentChapterId, 'language:', userLanguage);
     
     const loadChapter = async () => {
-      setLoading(true);
-      console.log('[CHAPTER_PAGE] Loading chapter content for chapter:', numChapterId, 'in', userLanguage);
-      
-      const data = await getChapterContent(numNovelId, numChapterId, userLanguage);
-      console.log('[CHAPTER_PAGE] Chapter loaded:', numChapterId, 'Data exists:', !!data);
-      setChapterData(data);
-      setLoading(false);
+      try {
+        setLoading(true);
+        console.log('[CHAPTER_LOAD] Starting load for novel:', currentNovelId, 'chapter:', currentChapterId);
+        
+        const data = await getChapterContent(currentNovelId, currentChapterId, userLanguage);
+        console.log('[CHAPTER_LOAD] Chapter loaded - data exists:', !!data);
+        
+        setChapterData(data);
+        setLoading(false);
+      } catch (error) {
+        console.error('[CHAPTER_LOAD] Error loading chapter:', error);
+        setChapterData(null);
+        setLoading(false);
+      }
     };
 
     loadChapter();
-  }, [novelId, chapterId, userLanguage]); // Use string params from useParams for proper dependency tracking
+  }, [novelId, chapterId, userLanguage]);
 
   // Scroll to top when chapter changes
   useEffect(() => {
