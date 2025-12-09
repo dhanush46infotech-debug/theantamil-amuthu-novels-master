@@ -1,5 +1,5 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Header from '../../components/layout/Header/Header';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -50,34 +50,50 @@ const ChapterPage = () => {
     // Handle login if needed
   };
 
-  const handleBack = () => {
-    console.log('[BACK_BTN] Clicked - novelId:', novelId);
-    navigate(`/novel/${novelId}`);
-  };
-
-  const handlePreviousChapter = () => {
-    const currentChapterId = Number(chapterId);
-    const prevChapter = currentChapterId - 1;
-    console.log('[PREV_BTN_HANDLER] Current:', currentChapterId, 'Previous:', prevChapter, 'Novel:', novelId);
-    if (prevChapter >= 1) {
-      const newPath = `/novel/${novelId}/chapter/${prevChapter}`;
-      console.log('[PREV_NAVIGATE] Path:', newPath);
-      navigate(newPath);
+  const handleBack = useCallback(() => {
+    try {
+      const backPath = `/novel/${novelId}`;
+      console.log('[BACK_BTN] Clicked - novelId:', novelId, 'Path:', backPath);
+      navigate(backPath);
+    } catch (error) {
+      console.error('[BACK_BTN] Error:', error);
     }
-  };
+  }, [novelId, navigate]);
 
-  const handleNextChapter = () => {
-    const currentChapterId = Number(chapterId);
-    const nextChapter = currentChapterId + 1;
-    const config = NOVEL_METADATA[Number(novelId)];
-    const maxChapters = config?.totalChapters || 27;
-    console.log('[NEXT_BTN_HANDLER] Current:', currentChapterId, 'Next:', nextChapter, 'Max:', maxChapters, 'Novel:', novelId);
-    if (nextChapter <= maxChapters) {
-      const newPath = `/novel/${novelId}/chapter/${nextChapter}`;
-      console.log('[NEXT_NAVIGATE] Path:', newPath);
-      navigate(newPath);
+  const handlePreviousChapter = useCallback(() => {
+    try {
+      const currentChapterId = Number(chapterId);
+      const prevChapter = currentChapterId - 1;
+      console.log('[PREV_BTN] Clicked - Current:', currentChapterId, 'Previous:', prevChapter, 'Novel:', novelId);
+      
+      if (prevChapter >= 1) {
+        const newPath = `/novel/${novelId}/chapter/${prevChapter}`;
+        console.log('[PREV_BTN] Navigate to:', newPath);
+        navigate(newPath);
+      }
+    } catch (error) {
+      console.error('[PREV_BTN] Error:', error);
     }
-  };
+  }, [chapterId, novelId, navigate]);
+
+  const handleNextChapter = useCallback(() => {
+    try {
+      const currentChapterId = Number(chapterId);
+      const nextChapter = currentChapterId + 1;
+      const config = NOVEL_METADATA[Number(novelId)];
+      const maxChapters = config?.totalChapters || 27;
+      
+      console.log('[NEXT_BTN] Clicked - Current:', currentChapterId, 'Next:', nextChapter, 'Max:', maxChapters);
+      
+      if (nextChapter <= maxChapters) {
+        const newPath = `/novel/${novelId}/chapter/${nextChapter}`;
+        console.log('[NEXT_BTN] Navigate to:', newPath);
+        navigate(newPath);
+      }
+    } catch (error) {
+      console.error('[NEXT_BTN] Error:', error);
+    }
+  }, [chapterId, novelId, navigate]);
 
   // Update displayChapterId when route params change
   useEffect(() => {
@@ -216,7 +232,10 @@ const ChapterPage = () => {
               <button 
                 type="button"
                 className={styles.navButton} 
-                onClick={handlePreviousChapter}
+                onClick={() => {
+                  console.log('[BUTTON_CLICK] Previous button clicked');
+                  handlePreviousChapter();
+                }}
               >
                 {t.chapter.previous}
               </button>
@@ -228,7 +247,10 @@ const ChapterPage = () => {
               <button 
                 type="button"
                 className={styles.navButton} 
-                onClick={handleNextChapter}
+                onClick={() => {
+                  console.log('[BUTTON_CLICK] Next button clicked');
+                  handleNextChapter();
+                }}
               >
                 {t.chapter.next}
               </button>
