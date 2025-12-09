@@ -36,9 +36,12 @@ export const API_ENDPOINTS = {
   // Download
   DOWNLOAD_NOVEL_PDF: '/novels/:id/download/pdf',
 
-  // Continue Reading
+  // Reading Progress
   GET_READING_PROGRESS: '/reading/progress',
   UPDATE_READING_PROGRESS: '/reading/progress',
+  DELETE_READING_PROGRESS: '/reading/progress/:novelId',
+  START_READING: '/reading/start',
+  COMPLETE_NOVEL: '/reading/complete',
 };
 
 export default API_BASE_URL;
