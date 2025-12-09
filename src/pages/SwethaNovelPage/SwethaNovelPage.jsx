@@ -95,21 +95,13 @@ const SwethaNovelPage = () => {
   const handleChapterClick = (chapterId) => {
     console.log('[SWETHA_PAGE] Chapter clicked:', chapterId);
     startReading(2, novel.title, 'Novel Card/swetha card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
-    const newUrl = `/novel/2/chapter/${chapterId}`;
-    console.log('[SWETHA_PAGE] Navigating to:', newUrl);
-    setTimeout(() => {
-      navigate(newUrl);
-    }, 100);
+    navigate(`/novel/2/chapter/${chapterId}`);
   };
 
   const handleContinueReading = () => {
     console.log('[SWETHA_PAGE] Continue reading clicked');
     startReading(2, novel.title, 'Novel Card/swetha card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
-    const newUrl = `/novel/2/chapter/1`;
-    console.log('[SWETHA_PAGE] Navigating to:', newUrl);
-    setTimeout(() => {
-      navigate(newUrl);
-    }, 100);
+    navigate(`/novel/2/chapter/1`);
   };
 
   return (

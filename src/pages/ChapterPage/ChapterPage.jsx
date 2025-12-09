@@ -23,7 +23,7 @@ const NOVEL_METADATA = {
   3: {
     title: 'மோகனா',
     defaultLanguage: 'tamil',
-    totalChapters: 27
+    totalChapters: 40
   }
 };
 

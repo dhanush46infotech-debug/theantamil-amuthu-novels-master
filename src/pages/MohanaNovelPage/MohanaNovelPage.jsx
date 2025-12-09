@@ -75,20 +75,12 @@ const MohanaNovelPage = () => {
 
   const handleChapterClick = (chapterId) => {
     console.log('[MOHANA_PAGE] Chapter clicked:', chapterId);
-    const newUrl = `/novel/3/chapter/${chapterId}`;
-    console.log('[MOHANA_PAGE] Navigating to:', newUrl);
-    setTimeout(() => {
-      navigate(newUrl);
-    }, 100);
+    navigate(`/novel/3/chapter/${chapterId}`);
   };
 
   const handleContinueReading = () => {
     console.log('[MOHANA_PAGE] Continue reading clicked');
-    const newUrl = `/novel/3/chapter/1`;
-    console.log('[MOHANA_PAGE] Navigating to:', newUrl);
-    setTimeout(() => {
-      navigate(newUrl);
-    }, 100);
+    navigate(`/novel/3/chapter/1`);
   };
 
   return (
