@@ -50,21 +50,17 @@ const ChapterPage = () => {
   };
 
   const handleBack = () => {
-    console.log('[CHAPTER_PAGE] Back button - navigating to:', `/novel/${numNovelId}`);
-    setTimeout(() => {
-      navigate(`/novel/${numNovelId}`);
-    }, 100);
+    const backPath = `/novel/${numNovelId}`;
+    console.log('[CHAPTER_PAGE] Back button - going to:', backPath);
+    navigate(backPath);
   };
 
   const handlePreviousChapter = () => {
     const prevChapter = numChapterId - 1;
     if (prevChapter >= 1) {
-      const newUrl = `/novel/${numNovelId}/chapter/${prevChapter}`;
-      console.log('[CHAPTER_NAV] Previous chapter - navigating to:', newUrl, 'Current:', `${numNovelId}/${numChapterId}`);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setTimeout(() => {
-        navigate(newUrl);
-      }, 100);
+      const newPath = `/novel/${numNovelId}/chapter/${prevChapter}`;
+      console.log('[CHAPTER_NAV] Previous - Current:', numChapterId, 'Going to:', prevChapter, 'Full path:', newPath);
+      navigate(newPath);
     } else {
       console.log('[CHAPTER_NAV] Cannot go before chapter 1');
     }
@@ -73,14 +69,11 @@ const ChapterPage = () => {
   const handleNextChapter = () => {
     const nextChapter = numChapterId + 1;
     const maxChapters = novelMeta?.totalChapters || 27;
-    console.log('[CHAPTER_NAV] Next chapter check - Current:', numChapterId, 'Next:', nextChapter, 'Max:', maxChapters);
+    console.log('[CHAPTER_NAV] Next check - Current:', numChapterId, 'Next would be:', nextChapter, 'Max:', maxChapters);
     if (nextChapter <= maxChapters) {
-      const newUrl = `/novel/${numNovelId}/chapter/${nextChapter}`;
-      console.log('[CHAPTER_NAV] Next chapter - navigating to:', newUrl, 'Current:', `${numNovelId}/${numChapterId}`, 'MaxChapters:', maxChapters);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setTimeout(() => {
-        navigate(newUrl);
-      }, 100);
+      const newPath = `/novel/${numNovelId}/chapter/${nextChapter}`;
+      console.log('[CHAPTER_NAV] Next - Going from', numChapterId, 'to', nextChapter, 'Full path:', newPath);
+      navigate(newPath);
     } else {
       console.log('[CHAPTER_NAV] Cannot go beyond chapter', maxChapters);
     }
@@ -183,7 +176,7 @@ const ChapterPage = () => {
   };
 
   return (
-    <div className={styles.chapterContainer}>
+    <div className={styles.chapterContainer} key={`chapter-${numNovelId}-${numChapterId}`}>
       <Header onLoginClick={handleLoginClick} />
 
       <div className={styles.content}>
