@@ -48,6 +48,7 @@ const ChapterPage = () => {
   const handlePreviousChapter = () => {
     const prevChapter = Number(chapterId) - 1;
     if (prevChapter >= 1) {
+      console.log('[CHAPTER_NAV] Going to previous chapter:', prevChapter);
       navigate(`/novel/${novelId}/chapter/${prevChapter}`);
     }
   };
@@ -55,6 +56,7 @@ const ChapterPage = () => {
   const handleNextChapter = () => {
     const nextChapter = Number(chapterId) + 1;
     if (nextChapter <= 27) {
+      console.log('[CHAPTER_NAV] Going to next chapter:', nextChapter);
       navigate(`/novel/${novelId}/chapter/${nextChapter}`);
     }
   };
@@ -187,7 +189,14 @@ const ChapterPage = () => {
           {/* Chapter Navigation */}
           <div className={styles.chapterNavigation}>
             {Number(chapterId) > 1 ? (
-              <button className={styles.navButton} onClick={handlePreviousChapter}>
+              <button 
+                className={styles.navButton} 
+                onClick={(e) => {
+                  console.log('[PREV_BTN] Clicked - Current chapter:', chapterId);
+                  e.stopPropagation();
+                  handlePreviousChapter();
+                }}
+              >
                 {t.chapter.previous}
               </button>
             ) : (
@@ -195,7 +204,14 @@ const ChapterPage = () => {
             )}
 
             {Number(chapterId) < 27 ? (
-              <button className={styles.navButton} onClick={handleNextChapter}>
+              <button 
+                className={styles.navButton} 
+                onClick={(e) => {
+                  console.log('[NEXT_BTN] Clicked - Current chapter:', chapterId);
+                  e.stopPropagation();
+                  handleNextChapter();
+                }}
+              >
                 {t.chapter.next}
               </button>
             ) : (
