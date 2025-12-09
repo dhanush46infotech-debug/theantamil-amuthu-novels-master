@@ -9,7 +9,7 @@ import novelService from '../services/API/novelService';
 const NOVEL_CONFIG = {
   1: {
     name: 'raatchasane-novel',
-    languages: ['tamil'],
+    languages: ['tamil', 'english'],
     totalChapters: 14
   },
   2: {
