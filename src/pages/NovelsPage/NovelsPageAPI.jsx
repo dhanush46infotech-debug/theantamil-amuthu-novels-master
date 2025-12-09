@@ -70,7 +70,7 @@ const NovelsPageAPI = () => {
       {/* Continue Reading Section */}
       <div className={styles.continueReadingSection}>
         <h2 className={styles.sectionHeader}>
-          {language === 'tamil' ? 'தொடர்ந்து படியுங்கள்' : 'Continue Reading'}
+          Continue Reading
         </h2>
       </div>
 
