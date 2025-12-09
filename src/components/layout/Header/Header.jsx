@@ -80,8 +80,8 @@ const Header = ({ onLoginClick }) => {
           </button>
 
           {/* Logo */}
-          <div className={styles.logoContainer} onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
-            <img src={logo} alt="TTM Novels Logo" className={styles.logo} title="Click to go home" />
+          <div className={styles.logoContainer} onClick={() => navigate('/novels')} style={{ cursor: 'pointer' }}>
+            <img src={logo} alt="TTM Novels Logo" className={styles.logo} title="Click to browse novels" />
           </div>
         </div>
 
