@@ -35,12 +35,13 @@ const ChapterPage = () => {
   const { updateProgress, completeNovel } = useReadingProgress();
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [displayChapterId, setDisplayChapterId] = useState(Number(chapterId));
 
   // Ensure numeric conversion for proper lookups
   const numNovelId = Number(novelId);
   const numChapterId = Number(chapterId);
 
-  console.log('[CHAPTER_PAGE] RENDER - novelId:', numNovelId, 'chapterId:', numChapterId, 'userLanguage:', userLanguage);
+  console.log('[CHAPTER_PAGE] RENDER - novelId:', numNovelId, 'chapterId:', numChapterId, 'displayChapterId:', displayChapterId);
 
   const t = translations[userLanguage];
   const novelMeta = NOVEL_METADATA[numNovelId];
@@ -61,7 +62,7 @@ const ChapterPage = () => {
     if (prevChapter >= 1) {
       const newPath = `/novel/${numNovelId}/chapter/${prevChapter}`;
       console.log('[PREV_NAVIGATE] Going to:', newPath);
-      navigate(newPath);
+      navigate(newPath, { replace: false });
     }
   };
 
@@ -72,13 +73,22 @@ const ChapterPage = () => {
     if (nextChapter <= maxChapters) {
       const newPath = `/novel/${numNovelId}/chapter/${nextChapter}`;
       console.log('[NEXT_NAVIGATE] Going to:', newPath);
-      navigate(newPath);
+      navigate(newPath, { replace: false });
+    } else {
+      console.log('[NEXT_DEBUG] Cannot navigate - nextChapter exceeds maxChapters');
     }
   };
 
+  // Update displayChapterId when route params change
+  useEffect(() => {
+    const newChapterId = Number(chapterId);
+    console.log('[CHAPTER_PAGE] Route params changed - old displayChapterId:', displayChapterId, 'new:', newChapterId);
+    setDisplayChapterId(newChapterId);
+  }, [chapterId]);
+
   // Load chapter content dynamically with proper language fallback
   useEffect(() => {
-    console.log('[CHAPTER_PAGE] useEffect triggered - novelId:', numNovelId, 'chapterId:', numChapterId, 'userLanguage:', userLanguage);
+    console.log('[CHAPTER_PAGE] useEffect - loading chapter:', chapterId, 'from route params');
     
     const loadChapter = async () => {
       setLoading(true);
@@ -91,7 +101,7 @@ const ChapterPage = () => {
     };
 
     loadChapter();
-  }, [numNovelId, numChapterId, userLanguage]);
+  }, [novelId, chapterId, userLanguage]); // Use string params from useParams for proper dependency tracking
 
   // Scroll to top when chapter changes
   useEffect(() => {
@@ -176,7 +186,7 @@ const ChapterPage = () => {
   };
 
   return (
-    <div className={styles.chapterContainer} key={`chapter-${numNovelId}-${numChapterId}`}>
+    <div className={styles.chapterContainer}>
       <Header onLoginClick={handleLoginClick} />
 
       <div className={styles.content}>
