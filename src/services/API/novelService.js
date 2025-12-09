@@ -101,17 +101,24 @@ const novelService = {
    * Get a specific chapter
    * @param {string|number} novelId - The ID of the novel
    * @param {string|number} chapterId - The ID of the chapter
+   * @param {string} language - The language ('tamil' or 'english')
    * @returns {Promise} Chapter details with content
    */
-  getChapter: async (novelId, chapterId) => {
+  getChapter: async (novelId, chapterId, language = 'tamil') => {
     try {
       const endpoint = API_ENDPOINTS.GET_CHAPTER
         .replace(':novelId', novelId)
         .replace(':chapterId', chapterId);
-      const response = await apiClient.get(endpoint);
+      
+      // Add language query parameter
+      const response = await apiClient.get(endpoint, {
+        params: { language }
+      });
+      
+      console.log(`[API] getChapter: Novel ${novelId}, Chapter ${chapterId}, Language: ${language}`);
       return response.data;
     } catch (error) {
-      console.error(`Error fetching chapter ${chapterId} for novel ${novelId}:`, error);
+      console.error(`Error fetching chapter ${chapterId} for novel ${novelId} in ${language}:`, error);
       throw error;
     }
   },

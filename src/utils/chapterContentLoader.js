@@ -1,5 +1,7 @@
 // Dynamic chapter content loader
-// This loads chapter content on-demand to reduce initial bundle size
+// This loads chapter content on-demand with backend API fallback to local files
+
+import novelService from '../services/API/novelService';
 
 /**
  * Novel configuration mapping
@@ -14,11 +16,17 @@ const NOVEL_CONFIG = {
     name: 'thaalaattum-novel',
     languages: ['tamil', 'english'],
     totalChapters: 27
+  },
+  3: {
+    name: 'mohanamozhi-novel',
+    languages: ['tamil', 'english'],
+    totalChapters: 27
   }
 };
 
 /**
  * Dynamically imports chapter content for a specific novel
+ * Tries backend API first, then falls back to local files
  * @param {number} novelId - The novel ID
  * @param {number} chapterId - The chapter ID
  * @param {string} language - The language ('tamil' or 'english')
@@ -45,6 +53,22 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
       language = 'tamil';
     }
 
+    // STEP 1: Try backend API first
+    console.log(`[CHAPTER_LOADER] Attempting to load from backend API: Novel ${novelId}, Chapter ${chapterId}, Language: ${language}`);
+    try {
+      const apiResponse = await novelService.getChapter(novelId, chapterId, language);
+      if (apiResponse && (apiResponse.content || apiResponse.title)) {
+        console.log(`[CHAPTER_LOADER] ✓ Successfully loaded from backend API`);
+        return {
+          title: apiResponse.title || `Chapter ${chapterId}`,
+          content: apiResponse.content || ''
+        };
+      }
+    } catch (apiError) {
+      console.log(`[CHAPTER_LOADER] Backend API unavailable or chapter not found, falling back to local files:`, apiError.message);
+    }
+
+    // STEP 2: Fallback to local files
     let chapterModule;
 
     // Try new structure first (individual chapter files)
@@ -53,10 +77,11 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
       chapterModule = await import(`../chapters/${novelFolder}/${language}/chapter-${chapterId}.js`);
 
       if (chapterModule && chapterModule.CHAPTER) {
+        console.log(`[CHAPTER_LOADER] ✓ Loaded from local files (new structure)`);
         return chapterModule.CHAPTER;
       }
     } catch (newStructureError) {
-      console.log(`New structure not found for novel ${novelId}, chapter ${chapterId}, trying fallback...`);
+      console.log(`[CHAPTER_LOADER] New structure not found, trying old structure...`);
 
       // Fallback to old structure for backward compatibility
       try {
@@ -85,17 +110,18 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
 
         const novel = novelModule?.CHAPTERS;
         if (novel && novel[chapterId]) {
+          console.log(`[CHAPTER_LOADER] ✓ Loaded from local files (old structure)`);
           return novel[chapterId];
         }
       } catch (fallbackError) {
-        console.error(`Fallback also failed:`, fallbackError);
+        console.error(`[CHAPTER_LOADER] Old structure also failed:`, fallbackError);
       }
     }
 
-    console.error(`Chapter ${chapterId} not found for novel ${novelId} in ${language}`);
+    console.error(`[CHAPTER_LOADER] ✗ Chapter ${chapterId} not found for novel ${novelId} in ${language}`);
     return null;
   } catch (error) {
-    console.error(`Failed to load chapter ${chapterId} for novel ${novelId} in ${language}:`, error);
+    console.error(`[CHAPTER_LOADER] ✗ Failed to load chapter ${chapterId} for novel ${novelId} in ${language}:`, error);
     return null;
   }
 };
