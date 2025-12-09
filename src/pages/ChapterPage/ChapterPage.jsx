@@ -35,11 +35,10 @@ const ChapterPage = () => {
   const { updateProgress, completeNovel } = useReadingProgress();
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [displayLanguage, setDisplayLanguage] = useState(userLanguage);
 
-  console.log('[CHAPTER_PAGE] RENDER - novelId:', novelId, 'chapterId:', chapterId);
+  console.log('[CHAPTER_PAGE] RENDER - novelId:', novelId, 'chapterId:', chapterId, 'userLanguage:', userLanguage);
 
-  const t = translations[displayLanguage];
+  const t = translations[userLanguage];
   const novelMeta = NOVEL_METADATA[novelId];
 
   const handleLoginClick = () => {
@@ -47,7 +46,10 @@ const ChapterPage = () => {
   };
 
   const handleBack = () => {
-    navigate(`/novel/${novelId}`);
+    console.log('[CHAPTER_PAGE] Back button - navigating to:', `/novel/${novelId}`);
+    setTimeout(() => {
+      navigate(`/novel/${novelId}`);
+    }, 100);
   };
 
   const handlePreviousChapter = () => {
@@ -81,30 +83,20 @@ const ChapterPage = () => {
 
   // Load chapter content dynamically with proper language fallback
   useEffect(() => {
-    console.log('[CHAPTER_PAGE] useEffect triggered - novelId:', novelId, 'chapterId:', chapterId, 'displayLanguage:', displayLanguage);
+    console.log('[CHAPTER_PAGE] useEffect triggered - novelId:', novelId, 'chapterId:', chapterId, 'userLanguage:', userLanguage);
     
     const loadChapter = async () => {
       setLoading(true);
-      console.log('[CHAPTER_PAGE] Loading chapter content for chapter:', chapterId);
+      console.log('[CHAPTER_PAGE] Loading chapter content for chapter:', chapterId, 'in', userLanguage);
       
-      // Use default language for the novel if user language is not available
-      const languageToUse = displayLanguage;
-      
-      const data = await getChapterContent(Number(novelId), Number(chapterId), languageToUse);
+      const data = await getChapterContent(Number(novelId), Number(chapterId), userLanguage);
       console.log('[CHAPTER_PAGE] Chapter loaded:', chapterId);
       setChapterData(data);
       setLoading(false);
     };
 
     loadChapter();
-  }, [novelId, chapterId, displayLanguage]);
-
-  // Set default language based on novel when component mounts
-  useEffect(() => {
-    if (novelMeta) {
-      setDisplayLanguage(novelMeta.defaultLanguage);
-    }
-  }, [novelId, novelMeta]);
+  }, [novelId, chapterId, userLanguage]);
 
   // Scroll to top when chapter changes
   useEffect(() => {
