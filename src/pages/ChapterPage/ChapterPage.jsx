@@ -51,19 +51,18 @@ const ChapterPage = () => {
   };
 
   const handleBack = () => {
-    const backPath = `/novel/${novelId}`;
-    console.log('[CHAPTER_PAGE] Back button - going to:', backPath);
-    navigate(backPath);
+    console.log('[BACK_BTN] Clicked - novelId:', novelId);
+    navigate(`/novel/${novelId}`);
   };
 
   const handlePreviousChapter = () => {
     const currentChapterId = Number(chapterId);
     const prevChapter = currentChapterId - 1;
-    console.log('[PREV_DEBUG] Current chapterId:', currentChapterId, 'prevChapter:', prevChapter, 'novelId:', novelId);
+    console.log('[PREV_BTN_HANDLER] Current:', currentChapterId, 'Previous:', prevChapter, 'Novel:', novelId);
     if (prevChapter >= 1) {
       const newPath = `/novel/${novelId}/chapter/${prevChapter}`;
-      console.log('[PREV_NAVIGATE] Going to:', newPath);
-      navigate(newPath, { replace: false });
+      console.log('[PREV_NAVIGATE] Path:', newPath);
+      navigate(newPath);
     }
   };
 
@@ -72,13 +71,11 @@ const ChapterPage = () => {
     const nextChapter = currentChapterId + 1;
     const config = NOVEL_METADATA[Number(novelId)];
     const maxChapters = config?.totalChapters || 27;
-    console.log('[NEXT_DEBUG] Current chapterId:', currentChapterId, 'nextChapter:', nextChapter, 'maxChapters:', maxChapters);
+    console.log('[NEXT_BTN_HANDLER] Current:', currentChapterId, 'Next:', nextChapter, 'Max:', maxChapters, 'Novel:', novelId);
     if (nextChapter <= maxChapters) {
       const newPath = `/novel/${novelId}/chapter/${nextChapter}`;
-      console.log('[NEXT_NAVIGATE] Going to:', newPath);
-      navigate(newPath, { replace: false });
-    } else {
-      console.log('[NEXT_DEBUG] Cannot navigate - nextChapter exceeds maxChapters');
+      console.log('[NEXT_NAVIGATE] Path:', newPath);
+      navigate(newPath);
     }
   };
 
@@ -219,12 +216,7 @@ const ChapterPage = () => {
               <button 
                 type="button"
                 className={styles.navButton} 
-                onClick={(e) => {
-                  console.log('[PREV_BTN] Clicked - Current chapter:', numChapterId);
-                  e.preventDefault();
-                  e.stopPropagation();
-                  handlePreviousChapter();
-                }}
+                onClick={handlePreviousChapter}
               >
                 {t.chapter.previous}
               </button>
@@ -236,12 +228,7 @@ const ChapterPage = () => {
               <button 
                 type="button"
                 className={styles.navButton} 
-                onClick={(e) => {
-                  console.log('[NEXT_BTN] Clicked - Current chapter:', numChapterId);
-                  e.preventDefault();
-                  e.stopPropagation();
-                  handleNextChapter();
-                }}
+                onClick={handleNextChapter}
               >
                 {t.chapter.next}
               </button>
