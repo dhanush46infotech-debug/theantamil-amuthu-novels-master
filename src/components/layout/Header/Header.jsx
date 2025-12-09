@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../../../context/ThemeContext';
 import { useLanguage } from '../../../context/LanguageContext';
 import { translations } from '../../../translations';
@@ -6,6 +7,7 @@ import logo from '../../../assets/images/brand/TTM NOVRLS.png';
 import styles from './Header.module.scss';
 
 const Header = ({ onLoginClick }) => {
+  const navigate = useNavigate();
   const { theme, toggleTheme } = useTheme();
   const { language, changeLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -78,8 +80,8 @@ const Header = ({ onLoginClick }) => {
           </button>
 
           {/* Logo */}
-          <div className={styles.logoContainer}>
-            <img src={logo} alt="TTM Novels Logo" className={styles.logo} />
+          <div className={styles.logoContainer} onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
+            <img src={logo} alt="TTM Novels Logo" className={styles.logo} title="Click to go home" />
           </div>
         </div>
 

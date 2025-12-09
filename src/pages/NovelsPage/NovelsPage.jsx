@@ -152,7 +152,7 @@ const NovelsPage = () => {
       {ongoingNovels.length > 0 && (
         <div className={styles.continueReadingSection}>
           <h2 className={styles.sectionHeader}>
-            {language === 'tamil' ? 'தொடர்ந்து வாசிக்கும் நாவல்கள்' : 'Ongoing Novels'}
+            📖 ON-GOING
           </h2>
           <div className={styles.content}>
             <div className={styles.grid}>
@@ -176,7 +176,7 @@ const NovelsPage = () => {
                   <h3 className={styles.novelTitle}>{novel.novelTitle}</h3>
                   <p className={styles.novelAuthor}>by {novel.author}</p>
                   <div className={styles.novelStats}>
-                    <span>📖 {language === 'tamil' ? 'அத்தியாயம்' : 'Chapter'} {novel.lastChapter}</span>
+                    <span>📖 Chapter {novel.lastChapter}</span>
                   </div>
                   <button
                     className={styles.readNowButton}
@@ -185,7 +185,7 @@ const NovelsPage = () => {
                       navigate(`/novel/${novel.novelId}/chapter/${novel.lastChapter}`);
                     }}
                   >
-                    {language === 'tamil' ? 'தொடர்ந்து படியுங்கள்' : 'Continue Reading'}
+                    Continue Reading
                   </button>
                 </div>
               ))}
@@ -198,7 +198,7 @@ const NovelsPage = () => {
       {completedNovels.length > 0 && (
         <div className={styles.continueReadingSection}>
           <h2 className={styles.sectionHeader}>
-            {language === 'tamil' ? 'முடிந்த நாவல்கள்' : 'Completed Novels'}
+            ✅ COMPLETED
           </h2>
           <div className={styles.content}>
             <div className={styles.grid}>
@@ -222,7 +222,7 @@ const NovelsPage = () => {
                   <h3 className={styles.novelTitle}>{novel.novelTitle}</h3>
                   <p className={styles.novelAuthor}>by {novel.author}</p>
                   <div className={styles.novelStats}>
-                    <span>✓ {language === 'tamil' ? 'முடிந்தது' : 'Completed'}</span>
+                    <span>✓ Completed</span>
                   </div>
                   <button
                     className={styles.readNowButton}
@@ -231,7 +231,7 @@ const NovelsPage = () => {
                       navigate(`/novel/${novel.novelId}`);
                     }}
                   >
-                    {language === 'tamil' ? 'மீண்டும் படியுங்கள்' : 'Read Again'}
+                    Read Again
                   </button>
                 </div>
               ))}
