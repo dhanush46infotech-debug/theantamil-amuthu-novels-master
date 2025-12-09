@@ -8,19 +8,22 @@ import { translations } from '../../translations';
 import { getChapterContent } from '../../utils/chapterContentLoader';
 import styles from './ChapterPage.module.scss';
 
-// Novel metadata - contains title and default language
+// Novel metadata - contains title, default language, and total chapters
 const NOVEL_METADATA = {
   1: {
     title: 'ராட்சசனே எனை வதைப்பதேனடா!',
-    defaultLanguage: 'tamil'
+    defaultLanguage: 'tamil',
+    totalChapters: 14
   },
   2: {
     title: 'தாலாட்டும் தாழம்பூவே!',
-    defaultLanguage: 'tamil'
+    defaultLanguage: 'tamil',
+    totalChapters: 27
   },
   3: {
     title: 'மோகனா',
-    defaultLanguage: 'tamil'
+    defaultLanguage: 'tamil',
+    totalChapters: 27
   }
 };
 
@@ -51,7 +54,7 @@ const ChapterPage = () => {
     const prevChapter = Number(chapterId) - 1;
     if (prevChapter >= 1) {
       const newUrl = `/novel/${novelId}/chapter/${prevChapter}`;
-      console.log('[CHAPTER_NAV] Navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`);
+      console.log('[CHAPTER_NAV] Previous chapter - navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
         navigate(newUrl);
@@ -63,15 +66,16 @@ const ChapterPage = () => {
 
   const handleNextChapter = () => {
     const nextChapter = Number(chapterId) + 1;
-    if (nextChapter <= 27) {
+    const maxChapters = novelMeta?.totalChapters || 27;
+    if (nextChapter <= maxChapters) {
       const newUrl = `/novel/${novelId}/chapter/${nextChapter}`;
-      console.log('[CHAPTER_NAV] Navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`);
+      console.log('[CHAPTER_NAV] Next chapter - navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`, 'MaxChapters:', maxChapters);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
         navigate(newUrl);
       }, 100);
     } else {
-      console.log('[CHAPTER_NAV] Cannot go beyond chapter 27');
+      console.log('[CHAPTER_NAV] Cannot go beyond chapter', maxChapters);
     }
   };
 
@@ -112,8 +116,9 @@ const ChapterPage = () => {
     if (novelId && chapterId) {
       updateProgress(Number(novelId), Number(chapterId));
 
-      // Check if this is the last chapter (chapter 27 for novels 1 and 2)
-      if (Number(chapterId) === 27 && novelMeta) {
+      // Check if this is the last chapter based on novel metadata
+      const maxChapters = novelMeta?.totalChapters || 27;
+      if (Number(chapterId) === maxChapters && novelMeta) {
         // Mark as complete when reaching the last chapter
         completeNovel(Number(novelId), novelMeta.title, getNovelCoverImage(Number(novelId)), getNovelAuthor(Number(novelId)));
       }
@@ -223,7 +228,7 @@ const ChapterPage = () => {
               <div></div>
             )}
 
-            {Number(chapterId) < 27 ? (
+            {Number(chapterId) < (novelMeta?.totalChapters || 27) ? (
               <button 
                 type="button"
                 className={styles.navButton} 
