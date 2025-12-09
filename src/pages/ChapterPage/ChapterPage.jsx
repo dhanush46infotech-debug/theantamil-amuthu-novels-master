@@ -57,25 +57,22 @@ const ChapterPage = () => {
 
   const handlePreviousChapter = () => {
     const prevChapter = numChapterId - 1;
+    console.log('[PREV_DEBUG] Current numChapterId:', numChapterId, 'prevChapter:', prevChapter, 'numNovelId:', numNovelId);
     if (prevChapter >= 1) {
       const newPath = `/novel/${numNovelId}/chapter/${prevChapter}`;
-      console.log('[CHAPTER_NAV] Previous - Current:', numChapterId, 'Going to:', prevChapter, 'Full path:', newPath);
+      console.log('[PREV_NAVIGATE] Going to:', newPath);
       navigate(newPath);
-    } else {
-      console.log('[CHAPTER_NAV] Cannot go before chapter 1');
     }
   };
 
   const handleNextChapter = () => {
     const nextChapter = numChapterId + 1;
     const maxChapters = novelMeta?.totalChapters || 27;
-    console.log('[CHAPTER_NAV] Next check - Current:', numChapterId, 'Next would be:', nextChapter, 'Max:', maxChapters);
+    console.log('[NEXT_DEBUG] Current numChapterId:', numChapterId, 'nextChapter:', nextChapter, 'maxChapters:', maxChapters, 'novelMeta:', novelMeta);
     if (nextChapter <= maxChapters) {
       const newPath = `/novel/${numNovelId}/chapter/${nextChapter}`;
-      console.log('[CHAPTER_NAV] Next - Going from', numChapterId, 'to', nextChapter, 'Full path:', newPath);
+      console.log('[NEXT_NAVIGATE] Going to:', newPath);
       navigate(newPath);
-    } else {
-      console.log('[CHAPTER_NAV] Cannot go beyond chapter', maxChapters);
     }
   };
 
@@ -166,7 +163,10 @@ const ChapterPage = () => {
     );
   }
 
-  // Format chapter content with proper paragraph breaks
+  // Get max chapters - ensure it's always available
+  const maxChapters = novelMeta?.totalChapters || 27;
+  const showPrevButton = numChapterId > 1;
+  const showNextButton = numChapterId < maxChapters;
   const formatContent = (content) => {
     return content.split('\n\n').map((paragraph, index) => (
       <p key={index} className={styles.paragraph}>
@@ -201,7 +201,7 @@ const ChapterPage = () => {
 
           {/* Chapter Navigation */}
           <div className={styles.chapterNavigation}>
-            {numChapterId > 1 ? (
+            {showPrevButton ? (
               <button 
                 type="button"
                 className={styles.navButton} 
@@ -218,7 +218,7 @@ const ChapterPage = () => {
               <div></div>
             )}
 
-            {numChapterId < (novelMeta?.totalChapters || 27) ? (
+            {showNextButton ? (
               <button 
                 type="button"
                 className={styles.navButton} 
