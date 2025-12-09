@@ -7,9 +7,7 @@
       "Bash(then echo \"OK: $f\")",
       "Bash(else echo \"MISSING: $f\")",
       "Bash(fi)",
-      "Bash(done)",
-      "Bash(dir:*)",
-      "Bash(findstr:*)"
+      "Bash(done)"
     ],
     "deny": [],
     "ask": []

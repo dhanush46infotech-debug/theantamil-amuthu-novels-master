@@ -5,9 +5,10 @@ import { lazy, Suspense } from 'react';
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const NovelsPage = lazy(() => import('../pages/NovelsPage/NovelsPage'));
 const NovelDetailPage = lazy(() => import('../pages/NovelDetailPage/NovelDetailPage'));
+const ThenmozhiNovelPage = lazy(() => import('../pages/ThenmozhiNovelPage/ThenmozhiNovelPage'));
+const SwethaNovelPage = lazy(() => import('../pages/SwethaNovelPage/SwethaNovelPage'));
+const MohanaNovelPage = lazy(() => import('../pages/MohanaNovelPage/MohanaNovelPage'));
 const ChapterPage = lazy(() => import('../pages/ChapterPage/ChapterPage'));
-const ContactPage = lazy(() => import('../pages/ContactPage/ContactPage'));
-const AboutPage = lazy(() => import('../pages/AboutPage/AboutPage'));
 
 // Loading component
 const LoadingFallback = () => (
@@ -29,9 +30,11 @@ const AppRoutes = () => {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/novels" element={<NovelsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
-        <Route path="/about" element={<AboutPage />} />
-        {/* API-based novel routes */}
+        {/* Specific routes first (for hardcoded novel pages) */}
+        <Route path="/novel/1" element={<ThenmozhiNovelPage />} />
+        <Route path="/novel/2" element={<SwethaNovelPage />} />
+        <Route path="/novel/3" element={<MohanaNovelPage />} />
+        {/* Generic routes after specific ones */}
         <Route path="/novel/:id" element={<NovelDetailPage />} />
         <Route path="/novel/:novelId/chapter/:chapterId" element={<ChapterPage />} />
       </Routes>

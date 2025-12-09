@@ -65,7 +65,7 @@ const ChapterPage = () => {
       const currentChapterId = Number(chapterId);
       const prevChapter = currentChapterId - 1;
       console.log('[PREV_BTN] Clicked - Current:', currentChapterId, 'Previous:', prevChapter, 'Novel:', novelId);
-
+      
       if (prevChapter >= 1) {
         const newPath = `/novel/${novelId}/chapter/${prevChapter}`;
         console.log('[PREV_BTN] Navigate to:', newPath);
@@ -82,9 +82,9 @@ const ChapterPage = () => {
       const nextChapter = currentChapterId + 1;
       const config = NOVEL_METADATA[Number(novelId)];
       const maxChapters = config?.totalChapters || 27;
-
+      
       console.log('[NEXT_BTN] Clicked - Current:', currentChapterId, 'Next:', nextChapter, 'Max:', maxChapters);
-
+      
       if (nextChapter <= maxChapters) {
         const newPath = `/novel/${novelId}/chapter/${nextChapter}`;
         console.log('[NEXT_BTN] Navigate to:', newPath);
@@ -239,10 +239,13 @@ const ChapterPage = () => {
           {/* Chapter Navigation */}
           <div className={styles.chapterNavigation}>
             {showPrevButton ? (
-              <button
+              <button 
                 type="button"
-                className={styles.navButton}
-                onClick={handlePreviousChapter}
+                className={styles.navButton} 
+                onClick={() => {
+                  console.log('[BUTTON_CLICK] Previous button clicked');
+                  handlePreviousChapter();
+                }}
               >
                 {t.chapter.previous}
               </button>
@@ -251,10 +254,13 @@ const ChapterPage = () => {
             )}
 
             {showNextButton ? (
-              <button
+              <button 
                 type="button"
-                className={styles.navButton}
-                onClick={handleNextChapter}
+                className={styles.navButton} 
+                onClick={() => {
+                  console.log('[BUTTON_CLICK] Next button clicked');
+                  handleNextChapter();
+                }}
               >
                 {t.chapter.next}
               </button>
