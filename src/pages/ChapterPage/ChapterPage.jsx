@@ -51,7 +51,7 @@ const ChapterPage = () => {
   };
 
   const handleBack = () => {
-    const backPath = `/novel/${numNovelId}`;
+    const backPath = `/novel/${novelId}`;
     console.log('[CHAPTER_PAGE] Back button - going to:', backPath);
     navigate(backPath);
   };
