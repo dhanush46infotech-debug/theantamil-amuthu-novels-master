@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
+import { useReadingProgress } from '../../context/ReadingProgressContext';
 import { translations } from '../../translations';
 import Header from '../../components/layout/Header/Header';
 import Carousel from '../../components/common/Carousel/Carousel';
@@ -30,6 +31,7 @@ const imageMap = {
 const NovelsPage = () => {
   const { user } = useAuth();
   const { language } = useLanguage();
+  const { ongoingNovels, completedNovels, getLastChapter } = useReadingProgress();
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [novels, setNovels] = useState([]);
@@ -85,14 +87,14 @@ const NovelsPage = () => {
       <Header onLoginClick={handleLoginClick} />
       <Carousel />
 
-      {/* Continue Reading Section */}
+      {/* Continue Reading - Novel Grid Section */}
       <div className={styles.continueReadingSection}>
         <h2 className={styles.sectionHeader}>
           {language === 'tamil' ? 'தொடர்ந்து படியுங்கள்' : 'Continue Reading'}
         </h2>
       </div>
 
-      {/* Novels Grid Section */}
+      {/* All Novels Grid Section */}
       <div className={styles.content}>
         {loading ? (
           <div className={styles.loading}>
@@ -145,6 +147,98 @@ const NovelsPage = () => {
           </div>
         )}
       </div>
+
+      {/* Ongoing Novels Section */}
+      {ongoingNovels.length > 0 && (
+        <div className={styles.continueReadingSection}>
+          <h2 className={styles.sectionHeader}>
+            {language === 'tamil' ? 'தொடர்ந்து வாசிக்கும் நாவல்கள்' : 'Ongoing Novels'}
+          </h2>
+          <div className={styles.content}>
+            <div className={styles.grid}>
+              {ongoingNovels.map(novel => (
+                <div
+                  className={styles.novelCard}
+                  key={novel.novelId}
+                  onClick={() => navigate(`/novel/${novel.novelId}/chapter/${novel.lastChapter}`)}
+                >
+                  <div className={styles.cardImage}>
+                    {novel.coverImage && imageMap[novel.coverImage] ? (
+                      <img
+                        src={imageMap[novel.coverImage]}
+                        alt={novel.novelTitle}
+                        className={styles.novelImage}
+                      />
+                    ) : (
+                      <span className={styles.placeholder}>Novel Cover</span>
+                    )}
+                  </div>
+                  <h3 className={styles.novelTitle}>{novel.novelTitle}</h3>
+                  <p className={styles.novelAuthor}>by {novel.author}</p>
+                  <div className={styles.novelStats}>
+                    <span>📖 {language === 'tamil' ? 'அத்தியாயம்' : 'Chapter'} {novel.lastChapter}</span>
+                  </div>
+                  <button
+                    className={styles.readNowButton}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/novel/${novel.novelId}/chapter/${novel.lastChapter}`);
+                    }}
+                  >
+                    {language === 'tamil' ? 'தொடர்ந்து படியுங்கள்' : 'Continue Reading'}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Completed Novels Section */}
+      {completedNovels.length > 0 && (
+        <div className={styles.continueReadingSection}>
+          <h2 className={styles.sectionHeader}>
+            {language === 'tamil' ? 'முடிந்த நாவல்கள்' : 'Completed Novels'}
+          </h2>
+          <div className={styles.content}>
+            <div className={styles.grid}>
+              {completedNovels.map(novel => (
+                <div
+                  className={styles.novelCard}
+                  key={novel.novelId}
+                  onClick={() => navigate(`/novel/${novel.novelId}`)}
+                >
+                  <div className={styles.cardImage}>
+                    {novel.coverImage && imageMap[novel.coverImage] ? (
+                      <img
+                        src={imageMap[novel.coverImage]}
+                        alt={novel.novelTitle}
+                        className={styles.novelImage}
+                      />
+                    ) : (
+                      <span className={styles.placeholder}>Novel Cover</span>
+                    )}
+                  </div>
+                  <h3 className={styles.novelTitle}>{novel.novelTitle}</h3>
+                  <p className={styles.novelAuthor}>by {novel.author}</p>
+                  <div className={styles.novelStats}>
+                    <span>✓ {language === 'tamil' ? 'முடிந்தது' : 'Completed'}</span>
+                  </div>
+                  <button
+                    className={styles.readNowButton}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/novel/${novel.novelId}`);
+                    }}
+                  >
+                    {language === 'tamil' ? 'மீண்டும் படியுங்கள்' : 'Read Again'}
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* User Login Modal */}
       <UserLogin isOpen={isLoginModalOpen} onClose={handleCloseLogin} />

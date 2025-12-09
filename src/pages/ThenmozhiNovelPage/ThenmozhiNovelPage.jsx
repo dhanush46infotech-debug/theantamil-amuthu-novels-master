@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
+import { useReadingProgress } from '../../context/ReadingProgressContext';
 import Header from '../../components/layout/Header/Header';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
 import styles from './ThenmozhiNovelPage.module.scss';
@@ -13,6 +14,7 @@ import thenmozhiChapterImage from '../../assets/images/episodes_card/Thenmozhi_e
 const ThenmozhiNovelPage = () => {
   const { user } = useAuth();
   const { language } = useLanguage();
+  const { startReading } = useReadingProgress();
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
@@ -72,10 +74,12 @@ Will a word spoken by the hero before death change the heroine's life? This is a
   };
 
   const handleChapterClick = (chapterId) => {
+    startReading(1, novel.title, 'Novel Card/Thenmozhi Card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
     navigate(`/novel/1/chapter/${chapterId}`);
   };
 
   const handleContinueReading = () => {
+    startReading(1, novel.title, 'Novel Card/Thenmozhi Card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
     navigate(`/novel/1/chapter/1`);
   };
 

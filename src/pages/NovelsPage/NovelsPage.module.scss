@@ -19,6 +19,16 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 1rem;
+
+  .content {
+    margin-top: 0;
+    padding-top: 0;
+  }
+
+  .grid {
+    margin-top: 1rem;
+  }
 }
 
 .sectionHeader {
@@ -121,6 +131,10 @@
   max-width: 1200px;
   margin: 1cm auto 0;
   padding: 0 2rem 2rem;
+}
+
+.continueReadingSection + .content {
+  margin-top: 0;
 }
 
 .title {

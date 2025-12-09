@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
+import { useReadingProgress } from '../../context/ReadingProgressContext';
 import Header from '../../components/layout/Header/Header';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
 import styles from './SwethaNovelPage.module.scss';
@@ -13,6 +14,7 @@ import swethaChapterImage from '../../assets/images/episodes_card/swetha swe epi
 const SwethaNovelPage = () => {
   const { user } = useAuth();
   const { language } = useLanguage();
+  const { startReading } = useReadingProgress();
   const navigate = useNavigate();
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
 
@@ -24,12 +26,13 @@ const SwethaNovelPage = () => {
     setIsLoginModalOpen(false);
   };
 
-  // Chapters for Swetha novel - dynamically generated based on language
+  // Chapters for Swetha novel
   const chapters = Array.from({ length: 27 }, (_, i) => {
     const chapterId = i + 1;
     return {
       id: chapterId,
-      title: language === 'tamil' ? `அத்தியாயம் ${chapterId}` : `Chapter ${chapterId}`,
+      title: `அத்தியாயம் ${chapterId}`,
+      titleEnglish: `Chapter ${chapterId}`,
       date: new Date(2025, 0, 5 + i).toLocaleDateString('en-GB'),
       words: 1500
     };
@@ -68,11 +71,14 @@ const SwethaNovelPage = () => {
 
   const novel = {
     id: 2,
-    title: language === 'tamil'
-      ? 'தாலாட்டும் தாழம்பூவே'
-      : 'The Lullaby of the Temple Flower',
-    author: 'Swetha Swe',
-    genres: ['Love', 'Romantic'],
+    title: 'தாலாட்டும் தாழம்பூவே',
+    titleEnglish: 'The Lullaby of the Temple Flower',
+    author: 'ஸ்வேதா ஸ்வே',
+    authorEnglish: 'Swetha Swe',
+    genres: [
+      { tamil: 'காதல்', english: 'Love' },
+      { tamil: 'ரொமாண்டிக்', english: 'Romantic' }
+    ],
     image: swethaCard,
     stats: {
       views: '25.6K',
@@ -87,10 +93,12 @@ const SwethaNovelPage = () => {
   };
 
   const handleChapterClick = (chapterId) => {
+    startReading(2, novel.title, 'Novel Card/swetha card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
     navigate(`/novel/2/chapter/${chapterId}`);
   };
 
   const handleContinueReading = () => {
+    startReading(2, novel.title, 'Novel Card/swetha card.jpg', language === 'tamil' ? novel.author : novel.authorEnglish);
     navigate(`/novel/2/chapter/1`);
   };
 
@@ -107,24 +115,30 @@ const SwethaNovelPage = () => {
 
           <div className={styles.infoSection}>
             {/* Title */}
-            <h1 className={styles.novelTitle}>{novel.title}</h1>
+            <h1 className={styles.novelTitle}>
+              {language === 'tamil' ? novel.title : novel.titleEnglish}
+            </h1>
 
             {/* Author */}
             <div className={styles.authorSection}>
-              <span className={styles.author}>{novel.author}</span>
+              <span className={styles.author}>
+                {language === 'tamil' ? novel.author : novel.authorEnglish}
+              </span>
             </div>
 
             {/* Genres */}
             <div className={styles.genres}>
               {novel.genres.map((genre, index) => (
-                <span key={index} className={styles.genreTag}>{genre}</span>
+                <span key={index} className={styles.genreTag}>
+                  {language === 'tamil' ? genre.tamil : genre.english}
+                </span>
               ))}
             </div>
 
             {/* Action Buttons */}
             <div className={styles.actionButtons}>
               <button className={styles.readButton} onClick={handleContinueReading}>
-                Start Reading
+                {language === 'tamil' ? 'வாசிக்க தொடங்கு' : 'Start Reading'}
               </button>
             </div>
           </div>
@@ -157,11 +171,13 @@ const SwethaNovelPage = () => {
                 <div className={styles.chapterImageWrapper}>
                   <img
                     src={swethaChapterImage}
-                    alt={chapter.title}
+                    alt={language === 'tamil' ? chapter.title : chapter.titleEnglish}
                     className={styles.chapterImage}
                   />
                 </div>
-                <h3 className={styles.chapterTitle}>{chapter.title}</h3>
+                <h3 className={styles.chapterTitle}>
+                  {language === 'tamil' ? chapter.title : chapter.titleEnglish}
+                </h3>
               </div>
             ))}
           </div>

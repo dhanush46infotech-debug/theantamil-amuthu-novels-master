@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from '../../components/layout/Header/Header';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
+import { useReadingProgress } from '../../context/ReadingProgressContext';
 import { translations } from '../../translations';
 import { getChapterContent } from '../../utils/chapterContentLoader';
 import styles from './ChapterPage.module.scss';
@@ -28,6 +29,7 @@ const ChapterPage = () => {
   const navigate = useNavigate();
   const { user } = useAuth();
   const { language: userLanguage } = useLanguage();
+  const { updateProgress, completeNovel } = useReadingProgress();
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [displayLanguage, setDisplayLanguage] = useState(userLanguage);
@@ -84,6 +86,39 @@ const ChapterPage = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [chapterId]);
+
+  // Update reading progress when chapter changes
+  useEffect(() => {
+    if (novelId && chapterId) {
+      updateProgress(Number(novelId), Number(chapterId));
+
+      // Check if this is the last chapter (chapter 27 for novels 1 and 2)
+      if (Number(chapterId) === 27 && novelMeta) {
+        // Mark as complete when reaching the last chapter
+        completeNovel(Number(novelId), novelMeta.title, getNovelCoverImage(Number(novelId)), getNovelAuthor(Number(novelId)));
+      }
+    }
+  }, [novelId, chapterId, updateProgress, completeNovel, novelMeta]);
+
+  // Helper function to get novel cover image
+  const getNovelCoverImage = (id) => {
+    const coverImages = {
+      1: 'Novel Card/Thenmozhi Card.jpg',
+      2: 'Novel Card/swetha card.jpg',
+      3: 'Novel Card/Mohana card.jpg'
+    };
+    return coverImages[id] || '';
+  };
+
+  // Helper function to get novel author
+  const getNovelAuthor = (id) => {
+    const authors = {
+      1: 'தென்மொழி',
+      2: 'ஸ்வேதா ஸ்வே',
+      3: 'மோகனா'
+    };
+    return authors[id] || '';
+  };
 
   // Handle loading and not found states
   if (loading) {
