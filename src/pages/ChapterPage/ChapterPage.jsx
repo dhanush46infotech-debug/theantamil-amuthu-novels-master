@@ -34,6 +34,8 @@ const ChapterPage = () => {
   const [loading, setLoading] = useState(true);
   const [displayLanguage, setDisplayLanguage] = useState(userLanguage);
 
+  console.log('[CHAPTER_PAGE] RENDER - novelId:', novelId, 'chapterId:', chapterId);
+
   const t = translations[displayLanguage];
   const novelMeta = NOVEL_METADATA[novelId];
 
@@ -48,9 +50,12 @@ const ChapterPage = () => {
   const handlePreviousChapter = () => {
     const prevChapter = Number(chapterId) - 1;
     if (prevChapter >= 1) {
-      console.log('[CHAPTER_NAV] Going to previous chapter:', prevChapter, 'from', chapterId);
+      const newUrl = `/novel/${novelId}/chapter/${prevChapter}`;
+      console.log('[CHAPTER_NAV] Navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      navigate(`/novel/${novelId}/chapter/${prevChapter}`, { replace: false });
+      setTimeout(() => {
+        navigate(newUrl);
+      }, 100);
     } else {
       console.log('[CHAPTER_NAV] Cannot go before chapter 1');
     }
@@ -59,9 +64,12 @@ const ChapterPage = () => {
   const handleNextChapter = () => {
     const nextChapter = Number(chapterId) + 1;
     if (nextChapter <= 27) {
-      console.log('[CHAPTER_NAV] Going to next chapter:', nextChapter, 'from', chapterId);
+      const newUrl = `/novel/${novelId}/chapter/${nextChapter}`;
+      console.log('[CHAPTER_NAV] Navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`);
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      navigate(`/novel/${novelId}/chapter/${nextChapter}`, { replace: false });
+      setTimeout(() => {
+        navigate(newUrl);
+      }, 100);
     } else {
       console.log('[CHAPTER_NAV] Cannot go beyond chapter 27');
     }
@@ -69,13 +77,17 @@ const ChapterPage = () => {
 
   // Load chapter content dynamically with proper language fallback
   useEffect(() => {
+    console.log('[CHAPTER_PAGE] useEffect triggered - novelId:', novelId, 'chapterId:', chapterId, 'displayLanguage:', displayLanguage);
+    
     const loadChapter = async () => {
       setLoading(true);
+      console.log('[CHAPTER_PAGE] Loading chapter content for chapter:', chapterId);
       
       // Use default language for the novel if user language is not available
       const languageToUse = displayLanguage;
       
       const data = await getChapterContent(Number(novelId), Number(chapterId), languageToUse);
+      console.log('[CHAPTER_PAGE] Chapter loaded:', chapterId);
       setChapterData(data);
       setLoading(false);
     };
