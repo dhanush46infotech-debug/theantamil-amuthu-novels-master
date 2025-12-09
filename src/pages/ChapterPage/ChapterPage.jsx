@@ -48,16 +48,22 @@ const ChapterPage = () => {
   const handlePreviousChapter = () => {
     const prevChapter = Number(chapterId) - 1;
     if (prevChapter >= 1) {
-      console.log('[CHAPTER_NAV] Going to previous chapter:', prevChapter);
-      navigate(`/novel/${novelId}/chapter/${prevChapter}`);
+      console.log('[CHAPTER_NAV] Going to previous chapter:', prevChapter, 'from', chapterId);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      navigate(`/novel/${novelId}/chapter/${prevChapter}`, { replace: false });
+    } else {
+      console.log('[CHAPTER_NAV] Cannot go before chapter 1');
     }
   };
 
   const handleNextChapter = () => {
     const nextChapter = Number(chapterId) + 1;
     if (nextChapter <= 27) {
-      console.log('[CHAPTER_NAV] Going to next chapter:', nextChapter);
-      navigate(`/novel/${novelId}/chapter/${nextChapter}`);
+      console.log('[CHAPTER_NAV] Going to next chapter:', nextChapter, 'from', chapterId);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      navigate(`/novel/${novelId}/chapter/${nextChapter}`, { replace: false });
+    } else {
+      console.log('[CHAPTER_NAV] Cannot go beyond chapter 27');
     }
   };
 
@@ -190,9 +196,11 @@ const ChapterPage = () => {
           <div className={styles.chapterNavigation}>
             {Number(chapterId) > 1 ? (
               <button 
+                type="button"
                 className={styles.navButton} 
                 onClick={(e) => {
                   console.log('[PREV_BTN] Clicked - Current chapter:', chapterId);
+                  e.preventDefault();
                   e.stopPropagation();
                   handlePreviousChapter();
                 }}
@@ -205,9 +213,11 @@ const ChapterPage = () => {
 
             {Number(chapterId) < 27 ? (
               <button 
+                type="button"
                 className={styles.navButton} 
                 onClick={(e) => {
                   console.log('[NEXT_BTN] Clicked - Current chapter:', chapterId);
+                  e.preventDefault();
                   e.stopPropagation();
                   handleNextChapter();
                 }}
