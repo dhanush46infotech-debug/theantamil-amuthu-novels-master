@@ -393,18 +393,19 @@
 }
 
 .readNowButton {
-  width: 100%;
-  padding: 0.6rem 1.2rem;
+  width: auto;
+  padding: 0.5rem 0.9rem;
   background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
   color: #000000;
   border: 2px solid rgba(255, 215, 0, 0.5);
-  border-radius: 12px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-family: 'Times New Roman', serif;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 1px;
   box-shadow:
     0 8px 32px 0 rgba(255, 215, 0, 0.4),
     inset 0 2px 4px rgba(255, 255, 255, 0.5),
@@ -561,8 +562,10 @@
   }
 
   .readNowButton {
-    padding: 0.6rem 1.2rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
   }
 
   .novelStats {
@@ -622,8 +625,10 @@
   }
 
   .readNowButton {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
   }
 }
 
@@ -682,10 +687,11 @@
     font-size: 0.95rem;
     padding-bottom: 1.3rem;
   }
-
   .readNowButton {
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
   }
 }
 
@@ -735,7 +741,9 @@
   }
 
   .readNowButton {
-    padding: 0.7rem 1.3rem;
-    font-size: 0.95rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.75rem;
+    font-family: 'Times New Roman', serif;
+    font-weight: 700;
   }
 }
