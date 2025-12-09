@@ -5,6 +5,7 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useReadingProgress } from '../../context/ReadingProgressContext';
 import Header from '../../components/layout/Header/Header';
 import UserLogin from '../../components/common/UserLogin/UserLogin';
+import { getNovelConfig } from '../../config/novelConfig';
 import styles from './SwethaNovelPage.module.scss';
 
 // Import images
@@ -26,8 +27,12 @@ const SwethaNovelPage = () => {
     setIsLoginModalOpen(false);
   };
 
-  // Chapters for Swetha novel
-  const chapters = Array.from({ length: 27 }, (_, i) => {
+  // Get novel config and generate chapters dynamically
+  const novelConfig = getNovelConfig(2);
+  const totalChapters = novelConfig?.totalChapters || 27;
+
+  // Chapters for Swetha novel - generated from config
+  const chapters = Array.from({ length: totalChapters }, (_, i) => {
     const chapterId = i + 1;
     return {
       id: chapterId,

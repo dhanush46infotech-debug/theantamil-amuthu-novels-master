@@ -2,27 +2,7 @@
 // This loads chapter content on-demand with backend API fallback to local files
 
 import novelService from '../services/API/novelService';
-
-/**
- * Novel configuration mapping
- */
-const NOVEL_CONFIG = {
-  1: {
-    name: 'raatchasane-novel',
-    languages: ['tamil', 'english'],
-    totalChapters: 14
-  },
-  2: {
-    name: 'thaalaattum-novel',
-    languages: ['tamil', 'english'],
-    totalChapters: 27
-  },
-  3: {
-    name: 'mohanamozhi-novel',
-    languages: ['tamil', 'english'],
-    totalChapters: 27
-  }
-};
+import { getNovelConfig, isValidChapter } from '../config/novelConfig';
 
 /**
  * Dynamically imports chapter content for a specific novel
@@ -34,14 +14,14 @@ const NOVEL_CONFIG = {
  */
 export const getChapterContent = async (novelId, chapterId, language = 'tamil') => {
   try {
-    const config = NOVEL_CONFIG[novelId];
+    const config = getNovelConfig(novelId);
 
     if (!config) {
       return null;
     }
 
     // Validate chapter ID
-    if (chapterId < 1 || chapterId > config.totalChapters) {
+    if (!isValidChapter(novelId, chapterId)) {
       return null;
     }
 
@@ -117,15 +97,6 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
 };
 
 /**
- * Get novel configuration
- * @param {number} novelId - The novel ID
- * @returns {Object|null} - Novel configuration or null
- */
-export const getNovelConfig = (novelId) => {
-  return NOVEL_CONFIG[novelId] || null;
-};
-
-/**
  * Check if a chapter exists
  * @param {number} novelId - The novel ID
  * @param {number} chapterId - The chapter ID
@@ -133,6 +104,12 @@ export const getNovelConfig = (novelId) => {
  * @returns {Promise<boolean>} - True if chapter exists
  */
 export const chapterExists = async (novelId, chapterId, language = 'tamil') => {
+  // First check if chapter ID is in valid range
+  if (!isValidChapter(novelId, chapterId)) {
+    return false;
+  }
+
+  // Then check if content actually exists
   const content = await getChapterContent(novelId, chapterId, language);
   return content !== null;
 };

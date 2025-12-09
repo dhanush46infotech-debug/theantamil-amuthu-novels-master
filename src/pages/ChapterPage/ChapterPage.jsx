@@ -6,26 +6,8 @@ import { useLanguage } from '../../context/LanguageContext';
 import { useReadingProgress } from '../../context/ReadingProgressContext';
 import { translations } from '../../translations';
 import { getChapterContent } from '../../utils/chapterContentLoader';
+import { getNovelConfig, isValidChapter } from '../../config/novelConfig';
 import styles from './ChapterPage.module.scss';
-
-// Novel metadata - contains title, default language, and total chapters
-const NOVEL_METADATA = {
-  1: {
-    title: 'ராட்சசனே எனை வதைப்பதேனடா!',
-    defaultLanguage: 'tamil',
-    totalChapters: 14
-  },
-  2: {
-    title: 'தாலாட்டும் தாழம்பூவே!',
-    defaultLanguage: 'tamil',
-    totalChapters: 27
-  },
-  3: {
-    title: 'மோகனா',
-    defaultLanguage: 'tamil',
-    totalChapters: 40
-  }
-};
 
 const ChapterPage = () => {
   const { novelId, chapterId } = useParams();
@@ -42,7 +24,7 @@ const ChapterPage = () => {
   const numChapterId = Number(chapterId);
 
   const t = translations[userLanguage];
-  const novelMeta = NOVEL_METADATA[numNovelId];
+  const novelMeta = getNovelConfig(numNovelId);
 
   const handleLoginClick = () => {
     // Handle login if needed
@@ -54,17 +36,14 @@ const ChapterPage = () => {
 
   const handlePreviousChapter = useCallback(() => {
     const prevChapter = Number(chapterId) - 1;
-    if (prevChapter >= 1) {
+    if (isValidChapter(novelId, prevChapter)) {
       navigate(`/novel/${novelId}/chapter/${prevChapter}`);
     }
   }, [chapterId, novelId, navigate]);
 
   const handleNextChapter = useCallback(() => {
     const nextChapter = Number(chapterId) + 1;
-    const config = NOVEL_METADATA[Number(novelId)];
-    const maxChapters = config?.totalChapters || 27;
-
-    if (nextChapter <= maxChapters) {
+    if (isValidChapter(novelId, nextChapter)) {
       navigate(`/novel/${novelId}/chapter/${nextChapter}`);
     }
   }, [chapterId, novelId, navigate]);
@@ -102,8 +81,8 @@ const ChapterPage = () => {
       updateProgress(numNovelId, numChapterId);
 
       // Check if this is the last chapter based on novel metadata
-      const metadata = NOVEL_METADATA[numNovelId];
-      const maxChapters = metadata?.totalChapters || 27;
+      const metadata = getNovelConfig(numNovelId);
+      const maxChapters = metadata?.totalChapters || 0;
       if (numChapterId === maxChapters && metadata) {
         // Mark as complete when reaching the last chapter
         completeNovel(numNovelId, metadata.title, getNovelCoverImage(numNovelId), getNovelAuthor(numNovelId));
@@ -164,7 +143,7 @@ const ChapterPage = () => {
 
   // Get max chapters - ensure it's always available
   const currentChapterId = Number(chapterId);
-  const maxChapters = NOVEL_METADATA[Number(novelId)]?.totalChapters || 27;
+  const maxChapters = getNovelConfig(Number(novelId))?.totalChapters || 0;
   const showPrevButton = currentChapterId > 1;
   const showNextButton = currentChapterId < maxChapters;
   const formatContent = (content) => {

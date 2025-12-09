@@ -52,7 +52,7 @@ export const mockNovels = [
     descriptionEnglish: 'A novel where a story is told through a story',
     genre: 'drama',
     language: 'tamil',
-    totalChapters: 40,
+    totalChapters: 27,
     image: 'Novel Card/Mohana card.jpg',
     coverImage: 'Novel Card/Mohana card.jpg',
     rating: 4.2,
