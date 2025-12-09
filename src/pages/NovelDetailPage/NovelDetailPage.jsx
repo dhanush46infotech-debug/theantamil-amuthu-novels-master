@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
@@ -104,24 +104,20 @@ const NovelDetailPage = () => {
     setIsLoginModalOpen(false);
   };
 
-  const handleChapterClick = (chapterId) => {
+  const handleChapterClick = useCallback((chapterId) => {
     const newUrl = `/novel/${id}/chapter/${chapterId}`;
     console.log('[NOVEL_DETAIL] Chapter clicked - navigating to:', newUrl);
-    setTimeout(() => {
-      navigate(newUrl);
-    }, 100);
-  };
+    navigate(newUrl);
+  }, [id, navigate]);
 
-  const handleContinueReading = () => {
+  const handleContinueReading = useCallback(() => {
     if (chapters.length > 0) {
       const firstChapterId = chapters[0]._id || chapters[0].id || 1;
       const newUrl = `/novel/${id}/chapter/${firstChapterId}`;
       console.log('[NOVEL_DETAIL] Continue reading clicked - navigating to:', newUrl);
-      setTimeout(() => {
-        navigate(newUrl);
-      }, 100);
+      navigate(newUrl);
     }
-  };
+  }, [chapters, id, navigate]);
 
   const handleBookmark = async () => {
     if (!user) {

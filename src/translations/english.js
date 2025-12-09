@@ -86,6 +86,28 @@ const englishTranslations = {
     save: 'Save',
     cancel: 'Cancel',
     submit: 'Submit'
+  },
+
+  // Contact Page
+  contact: {
+    title: 'Contact Us',
+    description: 'Share your feedback, suggestions, or questions with us.',
+    email: 'Email',
+    phone: 'Phone',
+    address: 'Address',
+    sendMessage: 'Send Message',
+    placeholder: 'This page will be updated soon...'
+  },
+
+  // About Page
+  about: {
+    title: 'About Us',
+    description: 'Thean Tamil Amudhu - A platform celebrating Tamil literature',
+    mission: 'Our Mission',
+    missionText: 'Our mission is to make Tamil literature accessible to everyone.',
+    vision: 'Our Vision',
+    visionText: 'To become the leading digital platform for Tamil novels.',
+    placeholder: 'This page will be updated soon...'
   }
 };
 

@@ -16,6 +16,7 @@ export const ReadingProgressProvider = ({ children }) => {
   const [completedNovels, setCompletedNovels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [synced, setSynced] = useState(false);
+  const [syncError, setSyncError] = useState(null);
 
   // Check if user is logged in
   const isUserLoggedIn = () => {
@@ -114,8 +115,10 @@ export const ReadingProgressProvider = ({ children }) => {
       if (isUserLoggedIn()) {
         try {
           await readingProgressService.startReading(novelId, novelTitle, coverImage, author);
+          setSyncError(null); // Clear any previous errors
         } catch (error) {
           console.error('Failed to sync start reading with backend:', error);
+          setSyncError('Failed to sync reading progress. Your progress is saved locally.');
         }
       }
     }
@@ -136,8 +139,10 @@ export const ReadingProgressProvider = ({ children }) => {
     if (isUserLoggedIn()) {
       try {
         await readingProgressService.updateChapter(novelId, chapterId);
+        setSyncError(null); // Clear any previous errors
       } catch (error) {
         console.error('Failed to sync chapter progress with backend:', error);
+        setSyncError('Failed to sync chapter progress. Your progress is saved locally.');
       }
     }
   };
@@ -163,11 +168,18 @@ export const ReadingProgressProvider = ({ children }) => {
       if (isUserLoggedIn()) {
         try {
           await readingProgressService.completeNovel(novelId, novelTitle, coverImage, author);
+          setSyncError(null); // Clear any previous errors
         } catch (error) {
           console.error('Failed to sync novel completion with backend:', error);
+          setSyncError('Failed to sync completion. Your progress is saved locally.');
         }
       }
     }
+  };
+
+  // Clear sync error
+  const clearSyncError = () => {
+    setSyncError(null);
   };
 
   // Check if a novel is ongoing
@@ -194,7 +206,10 @@ export const ReadingProgressProvider = ({ children }) => {
     completeNovel,
     isOngoing,
     isCompleted,
-    getLastChapter
+    getLastChapter,
+    syncError,
+    clearSyncError,
+    loading
   };
 
   return (

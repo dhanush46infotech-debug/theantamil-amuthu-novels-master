@@ -32,18 +32,14 @@ console.warn = (...args) => {
   originalWarn.apply(console, args)
 }
 
-// Keep info/log from extensions visible only if they mention our API
+// Allow all logs except chrome extension noise
 console.log = (...args) => {
   const message = args[0]?.toString() || ''
-  // Always show our app logs
-  if (message.includes('API') || message.includes('Novel') || message.includes('[API')) {
-    originalLog.apply(console, args)
-    return
-  }
   // Suppress extension logs
   if (message.includes('chrome-extension') || message.includes('contentScript')) {
     return
   }
+  // Show all other logs (application logs)
   originalLog.apply(console, args)
 }
 

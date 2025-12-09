@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { useTheme } from '../../../context/ThemeContext';
 import { useLanguage } from '../../../context/LanguageContext';
 import { translations } from '../../../translations';
@@ -263,7 +263,7 @@ const Header = ({ onLoginClick }) => {
       {isMenuOpen && (
         <div className={styles.mobileMenu}>
           <nav className={styles.nav}>
-            <a href="/" className={styles.navLink}>
+            <Link to="/" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
               <svg
                 className={styles.navIcon}
                 xmlns="http://www.w3.org/2000/svg"
@@ -278,8 +278,8 @@ const Header = ({ onLoginClick }) => {
                 <polyline points="9 22 9 12 15 12 15 22"></polyline>
               </svg>
               <span>{t.header.home}</span>
-            </a>
-            <a href="/contact" className={styles.navLink}>
+            </Link>
+            <Link to="/contact" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
               <svg
                 className={styles.navIcon}
                 xmlns="http://www.w3.org/2000/svg"
@@ -294,8 +294,8 @@ const Header = ({ onLoginClick }) => {
                 <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
               </svg>
               <span>{t.header.contact}</span>
-            </a>
-            <a href="/about" className={styles.navLink}>
+            </Link>
+            <Link to="/about" className={styles.navLink} onClick={() => setIsMenuOpen(false)}>
               <svg
                 className={styles.navIcon}
                 xmlns="http://www.w3.org/2000/svg"
@@ -311,7 +311,7 @@ const Header = ({ onLoginClick }) => {
                 <path d="M12 8h.01"></path>
               </svg>
               <span>{t.header.about}</span>
-            </a>
+            </Link>
           </nav>
         </div>
       )}
