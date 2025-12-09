@@ -15,12 +15,9 @@ const novelService = {
    */
   getAllNovels: async () => {
     try {
-      console.log('Fetching novels from backend API...');
       const response = await apiClient.get(API_ENDPOINTS.GET_NOVELS);
-      console.log('Successfully fetched novels from backend:', response.data);
       return response.data;
     } catch (error) {
-      console.warn('Backend API unavailable, using fallback mock data:', error.message);
       // Fallback to mock data - ALWAYS return data, never throw
       return { novels: mockNovels };
     }
@@ -35,10 +32,8 @@ const novelService = {
     try {
       const endpoint = API_ENDPOINTS.GET_NOVEL.replace(':id', novelId);
       const response = await apiClient.get(endpoint);
-      console.log('Successfully fetched novel from backend:', response.data);
       return response.data;
     } catch (error) {
-      console.warn(`Backend API unavailable for novel ${novelId}, using fallback:`, error.message);
       // Fallback to mock data
       const novel = mockNovels.find(n => n.id === parseInt(novelId));
       return novel || {};
@@ -57,7 +52,6 @@ const novelService = {
       });
       return response.data;
     } catch (error) {
-      console.error(`Error fetching novel by slug ${slug}:`, error);
       throw error;
     }
   },
@@ -68,14 +62,8 @@ const novelService = {
    * @returns {Promise} Novel details with all chapters
    */
   getRatsasaneEnaiVathaippathenaNovel: async () => {
-    try {
-      // Using the specific endpoint for this novel
-      const response = await apiClient.get(API_ENDPOINTS.GET_RATSASANE_NOVEL);
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching Ratsasane Enai Vathaippathena novel:', error);
-      throw error;
-    }
+    const response = await apiClient.get(API_ENDPOINTS.GET_RATSASANE_NOVEL);
+    return response.data;
   },
 
   /**
@@ -87,10 +75,8 @@ const novelService = {
     try {
       const endpoint = API_ENDPOINTS.GET_NOVEL_CHAPTERS.replace(':id', novelId);
       const response = await apiClient.get(endpoint);
-      console.log('Successfully fetched chapters from backend:', response.data);
       return response.data;
     } catch (error) {
-      console.warn(`Backend API unavailable for chapters of novel ${novelId}, using fallback:`, error.message);
       // Fallback: return empty chapters array for now
       // In production, you would fetch from mock data
       return { chapters: [] };
@@ -105,22 +91,16 @@ const novelService = {
    * @returns {Promise} Chapter details with content
    */
   getChapter: async (novelId, chapterId, language = 'tamil') => {
-    try {
-      const endpoint = API_ENDPOINTS.GET_CHAPTER
-        .replace(':novelId', novelId)
-        .replace(':chapterId', chapterId);
-      
-      // Add language query parameter
-      const response = await apiClient.get(endpoint, {
-        params: { language }
-      });
-      
-      console.log(`[API] getChapter: Novel ${novelId}, Chapter ${chapterId}, Language: ${language}`);
-      return response.data;
-    } catch (error) {
-      console.error(`Error fetching chapter ${chapterId} for novel ${novelId} in ${language}:`, error);
-      throw error;
-    }
+    const endpoint = API_ENDPOINTS.GET_CHAPTER
+      .replace(':novelId', novelId)
+      .replace(':chapterId', chapterId);
+
+    // Add language query parameter
+    const response = await apiClient.get(endpoint, {
+      params: { language }
+    });
+
+    return response.data;
   },
 
   /**
@@ -129,15 +109,10 @@ const novelService = {
    * @returns {Promise} Bookmark status
    */
   bookmarkNovel: async (novelId) => {
-    try {
-      const response = await apiClient.post(API_ENDPOINTS.BOOKMARK_NOVEL, {
-        novelId
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error bookmarking novel ${novelId}:`, error);
-      throw error;
-    }
+    const response = await apiClient.post(API_ENDPOINTS.BOOKMARK_NOVEL, {
+      novelId
+    });
+    return response.data;
   },
 
   /**
@@ -146,15 +121,10 @@ const novelService = {
    * @returns {Promise} Bookmark status
    */
   removeBookmark: async (novelId) => {
-    try {
-      const response = await apiClient.delete(API_ENDPOINTS.REMOVE_BOOKMARK, {
-        data: { novelId }
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error removing bookmark for novel ${novelId}:`, error);
-      throw error;
-    }
+    const response = await apiClient.delete(API_ENDPOINTS.REMOVE_BOOKMARK, {
+      data: { novelId }
+    });
+    return response.data;
   },
 
   /**
@@ -163,15 +133,10 @@ const novelService = {
    * @returns {Promise} Like status
    */
   likeNovel: async (novelId) => {
-    try {
-      const response = await apiClient.post(API_ENDPOINTS.LIKE_NOVEL, {
-        novelId
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error liking novel ${novelId}:`, error);
-      throw error;
-    }
+    const response = await apiClient.post(API_ENDPOINTS.LIKE_NOVEL, {
+      novelId
+    });
+    return response.data;
   },
 
   /**
@@ -182,17 +147,12 @@ const novelService = {
    * @returns {Promise} Progress update status
    */
   updateReadingProgress: async (novelId, chapterId, progress = 0) => {
-    try {
-      const response = await apiClient.post(API_ENDPOINTS.UPDATE_READING_PROGRESS, {
-        novelId,
-        chapterId,
-        progress
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error updating reading progress:`, error);
-      throw error;
-    }
+    const response = await apiClient.post(API_ENDPOINTS.UPDATE_READING_PROGRESS, {
+      novelId,
+      chapterId,
+      progress
+    });
+    return response.data;
   },
 
   /**
@@ -201,15 +161,10 @@ const novelService = {
    * @returns {Promise} Reading progress data
    */
   getReadingProgress: async (novelId) => {
-    try {
-      const response = await apiClient.get(API_ENDPOINTS.GET_READING_PROGRESS, {
-        params: { novelId }
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error fetching reading progress for novel ${novelId}:`, error);
-      throw error;
-    }
+    const response = await apiClient.get(API_ENDPOINTS.GET_READING_PROGRESS, {
+      params: { novelId }
+    });
+    return response.data;
   },
 
   /**
@@ -218,16 +173,11 @@ const novelService = {
    * @returns {Promise} PDF file blob
    */
   downloadNovelPDF: async (novelId) => {
-    try {
-      const endpoint = API_ENDPOINTS.DOWNLOAD_NOVEL_PDF.replace(':id', novelId);
-      const response = await apiClient.get(endpoint, {
-        responseType: 'blob'
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error downloading PDF for novel ${novelId}:`, error);
-      throw error;
-    }
+    const endpoint = API_ENDPOINTS.DOWNLOAD_NOVEL_PDF.replace(':id', novelId);
+    const response = await apiClient.get(endpoint, {
+      responseType: 'blob'
+    });
+    return response.data;
   },
 
   /**
@@ -237,15 +187,10 @@ const novelService = {
    * @returns {Promise} Array of matching novels
    */
   searchNovels: async (query, filters = {}) => {
-    try {
-      const response = await apiClient.get(API_ENDPOINTS.SEARCH_NOVELS, {
-        params: { query, ...filters }
-      });
-      return response.data;
-    } catch (error) {
-      console.error('Error searching novels:', error);
-      throw error;
-    }
+    const response = await apiClient.get(API_ENDPOINTS.SEARCH_NOVELS, {
+      params: { query, ...filters }
+    });
+    return response.data;
   },
 
   /**
@@ -254,15 +199,10 @@ const novelService = {
    * @returns {Promise} Array of novels
    */
   getNovelsByGenre: async (genre) => {
-    try {
-      const response = await apiClient.get(API_ENDPOINTS.GET_NOVELS_BY_GENRE, {
-        params: { genre }
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error fetching novels for genre ${genre}:`, error);
-      throw error;
-    }
+    const response = await apiClient.get(API_ENDPOINTS.GET_NOVELS_BY_GENRE, {
+      params: { genre }
+    });
+    return response.data;
   },
 
   /**
@@ -271,15 +211,10 @@ const novelService = {
    * @returns {Promise} Array of novels
    */
   getNovelsByAuthor: async (author) => {
-    try {
-      const response = await apiClient.get(API_ENDPOINTS.GET_NOVELS_BY_AUTHOR, {
-        params: { author }
-      });
-      return response.data;
-    } catch (error) {
-      console.error(`Error fetching novels for author ${author}:`, error);
-      throw error;
-    }
+    const response = await apiClient.get(API_ENDPOINTS.GET_NOVELS_BY_AUTHOR, {
+      params: { author }
+    });
+    return response.data;
   }
 };
 

@@ -37,35 +37,30 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
     const config = NOVEL_CONFIG[novelId];
 
     if (!config) {
-      console.error(`Novel ${novelId} configuration not found`);
       return null;
     }
 
     // Validate chapter ID
     if (chapterId < 1 || chapterId > config.totalChapters) {
-      console.error(`Invalid chapter ID ${chapterId} for novel ${novelId}`);
       return null;
     }
 
     // Check if language is supported
     if (!config.languages.includes(language)) {
-      console.warn(`Language ${language} not available for novel ${novelId}, falling back to Tamil`);
       language = 'tamil';
     }
 
     // STEP 1: Try backend API first
-    console.log(`[CHAPTER_LOADER] Attempting to load from backend API: Novel ${novelId}, Chapter ${chapterId}, Language: ${language}`);
     try {
       const apiResponse = await novelService.getChapter(novelId, chapterId, language);
       if (apiResponse && (apiResponse.content || apiResponse.title)) {
-        console.log(`[CHAPTER_LOADER] ✓ Successfully loaded from backend API`);
         return {
           title: apiResponse.title || `Chapter ${chapterId}`,
           content: apiResponse.content || ''
         };
       }
     } catch (apiError) {
-      console.log(`[CHAPTER_LOADER] Backend API unavailable or chapter not found, falling back to local files:`, apiError.message);
+      // Backend API unavailable, fall back to local files
     }
 
     // STEP 2: Fallback to local files
@@ -77,11 +72,10 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
       chapterModule = await import(`../chapters/${novelFolder}/${language}/chapter-${chapterId}.js`);
 
       if (chapterModule && chapterModule.CHAPTER) {
-        console.log(`[CHAPTER_LOADER] ✓ Loaded from local files (new structure)`);
         return chapterModule.CHAPTER;
       }
     } catch (newStructureError) {
-      console.log(`[CHAPTER_LOADER] New structure not found, trying old structure...`);
+      // New structure not found, try old structure
 
       // Fallback to old structure for backward compatibility
       try {
@@ -101,7 +95,6 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
         if (!novelModule) {
           // If English version doesn't exist, fallback to Tamil
           if (language === 'english') {
-            console.warn(`English version not available for novel ${novelId}, chapter ${chapterId}. Falling back to Tamil.`);
             if (novelId === 2) {
               novelModule = await import('./chapters/novel-2.js');
             }
@@ -110,18 +103,15 @@ export const getChapterContent = async (novelId, chapterId, language = 'tamil') 
 
         const novel = novelModule?.CHAPTERS;
         if (novel && novel[chapterId]) {
-          console.log(`[CHAPTER_LOADER] ✓ Loaded from local files (old structure)`);
           return novel[chapterId];
         }
       } catch (fallbackError) {
-        console.error(`[CHAPTER_LOADER] Old structure also failed:`, fallbackError);
+        // Old structure also failed
       }
     }
 
-    console.error(`[CHAPTER_LOADER] ✗ Chapter ${chapterId} not found for novel ${novelId} in ${language}`);
     return null;
   } catch (error) {
-    console.error(`[CHAPTER_LOADER] ✗ Failed to load chapter ${chapterId} for novel ${novelId} in ${language}:`, error);
     return null;
   }
 };

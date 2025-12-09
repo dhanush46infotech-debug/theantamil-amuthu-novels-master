@@ -54,8 +54,6 @@ export const ReadingProgressProvider = ({ children }) => {
           }
         }
       } catch (error) {
-        console.error('Failed to load reading progress from backend, using localStorage:', error);
-
         // Fallback to localStorage
         const savedOngoing = localStorage.getItem('ongoingNovels');
         const savedCompleted = localStorage.getItem('completedNovels');
@@ -115,7 +113,7 @@ export const ReadingProgressProvider = ({ children }) => {
         try {
           await readingProgressService.startReading(novelId, novelTitle, coverImage, author);
         } catch (error) {
-          console.error('Failed to sync start reading with backend:', error);
+          // Silent fail - local state already updated
         }
       }
     }
@@ -137,7 +135,7 @@ export const ReadingProgressProvider = ({ children }) => {
       try {
         await readingProgressService.updateChapter(novelId, chapterId);
       } catch (error) {
-        console.error('Failed to sync chapter progress with backend:', error);
+        // Silent fail - local state already updated
       }
     }
   };
@@ -164,7 +162,7 @@ export const ReadingProgressProvider = ({ children }) => {
         try {
           await readingProgressService.completeNovel(novelId, novelTitle, coverImage, author);
         } catch (error) {
-          console.error('Failed to sync novel completion with backend:', error);
+          // Silent fail - local state already updated
         }
       }
     }

@@ -7,13 +7,8 @@ const readingProgressService = {
    * @returns {Promise} - User's reading progress data
    */
   async getReadingProgress() {
-    try {
-      const response = await apiClient.get(API_ENDPOINTS.GET_READING_PROGRESS);
-      return response.data;
-    } catch (error) {
-      console.error('Error fetching reading progress:', error);
-      throw error;
-    }
+    const response = await apiClient.get(API_ENDPOINTS.GET_READING_PROGRESS);
+    return response.data;
   },
 
   /**
@@ -28,13 +23,8 @@ const readingProgressService = {
    * @returns {Promise} - Updated progress data
    */
   async updateProgress(progressData) {
-    try {
-      const response = await apiClient.post(API_ENDPOINTS.UPDATE_READING_PROGRESS, progressData);
-      return response.data;
-    } catch (error) {
-      console.error('Error updating reading progress:', error);
-      throw error;
-    }
+    const response = await apiClient.post(API_ENDPOINTS.UPDATE_READING_PROGRESS, progressData);
+    return response.data;
   },
 
   /**
@@ -98,13 +88,8 @@ const readingProgressService = {
    * @returns {Promise} - Deletion confirmation
    */
   async deleteProgress(novelId) {
-    try {
-      const response = await apiClient.delete(`${API_ENDPOINTS.UPDATE_READING_PROGRESS}/${novelId}`);
-      return response.data;
-    } catch (error) {
-      console.error('Error deleting reading progress:', error);
-      throw error;
-    }
+    const response = await apiClient.delete(`${API_ENDPOINTS.UPDATE_READING_PROGRESS}/${novelId}`);
+    return response.data;
   }
 };
 

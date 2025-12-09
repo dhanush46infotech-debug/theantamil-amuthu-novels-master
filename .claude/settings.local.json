@@ -7,7 +7,9 @@
       "Bash(then echo \"OK: $f\")",
       "Bash(else echo \"MISSING: $f\")",
       "Bash(fi)",
-      "Bash(done)"
+      "Bash(done)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run dev:*)"
     ],
     "deny": [],
     "ask": []

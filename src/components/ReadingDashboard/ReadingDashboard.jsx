@@ -34,11 +34,9 @@ const ReadingDashboard = () => {
           startedNovels: ongoing.length,
           completedNovels: completed.length
         });
-
-        console.log('[READING_DASHBOARD] Progress loaded:', { ongoing: ongoing.length, completed: completed.length });
       }
     } catch (error) {
-      console.error('[READING_DASHBOARD] Error fetching progress:', error);
+      // Silent fail - show empty dashboard
     } finally {
       setLoading(false);
     }

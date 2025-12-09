@@ -54,19 +54,16 @@ const NovelDetailPage = () => {
     const fetchNovelData = async () => {
       try {
         setLoading(true);
-        console.log('Fetching novel details for ID:', id);
 
         // Fetch novel details
         const novelResponse = await novelService.getNovelById(id);
-        console.log('Novel response:', novelResponse);
-        
+
         // Support both { novel: {...} } and direct novel object
         const novelData = novelResponse.novel || novelResponse;
         setNovel(novelData);
-        
+
         // Set display language based on novel's language
         if (novelData && novelData.language) {
-          console.log('Novel language:', novelData.language);
           setDisplayLanguage(novelData.language); // Use novel's language
         } else {
           setDisplayLanguage('tamil'); // Default to Tamil
@@ -74,17 +71,15 @@ const NovelDetailPage = () => {
 
         // Fetch chapters
         const chaptersResponse = await novelService.getNovelChapters(id);
-        console.log('Chapters response:', chaptersResponse);
-        
+
         // Support both { chapters: [...] } and direct chapters array
-        const chaptersData = Array.isArray(chaptersResponse) 
-          ? chaptersResponse 
+        const chaptersData = Array.isArray(chaptersResponse)
+          ? chaptersResponse
           : (chaptersResponse.chapters || []);
         setChapters(chaptersData);
 
         setError(null);
       } catch (err) {
-        console.error('Error fetching novel data:', err);
         setError('Failed to load novel details. Please try again later.');
       } finally {
         setLoading(false);
@@ -105,20 +100,16 @@ const NovelDetailPage = () => {
   };
 
   const handleChapterClick = (chapterId) => {
-    const newUrl = `/novel/${id}/chapter/${chapterId}`;
-    console.log('[NOVEL_DETAIL] Chapter clicked - navigating to:', newUrl);
     setTimeout(() => {
-      navigate(newUrl);
+      navigate(`/novel/${id}/chapter/${chapterId}`);
     }, 100);
   };
 
   const handleContinueReading = () => {
     if (chapters.length > 0) {
       const firstChapterId = chapters[0]._id || chapters[0].id || 1;
-      const newUrl = `/novel/${id}/chapter/${firstChapterId}`;
-      console.log('[NOVEL_DETAIL] Continue reading clicked - navigating to:', newUrl);
       setTimeout(() => {
-        navigate(newUrl);
+        navigate(`/novel/${id}/chapter/${firstChapterId}`);
       }, 100);
     }
   };
@@ -133,7 +124,6 @@ const NovelDetailPage = () => {
       await novelService.bookmarkNovel(id);
       alert(displayLanguage === 'tamil' ? 'புக்மார்க் சேர்க்கப்பட்டது' : 'Bookmarked successfully');
     } catch (err) {
-      console.error('Error bookmarking novel:', err);
       alert(displayLanguage === 'tamil' ? 'பிழை ஏற்பட்டது' : 'Error occurred');
     }
   };
@@ -157,7 +147,7 @@ const NovelDetailPage = () => {
         }));
       }
     } catch (err) {
-      console.error('Error liking novel:', err);
+      // Silent fail
     }
   };
 
@@ -166,11 +156,11 @@ const NovelDetailPage = () => {
       setIsLoginModalOpen(true);
       return;
     }
-    console.log('Download PDF functionality coming soon');
+    // Download PDF functionality coming soon
   };
 
   const handleShare = () => {
-    console.log('Share functionality coming soon');
+    // Share functionality coming soon
   };
 
   // Loading state

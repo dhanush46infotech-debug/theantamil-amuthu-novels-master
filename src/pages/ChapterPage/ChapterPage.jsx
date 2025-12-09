@@ -41,8 +41,6 @@ const ChapterPage = () => {
   const numNovelId = Number(novelId);
   const numChapterId = Number(chapterId);
 
-  console.log('[CHAPTER_PAGE] RENDER - novelId:', numNovelId, 'chapterId:', numChapterId, 'displayChapterId:', displayChapterId);
-
   const t = translations[userLanguage];
   const novelMeta = NOVEL_METADATA[numNovelId];
 
@@ -51,77 +49,41 @@ const ChapterPage = () => {
   };
 
   const handleBack = useCallback(() => {
-    try {
-      const backPath = `/novel/${novelId}`;
-      console.log('[BACK_BTN] Clicked - novelId:', novelId, 'Path:', backPath);
-      navigate(backPath);
-    } catch (error) {
-      console.error('[BACK_BTN] Error:', error);
-    }
+    navigate(`/novel/${novelId}`);
   }, [novelId, navigate]);
 
   const handlePreviousChapter = useCallback(() => {
-    try {
-      const currentChapterId = Number(chapterId);
-      const prevChapter = currentChapterId - 1;
-      console.log('[PREV_BTN] Clicked - Current:', currentChapterId, 'Previous:', prevChapter, 'Novel:', novelId);
-      
-      if (prevChapter >= 1) {
-        const newPath = `/novel/${novelId}/chapter/${prevChapter}`;
-        console.log('[PREV_BTN] Navigate to:', newPath);
-        navigate(newPath);
-      }
-    } catch (error) {
-      console.error('[PREV_BTN] Error:', error);
+    const prevChapter = Number(chapterId) - 1;
+    if (prevChapter >= 1) {
+      navigate(`/novel/${novelId}/chapter/${prevChapter}`);
     }
   }, [chapterId, novelId, navigate]);
 
   const handleNextChapter = useCallback(() => {
-    try {
-      const currentChapterId = Number(chapterId);
-      const nextChapter = currentChapterId + 1;
-      const config = NOVEL_METADATA[Number(novelId)];
-      const maxChapters = config?.totalChapters || 27;
-      
-      console.log('[NEXT_BTN] Clicked - Current:', currentChapterId, 'Next:', nextChapter, 'Max:', maxChapters);
-      
-      if (nextChapter <= maxChapters) {
-        const newPath = `/novel/${novelId}/chapter/${nextChapter}`;
-        console.log('[NEXT_BTN] Navigate to:', newPath);
-        navigate(newPath);
-      }
-    } catch (error) {
-      console.error('[NEXT_BTN] Error:', error);
+    const nextChapter = Number(chapterId) + 1;
+    const config = NOVEL_METADATA[Number(novelId)];
+    const maxChapters = config?.totalChapters || 27;
+
+    if (nextChapter <= maxChapters) {
+      navigate(`/novel/${novelId}/chapter/${nextChapter}`);
     }
   }, [chapterId, novelId, navigate]);
 
   // Update displayChapterId when route params change
   useEffect(() => {
-    const newChapterId = Number(chapterId);
-    console.log('[CHAPTER_PAGE] Route params changed - old displayChapterId:', displayChapterId, 'new:', newChapterId);
-    setDisplayChapterId(newChapterId);
+    setDisplayChapterId(Number(chapterId));
   }, [chapterId]);
 
   // Load chapter content dynamically with proper language fallback
   useEffect(() => {
-    const currentNovelId = Number(novelId);
-    const currentChapterId = Number(chapterId);
-    
-    console.log('[CHAPTER_LOAD] useEffect triggered - novel:', currentNovelId, 'chapter:', currentChapterId, 'language:', userLanguage);
-    
     const loadChapter = async () => {
       try {
         setLoading(true);
-        console.log('[CHAPTER_LOAD] Starting load for novel:', currentNovelId, 'chapter:', currentChapterId);
-        
-        const data = await getChapterContent(currentNovelId, currentChapterId, userLanguage);
-        console.log('[CHAPTER_LOAD] Chapter loaded - data exists:', !!data);
-        
+        const data = await getChapterContent(Number(novelId), Number(chapterId), userLanguage);
         setChapterData(data);
-        setLoading(false);
       } catch (error) {
-        console.error('[CHAPTER_LOAD] Error loading chapter:', error);
         setChapterData(null);
+      } finally {
         setLoading(false);
       }
     };
@@ -140,13 +102,14 @@ const ChapterPage = () => {
       updateProgress(numNovelId, numChapterId);
 
       // Check if this is the last chapter based on novel metadata
-      const maxChapters = novelMeta?.totalChapters || 27;
-      if (numChapterId === maxChapters && novelMeta) {
+      const metadata = NOVEL_METADATA[numNovelId];
+      const maxChapters = metadata?.totalChapters || 27;
+      if (numChapterId === maxChapters && metadata) {
         // Mark as complete when reaching the last chapter
-        completeNovel(numNovelId, novelMeta.title, getNovelCoverImage(numNovelId), getNovelAuthor(numNovelId));
+        completeNovel(numNovelId, metadata.title, getNovelCoverImage(numNovelId), getNovelAuthor(numNovelId));
       }
     }
-  }, [numNovelId, numChapterId, updateProgress, completeNovel, novelMeta]);
+  }, [numNovelId, numChapterId, updateProgress, completeNovel]);
 
   // Helper function to get novel cover image
   const getNovelCoverImage = (id) => {
@@ -239,13 +202,10 @@ const ChapterPage = () => {
           {/* Chapter Navigation */}
           <div className={styles.chapterNavigation}>
             {showPrevButton ? (
-              <button 
+              <button
                 type="button"
-                className={styles.navButton} 
-                onClick={() => {
-                  console.log('[BUTTON_CLICK] Previous button clicked');
-                  handlePreviousChapter();
-                }}
+                className={styles.navButton}
+                onClick={handlePreviousChapter}
               >
                 {t.chapter.previous}
               </button>
@@ -254,13 +214,10 @@ const ChapterPage = () => {
             )}
 
             {showNextButton ? (
-              <button 
+              <button
                 type="button"
-                className={styles.navButton} 
-                onClick={() => {
-                  console.log('[BUTTON_CLICK] Next button clicked');
-                  handleNextChapter();
-                }}
+                className={styles.navButton}
+                onClick={handleNextChapter}
               >
                 {t.chapter.next}
               </button>
