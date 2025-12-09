@@ -36,27 +36,31 @@ const ChapterPage = () => {
   const [chapterData, setChapterData] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  console.log('[CHAPTER_PAGE] RENDER - novelId:', novelId, 'chapterId:', chapterId, 'userLanguage:', userLanguage);
+  // Ensure numeric conversion for proper lookups
+  const numNovelId = Number(novelId);
+  const numChapterId = Number(chapterId);
+
+  console.log('[CHAPTER_PAGE] RENDER - novelId:', numNovelId, 'chapterId:', numChapterId, 'userLanguage:', userLanguage);
 
   const t = translations[userLanguage];
-  const novelMeta = NOVEL_METADATA[novelId];
+  const novelMeta = NOVEL_METADATA[numNovelId];
 
   const handleLoginClick = () => {
     // Handle login if needed
   };
 
   const handleBack = () => {
-    console.log('[CHAPTER_PAGE] Back button - navigating to:', `/novel/${novelId}`);
+    console.log('[CHAPTER_PAGE] Back button - navigating to:', `/novel/${numNovelId}`);
     setTimeout(() => {
-      navigate(`/novel/${novelId}`);
+      navigate(`/novel/${numNovelId}`);
     }, 100);
   };
 
   const handlePreviousChapter = () => {
-    const prevChapter = Number(chapterId) - 1;
+    const prevChapter = numChapterId - 1;
     if (prevChapter >= 1) {
-      const newUrl = `/novel/${novelId}/chapter/${prevChapter}`;
-      console.log('[CHAPTER_NAV] Previous chapter - navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`);
+      const newUrl = `/novel/${numNovelId}/chapter/${prevChapter}`;
+      console.log('[CHAPTER_NAV] Previous chapter - navigating to:', newUrl, 'Current:', `${numNovelId}/${numChapterId}`);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
         navigate(newUrl);
@@ -67,11 +71,12 @@ const ChapterPage = () => {
   };
 
   const handleNextChapter = () => {
-    const nextChapter = Number(chapterId) + 1;
+    const nextChapter = numChapterId + 1;
     const maxChapters = novelMeta?.totalChapters || 27;
+    console.log('[CHAPTER_NAV] Next chapter check - Current:', numChapterId, 'Next:', nextChapter, 'Max:', maxChapters);
     if (nextChapter <= maxChapters) {
-      const newUrl = `/novel/${novelId}/chapter/${nextChapter}`;
-      console.log('[CHAPTER_NAV] Next chapter - navigating to:', newUrl, 'Current:', `${novelId}/${chapterId}`, 'MaxChapters:', maxChapters);
+      const newUrl = `/novel/${numNovelId}/chapter/${nextChapter}`;
+      console.log('[CHAPTER_NAV] Next chapter - navigating to:', newUrl, 'Current:', `${numNovelId}/${numChapterId}`, 'MaxChapters:', maxChapters);
       window.scrollTo({ top: 0, behavior: 'smooth' });
       setTimeout(() => {
         navigate(newUrl);
@@ -83,20 +88,20 @@ const ChapterPage = () => {
 
   // Load chapter content dynamically with proper language fallback
   useEffect(() => {
-    console.log('[CHAPTER_PAGE] useEffect triggered - novelId:', novelId, 'chapterId:', chapterId, 'userLanguage:', userLanguage);
+    console.log('[CHAPTER_PAGE] useEffect triggered - novelId:', numNovelId, 'chapterId:', numChapterId, 'userLanguage:', userLanguage);
     
     const loadChapter = async () => {
       setLoading(true);
-      console.log('[CHAPTER_PAGE] Loading chapter content for chapter:', chapterId, 'in', userLanguage);
+      console.log('[CHAPTER_PAGE] Loading chapter content for chapter:', numChapterId, 'in', userLanguage);
       
-      const data = await getChapterContent(Number(novelId), Number(chapterId), userLanguage);
-      console.log('[CHAPTER_PAGE] Chapter loaded:', chapterId);
+      const data = await getChapterContent(numNovelId, numChapterId, userLanguage);
+      console.log('[CHAPTER_PAGE] Chapter loaded:', numChapterId, 'Data exists:', !!data);
       setChapterData(data);
       setLoading(false);
     };
 
     loadChapter();
-  }, [novelId, chapterId, userLanguage]);
+  }, [numNovelId, numChapterId, userLanguage]);
 
   // Scroll to top when chapter changes
   useEffect(() => {
@@ -105,17 +110,17 @@ const ChapterPage = () => {
 
   // Update reading progress when chapter changes
   useEffect(() => {
-    if (novelId && chapterId) {
-      updateProgress(Number(novelId), Number(chapterId));
+    if (numNovelId && numChapterId) {
+      updateProgress(numNovelId, numChapterId);
 
       // Check if this is the last chapter based on novel metadata
       const maxChapters = novelMeta?.totalChapters || 27;
-      if (Number(chapterId) === maxChapters && novelMeta) {
+      if (numChapterId === maxChapters && novelMeta) {
         // Mark as complete when reaching the last chapter
-        completeNovel(Number(novelId), novelMeta.title, getNovelCoverImage(Number(novelId)), getNovelAuthor(Number(novelId)));
+        completeNovel(numNovelId, novelMeta.title, getNovelCoverImage(numNovelId), getNovelAuthor(numNovelId));
       }
     }
-  }, [novelId, chapterId, updateProgress, completeNovel, novelMeta]);
+  }, [numNovelId, numChapterId, updateProgress, completeNovel, novelMeta]);
 
   // Helper function to get novel cover image
   const getNovelCoverImage = (id) => {
@@ -203,12 +208,12 @@ const ChapterPage = () => {
 
           {/* Chapter Navigation */}
           <div className={styles.chapterNavigation}>
-            {Number(chapterId) > 1 ? (
+            {numChapterId > 1 ? (
               <button 
                 type="button"
                 className={styles.navButton} 
                 onClick={(e) => {
-                  console.log('[PREV_BTN] Clicked - Current chapter:', chapterId);
+                  console.log('[PREV_BTN] Clicked - Current chapter:', numChapterId);
                   e.preventDefault();
                   e.stopPropagation();
                   handlePreviousChapter();
@@ -220,12 +225,12 @@ const ChapterPage = () => {
               <div></div>
             )}
 
-            {Number(chapterId) < (novelMeta?.totalChapters || 27) ? (
+            {numChapterId < (novelMeta?.totalChapters || 27) ? (
               <button 
                 type="button"
                 className={styles.navButton} 
                 onClick={(e) => {
-                  console.log('[NEXT_BTN] Clicked - Current chapter:', chapterId);
+                  console.log('[NEXT_BTN] Clicked - Current chapter:', numChapterId);
                   e.preventDefault();
                   e.stopPropagation();
                   handleNextChapter();
