@@ -97,10 +97,10 @@ const ChapterPage = () => {
 
   // Set default language based on novel when component mounts
   useEffect(() => {
-    if (novelMeta) {
-      setDisplayLanguage(novelMeta.defaultLanguage);
-    }
-  }, [novelId, novelMeta]);
+    // Use user's language preference, not novel's default
+    setDisplayLanguage(userLanguage);
+    console.log('[CHAPTER_PAGE] Language updated to:', userLanguage);
+  }, [userLanguage]);
 
   // Scroll to top when chapter changes
   useEffect(() => {
