@@ -57,21 +57,24 @@ const ChapterPage = () => {
   };
 
   const handlePreviousChapter = () => {
-    const prevChapter = numChapterId - 1;
-    console.log('[PREV_DEBUG] Current numChapterId:', numChapterId, 'prevChapter:', prevChapter, 'numNovelId:', numNovelId);
+    const currentChapterId = Number(chapterId);
+    const prevChapter = currentChapterId - 1;
+    console.log('[PREV_DEBUG] Current chapterId:', currentChapterId, 'prevChapter:', prevChapter, 'novelId:', novelId);
     if (prevChapter >= 1) {
-      const newPath = `/novel/${numNovelId}/chapter/${prevChapter}`;
+      const newPath = `/novel/${novelId}/chapter/${prevChapter}`;
       console.log('[PREV_NAVIGATE] Going to:', newPath);
       navigate(newPath, { replace: false });
     }
   };
 
   const handleNextChapter = () => {
-    const nextChapter = numChapterId + 1;
-    const maxChapters = novelMeta?.totalChapters || 27;
-    console.log('[NEXT_DEBUG] Current numChapterId:', numChapterId, 'nextChapter:', nextChapter, 'maxChapters:', maxChapters, 'novelMeta:', novelMeta);
+    const currentChapterId = Number(chapterId);
+    const nextChapter = currentChapterId + 1;
+    const config = NOVEL_METADATA[Number(novelId)];
+    const maxChapters = config?.totalChapters || 27;
+    console.log('[NEXT_DEBUG] Current chapterId:', currentChapterId, 'nextChapter:', nextChapter, 'maxChapters:', maxChapters);
     if (nextChapter <= maxChapters) {
-      const newPath = `/novel/${numNovelId}/chapter/${nextChapter}`;
+      const newPath = `/novel/${novelId}/chapter/${nextChapter}`;
       console.log('[NEXT_NAVIGATE] Going to:', newPath);
       navigate(newPath, { replace: false });
     } else {
@@ -174,9 +177,10 @@ const ChapterPage = () => {
   }
 
   // Get max chapters - ensure it's always available
-  const maxChapters = novelMeta?.totalChapters || 27;
-  const showPrevButton = numChapterId > 1;
-  const showNextButton = numChapterId < maxChapters;
+  const currentChapterId = Number(chapterId);
+  const maxChapters = NOVEL_METADATA[Number(novelId)]?.totalChapters || 27;
+  const showPrevButton = currentChapterId > 1;
+  const showNextButton = currentChapterId < maxChapters;
   const formatContent = (content) => {
     return content.split('\n\n').map((paragraph, index) => (
       <p key={index} className={styles.paragraph}>
