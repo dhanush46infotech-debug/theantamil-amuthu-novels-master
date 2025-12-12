@@ -26,10 +26,6 @@ const ChapterPage = () => {
   const t = translations[userLanguage];
   const novelMeta = getNovelConfig(numNovelId);
 
-  const handleLoginClick = () => {
-    // Handle login if needed
-  };
-
   const handleBack = useCallback(() => {
     navigate(`/novel/${novelId}`);
   }, [novelId, navigate]);
@@ -114,7 +110,7 @@ const ChapterPage = () => {
   if (loading) {
     return (
       <div className={styles.chapterContainer}>
-        <Header onLoginClick={handleLoginClick} />
+        <Header />
         <div className={styles.content}>
           <div className={styles.chapterContent}>
             <h1 className={styles.chapterTitle}>{t.chapter.loading}</h1>
@@ -127,7 +123,7 @@ const ChapterPage = () => {
   if (!chapterData) {
     return (
       <div className={styles.chapterContainer}>
-        <Header onLoginClick={handleLoginClick} />
+        <Header />
         <div className={styles.content}>
           <button className={styles.backButton} onClick={handleBack}>
             {t.chapter.back}
@@ -156,7 +152,7 @@ const ChapterPage = () => {
 
   return (
     <div className={styles.chapterContainer}>
-      <Header onLoginClick={handleLoginClick} />
+      <Header />
 
       <div className={styles.content}>
         <button className={styles.backButton} onClick={handleBack}>

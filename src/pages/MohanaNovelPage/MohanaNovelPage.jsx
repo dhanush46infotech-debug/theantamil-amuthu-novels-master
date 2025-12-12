@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
 import Header from '../../components/layout/Header/Header';
-import UserLogin from '../../components/common/UserLogin/UserLogin';
 import { getNovelConfig } from '../../config/novelConfig';
 import styles from './MohanaNovelPage.module.scss';
 
@@ -15,15 +14,6 @@ const MohanaNovelPage = () => {
   const { user } = useAuth();
   const { language } = useLanguage();
   const navigate = useNavigate();
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-
-  const handleLoginClick = () => {
-    setIsLoginModalOpen(true);
-  };
-
-  const handleCloseLogin = () => {
-    setIsLoginModalOpen(false);
-  };
 
   // Get novel config and generate chapters dynamically
   const novelConfig = getNovelConfig(3);
@@ -67,7 +57,7 @@ const MohanaNovelPage = () => {
 
   return (
     <div className={styles.novelDetailContainer}>
-      <Header onLoginClick={handleLoginClick} />
+      <Header />
 
       <div className={styles.content}>
         {/* Novel Header Section */}
@@ -133,9 +123,6 @@ const MohanaNovelPage = () => {
           </div>
         </div>
       </div>
-
-      {/* User Login Modal */}
-      <UserLogin isOpen={isLoginModalOpen} onClose={handleCloseLogin} />
     </div>
   );
 };

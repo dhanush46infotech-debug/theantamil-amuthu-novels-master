@@ -1,402 +1,292 @@
-// Footer Responsive Styles
-@use '../../../styles/abstracts/variables' as *;
-
 .footer {
-  background: linear-gradient(180deg, #001f3f 0%, #000d1a 100%);
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #FFFFFF;
-  padding: 40px 40px 30px;
-  margin-top: 0;
+  background: #1a1f2e;
+  color: #fff;
+  padding: 0;
   width: 100%;
+}
+
+.footerContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1.5fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+// Brand Section (Left)
+.brandSection {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.brandCard {
+  background: linear-gradient(135deg, #5B4FED 0%, #4a3fd9 100%);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
   position: relative;
   overflow: hidden;
 
-  // Star shining effect
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.3), transparent);
-    animation: footerShine 3s infinite;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-  @media (max-width: 480px) {
-    padding: 25px 20px 20px;
-  }
-
-  @media (min-width: 481px) and (max-width: 768px) {
-    padding: 30px 30px 25px;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 50px 60px 40px;
-  }
-
-  @media (min-width: 1920px) {
-    padding: 60px 80px 50px;
+    right: 0;
+    width: 80px;
+    height: 80px;
+    background: #FFD700;
+    clip-path: polygon(100% 0, 0 0, 100% 100%);
   }
 }
 
-@keyframes footerShine {
-  0% {
-    left: -100%;
-  }
-  50%, 100% {
-    left: 100%;
-  }
-}
-
-.footerContent {
-  max-width: 120px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 2;
-
-  @media (min-width: 1440px) {
-    max-width: 1400px;
-  }
-
-  @media (min-width: 1920px) {
-    max-width: 1600px;
-  }
-}
-
-.footerLeft {
-  position: absolute;
-  left: calc(50% - 20cm);
-  top: calc(50% - 1.5cm);
-  transform: translateY(-50%);
+.brandHeader {
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
 
-  @media (max-width: 768px) {
-    position: static;
-    transform: none;
-    justify-content: center;
-    margin-bottom: 20px;
+.brandIcon {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+}
+
+.brandName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+.brandTagline {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
+
+.ctaButton {
+  padding: 0.875rem 1.5rem;
+  background: #FFD700;
+  border: none;
+  border-radius: 6px;
+  color: #1a1a1a;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+
+  &:hover {
+    background: #FFC700;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
   }
 }
 
-.footerLogo {
-  height: 150px;
-  width: auto;
-  object-fit: contain;
-
-  @media (max-width: 480px) {
-    height: 100px;
-  }
-
-  @media (min-width: 1440px) {
-    height: 180px;
-  }
-
-  @media (min-width: 1920px) {
-    height: 200px;
-  }
+// Description Section (Center)
+.descriptionSection {
+  padding-top: 0.5rem;
 }
 
-.followSection {
+.logoTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0 0 1rem 0;
+}
+
+.description {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  max-width: 500px;
+}
+
+// Links Grid (Right)
+.linksGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.linkColumn {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 30px;
-
-  @media (max-width: 480px) {
-    margin-bottom: 20px;
-  }
-
-  @media (min-width: 1440px) {
-    margin-bottom: 40px;
-  }
+  gap: 1rem;
 }
 
-.followTitle {
-  font-size: 18px;
-  margin-bottom: 15px;
-  color: #FFFFFF;
-
-  @media (max-width: 480px) {
-    font-size: 16px;
-    margin-bottom: 12px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  @media (min-width: 1920px) {
-    font-size: 26px;
-    margin-bottom: 24px;
-  }
+.columnTitle {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.5);
+  letter-spacing: 1.5px;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
 }
 
-.socialIcons {
+.linkList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
   display: flex;
-  gap: 60px;
-  align-items: center;
+  flex-direction: column;
+  gap: 0.75rem;
 
-  @media (max-width: 480px) {
-    gap: 25px;
-    flex-wrap: wrap;
-    justify-content: center;
+  li {
+    margin: 0;
   }
 
-  @media (min-width: 481px) and (max-width: 768px) {
-    gap: 40px;
-  }
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 
-  @media (min-width: 1440px) {
-    gap: 80px;
-  }
-
-  @media (min-width: 1920px) {
-    gap: 100px;
+    &:hover {
+      color: #fff;
+    }
   }
 }
 
 .socialIcon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-  opacity: 0.9;
-
-  &:hover {
-    opacity: 1;
-    transform: scale(1.1);
-  }
-
-  img {
-    width: 40px;
-    height: 40px;
-
-    @media (max-width: 480px) {
-      width: 32px;
-      height: 32px;
-    }
-
-    @media (min-width: 1440px) {
-      width: 50px;
-      height: 50px;
-    }
-
-    @media (min-width: 1920px) {
-      width: 60px;
-      height: 60px;
-    }
-  }
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
 }
 
-.copyright {
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  padding-top: 20px;
-  text-align: center;
-  font-size: 14px;
-  opacity: 0.8;
-
-  @media (max-width: 480px) {
-    font-size: 12px;
-    padding-top: 15px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 16px;
-    padding-top: 25px;
-  }
-
-  @media (min-width: 1920px) {
-    font-size: 18px;
-    padding-top: 30px;
-  }
+// Bottom Bar
+.bottomBar {
+  background: #13171f;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-// YouTube Modal Styles
-.modalOverlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modalContent {
-  background-color: white;
-  border-radius: 12px;
-  padding: 30px;
-  max-width: 500px;
-  width: 90%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-
-  @media (max-width: 480px) {
-    padding: 20px;
-    max-width: 95%;
-    border-radius: 8px;
-  }
-
-  @media (min-width: 1440px) {
-    max-width: 600px;
-    padding: 40px;
-  }
-
-  @media (min-width: 1920px) {
-    max-width: 700px;
-    padding: 50px;
-  }
-}
-
-.modalHeader {
+.bottomContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
-
-  @media (max-width: 480px) {
-    margin-bottom: 15px;
-  }
+  flex-wrap: wrap;
+  gap: 1rem;
 }
 
-.modalTitle {
-  color: #0a2a43;
-  margin: 0;
-  font-size: 24px;
-
-  @media (max-width: 480px) {
-    font-size: 18px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 28px;
-  }
-
-  @media (min-width: 1920px) {
-    font-size: 32px;
-  }
+.copyright {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-.modalClose {
-  background: none;
-  border: none;
-  font-size: 28px;
-  cursor: pointer;
-  color: #666;
-  padding: 0;
-  width: 30px;
-  height: 30px;
+.bottomLinks {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: color 0.3s ease;
+  gap: 1rem;
+  flex-wrap: wrap;
 
-  &:hover {
-    color: #333;
+  a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 0.875rem;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: rgba(255, 255, 255, 0.8);
+    }
   }
 
-  @media (max-width: 480px) {
-    font-size: 24px;
-    width: 25px;
-    height: 25px;
-  }
-
-  @media (min-width: 1440px) {
-    font-size: 32px;
-    width: 35px;
-    height: 35px;
-  }
-}
-
-.modalBody {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-
-  @media (max-width: 480px) {
-    gap: 10px;
-  }
-
-  @media (min-width: 1440px) {
-    gap: 20px;
+  .separator {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.875rem;
   }
 }
 
-.channelLink {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  padding: 15px;
-  background-color: #f5f5f5;
-  border-radius: 8px;
-  text-decoration: none;
-  color: #0a2a43;
-  transition: all 0.3s ease;
-  border: 2px solid transparent;
-
-  &:hover {
-    background-color: #e8f4f8;
-    border-color: #1e90ff;
+// Responsive Design
+@media (max-width: 1024px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    padding: 3rem 2rem;
   }
 
-  @media (max-width: 480px) {
-    padding: 12px;
-    gap: 12px;
-  }
-
-  @media (min-width: 1440px) {
-    padding: 18px;
-    gap: 18px;
-  }
-
-  @media (min-width: 1920px) {
-    padding: 20px;
-    gap: 20px;
+  .linksGrid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-.channelIcon {
-  width: 40px;
-  height: 40px;
-
-  @media (max-width: 480px) {
-    width: 32px;
-    height: 32px;
+@media (max-width: 768px) {
+  .footerContainer {
+    padding: 2.5rem 1.5rem;
+    gap: 2.5rem;
   }
 
-  @media (min-width: 1440px) {
-    width: 48px;
-    height: 48px;
+  .linksGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
   }
 
-  @media (min-width: 1920px) {
-    width: 56px;
-    height: 56px;
+  .bottomContent {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .bottomLinks {
+    justify-content: center;
   }
 }
 
-.channelName {
-  font-size: 16px;
-  font-weight: 500;
-
-  @media (max-width: 480px) {
-    font-size: 14px;
+@media (max-width: 480px) {
+  .footerContainer {
+    padding: 2rem 1rem;
+    gap: 2rem;
   }
 
-  @media (min-width: 1440px) {
-    font-size: 18px;
+  .brandCard {
+    padding: 1.5rem 1.25rem;
   }
 
-  @media (min-width: 1920px) {
-    font-size: 20px;
+  .brandName {
+    font-size: 1.25rem;
+  }
+
+  .logoTitle {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+
+  .ctaButton {
+    padding: 0.75rem 1.25rem;
+    font-size: 0.8rem;
+  }
+
+  .bottomContent {
+    padding: 1.25rem 1rem;
+  }
+
+  .bottomLinks {
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .separator {
+      display: none;
+    }
   }
 }

@@ -4,7 +4,6 @@ import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
 import { useReadingProgress } from '../../context/ReadingProgressContext';
 import Header from '../../components/layout/Header/Header';
-import UserLogin from '../../components/common/UserLogin/UserLogin';
 import { getNovelConfig } from '../../config/novelConfig';
 import styles from './SwethaNovelPage.module.scss';
 
@@ -17,15 +16,6 @@ const SwethaNovelPage = () => {
   const { language } = useLanguage();
   const { startReading } = useReadingProgress();
   const navigate = useNavigate();
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
-
-  const handleLoginClick = () => {
-    setIsLoginModalOpen(true);
-  };
-
-  const handleCloseLogin = () => {
-    setIsLoginModalOpen(false);
-  };
 
   // Get novel config and generate chapters dynamically
   const novelConfig = getNovelConfig(2);
@@ -111,7 +101,7 @@ const SwethaNovelPage = () => {
 
   return (
     <div className={styles.novelDetailContainer}>
-      <Header onLoginClick={handleLoginClick} />
+      <Header />
 
       <div className={styles.content}>
         {/* Novel Header Section */}
@@ -190,9 +180,6 @@ const SwethaNovelPage = () => {
           </div>
         </div>
       </div>
-
-      {/* User Login Modal */}
-      <UserLogin isOpen={isLoginModalOpen} onClose={handleCloseLogin} />
     </div>
   );
 };

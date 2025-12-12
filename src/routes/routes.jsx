@@ -9,6 +9,8 @@ const ThenmozhiNovelPage = lazy(() => import('../pages/ThenmozhiNovelPage/Thenmo
 const SwethaNovelPage = lazy(() => import('../pages/SwethaNovelPage/SwethaNovelPage'));
 const MohanaNovelPage = lazy(() => import('../pages/MohanaNovelPage/MohanaNovelPage'));
 const ChapterPage = lazy(() => import('../pages/ChapterPage/ChapterPage'));
+const LoginPage = lazy(() => import('../pages/LoginPage/LoginPage'));
+const SignupPage = lazy(() => import('../pages/SignupPage/SignupPage'));
 
 // Loading component
 const LoadingFallback = () => (
@@ -29,6 +31,8 @@ const AppRoutes = () => {
     <Suspense fallback={<LoadingFallback />}>
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignupPage />} />
         <Route path="/novels" element={<NovelsPage />} />
         {/* Specific routes first (for hardcoded novel pages) */}
         <Route path="/novel/1" element={<ThenmozhiNovelPage />} />

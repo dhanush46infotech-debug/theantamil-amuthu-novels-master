@@ -5,7 +5,6 @@ import { useLanguage } from '../../context/LanguageContext';
 import { translations } from '../../translations';
 import Header from '../../components/layout/Header/Header';
 import Carousel from '../../components/common/Carousel/Carousel';
-import UserLogin from '../../components/common/UserLogin/UserLogin';
 import novelService from '../../services/API/novelService';
 import styles from './NovelsPage.module.scss';
 
@@ -25,7 +24,6 @@ const NovelsPageAPI = () => {
   const { user } = useAuth();
   const { language } = useLanguage();
   const navigate = useNavigate();
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [novels, setNovels] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -50,21 +48,13 @@ const NovelsPageAPI = () => {
     fetchNovels();
   }, []);
 
-  const handleLoginClick = () => {
-    setIsLoginModalOpen(true);
-  };
-
-  const handleCloseLogin = () => {
-    setIsLoginModalOpen(false);
-  };
-
   const handleNovelClick = (novelId) => {
     navigate(`/novel/${novelId}`);
   };
 
   return (
     <div className={styles.novelsContainer}>
-      <Header onLoginClick={handleLoginClick} />
+      <Header />
       <Carousel />
 
       {/* Continue Reading Section */}
@@ -124,9 +114,6 @@ const NovelsPageAPI = () => {
           </div>
         )}
       </div>
-
-      {/* User Login Modal */}
-      <UserLogin isOpen={isLoginModalOpen} onClose={handleCloseLogin} />
     </div>
   );
 };

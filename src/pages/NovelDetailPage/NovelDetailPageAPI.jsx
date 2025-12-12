@@ -3,7 +3,6 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import { useLanguage } from '../../context/LanguageContext';
 import Header from '../../components/layout/Header/Header';
-import UserLogin from '../../components/common/UserLogin/UserLogin';
 import novelService from '../../services/API/novelService';
 import styles from './NovelDetailPage.module.scss';
 
@@ -33,7 +32,6 @@ const NovelDetailPageAPI = () => {
   const { user } = useAuth();
   const { language } = useLanguage();
   const navigate = useNavigate();
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [novel, setNovel] = useState(null);
   const [chapters, setChapters] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -67,14 +65,6 @@ const NovelDetailPageAPI = () => {
     }
   }, [id]);
 
-  const handleLoginClick = () => {
-    setIsLoginModalOpen(true);
-  };
-
-  const handleCloseLogin = () => {
-    setIsLoginModalOpen(false);
-  };
-
   const handleChapterClick = (chapterId) => {
     navigate(`/novel/${id}/chapter/${chapterId}`);
   };
@@ -87,7 +77,7 @@ const NovelDetailPageAPI = () => {
 
   const handleBookmark = async () => {
     if (!user) {
-      handleLoginClick();
+      navigate('/login');
       return;
     }
 
@@ -103,7 +93,7 @@ const NovelDetailPageAPI = () => {
 
   const handleLike = async () => {
     if (!user) {
-      handleLoginClick();
+      navigate('/login');
       return;
     }
 
@@ -125,7 +115,7 @@ const NovelDetailPageAPI = () => {
   if (loading) {
     return (
       <div className={styles.novelDetailContainer}>
-        <Header onLoginClick={handleLoginClick} />
+        <Header />
         <div className={styles.loading}>
           <p>{language === 'tamil' ? 'ஏற்றுகிறது...' : 'Loading...'}</p>
         </div>
@@ -136,7 +126,7 @@ const NovelDetailPageAPI = () => {
   if (error || !novel) {
     return (
       <div className={styles.novelDetailContainer}>
-        <Header onLoginClick={handleLoginClick} />
+        <Header />
         <div className={styles.error}>
           <p>{error || 'Novel not found'}</p>
           <button onClick={() => navigate('/novels')}>
@@ -152,7 +142,7 @@ const NovelDetailPageAPI = () => {
 
   return (
     <div className={styles.novelDetailContainer}>
-      <Header onLoginClick={handleLoginClick} />
+      <Header />
 
       <div className={styles.content}>
         {/* Novel Header Section */}
@@ -242,7 +232,6 @@ const NovelDetailPageAPI = () => {
       </div>
 
       {/* User Login Modal */}
-      <UserLogin isOpen={isLoginModalOpen} onClose={handleCloseLogin} />
     </div>
   );
 };
